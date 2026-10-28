@@ -4,8 +4,11 @@ Titles, prices, descriptions and tags come from launch-listings.md; print files 
 designs/print/. Blanks, colors and print placement are configured in PRODUCTS below.
 
 Usage:
-    PRINTIFY_API_TOKEN=... python3 printify/create_products.py            # dry run: look up and print the plan
-    PRINTIFY_API_TOKEN=... python3 printify/create_products.py --apply    # create + publish
+    python3 printify/create_products.py            # dry run: look up and print the plan
+    python3 printify/create_products.py --apply    # create + publish
+
+Auth comes from PRINTIFY_API_TOKEN if set; otherwise the environment's network secret
+for api.printify.com is expected to add it to each request.
 
 Products whose title already exists in the Printify shop are skipped, so re-running is safe.
 """
@@ -65,7 +68,9 @@ PRODUCTS = {
 class Printify:
     def __init__(self, token):
         self.s = requests.Session()
-        self.s.headers.update({"Authorization": f"Bearer {token}", "User-Agent": "elsewhere-supply-setup"})
+        self.s.headers["User-Agent"] = "elsewhere-supply-setup"
+        if token:
+            self.s.headers["Authorization"] = f"Bearer {token}"
 
     def call(self, method, path, **kw):
         for attempt in range(4):
@@ -205,10 +210,7 @@ def main():
     ap.add_argument("--apply", action="store_true", help="create and publish (default is a dry run)")
     args = ap.parse_args()
 
-    token = os.environ.get("PRINTIFY_API_TOKEN")
-    if not token:
-        sys.exit("Set PRINTIFY_API_TOKEN in the environment.")
-    api = Printify(token)
+    api = Printify(os.environ.get("PRINTIFY_API_TOKEN"))
     listings = parse_listings()
 
     shops = api.get("/shops.json")
