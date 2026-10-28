@@ -1,0 +1,83 @@
+<section class="section section--tight">
+  <div class="page-width">
+    <h1 class="display display--lg" style="margin-bottom: 28px;">{{ 'cart.title' | t }}</h1>
+
+    {%- if cart.item_count > 0 -%}
+      <form action="{{ routes.cart_url }}" method="post" class="cart" novalidate>
+        <div>
+          {%- for item in cart.items -%}
+            <div class="cart-item">
+              <a class="cart-item__media" href="{{ item.url }}">
+                {%- if item.image -%}
+                  {{ item.image | image_url: width: 240 | image_tag: loading: 'lazy', alt: item.title }}
+                {%- endif -%}
+              </a>
+              <div>
+                <a class="cart-item__title" href="{{ item.url }}">{{ item.product.title }}</a>
+                {%- unless item.product.has_only_default_variant -%}
+                  <p class="label muted" style="margin: 4px 0 0;">{{ item.variant.title }}</p>
+                {%- endunless -%}
+                {%- for property in item.properties -%}
+                  {%- unless property.last == blank or property.first contains '_' -%}
+                    <p class="label muted" style="margin: 4px 0 0;">{{ property.first }}: {{ property.last }}</p>
+                  {%- endunless -%}
+                {%- endfor -%}
+                <p style="margin: 6px 0 12px;">{{ item.final_price | money }}</p>
+                <div style="display: flex; gap: 14px; align-items: center;">
+                  <label class="visually-hidden" for="Qty-{{ item.key }}">{{ 'products.quantity' | t }}</label>
+                  <input class="input" style="width: 80px;" type="number" min="0" inputmode="numeric"
+                    id="Qty-{{ item.key }}" name="updates[]" value="{{ item.quantity }}">
+                  <a class="cart-item__remove label" href="{{ item.url_to_remove }}">{{ 'cart.remove' | t }}</a>
+                </div>
+              </div>
+              <p class="cart-item__total price" style="margin: 0;">{{ item.final_line_price | money }}</p>
+            </div>
+          {%- endfor -%}
+
+          <div style="display: flex; justify-content: space-between; gap: 12px; margin-top: 18px; flex-wrap: wrap;">
+            <a class="btn btn--ghost" href="{{ routes.all_products_collection_url }}">&larr; {{ 'cart.continue' | t }}</a>
+            <button class="btn btn--ghost" type="submit" name="update">{{ 'cart.update' | t }}</button>
+          </div>
+        </div>
+
+        <aside class="box cart-summary">
+          <p class="label" style="margin: 0;">Packing slip</p>
+          <div class="barcode barcode--sm" style="margin-top: 12px;"></div>
+          <dl class="kv label">
+            <dt>Items</dt><dd>{{ cart.item_count }}</dd>
+            {%- for discount in cart.cart_level_discount_applications -%}
+              <dt>{{ discount.title }}</dt><dd>-{{ discount.total_allocated_amount | money }}</dd>
+            {%- endfor -%}
+            <dt>{{ 'cart.subtotal' | t }}</dt><dd>{{ cart.total_price | money_with_currency }}</dd>
+          </dl>
+          <p class="muted" style="font-size: 13px;">{{ 'cart.taxes_shipping' | t }}</p>
+          {%- if section.settings.show_note -%}
+            <div class="field" style="margin: 16px 0;">
+              <label class="label" for="CartNote">{{ 'cart.note' | t }}</label>
+              <textarea class="input" id="CartNote" name="note">{{ cart.note }}</textarea>
+            </div>
+          {%- endif -%}
+          {%- if section.settings.stamp != blank -%}
+            <p style="margin: 6px 0 18px;"><span class="stamp">{{ section.settings.stamp }}</span></p>
+          {%- endif -%}
+          <button class="btn btn--block" type="submit" name="checkout">{{ 'cart.checkout' | t }} &rarr;</button>
+        </aside>
+      </form>
+    {%- else -%}
+      <div class="empty">
+        <p class="display display--sm" style="margin-bottom: 18px;">{{ 'cart.empty' | t }}</p>
+        <a class="btn" href="{{ routes.all_products_collection_url }}">{{ 'cart.continue' | t }} &rarr;</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cart",
+  "settings": [
+    { "type": "checkbox", "id": "show_note", "label": "Show order note", "default": false },
+    { "type": "text", "id": "stamp", "label": "Stamp text", "default": "Code ELSEWHERE15 = 15% off" }
+  ]
+}
+{% endschema %}

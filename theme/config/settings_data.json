@@ -1,0 +1,14 @@
+{
+  "current": "Default",
+  "presets": {
+    "Default": {
+      "color_paper": "#EFE9DD",
+      "color_ink": "#111111",
+      "color_accent": "#D9442B",
+      "color_card": "#F7F4EE",
+      "tagline": "Currently elsewhere",
+      "card_show_second_image": true,
+      "card_tag": "Printed to order"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+<header class="header">
+  <div class="page-width header__inner">
+    <button class="menu-toggle label" type="button" aria-expanded="false" aria-controls="HeaderNav" data-menu-toggle>
+      {{ 'general.menu' | t }}
+    </button>
+
+    <nav class="header__nav label" id="HeaderNav" aria-label="Main">
+      <ul>
+        {%- for link in section.settings.menu.links -%}
+          <li>
+            <a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+
+    <a class="header__logo" href="{{ routes.root_url }}">
+      {%- if section.settings.logo != blank -%}
+        {%- assign logo_height = section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio | round -%}
+        {{ section.settings.logo | image_url: width: 480 | image_tag:
+          width: section.settings.logo_width,
+          height: logo_height,
+          alt: shop.name
+        }}
+      {%- else -%}
+        <span class="display">{{ shop.name }}</span>
+      {%- endif -%}
+      {%- if settings.tagline != blank -%}
+        <small class="label muted">{{ settings.tagline }}</small>
+      {%- endif -%}
+    </a>
+
+    <div class="header__actions label">
+      <a class="hide-mobile" href="{{ routes.search_url }}">{{ 'general.search' | t }}</a>
+      {%- if shop.customer_accounts_enabled -%}
+        <a class="hide-mobile" href="{{ routes.account_url }}">{{ 'general.account' | t }}</a>
+      {%- endif -%}
+      <a href="{{ routes.cart_url }}" aria-label="{{ 'general.cart' | t }}, {{ cart.item_count }}">
+        {{- 'general.cart' | t -}}
+        <span class="cart-count" data-cart-count>{{ cart.item_count }}</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "section-header",
+  "settings": [
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" },
+    { "type": "image_picker", "id": "logo", "label": "Logo image", "info": "Leave empty to use the store name in the display font." },
+    { "type": "range", "id": "logo_width", "label": "Logo width", "min": 80, "max": 320, "step": 10, "unit": "px", "default": 180 }
+  ]
+}
+{% endschema %}

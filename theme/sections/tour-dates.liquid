@@ -1,0 +1,51 @@
+<section class="section tour">
+  <div class="page-width">
+    <div class="section-head">
+      <div>
+        {%- if section.settings.kicker != blank -%}
+          <p class="label" style="margin: 0 0 8px; color: var(--accent);">{{ section.settings.kicker }}</p>
+        {%- endif -%}
+        <h2 class="display display--lg">{{ section.settings.heading }}</h2>
+      </div>
+      {%- if section.settings.button_label != blank -%}
+        <a class="btn" style="background: var(--paper); color: var(--ink); border-color: var(--paper);"
+          href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">
+          {{ section.settings.button_label }} &rarr;
+        </a>
+      {%- endif -%}
+    </div>
+    <ul class="tour__list">
+      {%- for block in section.blocks -%}
+        <li class="tour__row" {{ block.shopify_attributes }}>
+          <span class="tour__date">{{ block.settings.date }}</span>
+          <strong>{{ block.settings.venue }}</strong>
+          <span class="tour__status">{{ block.settings.status }}</span>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Tour dates",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Small heading", "default": "Now touring" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Seasonal Depression World Tour" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Get the merch" },
+    { "type": "url", "id": "button_link", "label": "Button link" }
+  ],
+  "blocks": [
+    {
+      "type": "date",
+      "name": "Tour date",
+      "settings": [
+        { "type": "text", "id": "date", "label": "Date", "default": "Nov 01" },
+        { "type": "text", "id": "venue", "label": "Venue", "default": "My couch" },
+        { "type": "text", "id": "status", "label": "Status", "default": "Sold out" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Tour dates", "blocks": [{ "type": "date" }, { "type": "date" }, { "type": "date" }] }]
+}
+{% endschema %}

@@ -1,0 +1,35 @@
+{%- layout none -%}
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Gift card &ndash; {{ shop.name }}</title>
+    {% render 'theme-styles' %}
+    {{ content_for_header }}
+  </head>
+  <body>
+    <main class="section">
+      <div class="page-width page-narrow" style="text-align: center;">
+        <p style="margin: 0 0 20px;"><span class="stamp">{% if gift_card.expired or gift_card.enabled == false %}Void{% else %}Gift card{% endif %}</span></p>
+        <h1 class="display display--lg">{{ gift_card.initial_value | money_without_trailing_zeros }}</h1>
+        <p>From {{ shop.name }}</p>
+        {%- if gift_card.balance != gift_card.initial_value -%}
+          <p class="label">Remaining: {{ gift_card.balance | money }}</p>
+        {%- endif -%}
+        <div class="box" style="padding: 18px; margin: 24px auto; max-width: 420px;">
+          <p class="label" style="margin: 0 0 6px;">Code</p>
+          <p class="display display--sm" style="word-break: break-all;">{{ gift_card.code | format_code }}</p>
+          <div class="barcode barcode--sm" style="margin-top: 12px;"></div>
+        </div>
+        {%- if gift_card.expires_on -%}
+          <p class="label muted">Expires {{ gift_card.expires_on | date: '%b %d, %Y' }}</p>
+        {%- endif -%}
+        <p style="margin-top: 24px;">
+          <a class="btn" href="{{ shop.url }}">Start shopping &rarr;</a>
+          <button class="btn btn--ghost" type="button" onclick="window.print()">Print</button>
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

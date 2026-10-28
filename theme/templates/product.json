@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "shipping": { "type": "collapsible", "settings": { "heading": "Shipping", "content": "<p>Every piece is printed to order, just for you. Production usually takes a few business days, then it ships. You'll get tracking by email when it leaves.</p>" } },
+        "fit": { "type": "collapsible", "settings": { "heading": "Fit", "content": "<p>Tees and hoodies use unisex sizing: true to size for a classic fit, size up for the oversized look. Beanies are one size.</p>" } },
+        "care": { "type": "collapsible", "settings": { "heading": "Care", "content": "<p>Wash cold, inside out. Tumble dry low or hang dry. Don't iron the print. Do not prompt.</p>" } }
+      },
+      "block_order": ["shipping", "fit", "care"],
+      "settings": {}
+    },
+    "more": {
+      "type": "featured-collection",
+      "settings": { "kicker": "Also elsewhere", "heading": "More from the drop", "limit": 3, "columns": 3, "link_label": "View all" }
+    }
+  },
+  "order": ["main", "more"]
+}

@@ -1,0 +1,78 @@
+{%- liquid
+  assign featured = section.settings.product
+  assign hero_image = section.settings.image
+  if hero_image == blank and featured != blank
+    assign hero_image = featured.featured_media
+  endif
+-%}
+<section class="ooo">
+  <div class="page-width ooo__grid">
+    <div class="ooo__copy">
+      <div class="box ooo__mail label">
+        <dl class="kv">
+          <dt>From:</dt><dd>{{ shop.name }}</dd>
+          <dt>Subject:</dt><dd>{{ section.settings.subject }}</dd>
+          <dt>Status:</dt><dd>{{ section.settings.status }}</dd>
+        </dl>
+        <div class="barcode barcode--sm" style="margin: 0 16px 12px;"></div>
+      </div>
+
+      <h1 class="display display--xl">{{ section.settings.heading | newline_to_br }}</h1>
+
+      <div class="ooo__body rte">{{ section.settings.body }}</div>
+
+      <div class="ooo__actions">
+        {%- if section.settings.button_label != blank -%}
+          <a class="btn" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">
+            {{ section.settings.button_label }} &rarr;
+          </a>
+        {%- endif -%}
+        {%- if section.settings.secondary_label != blank -%}
+          <a class="btn btn--ghost" href="{{ section.settings.secondary_link | default: routes.collections_url }}">
+            {{ section.settings.secondary_label }}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="ooo__media">
+      {%- if hero_image != blank -%}
+        {%- if featured != blank -%}<a href="{{ featured.url }}" aria-label="{{ featured.title | escape }}">{%- endif -%}
+        {{ hero_image | image_url: width: 1200 | image_tag:
+          widths: '600, 900, 1200',
+          sizes: '(min-width: 860px) 45vw, 100vw',
+          loading: 'eager',
+          fetchpriority: 'high',
+          alt: hero_image.alt | default: section.settings.heading
+        }}
+        {%- if featured != blank -%}</a>{%- endif -%}
+      {%- else -%}
+        <div class="ooo__placeholder label">Pick a product or image in the theme editor</div>
+      {%- endif -%}
+      {%- if section.settings.stamp != blank -%}
+        <span class="stamp">{{ section.settings.stamp }}</span>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Auto-reply hero",
+  "settings": [
+    { "type": "text", "id": "subject", "label": "Subject line", "default": "Automatic reply: New drop" },
+    { "type": "text", "id": "status", "label": "Status line", "default": "Away. Shop's open though." },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "Currently\nElsewhere" },
+    { "type": "richtext", "id": "body", "label": "Text", "default": "<p>Graphic tees, hoodies and hats for people who showed up but didn't fully arrive. Printed to order. Will respond upon return.</p>" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop the drop" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "text", "id": "secondary_label", "label": "Second button label", "default": "Browse collections" },
+    { "type": "url", "id": "secondary_link", "label": "Second button link" },
+    { "type": "header", "content": "Image" },
+    { "type": "product", "id": "product", "label": "Featured product", "info": "Uses the product's main image and links to it." },
+    { "type": "image_picker", "id": "image", "label": "Custom image", "info": "Overrides the product image." },
+    { "type": "text", "id": "stamp", "label": "Stamp text", "default": "New drop" }
+  ],
+  "presets": [{ "name": "Auto-reply hero" }]
+}
+{% endschema %}

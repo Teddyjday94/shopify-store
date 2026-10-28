@@ -1,0 +1,43 @@
+<section class="section section--tight">
+  <div class="page-width">
+    <h1 class="display display--lg" style="margin-bottom: 22px;">{{ 'search.title' | t }}</h1>
+    <form action="{{ routes.search_url }}" method="get" role="search" class="inline-form" style="max-width: 640px;">
+      <label class="visually-hidden" for="SearchTerms">{{ 'search.title' | t }}</label>
+      <input class="input" id="SearchTerms" type="search" name="q" value="{{ search.terms | escape }}"
+        placeholder="{{ 'search.placeholder' | t }}">
+      <input type="hidden" name="type" value="product">
+      <button class="btn" type="submit">{{ 'search.submit' | t }}</button>
+    </form>
+
+    {%- if search.performed -%}
+      {%- paginate search.results by 24 -%}
+        <p class="label" style="margin: 28px 0 18px;">
+          {%- if search.results_count > 0 -%}
+            {{ 'search.results' | t: count: search.results_count, terms: search.terms }}
+          {%- else -%}
+            {{ 'search.none' | t: terms: search.terms }}
+          {%- endif -%}
+        </p>
+        <div class="grid">
+          {%- for item in search.results -%}
+            {%- if item.object_type == 'product' -%}
+              {% render 'product-card', product: item %}
+            {%- else -%}
+              <a class="card" href="{{ item.url }}">
+                <div class="card__info">
+                  <h3 class="card__title">{{ item.title }}</h3>
+                  <p class="muted">{{ item.content | strip_html | truncatewords: 24 }}</p>
+                </div>
+              </a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+        {% render 'pagination', paginate: paginate %}
+      {%- endpaginate -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Search results" }
+{% endschema %}

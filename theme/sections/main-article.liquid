@@ -1,0 +1,17 @@
+<article class="section">
+  <div class="page-width page-narrow">
+    <p class="label muted" style="margin: 0 0 12px;">{{ article.published_at | date: '%b %d, %Y' }} &middot; {{ article.author }}</p>
+    <h1 class="display display--lg" style="margin-bottom: 24px;">{{ article.title }}</h1>
+    {%- if article.image -%}
+      <div class="box" style="margin-bottom: 28px;">
+        {{ article.image | image_url: width: 1400 | image_tag: widths: '700, 1000, 1400', sizes: '(min-width: 800px) 760px, 100vw', alt: article.image.alt | default: article.title }}
+      </div>
+    {%- endif -%}
+    <div class="rte" style="font-size: 16px;">{{ article.content }}</div>
+    <p style="margin-top: 36px;"><a class="btn btn--ghost" href="{{ blog.url }}">&larr; {{ blog.title }}</a></p>
+  </div>
+</article>
+
+{% schema %}
+{ "name": "Article" }
+{% endschema %}

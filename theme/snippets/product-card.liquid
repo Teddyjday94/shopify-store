@@ -1,0 +1,56 @@
+{%- comment -%}
+  Product card shaped like a parcel label.
+  Accepts:
+  - product: product object
+  - index: number shown as "No. 001" (optional)
+  - lazy: boolean, lazy-load images (default true)
+{%- endcomment -%}
+{%- liquid
+  assign lazy_load = true
+  if lazy == false
+    assign lazy_load = false
+  endif
+  assign loading = 'lazy'
+  unless lazy_load
+    assign loading = 'eager'
+  endunless
+-%}
+<a class="card" href="{{ product.url }}">
+  <div class="card__media">
+    {%- if index -%}
+      <span class="card__no label">No. {{ index | prepend: '00' | slice: -3, 3 }}</span>
+    {%- endif -%}
+    {%- if product.available == false -%}
+      <span class="card__tag stamp">{{ 'products.sold_out' | t }}</span>
+    {%- elsif product.compare_at_price > product.price -%}
+      <span class="card__tag stamp">{{ 'products.on_sale' | t }}</span>
+    {%- endif -%}
+
+    {%- if product.featured_media -%}
+      {{ product.featured_media | image_url: width: 720 | image_tag:
+        widths: '360, 540, 720',
+        sizes: '(min-width: 990px) 30vw, 50vw',
+        loading: loading,
+        alt: product.featured_media.alt | default: product.title
+      }}
+      {%- if settings.card_show_second_image and product.media[1] -%}
+        {{ product.media[1] | image_url: width: 720 | image_tag:
+          widths: '360, 540, 720',
+          sizes: '(min-width: 990px) 30vw, 50vw',
+          loading: 'lazy',
+          alt: ''
+        }}
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+  <div class="card__info">
+    <h3 class="card__title">{{ product.title }}</h3>
+    {%- if settings.card_tag != blank -%}
+      <span class="label muted">{{ settings.card_tag }}</span>
+    {%- endif -%}
+    <div class="card__meta">
+      {% render 'price', product: product %}
+      <span class="label" aria-hidden="true">&rarr;</span>
+    </div>
+  </div>
+</a>

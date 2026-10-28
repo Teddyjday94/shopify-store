@@ -1,0 +1,24 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "shop": { "type": "menu", "settings": { "heading": "Shop", "menu": "main-menu" } },
+        "info": { "type": "menu", "settings": { "heading": "Info", "menu": "footer" } }
+      },
+      "block_order": ["shop", "info"],
+      "settings": {
+        "reply_subject": "Out of office",
+        "reply_body": "<p>Thanks for stopping by. Everything here is printed to order, just for you, then shipped wherever you are. Questions? Reply anytime. We'll answer when we're back from elsewhere.</p>",
+        "show_newsletter": true,
+        "newsletter_heading": "Get notified about new drops",
+        "small_print": "Made elsewhere. Worn here.",
+        "show_wordmark": true,
+        "wordmark": "Elsewhere"
+      }
+    }
+  },
+  "order": ["footer"]
+}

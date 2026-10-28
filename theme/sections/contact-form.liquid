@@ -1,0 +1,43 @@
+<section class="section section--tight">
+  <div class="page-width page-narrow">
+    <div class="box" style="padding: 22px;">
+      <dl class="kv label">
+        <dt>To:</dt><dd>{{ shop.name }}</dd>
+        <dt>Re:</dt><dd>{{ section.settings.subject }}</dd>
+      </dl>
+      <hr class="rule rule--dashed" style="margin: 16px 0;">
+      {%- form 'contact', id: 'ContactForm' -%}
+        {%- if form.posted_successfully? -%}
+          <p class="notice" role="status">{{ 'contact.success' | t }}</p>
+        {%- elsif form.errors -%}
+          <p class="notice notice--error" role="alert">{{ form.errors | default_errors }}</p>
+        {%- endif -%}
+        <div style="display: grid; gap: 16px;">
+          <div class="field">
+            <label class="label" for="ContactName">{{ 'contact.name' | t }}</label>
+            <input class="input" id="ContactName" type="text" name="contact[name]" autocomplete="name" value="{{ form.name }}">
+          </div>
+          <div class="field">
+            <label class="label" for="ContactEmail">{{ 'contact.email' | t }}</label>
+            <input class="input" id="ContactEmail" type="email" name="contact[email]" autocomplete="email" required value="{{ form.email }}">
+          </div>
+          <div class="field">
+            <label class="label" for="ContactBody">{{ 'contact.message' | t }}</label>
+            <textarea class="input" id="ContactBody" name="contact[body]" required>{{ form.body }}</textarea>
+          </div>
+          <button class="btn" type="submit">{{ 'contact.send' | t }}</button>
+        </div>
+      {%- endform -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact form",
+  "settings": [
+    { "type": "text", "id": "subject", "label": "Subject line", "default": "A question, probably" }
+  ],
+  "presets": [{ "name": "Contact form" }]
+}
+{% endschema %}

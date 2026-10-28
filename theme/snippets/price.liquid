@@ -1,0 +1,27 @@
+{%- comment -%}
+  Accepts:
+  - product: product object (shows "From" when variant prices differ)
+  - variant: variant object (overrides product)
+{%- endcomment -%}
+{%- liquid
+  if variant
+    assign current = variant.price
+    assign compare = variant.compare_at_price
+    assign varies = false
+  else
+    assign current = product.price
+    assign compare = product.compare_at_price
+    assign varies = product.price_varies
+  endif
+-%}
+<span class="price" data-price>
+  {%- if compare > current -%}
+    <s>{{ compare | money }}</s>
+  {%- endif -%}
+  {%- if varies -%}
+    {%- assign current_money = current | money -%}
+    {{ 'products.from_price' | t: price: current_money }}
+  {%- else -%}
+    {{ current | money }}
+  {%- endif -%}
+</span>

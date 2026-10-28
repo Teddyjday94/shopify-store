@@ -1,0 +1,33 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Elsewhere",
+    "theme_version": "1.0.0",
+    "theme_author": "Elsewhere Supply Co.",
+    "theme_documentation_url": "https://github.com/Teddyjday94/shopify-store",
+    "theme_support_url": "https://github.com/Teddyjday94/shopify-store"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      { "type": "color", "id": "color_paper", "label": "Paper (background)", "default": "#EFE9DD" },
+      { "type": "color", "id": "color_ink", "label": "Ink (text and borders)", "default": "#111111" },
+      { "type": "color", "id": "color_accent", "label": "Stamp (accent)", "default": "#D9442B" },
+      { "type": "color", "id": "color_card", "label": "Image backgrounds", "default": "#F7F4EE" }
+    ]
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      { "type": "image_picker", "id": "favicon", "label": "Favicon", "info": "32 x 32px PNG" },
+      { "type": "text", "id": "tagline", "label": "Tagline under the logo", "default": "Currently elsewhere" }
+    ]
+  },
+  {
+    "name": "Product cards",
+    "settings": [
+      { "type": "checkbox", "id": "card_show_second_image", "label": "Show second image on hover", "default": true },
+      { "type": "text", "id": "card_tag", "label": "Card tag", "default": "Printed to order" }
+    ]
+  }
+]

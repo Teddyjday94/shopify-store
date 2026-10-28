@@ -1,0 +1,59 @@
+{%- paginate collection.products by section.settings.per_page -%}
+  <div class="collection-hero">
+    <div class="page-width">
+      <p class="label muted" style="margin: 0 0 10px;">Dept. / {{ collection.handle | upcase }}</p>
+      <h1 class="display display--lg">{{ collection.title }}</h1>
+      <div class="collection-hero__meta">
+        {%- if collection.description != blank -%}
+          <div class="rte" style="max-width: 640px;">{{ collection.description }}</div>
+        {%- endif -%}
+        <div class="barcode" style="width: 220px;" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-width section--tight" style="padding-top: 0;">
+    <div class="toolbar label">
+      <span>{{ 'collections.count' | t: count: collection.products_count }}</span>
+      {%- if collection.sort_options.size > 0 -%}
+        <form method="get" data-sort-form>
+          <label for="SortBy">{{ 'collections.sort_by' | t }}</label>
+          {%- assign current_sort = collection.sort_by | default: collection.default_sort_by -%}
+          <select class="select" id="SortBy" name="sort_by" onchange="this.form.submit()">
+            {%- for option in collection.sort_options -%}
+              <option value="{{ option.value }}"{% if option.value == current_sort %} selected{% endif %}>
+                {{ option.name }}
+              </option>
+            {%- endfor -%}
+          </select>
+          <noscript><button class="btn btn--ghost" type="submit">{{ 'collections.sort_by' | t }}</button></noscript>
+        </form>
+      {%- endif -%}
+    </div>
+
+    {%- if collection.products.size > 0 -%}
+      <div class="grid" style="--cols: {{ section.settings.columns }};">
+        {%- for product in collection.products -%}
+          {%- assign index = paginate.current_offset | plus: forloop.index -%}
+          {%- assign eager = false -%}
+          {%- if forloop.index <= 3 -%}{%- assign eager = true -%}{%- endif -%}
+          {% render 'product-card', product: product, index: index, lazy: eager %}
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <p class="empty">{{ 'collections.empty' | t }}</p>
+    {%- endif -%}
+
+    {% render 'pagination', paginate: paginate %}
+  </div>
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "Collection page",
+  "settings": [
+    { "type": "range", "id": "per_page", "label": "Products per page", "min": 6, "max": 48, "step": 3, "default": 24 },
+    { "type": "range", "id": "columns", "label": "Columns on desktop", "min": 2, "max": 4, "step": 1, "default": 3 }
+  ]
+}
+{% endschema %}

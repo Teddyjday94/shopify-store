@@ -1,0 +1,42 @@
+{%- liquid
+  assign messages = section.blocks | where: 'type', 'message'
+-%}
+{%- if messages.size > 0 -%}
+  <div class="announcement label" role="region" aria-label="Announcements" style="--marquee-speed: {{ section.settings.speed }}s;">
+    <div class="marquee">
+      {%- comment -%} Two copies so the scroll loops seamlessly; the second is hidden from screen readers. {%- endcomment -%}
+      {%- for copy in (1..2) -%}
+        {%- for block in messages -%}
+          <span class="marquee__item"{% if copy == 2 %} aria-hidden="true"{% endif %} {{ block.shopify_attributes }}>
+            {%- if block.settings.link != blank -%}
+              <a href="{{ block.settings.link }}"{% if copy == 2 %} tabindex="-1"{% endif %}>{{ block.settings.text }}</a>
+            {%- else -%}
+              {{ block.settings.text }}
+            {%- endif -%}
+          </span>
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "class": "section-announcement",
+  "settings": [
+    { "type": "range", "id": "speed", "label": "Scroll duration (seconds)", "min": 10, "max": 90, "step": 5, "default": 40 }
+  ],
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Message",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "Currently elsewhere" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Announcement bar", "blocks": [{ "type": "message" }] }]
+}
+{% endschema %}

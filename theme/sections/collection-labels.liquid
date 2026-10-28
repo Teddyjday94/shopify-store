@@ -1,0 +1,45 @@
+<section class="section section--tight">
+  <div class="page-width">
+    <div class="section-head">
+      <h2 class="display display--md">{{ section.settings.heading }}</h2>
+    </div>
+    <div class="labels">
+      {%- for block in section.blocks -%}
+        {%- assign c = block.settings.collection -%}
+        {%- if c != blank -%}
+          <a class="ship-label" href="{{ c.url }}" {{ block.shopify_attributes }}>
+            <div class="ship-label__top label">
+              <span>Dept. {{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+              <span>{{ 'collections.count' | t: count: c.products_count }}</span>
+            </div>
+            <span class="display">{{ block.settings.title | default: c.title }}</span>
+            <hr class="rule rule--dashed">
+            <div class="barcode barcode--sm"></div>
+            <span class="label">{{ block.settings.note }} &rarr;</span>
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection labels",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Departments" }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        { "type": "collection", "id": "collection", "label": "Collection" },
+        { "type": "text", "id": "title", "label": "Title override" },
+        { "type": "text", "id": "note", "label": "Label note", "default": "Handle with indifference" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Collection labels", "blocks": [{ "type": "collection" }, { "type": "collection" }, { "type": "collection" }] }]
+}
+{% endschema %}

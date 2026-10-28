@@ -1,0 +1,70 @@
+{
+  "general": {
+    "cart": "Cart",
+    "menu": "Menu",
+    "search": "Search",
+    "account": "Account",
+    "close": "Close"
+  },
+  "products": {
+    "add_to_cart": "Add to cart",
+    "sold_out": "Sold out",
+    "unavailable": "Unavailable",
+    "quantity": "Quantity",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "on_sale": "Sale",
+    "from_price": "From {{ price }}"
+  },
+  "cart": {
+    "title": "Your cart",
+    "empty": "Nothing in here. Very on brand.",
+    "continue": "Keep browsing",
+    "subtotal": "Subtotal",
+    "checkout": "Check out",
+    "remove": "Remove",
+    "update": "Update",
+    "note": "Order note",
+    "taxes_shipping": "Taxes, discounts and shipping calculated at checkout."
+  },
+  "collections": {
+    "empty": "Nothing here yet. It's on its way. Eventually.",
+    "sort_by": "Sort by",
+    "count": {
+      "one": "{{ count }} item",
+      "other": "{{ count }} items"
+    }
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "What are you looking for?",
+    "submit": "Search",
+    "results": {
+      "one": "{{ count }} result for “{{ terms }}”",
+      "other": "{{ count }} results for “{{ terms }}”"
+    },
+    "none": "Nothing found for “{{ terms }}”."
+  },
+  "newsletter": {
+    "label": "Email",
+    "placeholder": "you@elsewhere.com",
+    "submit": "Subscribe",
+    "success": "You're on the list. We'll be in touch. Eventually."
+  },
+  "contact": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "success": "Message received. Auto-reply: we'll get back to you soon."
+  },
+  "pagination": {
+    "previous": "Previous page",
+    "next": "Next page"
+  },
+  "password": {
+    "enter": "Enter store password",
+    "password": "Password",
+    "submit": "Enter"
+  }
+}
