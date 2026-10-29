@@ -396,7 +396,7 @@ textarea.input { padding: 12px 14px; min-height: 140px; }
 .tour__status { color: var(--pop-3); }
 .tour__row:nth-child(4n+2) .tour__status { color: var(--pop-1); }
 .tour__row:nth-child(4n+3) .tour__status { color: var(--pop-4); }
-.tour__row:nth-child(4n+4) .tour__status { color: #7EA1FF; }
+.tour__row:nth-child(4n+4) .tour__status { color: #B9A2FF; }
 
 .option__values input:checked + label { background: var(--pop-1); color: var(--ink); box-shadow: 3px 3px 0 var(--ink); }
 .submenu a:hover, .submenu a[aria-current] { background: var(--pop-3); color: var(--ink); }

@@ -47,25 +47,25 @@
         "type": "color",
         "id": "color_pop_1",
         "label": "Pop 1",
-        "default": "#FF4FA3"
+        "default": "#9B6BFF"
       },
       {
         "type": "color",
         "id": "color_pop_2",
         "label": "Pop 2",
-        "default": "#3D5AFE"
+        "default": "#1F7A4D"
       },
       {
         "type": "color",
         "id": "color_pop_3",
         "label": "Pop 3",
-        "default": "#FFC93C"
+        "default": "#C6F432"
       },
       {
         "type": "color",
         "id": "color_pop_4",
         "label": "Pop 4",
-        "default": "#22C997"
+        "default": "#3FB68B"
       },
       {
         "type": "checkbox",
