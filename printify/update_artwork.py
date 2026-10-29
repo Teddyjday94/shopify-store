@@ -10,7 +10,7 @@ import os
 import sys
 
 from create_products import Printify
-from create_drop2 import FULL, RAW
+from create_drop2 import FOLDER, FULL, RAW
 
 
 def main():
@@ -23,7 +23,7 @@ def main():
 
     new_ids = {}
     for position, name in files.items():
-        image = api.post("/uploads/images.json", {"file_name": name, "url": RAW.format(commit=commit, name=name)})
+        image = api.post("/uploads/images.json", {"file_name": name, "url": RAW.format(commit=commit, folder=FOLDER, name=name)})
         new_ids[position] = image["id"]
 
     print_areas = []

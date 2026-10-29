@@ -12,7 +12,8 @@ import os
 
 from create_products import Printify, TEE_SIZES, XXL_UPCHARGE, pick_provider
 
-RAW = "https://raw.githubusercontent.com/Teddyjday94/shopify-store/{commit}/designs/print-drop2/{name}"
+RAW = "https://raw.githubusercontent.com/Teddyjday94/shopify-store/{commit}/designs/{folder}/{name}"
+FOLDER = "print-drop2"
 COMMIT = "6975476fb478998c96c25b928696813167646f51"
 
 # Files 01-05 are full 3:4 canvases with built-in margins, so they fill most of the print area.
@@ -96,12 +97,16 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--apply", action="store_true")
     args = ap.parse_args()
+    run(PRODUCTS, COMMIT, FOLDER, args.apply)
+
+
+def run(products, commit, folder, apply):
     api = Printify(os.environ.get("PRINTIFY_API_TOKEN"))
     shop = next(s for s in api.get("/shops.json") if s.get("sales_channel") == "shopify")
     existing = {p["title"] for p in api.get(f"/shops/{shop['id']}/products.json?limit=50")["data"]}
     blueprints = api.get("/catalog/blueprints.json")
 
-    for spec in PRODUCTS:
+    for spec in products:
         if spec["title"] in existing:
             print(f"- {spec['title']}: already exists, skipping")
             continue
@@ -115,13 +120,13 @@ def main():
         missing = set(spec["prints"]) - positions
         if missing:
             raise SystemExit(f"  provider lacks print areas {missing}")
-        if not args.apply:
+        if not apply:
             continue
 
         placeholders = []
         for position, (name, place) in spec["prints"].items():
             image = api.post("/uploads/images.json",
-                             {"file_name": name, "url": RAW.format(commit=COMMIT, name=name)})
+                             {"file_name": name, "url": RAW.format(commit=commit, folder=folder, name=name)})
             placeholders.append({"position": position, "images": [dict(id=image["id"], angle=0, **place)]})
         product = api.post(f"/shops/{shop['id']}/products.json", {
             "title": spec["title"],
