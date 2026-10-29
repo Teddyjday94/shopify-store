@@ -101,15 +101,18 @@ PRODUCTS = [
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--apply", action="store_true")
-    args = ap.parse_args()
+    run(PRODUCTS, "18500", ap.parse_args().apply)
+
+
+def run(products, model, apply):
     api = Printify(os.environ.get("PRINTIFY_API_TOKEN"))
     shop = next(s for s in api.get("/shops.json") if s.get("sales_channel") == "shopify")
     existing = {p["title"] for page in (1, 2) for p in
                 api.get(f"/shops/{shop['id']}/products.json?limit=50&page={page}")["data"]}
-    bp = next(b for b in api.get("/catalog/blueprints.json") if "18500" in (b.get("model") or ""))
+    bp = next(b for b in api.get("/catalog/blueprints.json") if model == (b.get("model") or "").strip())
     cache = {}
 
-    for spec in PRODUCTS:
+    for spec in products:
         if spec["title"] in existing:
             print(f"- {spec['title']}: already exists, skipping")
             continue
@@ -122,7 +125,7 @@ def main():
         print(f"- {spec['title']}: via {provider['title']}, {len(chosen)} variants"
               + (f", missing colors {missing}" if missing else "")
               + "; " + ", ".join(f"{pos} {round(l['scale'] * sizes[pos][0])}px wide" for pos, l in layout.items()))
-        if not args.apply:
+        if not apply:
             continue
 
         placeholders = [{"position": pos, "images": [dict(id=upload(api, name, cache), angle=0, **layout[pos])]}
