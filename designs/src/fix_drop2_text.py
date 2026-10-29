@@ -5,7 +5,8 @@ Edits are made on the 4x print files in designs/print-drop2, which are upscaled 
 Each fix erases only the old text pixels (so the ink texture and glitch streaks behind them
 survive), then redraws the text in a matching font.
 
-Usage: python3 designs/src/fix_drop2_text.py <path-to-Noto-Serif-JP-800.ttf>
+Usage: python3 designs/src/fix_drop2_text.py <path-to-Noto-Serif-JP-800.ttf> [fix ...]
+(fixes: systems, error, skull, calmer, same-mind; default all, starting from fresh 4x files)
 """
 
 import sys
@@ -105,10 +106,43 @@ def fix_calmer(font_path):
     im.save(path, optimize=True)
 
 
+def fix_same_mind(font_path):
+    """Replace the illegible 2x2 seal under 平常心 with 明鏡止水 ("clear mirror, still water")."""
+    path = PRINT / "02-back-sakura-moon-same-mind-brighter-days.png"
+    im = Image.open(path).convert("RGBA")
+    # The seal is red ink on a transparent background: clear the old characters inside the frame.
+    x0, y0, x1, y1 = 164, 804, 247, 919
+    region = (x0 * S, y0 * S, x1 * S, y1 * S)
+    a = np.asarray(im.crop(region)).copy()
+    old = (a[..., 0] > 120) & (a[..., 1] < 120) & (a[..., 3] > 30)
+    grown = np.asarray(Image.fromarray((old * 255).astype("uint8")).filter(ImageFilter.MaxFilter(9))) > 0
+    a[grown, 3] = 0
+    im.paste(Image.fromarray(a, "RGBA"), region[:2])
+
+    # Draw the new characters on their own layer, read right column first (top to bottom).
+    layer = Image.new("RGBA", im.size, (0, 0, 0, 0))
+    font = ImageFont.truetype(font_path, 37 * S)
+    d = ImageDraw.Draw(layer)
+    cols = {x1 - (x1 - x0) / 4: "明鏡", x0 + (x1 - x0) / 4: "止水"}
+    for cx, chars in cols.items():
+        for i, ch in enumerate(chars):
+            cy = y0 + (y1 - y0) * (0.27 + 0.48 * i)
+            d.text((cx * S, cy * S), ch, font=font, fill=SEAL_RED, anchor="mm")
+    # Rough up the edges like a rubber stamp so it matches the frame around it.
+    rng = np.random.default_rng(67)
+    la = np.asarray(layer).copy()
+    speckle = rng.random(la.shape[:2]) < 0.12
+    la[speckle, 3] = (la[speckle, 3] * 0.35).astype("uint8")
+    im.alpha_composite(Image.fromarray(la, "RGBA"))
+    im.save(path, optimize=True)
+
+
+FIXES = {"systems": fix_systems, "error": fix_error, "skull": fix_skull,
+         "calmer": fix_calmer, "same-mind": fix_same_mind}
+
 if __name__ == "__main__":
-    jp_font = sys.argv[1]
-    fix_systems()
-    fix_error()
-    fix_skull(jp_font)
-    fix_calmer(jp_font)
-    print("done")
+    jp_font, *names = sys.argv[1:]
+    for name in names or FIXES:
+        fn = FIXES[name]
+        fn(jp_font) if fn.__code__.co_argcount else fn()
+        print("fixed", name)
