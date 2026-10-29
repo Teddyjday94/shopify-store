@@ -3,16 +3,15 @@
     "hero": {
       "type": "auto-reply-hero",
       "settings": {
-        "subject": "Automatic reply: Drop 002",
-        "status": "Back from elsewhere. Briefly.",
+        "subject": "Automatic reply: New drop",
+        "status": "Away. Shop's open though.",
         "heading": "Currently\nElsewhere",
-        "body": "<p>Drop 002 is here: six front-and-back tees with moons, skulls, samurai and system errors. For people who are tired but here anyway. Printed to order.</p>",
-        "button_label": "Shop Drop 002",
-        "secondary_label": "Drop 001",
-        "secondary_link": "shopify://collections/drop-001",
-        "product": "systems-still-functional-tee",
-        "stamp": "Drop 002 out now",
-        "button_link": "shopify://collections/drop-002"
+        "body": "<p>Graphic tees, hoodies and hats for people who showed up but didn't fully arrive. Printed to order. Will respond upon return.</p>",
+        "button_label": "Shop the drop",
+        "secondary_label": "Browse departments",
+        "secondary_link": "shopify://collections",
+        "product": "currently-elsewhere-hoodie",
+        "stamp": "Drop 001"
       }
     },
     "drop": {
@@ -22,107 +21,30 @@
         "heading": "The launch drop",
         "limit": 6,
         "columns": 3,
-        "link_label": "Shop Drop 001",
-        "collection": "drop-001"
+        "link_label": "View all"
       }
     },
     "departments": {
       "type": "collection-labels",
       "blocks": {
-        "tees": {
-          "type": "collection",
-          "settings": {
-            "collection": "t-shirts",
-            "title": "",
-            "note": "Handle with indifference"
-          }
-        },
-        "hoodies": {
-          "type": "collection",
-          "settings": {
-            "collection": "hoodies-sweatshirts",
-            "title": "Hoodies",
-            "note": "Fragile: contains feelings"
-          }
-        },
-        "hats": {
-          "type": "collection",
-          "settings": {
-            "collection": "hats",
-            "title": "",
-            "note": "This side up, probably"
-          }
-        }
+        "tees": { "type": "collection", "settings": { "collection": "t-shirts", "title": "", "note": "Handle with indifference" } },
+        "hoodies": { "type": "collection", "settings": { "collection": "hoodies-sweatshirts", "title": "Hoodies", "note": "Fragile: contains feelings" } },
+        "hats": { "type": "collection", "settings": { "collection": "hats", "title": "", "note": "This side up, probably" } }
       },
-      "block_order": [
-        "tees",
-        "hoodies",
-        "hats"
-      ],
-      "settings": {
-        "heading": "Departments"
-      }
+      "block_order": ["tees", "hoodies", "hats"],
+      "settings": { "heading": "Departments" }
     },
     "tour": {
       "type": "tour-dates",
       "blocks": {
-        "d1": {
-          "type": "date",
-          "settings": {
-            "date": "Nov 01",
-            "venue": "My couch",
-            "status": "Sold out"
-          }
-        },
-        "d2": {
-          "type": "date",
-          "settings": {
-            "date": "Nov 14",
-            "venue": "Under a blanket",
-            "status": "Sold out"
-          }
-        },
-        "d3": {
-          "type": "date",
-          "settings": {
-            "date": "Nov 27",
-            "venue": "Thanksgiving table",
-            "status": "Sold out"
-          }
-        },
-        "d4": {
-          "type": "date",
-          "settings": {
-            "date": "Dec 08",
-            "venue": "Canceled plans",
-            "status": "Sold out"
-          }
-        },
-        "d5": {
-          "type": "date",
-          "settings": {
-            "date": "Dec 21",
-            "venue": "Shortest day",
-            "status": "Headliner"
-          }
-        },
-        "d6": {
-          "type": "date",
-          "settings": {
-            "date": "Jan 02",
-            "venue": "Bed (encore)",
-            "status": "Extended"
-          }
-        }
+        "d1": { "type": "date", "settings": { "date": "Nov 01", "venue": "My couch", "status": "Sold out" } },
+        "d2": { "type": "date", "settings": { "date": "Nov 14", "venue": "Under a blanket", "status": "Sold out" } },
+        "d3": { "type": "date", "settings": { "date": "Nov 27", "venue": "Thanksgiving table", "status": "Sold out" } },
+        "d4": { "type": "date", "settings": { "date": "Dec 08", "venue": "Canceled plans", "status": "Sold out" } },
+        "d5": { "type": "date", "settings": { "date": "Dec 21", "venue": "Shortest day", "status": "Headliner" } },
+        "d6": { "type": "date", "settings": { "date": "Jan 02", "venue": "Bed (encore)", "status": "Extended" } }
       },
-      "block_order": [
-        "d1",
-        "d2",
-        "d3",
-        "d4",
-        "d5",
-        "d6"
-      ],
+      "block_order": ["d1", "d2", "d3", "d4", "d5", "d6"],
       "settings": {
         "kicker": "Now touring",
         "heading": "Seasonal Depression World Tour",
@@ -139,25 +61,7 @@
         "stamp": "Approved for daydreaming",
         "align": "center"
       }
-    },
-    "drop002": {
-      "type": "featured-collection",
-      "settings": {
-        "kicker": "Drop 002 · New",
-        "heading": "Tired but here anyway",
-        "collection": "drop-002",
-        "limit": 6,
-        "columns": 3,
-        "link_label": "Shop Drop 002"
-      }
     }
   },
-  "order": [
-    "hero",
-    "drop002",
-    "drop",
-    "departments",
-    "tour",
-    "about"
-  ]
+  "order": ["hero", "drop", "departments", "tour", "about"]
 }
