@@ -21,7 +21,7 @@ FEATURES = ("<ul><li>Full-size front and back print (no front pocket, so the art
 
 
 def pocketless(title, colors, front, back, tags, intro, signoff):
-    return dict(title=title, colors=colors, price=6200,
+    return dict(title=title, colors=colors, price=6800,
                 prints=[("front", front, fill), ("back", back, fill)],
                 tags=["hoodie", "drop 002"] + tags,
                 description=f"{intro}{FEATURES}<p><em>{signoff}</em></p>")
