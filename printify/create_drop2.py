@@ -13,7 +13,7 @@ import os
 from create_products import Printify, TEE_SIZES, XXL_UPCHARGE, pick_provider
 
 RAW = "https://raw.githubusercontent.com/Teddyjday94/shopify-store/{commit}/designs/print-drop2/{name}"
-COMMIT = "10b6e98134066b253ebb9964f81d83a55b2fce33"
+COMMIT = "6975476fb478998c96c25b928696813167646f51"
 
 # Files 01-05 are full 3:4 canvases with built-in margins, so they fill most of the print area.
 FULL = dict(x=0.5, y=0.5, scale=0.85)
@@ -39,8 +39,8 @@ PRODUCTS = [
         model="3001",
         colors={"Black": "x"},
         prints={
-            "front": ("06-front-error-skull.png", dict(x=0.5, y=0.5, scale=0.78)),
-            "back": ("06-back-systems-still-functional.png", dict(x=0.5, y=0.5, scale=0.82)),
+            "front": ("06-front-error-skull.png", FULL),
+            "back": ("06-back-systems-still-functional.png", FULL),
         },
         tags=["t-shirt", "glitch", "skull", "error", "tired", "funny", "drop 002"],
         description=(
