@@ -12,6 +12,10 @@
     --accent: {{ settings.color_accent }};
     --card: {{ settings.color_card }};
     --muted: {{ settings.color_ink | color_mix: settings.color_paper, 60 }};
+    --pop-1: {{ settings.color_pop_1 }};
+    --pop-2: {{ settings.color_pop_2 }};
+    --pop-3: {{ settings.color_pop_3 }};
+    --pop-4: {{ settings.color_pop_4 }};
   }
 </style>
 {{ 'theme.css' | asset_url | stylesheet_tag }}

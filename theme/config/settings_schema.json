@@ -10,24 +10,104 @@
   {
     "name": "Colors",
     "settings": [
-      { "type": "color", "id": "color_paper", "label": "Paper (background)", "default": "#EFE9DD" },
-      { "type": "color", "id": "color_ink", "label": "Ink (text and borders)", "default": "#111111" },
-      { "type": "color", "id": "color_accent", "label": "Stamp (accent)", "default": "#D9442B" },
-      { "type": "color", "id": "color_card", "label": "Image backgrounds", "default": "#F7F4EE" }
+      {
+        "type": "color",
+        "id": "color_paper",
+        "label": "Paper (background)",
+        "default": "#EFE9DD"
+      },
+      {
+        "type": "color",
+        "id": "color_ink",
+        "label": "Ink (text and borders)",
+        "default": "#111111"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Stamp (accent)",
+        "default": "#D9442B"
+      },
+      {
+        "type": "color",
+        "id": "color_card",
+        "label": "Image backgrounds",
+        "default": "#F7F4EE"
+      }
+    ]
+  },
+  {
+    "name": "Pop colors & motion",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Accent colors used for hover shadows, badges, highlights and the misprint headline effect."
+      },
+      {
+        "type": "color",
+        "id": "color_pop_1",
+        "label": "Pop 1",
+        "default": "#FF4FA3"
+      },
+      {
+        "type": "color",
+        "id": "color_pop_2",
+        "label": "Pop 2",
+        "default": "#3D5AFE"
+      },
+      {
+        "type": "color",
+        "id": "color_pop_3",
+        "label": "Pop 3",
+        "default": "#FFC93C"
+      },
+      {
+        "type": "color",
+        "id": "color_pop_4",
+        "label": "Pop 4",
+        "default": "#22C997"
+      },
+      {
+        "type": "checkbox",
+        "id": "animations",
+        "label": "Enable animations",
+        "default": true,
+        "info": "Scroll reveals, stamp drops and hover effects. Always off for visitors who prefer reduced motion."
+      }
     ]
   },
   {
     "name": "Brand",
     "settings": [
-      { "type": "image_picker", "id": "favicon", "label": "Favicon", "info": "32 x 32px PNG" },
-      { "type": "text", "id": "tagline", "label": "Tagline under the logo", "default": "Currently elsewhere" }
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon",
+        "info": "32 x 32px PNG"
+      },
+      {
+        "type": "text",
+        "id": "tagline",
+        "label": "Tagline under the logo",
+        "default": "Currently elsewhere"
+      }
     ]
   },
   {
     "name": "Product cards",
     "settings": [
-      { "type": "checkbox", "id": "card_show_second_image", "label": "Show second image on hover", "default": true },
-      { "type": "text", "id": "card_tag", "label": "Card tag", "default": "Printed to order" }
+      {
+        "type": "checkbox",
+        "id": "card_show_second_image",
+        "label": "Show second image on hover",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "card_tag",
+        "label": "Card tag",
+        "default": "Printed to order"
+      }
     ]
   }
 ]

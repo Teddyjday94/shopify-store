@@ -3,8 +3,29 @@
 document.addEventListener('DOMContentLoaded', () => {
   initMenu();
   initFilters();
+  initReveal();
   document.querySelectorAll('[data-product]').forEach(initProduct);
 });
+
+// Scroll reveal: fade/slide items in as they enter the viewport, staggered within a row.
+function initReveal() {
+  if (!document.body.classList.contains('motion')) return;
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const items = document.querySelectorAll('.card, .ship-label, .section-head, .tour__row, .product__info, .gallery, .page-narrow');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  items.forEach((el) => {
+    const siblings = Array.from(el.parentElement.children);
+    el.style.setProperty('--reveal-delay', `${(siblings.indexOf(el) % 4) * 0.08}s`);
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+}
 
 // Collection filters: apply on change; price inputs apply after a short pause.
 function initFilters() {

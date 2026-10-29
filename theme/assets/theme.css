@@ -339,3 +339,119 @@ textarea.input { padding: 12px 14px; min-height: 140px; }
 .page-narrow { max-width: 760px; margin: 0 auto; }
 .notice { padding: 14px 16px; border: 2px solid var(--ink); margin-bottom: 18px; }
 .notice--error { border-color: var(--accent); color: var(--accent); }
+
+/* =====================================================================
+   POP — accent colors + motion. Colors come from theme settings (--pop-1..4).
+   Motion only runs with body.motion and when the visitor allows motion.
+   ===================================================================== */
+
+/* ---------- Color ---------- */
+.announcement { background: var(--pop-2); border-bottom-color: var(--ink); }
+.marquee__item::after { color: var(--pop-3); }
+
+/* Misprint headline: two offset color passes behind the ink, like a slipped screenprint. */
+.ooo__copy .display,
+.collection-hero .display,
+.section-head .display {
+  text-shadow: 0.035em 0.035em 0 var(--pop-1), -0.025em -0.02em 0 var(--pop-2);
+}
+.tour .display { text-shadow: 0.035em 0.035em 0 var(--pop-1); }
+
+/* Highlighter swipe behind small section kickers. */
+.section-head .label.muted,
+.collection-hero .label.muted {
+  color: var(--ink);
+  background: linear-gradient(transparent 55%, var(--pop-3) 55%);
+  display: inline-block; padding: 0 4px;
+}
+
+/* Colored offset shadows and badges, cycling through the palette. */
+.card { --pop: var(--pop-1); }
+.grid > .card:nth-child(4n+2) { --pop: var(--pop-2); }
+.grid > .card:nth-child(4n+3) { --pop: var(--pop-3); }
+.grid > .card:nth-child(4n+4) { --pop: var(--pop-4); }
+.card:hover { box-shadow: 8px 8px 0 var(--pop), 8px 8px 0 2px var(--ink); }
+.card__no { background: var(--pop); color: var(--ink); }
+.card__meta .label { transition: transform 0.2s; }
+.card:hover .card__meta .label { transform: translateX(4px); }
+
+.ship-label { --pop: var(--pop-1); border-top: 14px solid var(--pop); }
+.labels > .ship-label:nth-child(3n+2) { --pop: var(--pop-2); }
+.labels > .ship-label:nth-child(3n+3) { --pop: var(--pop-4); }
+.ship-label:hover { box-shadow: 8px 8px 0 var(--pop), 8px 8px 0 2px var(--ink); }
+
+.tab:hover { background: var(--pop-3); color: var(--ink); }
+.tab.is-active { background: var(--pop-1); color: var(--ink); box-shadow: 3px 3px 0 var(--ink); }
+.filter[open] summary { background: var(--pop-2); color: var(--paper); border-color: var(--ink); }
+.chip { background: var(--pop-3); }
+
+.btn { box-shadow: 4px 4px 0 var(--pop-1); }
+.btn:hover { background: var(--pop-3); color: var(--ink); box-shadow: 6px 6px 0 var(--ink); }
+.btn--ghost:hover { background: var(--pop-4); }
+.btn:active { box-shadow: 0 0 0 var(--ink); transform: translate(4px, 4px); }
+.btn[disabled] { box-shadow: none; }
+
+.cart-count { background: var(--pop-1); color: var(--ink); }
+.stamp { border-color: var(--pop-1); color: var(--pop-1); }
+.tour__status { color: var(--pop-3); }
+.tour__row:nth-child(4n+2) .tour__status { color: var(--pop-1); }
+.tour__row:nth-child(4n+3) .tour__status { color: var(--pop-4); }
+.tour__row:nth-child(4n+4) .tour__status { color: #7EA1FF; }
+
+.option__values input:checked + label { background: var(--pop-1); color: var(--ink); box-shadow: 3px 3px 0 var(--ink); }
+.submenu a:hover, .submenu a[aria-current] { background: var(--pop-3); color: var(--ink); }
+
+/* Footer wordmark: slow multicolor gradient. */
+.footer__word {
+  background: linear-gradient(90deg, var(--pop-1), var(--pop-3), var(--pop-4), var(--pop-2), var(--pop-1));
+  background-size: 300% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* ---------- Motion ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .motion .footer__word { animation: pop-gradient 12s linear infinite; }
+  @keyframes pop-gradient { to { background-position: 300% 0; } }
+
+  /* Scroll reveal (classes added by theme.js). */
+  .motion .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); transition-delay: var(--reveal-delay, 0s); }
+  .motion .reveal.is-visible { opacity: 1; transform: none; }
+
+  /* Cards tilt as they lift. */
+  .motion .card:hover { transform: translate(-4px, -4px) rotate(-0.6deg); }
+  .motion .grid > .card:nth-child(even):hover { transform: translate(-4px, -4px) rotate(0.6deg); }
+
+  /* Stamps drop in with a thunk. */
+  .motion .stamp { animation: stamp-in 0.55s cubic-bezier(0.3, 1.6, 0.5, 1) both; animation-delay: 0.35s; }
+  @keyframes stamp-in {
+    0% { opacity: 0; transform: scale(2.2) rotate(-14deg); }
+    70% { opacity: 1; transform: scale(0.94) rotate(-4deg); }
+    100% { opacity: 1; transform: scale(1) rotate(-5deg); }
+  }
+
+  /* Misprint headline nudges now and then. */
+  .motion .ooo__copy .display { animation: misprint 5s steps(1) infinite; }
+  @keyframes misprint {
+    0%, 92%, 100% { text-shadow: 0.035em 0.035em 0 var(--pop-1), -0.025em -0.02em 0 var(--pop-2); }
+    94% { text-shadow: 0.06em 0.01em 0 var(--pop-1), -0.04em 0.02em 0 var(--pop-2); }
+    96% { text-shadow: 0.02em 0.05em 0 var(--pop-1), -0.01em -0.04em 0 var(--pop-2); }
+  }
+
+  /* Blinking cursor after the auto-reply status. */
+  .motion .ooo__mail dd:last-of-type::after { content: '▌'; margin-left: 4px; color: var(--pop-1); animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* Barcode scan line. */
+  .motion .barcode { position: relative; overflow: hidden; }
+  .motion .barcode::after {
+    content: ''; position: absolute; top: 0; bottom: 0; width: 18%; left: -20%;
+    background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--pop-1) 70%, transparent), transparent);
+    animation: scan 3.2s ease-in-out infinite;
+  }
+  @keyframes scan { 60%, 100% { left: 105%; } }
+
+  /* Category label wiggles on hover. */
+  .motion .ship-label:hover { transform: rotate(-1.2deg) translate(-3px, -3px); }
+  .motion .ship-label:hover .display { animation: wiggle 0.4s ease-in-out; }
+  @keyframes wiggle { 25% { transform: rotate(-2deg); } 75% { transform: rotate(2deg); } }
+}
