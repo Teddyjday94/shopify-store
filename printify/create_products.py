@@ -75,7 +75,7 @@ class Printify:
     def call(self, method, path, **kw):
         for attempt in range(4):
             r = self.s.request(method, f"{API}{path}", timeout=60, **kw)
-            if r.status_code == 429:
+            if r.status_code == 429 or r.status_code >= 500:
                 time.sleep(2 ** attempt * 5)
                 continue
             if not r.ok:
