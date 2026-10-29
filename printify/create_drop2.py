@@ -13,7 +13,24 @@ import os
 from create_products import Printify, TEE_SIZES, XXL_UPCHARGE, pick_provider
 
 RAW = "https://raw.githubusercontent.com/Teddyjday94/shopify-store/{commit}/designs/print-drop2/{name}"
-COMMIT = "ec7a985f4dec29f474179241bb0c5050029e7ee6"
+COMMIT = "10b6e98134066b253ebb9964f81d83a55b2fce33"
+
+# Files 01-05 are full 3:4 canvases with built-in margins, so they fill most of the print area.
+FULL = dict(x=0.5, y=0.5, scale=0.85)
+FEATURES = ("<ul><li>Front and back print</li>"
+            "<li>Soft, lightweight 100% combed cotton</li>"
+            "<li>Retail unisex fit</li>"
+            "<li>Printed to order just for you</li></ul>")
+
+
+def tee(title, colors, front, back, tags, intro, signoff):
+    return dict(
+        title=title, price=3600, model="3001", colors={c: "x" for c in colors},
+        prints={"front": (front, FULL), "back": (back, FULL)},
+        tags=["t-shirt", "drop 002"] + tags,
+        description=f"{intro}{FEATURES}<p><em>{signoff}</em></p>",
+    )
+
 
 PRODUCTS = [
     dict(
@@ -37,6 +54,41 @@ PRODUCTS = [
             "<p><em>Tired but here anyway.</em></p>"
         ),
     ),
+    tee("Same Chaos Different Day Tee", ["White", "Natural", "Ash"],
+        "01-front-engraved-moon-miner.png", "01-back-lunar-phases-same-chaos-different-day.png",
+        ["moon", "astronaut", "space", "engraved", "minimalist"],
+        "<p>Clocking in. Mining the moon. Again.</p>"
+        "<p>Front: an astronaut chipping away at a crescent moon, drawn like an old engraving. "
+        "Back: the lunar phases, top to bottom, with the only update anyone needs.</p>",
+        "Same chaos. Different day."),
+    tee("Same Mind Brighter Days Tee", ["Black"],
+        "02-front-grunge-samurai-red-sakura-sun.png", "02-back-sakura-moon-same-mind-brighter-days.png",
+        ["samurai", "skeleton", "sakura", "japanese", "coffee"],
+        "<p>A skeleton samurai, a red sun, a cup of something hot. Composure, achieved.</p>"
+        "<p>Front: the samurai on his coffee break under falling sakura. Back: a moonlit cherry tree "
+        "panel with 平常心 (a calm, everyday mind).</p>",
+        "Same mind. Brighter days."),
+    tee("Balance Tee", ["White", "Natural"],
+        "03-front-balance-of-mind-and-heart.png", "03-back-process-over-perfection-moons.png",
+        ["brain", "heart", "anatomy", "moon", "minimalist"],
+        "<p>Mind: overthink, analyze, plan, worry, repeat. Heart: feel, create, risk, trust, live.</p>"
+        "<p>Front: brain and heart, split down the middle. Back: a column of moons and orbits for "
+        "everyone still working it out.</p>",
+        "Process over perfection."),
+    tee("Somewhere in a Calmer Place Tee", ["White", "Natural"],
+        "04-front-sumi-ink-skull-mountain-landscape.png", "04-back-calmer-place-mountain-landscape.png",
+        ["skull", "mountains", "sumi ink", "japanese", "landscape"],
+        "<p>Physically here. Mentally in the mountains.</p>"
+        "<p>Front: a skull turned ink-wash landscape, with pines, a pagoda and a red sun. "
+        "Back: a stepped mountain scroll with どこかでまた (somewhere, again).</p>",
+        "Somewhere in a calmer place."),
+    tee("A Quieter Mind Tee", ["Black"],
+        "05-front-a-quieter-mind-space-cat.png", "05-back-space-cat-helmet-blueprint.png",
+        ["cat", "astronaut", "space", "moon", "blueprint"],
+        "<p>One cat. One helmet. One very large moon.</p>"
+        "<p>Front: an astronaut cat sitting on a rooftop ledge, watching the moon. Back: the "
+        "helmet blueprint, with a checklist: explore, adapt, observe, repeat.</p>",
+        "A quieter mind. A brighter tomorrow."),
 ]
 
 
