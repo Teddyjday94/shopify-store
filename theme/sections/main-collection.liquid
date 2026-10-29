@@ -12,24 +12,119 @@
     </div>
   </div>
 
+  {%- comment -%} Category tabs: every collection link inside the chosen menu's dropdowns. {%- endcomment -%}
+  {%- if section.settings.browse_menu != blank -%}
+    <nav class="tabs-bar" aria-label="Browse">
+      <div class="page-width">
+        {%- for group in section.settings.browse_menu.links -%}
+          {%- if group.links.size > 0 -%}
+            <div class="tabs">
+              <span class="label muted tabs__label">{{ group.title }}</span>
+              {%- for link in group.links -%}
+                <a class="tab label{% if link.url == collection.url %} is-active{% endif %}" href="{{ link.url }}"
+                  {% if link.url == collection.url %}aria-current="page"{% endif %}>{{ link.title }}</a>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </nav>
+  {%- endif -%}
+
   <div class="page-width section--tight" style="padding-top: 0;">
-    <div class="toolbar label">
-      <span>{{ 'collections.count' | t: count: collection.products_count }}</span>
-      {%- if collection.sort_options.size > 0 -%}
-        <form method="get" data-sort-form>
-          <label for="SortBy">{{ 'collections.sort_by' | t }}</label>
-          {%- assign current_sort = collection.sort_by | default: collection.default_sort_by -%}
-          <select class="select" id="SortBy" name="sort_by" onchange="this.form.submit()">
-            {%- for option in collection.sort_options -%}
-              <option value="{{ option.value }}"{% if option.value == current_sort %} selected{% endif %}>
-                {{ option.name }}
-              </option>
+    <form class="filters" method="get" data-filter-form>
+      <div class="toolbar label">
+        <div class="filters__groups">
+          {%- for filter in collection.filters -%}
+            {%- case filter.type -%}
+              {%- when 'list', 'boolean' -%}
+                <details class="filter" data-dropdown>
+                  <summary>
+                    {{ filter.label }}
+                    {%- if filter.active_values.size > 0 %} ({{ filter.active_values.size }}){% endif -%}
+                  </summary>
+                  <div class="filter__panel">
+                    {%- for value in filter.values -%}
+                      <label class="filter__option{% if value.count == 0 and value.active == false %} is-empty{% endif %}">
+                        <input type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}"
+                          {% if value.active %}checked{% endif %}
+                          {% if value.count == 0 and value.active == false %}disabled{% endif %}>
+                        <span>{{ value.label }}</span>
+                        <span class="muted">{{ value.count }}</span>
+                      </label>
+                    {%- endfor -%}
+                  </div>
+                </details>
+              {%- when 'price_range' -%}
+                <details class="filter" data-dropdown>
+                  <summary>{{ filter.label }}</summary>
+                  <div class="filter__panel filter__price">
+                    <label>
+                      <span class="visually-hidden">From</span>
+                      <input class="input" type="number" min="0" placeholder="From" inputmode="numeric"
+                        name="{{ filter.min_value.param_name }}"
+                        value="{{ filter.min_value.value | money_without_currency | remove: ',' }}">
+                    </label>
+                    <span>&ndash;</span>
+                    <label>
+                      <span class="visually-hidden">To</span>
+                      <input class="input" type="number" min="0" placeholder="{{ filter.range_max | money_without_currency | remove: ',' }}"
+                        inputmode="numeric" name="{{ filter.max_value.param_name }}"
+                        value="{{ filter.max_value.value | money_without_currency | remove: ',' }}">
+                    </label>
+                  </div>
+                </details>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+
+        <div class="filters__right">
+          <span>{{ 'collections.count' | t: count: collection.products_count }}</span>
+          {%- if collection.sort_options.size > 0 -%}
+            {%- assign current_sort = collection.sort_by | default: collection.default_sort_by -%}
+            <label class="visually-hidden" for="SortBy">{{ 'collections.sort_by' | t }}</label>
+            <select class="select" id="SortBy" name="sort_by">
+              {%- for option in collection.sort_options -%}
+                <option value="{{ option.value }}"{% if option.value == current_sort %} selected{% endif %}>
+                  {{ option.name }}
+                </option>
+              {%- endfor -%}
+            </select>
+          {%- endif -%}
+          <noscript><button class="btn btn--ghost" type="submit">Apply</button></noscript>
+        </div>
+      </div>
+
+      {%- liquid
+        assign active_count = 0
+        for filter in collection.filters
+          assign active_count = active_count | plus: filter.active_values.size
+          if filter.type == 'price_range'
+            if filter.min_value.value != nil or filter.max_value.value != nil
+              assign active_count = active_count | plus: 1
+            endif
+          endif
+        endfor
+      -%}
+      {%- if active_count > 0 -%}
+        <div class="active-filters label">
+          {%- for filter in collection.filters -%}
+            {%- for value in filter.active_values -%}
+              <a class="chip" href="{{ value.url_to_remove }}">{{ value.label }} <span aria-hidden="true">&times;</span><span class="visually-hidden">Remove filter</span></a>
             {%- endfor -%}
-          </select>
-          <noscript><button class="btn btn--ghost" type="submit">{{ 'collections.sort_by' | t }}</button></noscript>
-        </form>
+            {%- if filter.type == 'price_range' -%}
+              {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
+                <a class="chip" href="{{ filter.url_to_remove }}">
+                  {{ filter.min_value.value | default: 0 | money }}&ndash;{{ filter.max_value.value | default: filter.range_max | money }}
+                  <span aria-hidden="true">&times;</span><span class="visually-hidden">Remove filter</span>
+                </a>
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+          <a class="chip chip--clear" href="{{ collection.url }}?sort_by={{ collection.sort_by }}">Clear all</a>
+        </div>
       {%- endif -%}
-    </div>
+    </form>
 
     {%- if collection.products.size > 0 -%}
       <div class="grid" style="--cols: {{ section.settings.columns }};">
@@ -41,7 +136,13 @@
         {%- endfor -%}
       </div>
     {%- else -%}
-      <p class="empty">{{ 'collections.empty' | t }}</p>
+      <p class="empty">
+        {%- if active_count > 0 -%}
+          Nothing matches those filters. <a href="{{ collection.url }}">Clear them</a> and try again.
+        {%- else -%}
+          {{ 'collections.empty' | t }}
+        {%- endif -%}
+      </p>
     {%- endif -%}
 
     {% render 'pagination', paginate: paginate %}
@@ -52,6 +153,7 @@
 {
   "name": "Collection page",
   "settings": [
+    { "type": "link_list", "id": "browse_menu", "label": "Category tabs menu", "default": "main-menu", "info": "Shows the links inside this menu's dropdowns as tabs." },
     { "type": "range", "id": "per_page", "label": "Products per page", "min": 6, "max": 48, "step": 3, "default": 24 },
     { "type": "range", "id": "columns", "label": "Columns on desktop", "min": 2, "max": 4, "step": 1, "default": 3 }
   ]

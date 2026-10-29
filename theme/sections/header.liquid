@@ -7,9 +7,24 @@
     <nav class="header__nav label" id="HeaderNav" aria-label="Main">
       <ul>
         {%- for link in section.settings.menu.links -%}
-          <li>
-            <a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title }}</a>
-          </li>
+          {%- if link.links.size > 0 -%}
+            <li class="has-sub">
+              <details data-dropdown>
+                <summary{% if link.child_active %} aria-current="page"{% endif %}>{{ link.title }}</summary>
+                <ul class="submenu">
+                  {%- for child in link.links -%}
+                    <li>
+                      <a href="{{ child.url }}"{% if child.current %} aria-current="page"{% endif %}>{{ child.title }}</a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </details>
+            </li>
+          {%- else -%}
+            <li>
+              <a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title }}</a>
+            </li>
+          {%- endif -%}
         {%- endfor -%}
       </ul>
     </nav>

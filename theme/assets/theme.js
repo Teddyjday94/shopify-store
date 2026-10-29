@@ -2,8 +2,31 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initMenu();
+  initFilters();
   document.querySelectorAll('[data-product]').forEach(initProduct);
 });
+
+// Collection filters: apply on change; price inputs apply after a short pause.
+function initFilters() {
+  const form = document.querySelector('[data-filter-form]');
+  if (!form) return;
+  let timer;
+  form.addEventListener('change', (e) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => form.requestSubmit(), e.target.type === 'number' ? 600 : 0);
+  });
+  form.addEventListener('submit', (e) => {
+    // Drop empty fields so URLs stay clean.
+    e.preventDefault();
+    const params = new URLSearchParams();
+    new FormData(form).forEach((value, key) => { if (value !== '') params.append(key, value); });
+    window.location.search = params.toString();
+  });
+  const panels = Array.from(form.querySelectorAll('[data-dropdown]'));
+  document.addEventListener('click', (e) => {
+    panels.forEach((d) => { if (!d.contains(e.target)) d.open = false; });
+  });
+}
 
 function initMenu() {
   const toggle = document.querySelector('[data-menu-toggle]');
@@ -12,6 +35,19 @@ function initMenu() {
   toggle.addEventListener('click', () => {
     const open = nav.classList.toggle('is-open');
     toggle.setAttribute('aria-expanded', String(open));
+  });
+
+  // Dropdowns: one open at a time; close on outside click or Escape.
+  const dropdowns = Array.from(nav.querySelectorAll('[data-dropdown]'));
+  dropdowns.forEach((d) => d.addEventListener('toggle', () => {
+    if (d.open) dropdowns.forEach((other) => { if (other !== d) other.open = false; });
+  }));
+  document.addEventListener('click', (e) => {
+    dropdowns.forEach((d) => { if (!d.contains(e.target)) d.open = false; });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    dropdowns.filter((d) => d.open).forEach((d) => { d.open = false; d.querySelector('summary').focus(); });
   });
 }
 
