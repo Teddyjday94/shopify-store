@@ -104,7 +104,7 @@ def main():
     run(PRODUCTS, "18500", ap.parse_args().apply)
 
 
-def run(products, model, apply):
+def run(products, model, apply, replace=False):
     api = Printify(os.environ.get("PRINTIFY_API_TOKEN"))
     shop = next(s for s in api.get("/shops.json") if s.get("sales_channel") == "shopify")
     existing = {p["title"] for page in (1, 2) for p in
@@ -113,7 +113,7 @@ def run(products, model, apply):
     cache = {}
 
     for spec in products:
-        if spec["title"] in existing:
+        if spec["title"] in existing and not replace:
             print(f"- {spec['title']}: already exists, skipping")
             continue
         provider, variants, colors = pick_provider(api, bp, {"colors": dict.fromkeys(spec["colors"])})
