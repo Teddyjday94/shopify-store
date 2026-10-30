@@ -13,8 +13,10 @@ from create_products import Printify
 
 # Old price -> new price, in cents. Per-title overrides win over the defaults.
 OVERRIDES = {
-    "Currently Elsewhere Hoodie": {5200: 4400, 5500: 4700},
+    "Currently Elsewhere Hoodie": {4400: 4500, 4700: 4800},
 }
+# Gildan hoodies all sit at $45 / $48 2XL.
+GILDAN_HOODIE = {4600: 4500, 4900: 4800}
 DEFAULTS = {
     2800: 2400, 3100: 2700,  # Drop 001 tees
     3200: 2600, 3500: 2900,  # Own Lane tees, Odysseus
@@ -32,7 +34,12 @@ def main(apply):
     while True:
         res = api.get(f"/shops/{shop['id']}/products.json?limit=50&page={page}")
         for p in res["data"]:
-            table = OVERRIDES.get(p["title"], DEFAULTS)
+            if p["title"] in OVERRIDES:
+                table = OVERRIDES[p["title"]]
+            elif p["blueprint_id"] == 77:
+                table = GILDAN_HOODIE
+            else:
+                table = DEFAULTS
             changes = [{"id": v["id"], "price": table[v["price"]]}
                        for v in p["variants"] if v["price"] in table]
             if not changes:
