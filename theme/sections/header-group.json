@@ -6,8 +6,8 @@
       "type": "announcement-bar",
       "blocks": {
         "m1": { "type": "message", "settings": { "text": "Use code ELSEWHERE15 for 15% off the launch drop", "link": "shopify://collections/all" } },
-        "m2": { "type": "message", "settings": { "text": "Free US shipping on orders $60+", "link": "shopify://collections/all" } },
-        "m3": { "type": "message", "settings": { "text": "Currently elsewhere. Will respond upon return.", "link": "" } }
+        "m2": { "type": "message", "settings": { "text": "Printed to order, just for you", "link": "" } },
+        "m3": { "type": "message", "settings": { "text": "Free US shipping on orders $60+.", "link": "" } }
       },
       "block_order": ["m1", "m2", "m3"],
       "settings": { "speed": 40 }
