@@ -76,9 +76,11 @@ def main():
             base = TEE_PRICE if is_tee else min(v["price"] for v in p["variants"]
                                                 if v["is_enabled"] and options[v["id"]].get("size") != "2XL")
 
+            # Every variant, enabled or not, has to sit in a print area.
             groups = {}
-            for vid in enabled:
-                groups.setdefault("white" if options[vid].get("color") in WHITE_TEXT else "black", []).append(vid)
+            for v in p["variants"]:
+                color = options.get(v["id"], {}).get("color")
+                groups.setdefault("white" if color in WHITE_TEXT else "black", []).append(v["id"])
             areas = []
             for ink, ids in sorted(groups.items()):
                 name = f"{ART[base_title]}-back-{ink}.png"
@@ -91,13 +93,15 @@ def main():
                 ]})
             colors = sorted({options[v]["color"] for v in enabled})
             print(f"{'set ' if apply else 'plan'}  {p['title']}: colors {colors}; "
-                  f"white text on {sorted({options[v]['color'] for v in groups.get('white', [])})}; "
+                  f"white text on {sorted({options[v]['color'] for v in groups.get('white', []) if v in enabled})}; "
                   f"back {place['scale']:.0%} wide" + (f"; price ${base / 100:.0f}" if is_tee else ""))
             if not apply:
                 continue
             variants = [{"id": v["id"], "is_enabled": v["id"] in enabled,
                          "price": base + (XXL_UPCHARGE if options[v["id"]].get("size") == "2XL" else 0)}
-                        for v in p["variants"] if v["id"] in options]
+                        if v["id"] in options else
+                        {"id": v["id"], "is_enabled": v["is_enabled"], "price": v["price"]}
+                        for v in p["variants"]]
             updated = api.call("PUT", path, json={"variants": variants, "print_areas": areas})
             costs = [v["cost"] for v in updated["variants"] if v["is_enabled"]]
             api.post(f"{path[:-5]}/publish.json", {
