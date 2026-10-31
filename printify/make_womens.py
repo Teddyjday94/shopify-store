@@ -10,6 +10,7 @@ Usage:
 
 import argparse
 import os
+import time
 
 from clone_product import build
 from create_products import Printify
@@ -47,14 +48,22 @@ def main():
     api = Printify(os.environ.get("PRINTIFY_API_TOKEN"))
     shop = next(s for s in api.get("/shops.json") if s.get("sales_channel") == "shopify")["id"]
     products = [p for page in (1, 2) for p in api.get(f"/shops/{shop}/products.json?limit=50&page={page}")["data"]]
-    existing = {p["title"] for p in products}
+    existing = {p["title"]: p for p in products}
 
     for p in products:
         if p["title"] not in COLORS or not (p.get("external") or {}).get("id"):
             continue
         title = womens_title(p["title"])
         if title in existing:
-            print(f"skip  {title}: already exists")
+            done = existing[title]
+            if apply and not (done.get("external") or {}).get("id") and not done["is_locked"]:
+                api.post(f"/shops/{shop}/products/{done['id']}/publish.json", {
+                    "title": True, "description": True, "images": True, "variants": True,
+                    "tags": True, "keyFeatures": True, "shipping_template": True,
+                })
+                print(f"publish  {title}: created earlier, publishing now")
+            else:
+                print(f"skip  {title}: already exists")
             continue
         src = api.get(f"/shops/{shop}/products/{p['id']}.json")
         sizes = {v["title"].split(" / ")[-1] if p["blueprint_id"] == 12 else v["title"].split(" / ")[0]
@@ -72,6 +81,7 @@ def main():
             "tags": True, "keyFeatures": True, "shipping_template": True,
         })
         cost = [v["cost"] for v in new["variants"] if v["is_enabled"]]
+        time.sleep(20)  # stay under Printify's publish rate limit
         print(f"      created {new['id']}, cost ${min(cost) / 100:.2f}-${max(cost) / 100:.2f}")
 
 
