@@ -97,7 +97,7 @@ def main():
                 continue
             variants = [{"id": v["id"], "is_enabled": v["id"] in enabled,
                          "price": base + (XXL_UPCHARGE if options[v["id"]].get("size") == "2XL" else 0)}
-                        for v in p["variants"]]
+                        for v in p["variants"] if v["id"] in options]
             updated = api.call("PUT", path, json={"variants": variants, "print_areas": areas})
             costs = [v["cost"] for v in updated["variants"] if v["is_enabled"]]
             api.post(f"{path[:-5]}/publish.json", {
