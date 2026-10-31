@@ -1,0 +1,45 @@
+{% doc %}
+  The hero's "postcard from nowhere": a picture side and a writing side.
+  @param {object} section - The cinematic hero section, for its postcard settings.
+{% enddoc %}
+<style>
+  @font-face { font-family: 'Caveat'; src: url({{ 'caveat-600.woff2' | asset_url }}) format('woff2'); font-weight: 400 700; font-display: swap; }
+</style>
+{{ 'postcard.css' | asset_url | stylesheet_tag }}
+<div class="hero-postcard" role="img" aria-label="A postcard from nowhere: Greetings from Elsewhere. Wish you weren't here.">
+  <div class="hero-postcard__card" aria-hidden="true">
+    <figure class="hero-postcard__photo">
+      {%- if section.settings.postcard_image != blank -%}
+        {{ section.settings.postcard_image | image_url: width: 600 | image_tag: widths: '300, 450, 600', sizes: '240px', loading: 'eager', alt: '' }}
+      {%- else -%}
+        <img src="{{ 'postcard-photo.jpg' | asset_url }}" width="1000" height="750" alt="" loading="eager">
+      {%- endif -%}
+      <figcaption class="hero-postcard__greeting"><small>Greetings from</small><b>Elsewhere</b></figcaption>
+    </figure>
+    <div class="hero-postcard__back">
+      <div class="hero-postcard__head">
+        <span class="hero-postcard__label">Post card<br>from nowhere</span>
+        <span class="hero-postcard__stamp">
+          {%- if section.settings.postcard_stamp != blank -%}
+            {{ section.settings.postcard_stamp | image_url: width: 120 | image_tag: loading: 'eager', alt: '' }}
+          {%- else -%}
+            <img src="{{ 'postcard-stamp.jpg' | asset_url }}" width="300" height="341" alt="" loading="eager">
+          {%- endif -%}
+        </span>
+      </div>
+      <svg class="hero-postcard__postmark" viewBox="0 0 104 52" fill="none" focusable="false">
+        <circle cx="78" cy="26" r="22" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="78" cy="26" r="16" stroke="currentColor" stroke-width="0.8"/>
+        <text x="78" y="24" text-anchor="middle" font-family="Space Mono, monospace" font-size="6" fill="currentColor" letter-spacing="0.5">ELSEWHERE</text>
+        <text x="78" y="33" text-anchor="middle" font-family="Space Mono, monospace" font-size="5.5" fill="currentColor">NO RETURN</text>
+        <path d="M2 16c6-4 10 4 16 0s10 4 16 0 10 4 16 0 M2 26c6-4 10 4 16 0s10 4 16 0 10 4 16 0 M2 36c6-4 10 4 16 0s10 4 16 0 10 4 16 0" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+      <p class="hero-postcard__note">{{ section.settings.postcard_note | default: "Wish you weren't here." | escape }}<span>{{ section.settings.postcard_signoff | default: 'In the best way possible.' | escape }}</span></p>
+      <ul class="hero-postcard__address">
+        <li>To: whoever's still here</li>
+        <li>Under a blanket, probably</li>
+        <li>Currently Elsewhere</li>
+      </ul>
+    </div>
+  </div>
+</div>

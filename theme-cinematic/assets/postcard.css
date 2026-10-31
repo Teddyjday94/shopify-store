@@ -1,0 +1,122 @@
+/* Hero postcard: picture side on the left, writing side (stamp, postmark, note, address) on the right. */
+.hero-postcard {
+  --pc-paper: #f4ecdc;
+  --pc-ink: #2a2433;
+  --pc-pop: #9b6bff;
+  position: absolute;
+  right: var(--gutter, 40px);
+  bottom: 96px;
+  z-index: 2;
+  width: 440px;
+  transform: rotate(3deg);
+  filter: drop-shadow(0 18px 28px rgba(8, 4, 16, 0.5));
+}
+.hero-postcard__card {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  padding: 10px;
+  border-radius: 3px;
+  color: var(--pc-ink);
+  background:
+    radial-gradient(rgba(60, 40, 20, 0.07) 1px, transparent 1.2px) 0 0 / 5px 5px,
+    linear-gradient(160deg, #f8f1e3, var(--pc-paper) 55%, #ecdfc6);
+}
+
+/* Picture side */
+.hero-postcard__photo { position: relative; margin: 0; overflow: hidden; min-height: 190px; background: #1d1726; }
+.hero-postcard__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-postcard__photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(20, 12, 28, 0.75), transparent 55%);
+}
+.hero-postcard__greeting { position: absolute; left: 10px; right: 8px; bottom: 9px; z-index: 1; line-height: 1; }
+.hero-postcard__greeting small {
+  display: block;
+  font-family: 'Caveat', cursive;
+  font-size: 19px;
+  color: var(--pc-paper);
+  transform: rotate(-4deg);
+  transform-origin: left bottom;
+  margin-bottom: 2px;
+}
+.hero-postcard__greeting b {
+  display: block;
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  font-size: 37px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--pc-paper);
+  -webkit-text-stroke: 1px #1d1726;
+  text-shadow: 3px 3px 0 var(--pc-pop);
+}
+
+/* Writing side */
+.hero-postcard__back {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2px 2px 2px 14px;
+  margin-left: 12px;
+  border-left: 1px solid rgba(42, 36, 51, 0.35);
+}
+.hero-postcard__head { display: flex; justify-content: space-between; align-items: flex-start; min-height: 66px; }
+.hero-postcard__label {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: rgba(42, 36, 51, 0.75);
+  padding-top: 4px;
+}
+.hero-postcard__stamp {
+  position: relative;
+  width: 50px;
+  height: 58px;
+  padding: 4px;
+  background: #fffaf0;
+  transform: rotate(4deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, radial-gradient(circle, transparent 2px, #000 2.4px) -3px -3px / 6px 6px;
+  mask: linear-gradient(#000 0 0) content-box, radial-gradient(circle, transparent 2px, #000 2.4px) -3px -3px / 6px 6px;
+}
+.hero-postcard__stamp img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.hero-postcard__postmark {
+  position: absolute;
+  top: 18px;
+  right: 40px;
+  width: 104px;
+  height: 52px;
+  color: rgba(42, 36, 51, 0.62);
+  transform: rotate(-10deg);
+  pointer-events: none;
+}
+.hero-postcard__note {
+  margin: 8px 0 6px;
+  font-family: 'Caveat', cursive;
+  font-size: 22px;
+  line-height: 0.95;
+  transform: rotate(-2deg);
+}
+.hero-postcard__note span { display: block; font-size: 16px; margin-top: 3px; color: rgba(42, 36, 51, 0.8); }
+.hero-postcard__address { list-style: none; margin: auto 0 0; padding: 0; font-family: 'Caveat', cursive; font-size: 15px; line-height: 1; }
+.hero-postcard__address li { padding: 5px 0 1px; border-bottom: 1px solid rgba(42, 36, 51, 0.3); }
+
+@media (max-width: 1199px) {
+  .hero-postcard { width: 360px; }
+  .hero-postcard__greeting b { font-size: 30px; }
+  .hero-postcard__note { font-size: 19px; }
+  .hero-postcard__address { font-size: 13px; }
+  .hero-postcard__label { font-size: 7px; letter-spacing: 0.14em; }
+  .hero-postcard__postmark { width: 84px; height: 42px; top: 34px; right: 30px; }
+}
+@media (max-width: 749px) {
+  .hero-postcard { width: 172px; right: 20px; bottom: 74px; }
+  .hero-postcard__card { grid-template-columns: 1fr; padding: 6px; }
+  .hero-postcard__photo { min-height: 118px; }
+  .hero-postcard__back { display: none; }
+  .hero-postcard__greeting small { font-size: 14px; }
+  .hero-postcard__greeting b { font-size: 23px; text-shadow: 2px 2px 0 var(--pc-pop); }
+}
