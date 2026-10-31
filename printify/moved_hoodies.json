@@ -84,41 +84,47 @@
     "old_shopify": "8838164349089",
     "new_printify": "6ae646d3c9ed9f59750545fd",
     "new_shopify": "8843806834849",
-    "locked": true
+    "locked": true,
+    "swapped": true
   },
   "6ae3a35058b5b5913f048738": {
     "title": "Lucky Charm Hoodie",
     "old_shopify": "8838164185249",
     "new_printify": "6ae646d78ac3264f1b0a9b11",
     "new_shopify": "8843806965921",
-    "locked": true
+    "locked": true,
+    "swapped": true
   },
   "6ae3a33d6ce8e54a4501a4be": {
     "title": "Butterfly Effect Hoodie",
     "old_shopify": "8838163726497",
     "new_printify": "6ae646da09e2bd18a5030cb0",
     "new_shopify": "8843807129761",
-    "locked": true
+    "locked": true,
+    "swapped": true
   },
   "6ae3a32cc82a01d1d008391f": {
     "title": "In My Own Lane Hoodie",
     "old_shopify": "8838163366049",
     "new_printify": "6ae646de8ac3264f1b0a9b19",
     "new_shopify": "8843807260833",
-    "locked": true
+    "locked": true,
+    "swapped": true
   },
   "6ae188bee84861bcbd0ec4d1": {
     "title": "Seasonal Depression World Tour Hoodie",
     "old_shopify": "8831409422497",
     "new_printify": "6ae646e188325bfb8908eb7e",
     "new_shopify": "8843807391905",
-    "locked": true
+    "locked": true,
+    "swapped": true
   },
   "6ae188abfa2df7adf504a81b": {
     "title": "Currently Elsewhere Hoodie",
     "old_shopify": "8831409029281",
     "new_printify": "6ae646e588325bfb8908eb85",
     "new_shopify": "8843807555745",
-    "locked": true
+    "locked": true,
+    "swapped": true
   }
 }
