@@ -7,10 +7,22 @@ Placements keep each print's physical size and top edge, shrinking only if it wo
 new print area.
 """
 
+from functools import lru_cache
+
 from create_products import XXL_UPCHARGE
-from fit import placeholder_sizes
+from fit import placeholder_sizes as _placeholder_sizes
 
 SIZES = ["XS", "S", "M", "L", "XL", "2XL"]
+
+
+@lru_cache(maxsize=None)
+def placeholder_sizes(api, blueprint_id, provider_id):
+    return _placeholder_sizes(api, blueprint_id, provider_id)
+
+
+@lru_cache(maxsize=None)
+def catalog_variants(api, blueprint_id, provider_id):
+    return api.get(f"/catalog/blueprints/{blueprint_id}/print_providers/{provider_id}/variants.json")["variants"]
 
 
 def source_area(src, ink):
@@ -46,7 +58,7 @@ def build(api, src, blueprint_id, provider_id, colors, base_price, price_of=None
     """Return the create-product body for a clone of src. price_of(color, size) may return a price."""
     old_sizes = placeholder_sizes(api, src["blueprint_id"], src["print_provider_id"])
     new_sizes = placeholder_sizes(api, blueprint_id, provider_id)
-    catalog = api.get(f"/catalog/blueprints/{blueprint_id}/print_providers/{provider_id}/variants.json")["variants"]
+    catalog = catalog_variants(api, blueprint_id, provider_id)
     by_ink = {}
     variants = []
     for v in catalog:
