@@ -52,21 +52,24 @@
     "old_shopify": "8838165921953",
     "new_printify": "6ae646c509e2bd18a5030c80",
     "new_shopify": "8843806343329",
-    "locked": true
+    "locked": true,
+    "swapped": true
   },
   "6ae3a38adef91225270e54bc": {
     "title": "Pink Crown Hoodie",
     "old_shopify": "8838165725345",
     "new_printify": "6ae646c91194fd37ca05c5d0",
     "new_shopify": "8843806474401",
-    "locked": true
+    "locked": true,
+    "swapped": true
   },
   "6ae3a372541e12a2fb01b284": {
     "title": "Crown & Curls Hoodie",
     "old_shopify": "8838164906145",
     "new_printify": "6ae646cc09e2bd18a5030c93",
     "new_shopify": "8843806605473",
-    "locked": true
+    "locked": true,
+    "swapped": true
   },
   "6ae3a363c82a01d1d0083959": {
     "title": "Color Me Bold Hoodie",
