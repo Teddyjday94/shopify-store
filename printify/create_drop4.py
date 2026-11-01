@@ -1,11 +1,13 @@
-"""Create Drop 004 (Old Gods, New Problems): a tee and a hoodie for each of four paintings.
+"""Create the Immortalized Collection: a tee and a hoodie for each painting.
 
 The back is the painting framed like a vintage poster with its title (designs/print-drop4/*-back.png);
 the front is a small chest mark. White type, so only dark garment colors.
 
+Products that already exist get their artwork swapped for the current print files instead.
+
 Usage:
     python3 printify/create_drop4.py            # dry run
-    python3 printify/create_drop4.py --apply    # create + publish
+    python3 printify/create_drop4.py --apply    # create + publish, or refresh existing artwork
 """
 
 import argparse
@@ -17,7 +19,7 @@ from PIL import Image
 from create_products import TEE_SIZES, XXL_UPCHARGE, Printify
 from fit import MARGIN, ROOT, placeholder_sizes
 
-COMMIT = "b9bf46af1b6ba27c9aec76ae30743b8769a86e78"
+COMMIT = "d2d9d842ac2d4b0d16acc60aa7b144d3c32040d1"
 RAW = "https://raw.githubusercontent.com/Teddyjday94/shopify-store/{commit}/designs/print-drop4/{name}"
 ART = ROOT / "designs" / "print-drop4"
 
@@ -38,7 +40,21 @@ DESIGNS = [
     ("04-one-way-ferry", "One Way Ferry", "Navy", ["ferryman", "moon", "island"],
      "A cloaked ferryman crosses a still black lake toward an island of cypress and marble.",
      "No return ticket required."),
+    ("05-born-ready", "Born Ready", "Navy", ["goddess", "shell", "ocean"],
+     "A goddess rises from the sea on a shell, hair and silk everywhere, sunlight on cue.",
+     "Arrived fashionably late. On a shell."),
+    ("06-fallen-not-finished", "Fallen, Not Finished", "Maroon", ["angel", "wings", "ruins"],
+     "A fallen angel sits in the ruins of heaven, wings still attached, pride slightly less so.",
+     "Heaven can wait. So can I."),
+    ("07-above-it-all", "Above It All", "Brown", ["wanderer", "mountains", "clouds"],
+     "A wanderer in a long coat stands over a sea of clouds at sunrise.",
+     "Physically here. Mentally up there."),
+    ("08-going-with-the-flow", "Going With the Flow", "Forest", ["flowers", "river", "dreamy"],
+     "A dreamer floats down a quiet stream through lilies, roses and golden light.",
+     "Floating through it."),
 ]
+# Hoodie names for the same colors on the Gildan 18500 at SwiftPOD.
+HOODIE_COLOR = {"Brown": "Dark Chocolate", "Forest": "Forest Green"}
 
 
 def aspect(name):
@@ -56,6 +72,28 @@ def chest_place(name, w, h, width=0.27):
     return dict(x=0.72, y=round(0.06 + width * aspect(name) * w / h / 2, 4), scale=width)
 
 
+def refresh(api, shop, product, back_id, front_id):
+    """Point an existing product's back and front prints at new artwork, keeping placement."""
+    path = f"/shops/{shop}/products/{product['id']}.json"
+    p = api.get(path)
+    areas = []
+    for area in p["print_areas"]:
+        placeholders = []
+        for ph in area["placeholders"]:
+            if not ph["images"]:
+                continue
+            img = ph["images"][0]
+            new_id = back_id if ph["position"] == "back" else front_id
+            placeholders.append({"position": ph["position"], "images": [
+                dict(id=new_id, x=img["x"], y=img["y"], scale=img["scale"], angle=img["angle"])]})
+        areas.append({"variant_ids": area["variant_ids"], "placeholders": placeholders})
+    api.call("PUT", path, json={"print_areas": areas})
+    api.post(f"{path[:-5]}/publish.json", {
+        "title": False, "description": False, "images": True, "variants": False,
+        "tags": False, "keyFeatures": False, "shipping_template": False,
+    })
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--apply", action="store_true")
@@ -63,7 +101,7 @@ def main():
 
     api = Printify(os.environ.get("PRINTIFY_API_TOKEN"))
     shop = next(s for s in api.get("/shops.json") if s.get("sales_channel") == "shopify")["id"]
-    existing = {p["title"] for page in (1, 2, 3) for p in
+    existing = {p["title"]: p for page in (1, 2, 3) for p in
                 api.get(f"/shops/{shop}/products.json?limit=50&page={page}")["data"]}
     uploads = {}
 
@@ -75,14 +113,17 @@ def main():
     for slug, name, alt, tags, intro, line in DESIGNS:
         for spec in (TEE, HOODIE):
             title = f"{name} {spec['kind']}"
+            back, front = f"{slug}-back.png", f"{slug}-front.png"
             if title in existing:
-                print(f"skip  {title}")
+                print(f"{'swap' if apply else 'plan'}  {title}: refresh artwork")
+                if apply:
+                    refresh(api, shop, existing[title], image(back), image(front))
+                    time.sleep(20)
                 continue
             catalog = api.get(f"/catalog/blueprints/{spec['blueprint']}/print_providers/{spec['provider']}/variants.json")["variants"]
-            colors = ["Black", alt]
+            colors = ["Black", HOODIE_COLOR.get(alt, alt) if spec is HOODIE else alt]
             chosen = [v for v in catalog if v["options"].get("color") in colors and v["options"].get("size") in TEE_SIZES]
             sizes = placeholder_sizes(api, spec["blueprint"], spec["provider"])
-            back, front = f"{slug}-back.png", f"{slug}-front.png"
             bp, fp = back_place(back, *sizes["back"]), chest_place(front, *sizes["front"])
             print(f"{'make' if apply else 'plan'}  {title}: {sorted({v['options']['color'] for v in chosen})}, "
                   f"{len(chosen)} variants, back {bp['scale']:.0%} wide")
@@ -94,7 +135,7 @@ def main():
             product = api.post(f"/shops/{shop}/products.json", {
                 "title": title,
                 "description": f"<p>{intro}</p><ul>{features}</ul><p><em>{line}</em></p>",
-                "tags": [spec["kind"].lower(), "drop 004", "old gods new problems"] + tags,
+                "tags": [spec["kind"].lower(), "drop 004", "immortalized"] + tags,
                 "blueprint_id": spec["blueprint"],
                 "print_provider_id": spec["provider"],
                 "variants": [{"id": v["id"], "is_enabled": True,
