@@ -1,4 +1,4 @@
-// Drop 004 print files: each painting framed like a vintage poster with its title underneath (back),
+// The Immortalized Collection print files: each painting framed like a vintage poster with its title underneath (back),
 // and a small chest mark (front). White type, for dark garments.
 // Usage: node designs/src/render_drop4.js
 
@@ -17,6 +17,10 @@ const designs = [
   ['02-rise-from-ruin', 'Rise From Ruin', 'Down bad. Getting up anyway.', ['Rise', 'From Ruin']],
   ['03-sleep-paralysis-club', 'Sleep Paralysis Club', 'Members only. Meetings at 3 a.m.', ['Sleep Paralysis', 'Club']],
   ['04-one-way-ferry', 'One Way Ferry', 'No return ticket required.', ['One Way', 'Ferry']],
+  ['05-born-ready', 'Born Ready', 'Arrived fashionably late. On a shell.', ['Born', 'Ready']],
+  ['06-fallen-not-finished', 'Fallen, Not Finished', 'Heaven can wait. So can I.', ['Fallen,', 'Not Finished']],
+  ['07-above-it-all', 'Above It All', 'Physically here. Mentally up there.', ['Above', 'It All']],
+  ['08-going-with-the-flow', 'Going With the Flow', 'Floating through it.', ['Going With', 'the Flow']],
 ];
 
 const css = `
@@ -39,7 +43,7 @@ function back(name, title, line) {
   </style></head><body><div id="art">
     <div class="frame"><img src="${img}"></div>
     <div class="title">${title}</div>
-    <div class="row"><div class="label">Elsewhere Supply Co. / Drop 004</div><div class="line">${line}</div></div>
+    <div class="row"><div class="label">Elsewhere Supply Co. / Immortalized</div><div class="line">${line}</div></div>
   </div></body></html>`;
 }
 
@@ -49,7 +53,7 @@ function front(lines) {
     .t{font-family:'Anton';font-size:120px;line-height:.9;text-transform:uppercase;white-space:nowrap}
     .label{font-size:30px;margin-top:16px}
   </style></head><body><div id="art"><div class="t">${lines.join('<br>')}</div>
-    <div class="label">Elsewhere / Drop 004</div></div></body></html>`;
+    <div class="label">Elsewhere / Immortalized</div></div></body></html>`;
 }
 
 (async () => {
