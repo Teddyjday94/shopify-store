@@ -14,8 +14,8 @@ const designs = [
     lines: ['CURRENTLY', 'ELSEWHERE'] },
   { name: '08-not-ai-just-tired-trucker', font: 'Anton', size: 190, lh: 1.0, ls: '0.03em',
     lines: ['NOT AI.', 'JUST TIRED.'] },
-  { name: '09-elsewhere-beanie', font: 'Archivo Black', size: 170, lh: 1.0, ls: '0.12em',
-    lines: ['ELSEWHERE'] },
+  { name: '09-many-worlds-beanie', font: 'Archivo Black', size: 170, lh: 1.0, ls: '0.12em',
+    lines: ['MANY WORLDS'] },
   { name: '10-same-chaos-bucket', font: 'Anton', size: 170, lh: 1.0, ls: '0.03em',
     lines: ['SAME CHAOS', 'DIFFERENT DAY'] },
 ];

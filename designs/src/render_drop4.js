@@ -43,7 +43,7 @@ function back(name, title, line) {
   </style></head><body><div id="art">
     <div class="frame"><img src="${img}"></div>
     <div class="title">${title}</div>
-    <div class="row"><div class="label">Elsewhere Supply Co. / Immortalized</div><div class="line">${line}</div></div>
+    <div class="row"><div class="label">Many Worlds Supply Co. / Immortalized</div><div class="line">${line}</div></div>
   </div></body></html>`;
 }
 
@@ -53,7 +53,7 @@ function front(lines) {
     .t{font-family:'Anton';font-size:120px;line-height:.9;text-transform:uppercase;white-space:nowrap}
     .label{font-size:30px;margin-top:16px}
   </style></head><body><div id="art"><div class="t">${lines.join('<br>')}</div>
-    <div class="label">Elsewhere / Immortalized</div></div></body></html>`;
+    <div class="label">Many Worlds / Immortalized</div></div></body></html>`;
 }
 
 (async () => {

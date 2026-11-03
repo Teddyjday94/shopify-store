@@ -39,7 +39,7 @@ function page(lines, tagline, ink) {
       text-shadow:0 0 0 ${PINK}}
     .foot{margin-top:40px}
   </style></head><body><div id="art">
-    <div class="label">ELSEWHERE SUPPLY CO.</div><div class="rule"></div>
+    <div class="label">MANY WORLDS SUPPLY CO.</div><div class="rule"></div>
     <div class="name">${lines.join('<br>')}</div>
     <div class="tag">${tagline}</div>
     <div class="rule"></div><div class="label foot">OWN LANE &middot; 2026</div>
