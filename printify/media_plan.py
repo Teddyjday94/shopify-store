@@ -4,7 +4,7 @@ For each product: the Black back mockup, the other color's back, then the fronts
 color and view. Writes scratch JSON for the Shopify media mutations (Shopify's own media order does
 not match Printify's, so mockups are re-added by URL with labeled alt text).
 
-Usage: python3 printify/media_plan.py OUT.json
+Usage: python3 printify/media_plan.py OUT.json ["Title prefix" ...]   (prefixes limit it to those products)
 """
 
 import json
@@ -30,13 +30,15 @@ def pick(product, ids, side):
                 return i["src"]
 
 
-def main(out):
+def main(out, prefixes=()):
     api = Printify(os.environ.get("PRINTIFY_API_TOKEN"))
     shop = next(s for s in api.get("/shops.json") if s.get("sales_channel") == "shopify")["id"]
     plan = {}
     for page in (1, 2, 3, 4):
         for p in api.get(f"/shops/{shop}/products.json?limit=50&page={page}")["data"]:
             if not any(t in p["tags"] for t in TAGS) or "dad hat" in p["tags"]:
+                continue
+            if prefixes and not p["title"].startswith(tuple(prefixes)):
                 continue
             colors = {}
             for v in p["variants"]:
@@ -52,4 +54,4 @@ def main(out):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    main(sys.argv[1], sys.argv[2:])
