@@ -1,6 +1,6 @@
 // The Immortalized Collection print files: each painting framed like a vintage poster with its title underneath (back),
 // and a small chest mark (front). White type, for dark garments.
-// Usage: node designs/src/render_drop4.js
+// Usage: node designs/src/render_drop4.js [slug ...]   (no slugs = render all)
 
 const fs = require('fs');
 const path = require('path');
@@ -21,6 +21,10 @@ const designs = [
   ['06-fallen-not-finished', 'Fallen, Not Finished', 'Heaven can wait. So can I.', ['Fallen,', 'Not Finished']],
   ['07-above-it-all', 'Above It All', 'Physically here. Mentally up there.', ['Above', 'It All']],
   ['08-going-with-the-flow', 'Going With the Flow', 'Floating through it.', ['Going With', 'the Flow']],
+  ['09-long-live-the-king', 'Long Live the King', "Crowns don't retire.", ['Long Live', 'the King']],
+  ['10-queen-forever', 'Queen Forever', 'Death is no reason to dress down.', ['Queen', 'Forever']],
+  ['11-nine-tails', 'Nine Tails', 'Protector or punisher. Your call.', ['Nine', 'Tails']],
+  ['12-masterless', 'Masterless', 'No lord. No rush.', ['Master', 'less']],
 ];
 
 const css = `
@@ -60,7 +64,8 @@ function front(lines) {
   fs.mkdirSync(OUT, { recursive: true });
   const browser = await chromium.launch();
   const page = await (await browser.newContext({ viewport: { width: 1500, height: 2400 }, deviceScaleFactor: 2.5 })).newPage();
-  for (const [name, title, line, lines] of designs) {
+  const only = process.argv.slice(2);
+  for (const [name, title, line, lines] of designs.filter(([n]) => !only.length || only.includes(n))) {
     for (const [file, html] of [[`${name}-back.png`, back(name, title, line)], [`${name}-front.png`, front(lines)]]) {
       await page.setContent(html, { waitUntil: 'load' });
       await page.evaluate(async () => { await document.fonts.load('40px Anton'); await document.fonts.load('700 20px "Space Mono"'); });
