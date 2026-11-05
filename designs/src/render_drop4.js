@@ -1,4 +1,4 @@
-// The Immortalized Collection print files: each painting framed like a vintage poster with its title underneath (back),
+// The Immortalized Collection print files: each painting, unframed, with its title underneath (back),
 // and a small chest mark (front). White type, for dark garments.
 // Usage: node designs/src/render_drop4.js [slug ...]   (no slugs = render all)
 
@@ -38,7 +38,7 @@ function back(name, title, line) {
   const img = data(path.join(ROOT, 'drop4-src', `${name}-3x.jpg`), 'image/jpeg');
   return `<!doctype html><html><head><style>${css}
     #art{width:1346px;padding:0}
-    .frame{border:5px solid #f4ecdc;padding:14px}
+    .frame{border:0;padding:0}
     .frame img{display:block;width:100%}
     .title{font-family:'Anton';font-size:150px;line-height:1;text-transform:uppercase;letter-spacing:.01em;
       white-space:nowrap;margin-top:22px;text-align:center}
