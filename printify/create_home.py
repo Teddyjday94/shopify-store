@@ -45,9 +45,9 @@ def specs():
     for slug, name, line in XMAS:
         tags = ["christmas collection", "christmas", "holiday", "accessory", "home"]
         yield MUG, f"{name} Mug", f"{slug}-mug.png", tags + ["mug"], line, \
-            f"The {name} design wrapped around a mug, on black, both sides."
+            f"The {name} design, die-cut style, on both sides of a white mug."
         yield ORNAMENT, f"{name} Ornament", f"{slug}-ornament.png", tags + ["ornament"], line, \
-            f"The {name} design on a round ceramic ornament, for a tree with a sense of humor."
+            f"The {name} design, die-cut style, on a round white ceramic ornament, for a tree with a sense of humor."
     for slug, name, line in SLOGANS:
         yield MUG, f"{name} Mug", f"{slug}-mug.png", ["accessory", "home", "mug", "funny"], line, \
             f"\"{name}\" in bold black type on both sides of a white mug."
@@ -76,9 +76,11 @@ def main():
                 areas = [{"variant_ids": a["variant_ids"], "placeholders": [
                     {"position": ph["position"], "images": [dict(id=img, x=0.5, y=0.5, scale=1, angle=0)]}
                     for ph in a["placeholders"] if ph["images"]]} for a in full["print_areas"]]
-                api.call("PUT", f"/shops/{shop}/products/{pid}.json", json={"print_areas": areas})
+                features = "".join(f"<li>{f}</li>" for f in [*spec["features"], "Printed to order just for you"])
+                api.call("PUT", f"/shops/{shop}/products/{pid}.json", json={
+                    "print_areas": areas, "description": f"<p>{intro}</p><ul>{features}</ul><p><em>{line}</em></p>"})
                 api.post(f"/shops/{shop}/products/{pid}/publish.json", {
-                    "title": False, "description": False, "images": True, "variants": False,
+                    "title": False, "description": True, "images": True, "variants": False,
                     "tags": False, "keyFeatures": False, "shipping_template": False})
                 time.sleep(20)
             continue
