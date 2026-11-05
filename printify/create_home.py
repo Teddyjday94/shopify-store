@@ -2,11 +2,13 @@
 
 Print files come from designs/print-home (rendered by designs/src/render_home.js). Products are tagged
 "accessory" so they land in the Home & Accessories collection; Christmas ones are also tagged for the
-Christmas Collection. Existing products (by title) are skipped.
+Christmas Collection. Existing products (by title) are skipped, unless --refresh is given: then their
+print file is swapped for the current one and the mockups are republished.
 
 Usage:
-    python3 printify/create_home.py --commit SHA            # dry run
+    python3 printify/create_home.py --commit SHA                      # dry run
     python3 printify/create_home.py --commit SHA --apply
+    python3 printify/create_home.py --commit SHA --apply --refresh    # also update existing art
 """
 
 import argparse
@@ -55,14 +57,30 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--commit", required=True)
     ap.add_argument("--apply", action="store_true")
+    ap.add_argument("--refresh", action="store_true")
     args = ap.parse_args()
     api = Printify(os.environ.get("PRINTIFY_API_TOKEN"))
     shop = next(s for s in api.get("/shops.json") if s.get("sales_channel") == "shopify")["id"]
-    existing = {p["title"] for page in (1, 2, 3, 4) for p in
+    existing = {p["title"]: p for page in (1, 2, 3, 4) for p in
                 api.get(f"/shops/{shop}/products.json?limit=50&page={page}")["data"]}
     for spec, title, art, tags, line, intro in specs():
         if title in existing:
-            print(f"skip  {title}")
+            if not (args.refresh and "christmas" in tags):
+                print(f"skip  {title}")
+                continue
+            print(f"{'swap' if args.apply else 'plan'}  {title}: new print file")
+            if args.apply:
+                pid = existing[title]["id"]
+                img = api.post("/uploads/images.json", {"file_name": art, "url": RAW.format(commit=args.commit, name=art)})["id"]
+                full = api.get(f"/shops/{shop}/products/{pid}.json")
+                areas = [{"variant_ids": a["variant_ids"], "placeholders": [
+                    {"position": ph["position"], "images": [dict(id=img, x=0.5, y=0.5, scale=1, angle=0)]}
+                    for ph in a["placeholders"] if ph["images"]]} for a in full["print_areas"]]
+                api.call("PUT", f"/shops/{shop}/products/{pid}.json", json={"print_areas": areas})
+                api.post(f"/shops/{shop}/products/{pid}/publish.json", {
+                    "title": False, "description": False, "images": True, "variants": False,
+                    "tags": False, "keyFeatures": False, "shipping_template": False})
+                time.sleep(20)
             continue
         catalog = api.get(f"/catalog/blueprints/{spec['blueprint']}/print_providers/{spec['provider']}/variants.json")["variants"]
         chosen = [v for v in catalog if v["title"] in spec["prices"]]
