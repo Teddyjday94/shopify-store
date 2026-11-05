@@ -2,8 +2,8 @@
 keeping only a thin black edge that follows the art's outline (so cream lettering still reads),
 and printed straight on the white mug or ornament. No black band, no box.
 
-Mug: two copies at the wrap's full height. Ornament: the largest size at which the circle cuts off
-almost nothing of the art.
+Mug: two copies at the wrap's full height. Ornament: 12% larger than the size at which the circle cuts off
+nothing, so the art fills the circle; the circle trims edge decoration but no lettering.
 Usage: python3 designs/src/render_home_xmas.py
 """
 from pathlib import Path
@@ -62,6 +62,7 @@ def ornament(art):
         py = ys / small.height * h - h / 2
         if ((px ** 2 + py ** 2) > 0.485 ** 2).mean() <= 0.004:   # 3% safety ring at the edge
             best = f
+    best *= 1.12                                    # zoom in: trim edge decoration, keep lettering
     h = int(ORN * best)
     a = art.resize((round(art.width * h / art.height), h), Image.LANCZOS)
     canvas = Image.new("RGBA", (ORN, ORN), (0, 0, 0, 0))
