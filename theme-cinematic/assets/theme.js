@@ -1,4 +1,4 @@
-// Elsewhere Supply Co. theme scripts: mobile menu, product gallery, variant picker, quantity.
+// Elsewhere Apparel Co. theme scripts: mobile menu, product gallery, variant picker, quantity.
 
 document.addEventListener('DOMContentLoaded', () => {
   initMenu();

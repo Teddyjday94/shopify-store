@@ -1,0 +1,243 @@
+
+/*
+ * Elsewhere / Portal chapter transitions.
+ * Decorative, non-interactive and deliberately brief.
+ * Palettes cycle on each new scroll chapter: ember, amethyst, tidal, solar.
+ */
+.mw-portal-transition {
+  --mw-portal-bright:#ffad81;
+  --mw-portal-color:#e14b46;
+  --mw-portal-deep:#67212f;
+  --mw-portal-glow:#ed594a8c;
+  position:fixed;
+  inset:0;
+  z-index:76;
+  pointer-events:none;
+  display:block;
+  visibility:hidden;
+  opacity:0;
+  isolation:isolate;
+  overflow:hidden;
+  color:#fff7ec;
+}
+.mw-portal-transition.is-active {
+  visibility:visible;
+  animation:mw-portal-appears 1.26s linear both;
+}
+.mw-portal-transition__veil {
+  position:absolute;
+  inset:0;
+  opacity:0;
+  background:
+    radial-gradient(circle at center, color-mix(in srgb,var(--mw-portal-color) 22%,transparent) 0%,transparent 55%),
+    linear-gradient(90deg,#06050c51,#0706134a);
+  animation:none;
+}
+.is-active .mw-portal-transition__veil { animation:mw-portal-dim 1.22s ease-in-out both; }
+.mw-portal-transition__rift {
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:min(74vmin,720px);
+  aspect-ratio:1;
+  border-radius:50%;
+  transform:translate(-50%,-50%) scale(.04);
+  opacity:0;
+  filter:drop-shadow(0 0 26px var(--mw-portal-glow));
+}
+.is-active .mw-portal-transition__rift {
+  animation:mw-portal-open-close 1.23s cubic-bezier(.3,.02,.35,1) both;
+}
+.mw-portal-transition__outer-ring,
+.mw-portal-transition__inner,
+.mw-portal-transition__vortex,
+.mw-portal-transition__iris,
+.mw-portal-transition__arc,
+.mw-portal-transition__sparks {
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+}
+.mw-portal-transition__outer-ring {
+  inset:0;
+  border:clamp(3px,.45vmin,6px) solid var(--mw-portal-bright);
+  box-shadow:
+    0 0 10px 3px var(--mw-portal-color),
+    0 0 38px 9px var(--mw-portal-glow),
+    0 0 90px 13px color-mix(in srgb,var(--mw-portal-color) 28%,transparent),
+    inset 0 0 32px 4px var(--mw-portal-glow);
+  background:
+    conic-gradient(from 35deg, transparent 0deg,
+      color-mix(in srgb,var(--mw-portal-bright) 10%,transparent) 31deg,
+      transparent 48deg,
+      color-mix(in srgb,var(--mw-portal-color) 40%,transparent) 94deg,
+      transparent 145deg,
+      color-mix(in srgb,var(--mw-portal-bright) 26%,transparent) 229deg,
+      transparent 300deg,
+      color-mix(in srgb,var(--mw-portal-deep) 28%,transparent) 360deg);
+}
+.mw-portal-transition__outer-ring::before,
+.mw-portal-transition__outer-ring::after {
+  content:"";
+  position:absolute;
+  inset:5%;
+  border-radius:50%;
+  border:1px dashed color-mix(in srgb,var(--mw-portal-bright) 72%,transparent);
+  box-shadow:inset 0 0 22px color-mix(in srgb,var(--mw-portal-color) 25%,transparent);
+}
+.mw-portal-transition__outer-ring::after {
+  inset:-6%;
+  border:2px solid color-mix(in srgb,var(--mw-portal-bright) 40%,transparent);
+  opacity:.65;
+}
+.mw-portal-transition__inner {
+  inset:7%;
+  border:1px solid var(--mw-portal-color);
+  background:
+    radial-gradient(circle at 49% 48%,#02060b75 0%,#06080c9e 24%,
+      color-mix(in srgb,var(--mw-portal-deep) 76%,transparent) 47%,
+      color-mix(in srgb,var(--mw-portal-color) 24%,transparent) 67%,
+      #06030a15 100%);
+  box-shadow:
+    inset 0 0 36px var(--mw-portal-glow),
+    inset 0 0 110px color-mix(in srgb,var(--mw-portal-color) 24%,transparent);
+}
+.mw-portal-transition__vortex {
+  inset:12%;
+  opacity:.9;
+  background:repeating-conic-gradient(
+    from 20deg at 50% 50%,transparent 0deg 16deg,
+    color-mix(in srgb,var(--mw-portal-color) 20%,transparent) 17deg 19deg,
+    transparent 20deg 35deg);
+  -webkit-mask-image:radial-gradient(circle,transparent 16%,#000 36%,#000 68%,transparent 86%);
+  mask-image:radial-gradient(circle,transparent 16%,#000 36%,#000 68%,transparent 86%);
+}
+.is-active .mw-portal-transition__vortex {
+  animation:mw-portal-spin 1.24s ease-in-out both;
+}
+.mw-portal-transition__iris {
+  inset:26%;
+  opacity:.85;
+  background:radial-gradient(circle,#04070bdb 0%,#03050aaf 39%,var(--mw-portal-deep) 75%,transparent 100%);
+  border:1px solid color-mix(in srgb,var(--mw-portal-bright) 40%,transparent);
+  box-shadow:0 0 20px color-mix(in srgb,var(--mw-portal-color) 45%,transparent),inset 0 0 18px var(--mw-portal-glow);
+}
+.mw-portal-transition__arc {
+  inset:-6%;
+  border:2px solid transparent;
+  border-top-color:var(--mw-portal-bright);
+  border-bottom-color:var(--mw-portal-color);
+  filter:drop-shadow(0 0 10px var(--mw-portal-color));
+  opacity:.9;
+}
+.mw-portal-transition__arc--two {
+  inset:-13%;
+  border-top-color:var(--mw-portal-color);
+  border-right-color:color-mix(in srgb,var(--mw-portal-bright) 55%,transparent);
+  border-bottom-color:transparent;
+  opacity:.7;
+  transform:rotate(32deg);
+}
+.is-active .mw-portal-transition__arc--one { animation:mw-portal-spin 1.18s ease-in-out both; }
+.is-active .mw-portal-transition__arc--two { animation:mw-portal-counterspin 1.17s ease-in-out both; }
+.mw-portal-transition__sparks {
+  inset:-12%;
+  opacity:.7;
+  background-image:
+    radial-gradient(circle at 7% 49%,var(--mw-portal-bright) 0 2px,transparent 4px),
+    radial-gradient(circle at 80% 4%,var(--mw-portal-color) 0 2px,transparent 5px),
+    radial-gradient(circle at 95% 65%,var(--mw-portal-bright) 0 1px,transparent 4px),
+    radial-gradient(circle at 30% 93%,var(--mw-portal-color) 0 2px,transparent 4px),
+    radial-gradient(circle at 51% 8%,var(--mw-portal-bright) 0 2px,transparent 3px),
+    radial-gradient(circle at 13% 13%,var(--mw-portal-color) 0 2px,transparent 4px);
+}
+.is-active .mw-portal-transition__sparks { animation:mw-portal-sparks 1.19s ease-in-out both; }
+.mw-portal-transition__caption {
+  position:absolute;
+  z-index:5;
+  left:50%;
+  top:50%;
+  width:min(60vw,420px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(9px,2vmin,17px);
+  text-align:center;
+  transform:translate(-50%,-40%) scale(.9);
+  opacity:0;
+  text-shadow:0 2px 16px #05050adb,0 0 25px #04040aa6;
+}
+.is-active .mw-portal-transition__caption { animation:mw-portal-caption 1.2s ease-in-out both; }
+.mw-portal-transition__eyebrow {
+  font:700 clamp(8px,1vw,11px)/1.5 Arial,Helvetica,sans-serif;
+  letter-spacing:.33em;
+  color:var(--mw-portal-bright);
+}
+.mw-portal-transition__eyebrow span { padding-inline:8px; }
+.mw-portal-transition__caption strong {
+  font:400 clamp(22px,3.2vw,44px)/1.08 Georgia,'Times New Roman',serif;
+  text-transform:uppercase;
+  letter-spacing:-.035em;
+  max-width:16ch;
+  color:#fff2e4;
+  text-wrap:balance;
+}
+.mw-portal-transition__caption-line {
+  display:block;
+  width:65px;
+  height:1px;
+  background:var(--mw-portal-bright);
+  box-shadow:0 0 14px var(--mw-portal-color);
+}
+@keyframes mw-portal-appears {
+  0%,100% {opacity:0;}
+  9%,82% {opacity:1;}
+}
+@keyframes mw-portal-dim {
+  0%,100% {opacity:0;}
+  22%,71% {opacity:.7;}
+}
+@keyframes mw-portal-open-close {
+  0% { transform:translate(-50%,-50%) scale(.025) rotate(-22deg);opacity:0; }
+  15% { transform:translate(-50%,-50%) scale(.44) rotate(-10deg);opacity:.9; }
+  38% { transform:translate(-50%,-50%) scale(1) rotate(0deg);opacity:1; }
+  57% { transform:translate(-50%,-50%) scale(1.12) rotate(8deg);opacity:1; }
+  74% { transform:translate(-50%,-50%) scale(.93) rotate(18deg);opacity:.95; }
+  100% {transform:translate(-50%,-50%) scale(.03) rotate(45deg);opacity:0;}
+}
+@keyframes mw-portal-caption {
+  0%,22% {opacity:0;transform:translate(-50%,-43%) scale(.88);}
+  38%,62% {opacity:1;transform:translate(-50%,-50%) scale(1);}
+  86%,100% {opacity:0;transform:translate(-50%,-58%) scale(.92);}
+}
+@keyframes mw-portal-spin {
+  from {transform:rotate(-60deg);}
+  to {transform:rotate(185deg);}
+}
+@keyframes mw-portal-counterspin {
+  from {transform:rotate(65deg);}
+  to {transform:rotate(-176deg);}
+}
+@keyframes mw-portal-sparks {
+  0%,100% {opacity:0;transform:rotate(-18deg) scale(.7);}
+  32% {opacity:.8;transform:rotate(0deg) scale(1.1);}
+  75% {opacity:.65;transform:rotate(18deg) scale(1.24);}
+}
+@media(max-width:700px) {
+  .mw-portal-transition__rift {width:min(87vmin,390px);filter:drop-shadow(0 0 14px var(--mw-portal-glow));}
+  .mw-portal-transition__outer-ring {
+    box-shadow:0 0 9px 2px var(--mw-portal-color),0 0 30px 7px var(--mw-portal-glow),inset 0 0 20px var(--mw-portal-glow);
+  }
+  .mw-portal-transition__arc--two,.mw-portal-transition__sparks {display:none;}
+  .mw-portal-transition__caption {width:74vw;gap:10px;}
+  .mw-portal-transition__caption strong {font-size:clamp(21px,6vw,29px);}
+  .mw-portal-transition__eyebrow {font-size:8px;letter-spacing:.19em;}
+  .mw-portal-transition__caption-line {width:48px;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .mw-portal-transition {display:none!important;}
+  .mw-portal-transition * {animation:none!important;}
+}
+html.motion-paused .mw-portal-transition,
+body.motion-paused .mw-portal-transition {display:none!important;}

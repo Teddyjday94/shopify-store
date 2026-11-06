@@ -1,0 +1,21 @@
+
+{% doc %}
+  Decorative three-style cinematic transition for internal storefront links.
+{% enddoc %}
+<div class="page-curtain" data-page-curtain aria-hidden="true">
+  <div class="page-curtain__scene"></div>
+  <div class="page-curtain__panels">
+    {% for panel in (0..4) %}<div class="page-curtain__panel" style="--panel: {{ panel }};"></div>{% endfor %}
+  </div>
+  <div class="page-curtain__aperture page-curtain__aperture--top"></div>
+  <div class="page-curtain__aperture page-curtain__aperture--bottom"></div>
+  <div class="page-curtain__frame"></div>
+  <div class="page-curtain__brand">
+    <span class="mw-transition-eyebrow">Elsewhere Apparel Co. / New chapter</span>
+    <span class="page-curtain__star" aria-hidden="true">✦</span>
+    <span class="display">Elsewhere.</span>
+    <span class="label" data-transition-caption>See you on the other side.</span>
+  </div>
+  <span class="page-curtain__rule"></span>
+  <span class="mw-transition-counter">APPAREL FOR OTHER REALITIES / 2026</span>
+</div>

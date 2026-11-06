@@ -1,0 +1,56 @@
+{%- assign campaign = section.settings.campaign_image | default: settings.world_crossing -%}
+<section class="world-hero" aria-labelledby="CampaignTitle-{{ section.id }}">
+  {% render 'world-scenery', image: campaign, kind: 'hero' %}
+  <div class="page-width world-hero__inner">
+    <div class="world-hero__coordinates label"><span>Elsewhere Apparel Co. / The Crossing</span><span>Reality is optional.</span></div>
+    <div class="world-hero__copy">
+      <p class="label world-hero__kicker">{{ section.settings.status | escape }}</p>
+      <h1 class="display world-hero__title" id="CampaignTitle-{{ section.id }}"><span>{{ section.settings.first_line | escape }}</span><span>{{ section.settings.second_line | escape }}<i aria-hidden="true">*</i></span></h1>
+      <p class="world-hero__body">{{ section.settings.body | escape }}</p>
+      <div class="world-hero__actions"><a class="btn cinema__cta" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label | escape }} <span aria-hidden="true">&rarr;</span></a><a class="world-hero__explore" href="#WorldDepartures">Choose your world <span aria-hidden="true">&darr;</span></a></div>
+    </div>
+    {% render 'hero-postcard', section: section %}
+    <div class="world-hero__foot label"><span>{{ section.settings.scene_caption | escape }}</span><span>*Physically here. Mentally unavailable.</span></div>
+  </div>
+</section>
+<div class="world-rotation">
+  <div class="page-width world-rotation__inner">
+    <div class="world-rotation__intro"><span class="label">Earth essentials.</span><p>For your next<br>mental departure.</p></div>
+    {%- for block in section.blocks -%}
+      {%- assign piece = block.settings.product -%}
+      {%- if piece != blank -%}
+        <a class="world-rotation__piece" href="{{ piece.url }}" {{ block.shopify_attributes }}>
+          <div class="world-rotation__image">{%- if piece.featured_image -%}{{ piece.featured_image | image_url: width: 360 | image_tag: widths: '120, 240, 360', sizes: '(min-width: 900px) 100px, 75px', loading: 'lazy', alt: piece.title }}{%- endif -%}</div>
+          <span><span class="label">{{ block.settings.note | escape }}</span><span>{{ piece.title | escape }}</span><span class="world-rotation__price">{% render 'price', product: piece %}</span></span><span aria-hidden="true">&nearr;</span>
+        </a>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cinematic campaign",
+  "settings": [
+    { "type": "text", "id": "status", "label": "Status", "default": "Away. Shop's open though." },
+    { "type": "text", "id": "first_line", "label": "First headline line", "default": "Currently" },
+    { "type": "text", "id": "second_line", "label": "Second headline line", "default": "Elsewhere" },
+    { "type": "textarea", "id": "body", "label": "Introduction", "default": "Clothes for people who showed up, but didn't fully arrive." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop the drop" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "image_picker", "id": "campaign_image", "label": "Campaign still" },
+    { "type": "text", "id": "scene_caption", "label": "Scene caption", "default": "Will respond upon return." },
+    { "type": "text", "id": "footnote", "label": "Bottom note", "default": "Printed to order. Just for you." },
+    { "type": "header", "content": "Postcard" },
+    { "type": "image_picker", "id": "postcard_image", "label": "Postcard photo", "info": "Leave empty for the Calmer Place mountains. Landscape images work best." },
+    { "type": "image_picker", "id": "postcard_stamp", "label": "Stamp image", "info": "Leave empty for the moon miner." },
+    { "type": "text", "id": "postcard_note", "label": "Handwritten note", "default": "Wish you weren't here." },
+    { "type": "text", "id": "postcard_signoff", "label": "Second line", "default": "In the best way possible." }
+  ],
+  "blocks": [{ "type": "piece", "name": "Contact sheet piece", "limit": 3, "settings": [
+    { "type": "product", "id": "product", "label": "Product" },
+    { "type": "text", "id": "note", "label": "Short caption", "default": "In rotation" }
+  ] }],
+  "presets": [{ "name": "Cinematic campaign" }]
+}
+{% endschema %}

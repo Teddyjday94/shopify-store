@@ -1,0 +1,70 @@
+{%- liquid
+  assign is_contact_page = false
+  if request.page_type == 'page' and page.handle == 'contact'
+    assign is_contact_page = true
+  endif
+-%}
+<section class="section section--tight mw-contact-section">
+  <div class="page-width{% if is_contact_page %} mw-contact-layout{% else %} page-narrow{% endif %}">
+    {%- if is_contact_page -%}
+      <div class="mw-contact-intro">
+        <p class="mw-contact-kicker"><span aria-hidden="true"></span>{{ section.settings.kicker | escape }}</p>
+        <h1 class="mw-contact-heading">{{ page.title | escape }}</h1>
+        <p class="mw-contact-message">{{ section.settings.introduction | escape }}</p>
+        {%- if page.content != blank -%}
+          <div class="rte mw-contact-richtext">{{ page.content }}</div>
+        {%- endif -%}
+        <div class="mw-contact-identity">
+          <span class="mw-contact-identity__glyph" aria-hidden="true">✧</span>
+          <span><strong>{{ section.settings.world_label | escape }}</strong><small>{{ section.settings.world_caption | escape }}</small></span>
+        </div>
+      </div>
+    {%- endif -%}
+    <div class="box mw-contact-form-shell">
+      <div class="mw-contact-form-shell__eyebrow"><span class="mw-contact-form-shell__dot" aria-hidden="true"></span>{{ section.settings.form_eyebrow | escape }} <span aria-hidden="true"> / 001</span></div>
+      <dl class="kv label mw-contact-meta">
+        <dt>To:</dt><dd>Elsewhere Apparel Co.</dd>
+        <dt>Re:</dt><dd>{{ section.settings.subject | escape }}</dd>
+      </dl>
+      <hr class="rule mw-contact-rule">
+      {%- form 'contact', id: 'ContactForm' -%}
+        {%- if form.posted_successfully? -%}
+          <p class="notice" role="status">{{ 'contact.success' | t }}</p>
+        {%- elsif form.errors -%}
+          <p class="notice notice--error" role="alert">{{ form.errors | default_errors }}</p>
+        {%- endif -%}
+        <div class="mw-contact-fields">
+          <div class="field">
+            <label class="label" for="ContactName">{{ 'contact.name' | t }}</label>
+            <input class="input" id="ContactName" type="text" name="contact[name]" autocomplete="name" value="{{ form.name | escape }}">
+          </div>
+          <div class="field">
+            <label class="label" for="ContactEmail">{{ 'contact.email' | t }}</label>
+            <input class="input" id="ContactEmail" type="email" name="contact[email]" autocomplete="email" required value="{{ form.email | escape }}">
+          </div>
+          <div class="field">
+            <label class="label" for="ContactBody">{{ 'contact.message' | t }}</label>
+            <textarea class="input" id="ContactBody" name="contact[body]" required>{{ form.body | escape }}</textarea>
+          </div>
+          <button class="btn mw-contact-send" type="submit">{{ 'contact.send' | t }} <span aria-hidden="true">↗</span></button>
+        </div>
+      {%- endform -%}
+      <div class="mw-contact-form-shell__foot"><span aria-hidden="true">✦</span> {{ section.settings.form_note | escape }}</div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Contact form",
+  "settings": [
+    { "type": "text", "id": "subject", "label": "Subject line", "default": "A question, probably" },
+    { "type": "text", "id": "kicker", "label": "Heading eyebrow", "default": "OPEN TRANSMISSION / ELSEWHERE" },
+    { "type": "textarea", "id": "introduction", "label": "Contact introduction", "default": "Questions about an order, a design, or your next favorite piece? Send a message from your world to ours." },
+    { "type": "text", "id": "world_label", "label": "Brand marker", "default": "A DIRECT LINE BETWEEN WORLDS" },
+    { "type": "text", "id": "world_caption", "label": "Brand caption", "default": "Every story starts somewhere." },
+    { "type": "text", "id": "form_eyebrow", "label": "Form eyebrow", "default": "NEW TRANSMISSION" },
+    { "type": "text", "id": "form_note", "label": "Form note", "default": "Made elsewhere. Worn right here." }
+  ],
+  "presets": [{ "name": "Contact form" }]
+}
+{% endschema %}

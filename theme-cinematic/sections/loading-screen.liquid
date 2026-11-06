@@ -1,0 +1,570 @@
+{%- comment -%}
+  Elsewhere cinematic loading screen.
+  Add to layout/theme.liquid directly after the opening <body> tag:
+    {% section 'loading-screen' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign s = section.settings
+  assign has_video = false
+  if s.video != blank or s.video_url != blank
+    assign has_video = true
+  endif
+-%}
+
+{%- if s.enabled and has_video -%}
+  <style>
+    html.mw-loader-lock { overflow: hidden; }
+    #mw-loader {
+      --mw-bar: clamp(44px, 9vh, 96px);
+      --mw-gold: #e8bd5c;
+      --mw-gold-deep: #b8862f;
+      --mw-red: #c4221a;
+      --mw-p: 0;
+      position: fixed;
+      inset: 0;
+      z-index: 2147483000;
+      overflow: hidden;
+      background: {{ s.background }};
+      color: var(--mw-gold);
+      font-family: Georgia, 'Times New Roman', serif;
+      transition: background-color 0.7s ease 0.35s;
+    }
+
+    /* Red glow breathing behind the logo */
+    #mw-loader .mw-loader__glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 45% 40% at 50% 48%, rgba(196, 34, 26, 0.32), transparent 70%);
+      animation: mw-glow 3.2s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    /* Video stage: sized to the 3:2 video, between the letterbox bars */
+    #mw-loader .mw-loader__stage {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      {%- if s.fit == 'cover' %}
+      width: 100vw;
+      height: 100vh;
+      {%- else %}
+      width: min(100vw, calc((100vh - 2 * var(--mw-bar)) * 1.5));
+      aspect-ratio: 3 / 2;
+      {%- endif %}
+      transform: translate(-50%, -50%);
+      transition: transform 1s cubic-bezier(0.7, 0, 0.84, 0), filter 1s ease-in, opacity 0.9s ease-in;
+      -webkit-mask-image: radial-gradient(ellipse 50% 50% at center, #000 72%, transparent 100%);
+      mask-image: radial-gradient(ellipse 50% 50% at center, #000 72%, transparent 100%);
+    }
+    #mw-loader .mw-loader__video {
+      width: 100%;
+      height: 100%;
+      object-fit: {{ s.fit }};
+      display: block;
+      opacity: 0;
+      animation: mw-reveal 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+    }
+
+    #mw-loader .mw-loader__embers {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0;
+      animation: mw-fade-in 1.5s ease 0.6s forwards;
+      transition: opacity 0.6s ease;
+    }
+
+    #mw-loader .mw-loader__grain {
+      position: absolute;
+      inset: -50%;
+      opacity: 0.07;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      animation: mw-grain 0.9s steps(6) infinite;
+    }
+
+    /* Letterbox bars */
+    #mw-loader .mw-loader__bar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: var(--mw-bar);
+      background: #000;
+      z-index: 2;
+      transition: transform 0.95s cubic-bezier(0.76, 0, 0.24, 1) 0.1s;
+    }
+    #mw-loader .mw-loader__bar--top { top: 0; }
+    #mw-loader .mw-loader__bar--bottom { bottom: 0; }
+    #mw-loader .mw-loader__line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(232, 189, 92, 0.15) 15%, rgba(232, 189, 92, 0.65) 50%, rgba(232, 189, 92, 0.15) 85%, transparent);
+      transform: scaleX(0);
+      animation: mw-draw 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+    }
+    #mw-loader .mw-loader__bar--top .mw-loader__line { bottom: 0; }
+    #mw-loader .mw-loader__bar--bottom .mw-loader__line { top: 0; }
+
+    /* Loading readout */
+    #mw-loader .mw-loader__hud {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      opacity: 0;
+      animation: mw-fade-in 0.8s ease 0.6s forwards;
+    }
+    #mw-loader .mw-loader__label {
+      font-size: 10px;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: rgba(232, 189, 92, 0.75);
+      padding-left: 0.42em;
+      white-space: nowrap;
+    }
+    #mw-loader .mw-loader__row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    #mw-loader .mw-loader__progress {
+      position: relative;
+      width: min(56vw, 420px);
+      height: 2px;
+      background: rgba(232, 189, 92, 0.14);
+      overflow: visible;
+    }
+    #mw-loader .mw-loader__fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: calc(var(--mw-p) * 100%);
+      background: linear-gradient(90deg, var(--mw-red), var(--mw-gold-deep) 55%, var(--mw-gold));
+      box-shadow: 0 0 10px rgba(232, 189, 92, 0.55), 0 0 22px rgba(196, 34, 26, 0.45);
+    }
+    #mw-loader .mw-loader__fill::after {
+      content: '';
+      position: absolute;
+      right: -3px;
+      top: 50%;
+      width: 6px;
+      height: 6px;
+      margin-top: -3px;
+      border-radius: 50%;
+      background: #fff3d6;
+      box-shadow: 0 0 8px 2px rgba(255, 220, 150, 0.9), 0 0 18px 4px rgba(232, 120, 60, 0.6);
+    }
+    #mw-loader .mw-loader__pct {
+      min-width: 3.2em;
+      font: 600 11px/1 ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+      letter-spacing: 0.18em;
+      color: var(--mw-gold);
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    #mw-loader .mw-loader__skip {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 7px 14px;
+      font: 600 10px/1 system-ui, sans-serif;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(232, 189, 92, 0.85);
+      background: transparent;
+      border: 1px solid rgba(232, 189, 92, 0.35);
+      border-radius: 999px;
+      cursor: pointer;
+      opacity: 0;
+      animation: mw-fade-in 0.5s ease 1.4s forwards;
+    }
+    #mw-loader .mw-loader__skip:hover,
+    #mw-loader .mw-loader__skip:focus-visible { background: rgba(196, 34, 26, 0.35); border-color: var(--mw-gold); outline: none; }
+
+    /* Exit: push through the logo while the letterbox opens onto the store */
+    #mw-loader.is-leaving { background-color: transparent; pointer-events: none; }
+    #mw-loader.is-leaving .mw-loader__stage {
+      transform: translate(-50%, -50%) scale(1.35);
+      filter: blur(8px) brightness(1.6);
+      opacity: 0;
+    }
+    #mw-loader.is-leaving .mw-loader__glow,
+    #mw-loader.is-leaving .mw-loader__grain,
+    #mw-loader.is-leaving .mw-loader__embers { opacity: 0; transition: opacity 0.6s ease; animation: none; }
+    #mw-loader.is-leaving .mw-loader__bar--top { transform: translateY(-101%); }
+    #mw-loader.is-leaving .mw-loader__bar--bottom { transform: translateY(101%); }
+
+    @keyframes mw-reveal {
+      0% { opacity: 0; filter: blur(12px) brightness(0.4); }
+      100% { opacity: 1; filter: blur(0) brightness(1); }
+    }
+    @keyframes mw-draw { to { transform: scaleX(1); } }
+    @keyframes mw-fade-in { to { opacity: 1; } }
+    @keyframes mw-glow { from { opacity: 0.45; } to { opacity: 1; } }
+    @keyframes mw-grain {
+      0% { transform: translate(0, 0); }
+      20% { transform: translate(-4%, 3%); }
+      40% { transform: translate(3%, -5%); }
+      60% { transform: translate(-6%, -2%); }
+      80% { transform: translate(5%, 4%); }
+      100% { transform: translate(-2%, 6%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #mw-loader *, #mw-loader *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; }
+      #mw-loader .mw-loader__grain, #mw-loader .mw-loader__embers { display: none; }
+      #mw-loader.is-leaving .mw-loader__stage { transform: translate(-50%, -50%); filter: none; }
+    }
+  </style>
+
+  <div
+    id="mw-loader"
+    data-frequency="{{ s.frequency }}"
+    data-max="{{ s.max_seconds }}"
+    data-design-mode="{{ request.design_mode }}"
+    data-embers="{{ s.show_embers }}"
+  >
+    <div class="mw-loader__glow" aria-hidden="true"></div>
+    <div class="mw-loader__stage" aria-hidden="true">
+      {%- if s.video != blank -%}
+        {{
+          s.video
+          | video_tag:
+            autoplay: true,
+            muted: true,
+            loop: false,
+            controls: false,
+            playsinline: true,
+            preload: 'auto',
+            class: 'mw-loader__video',
+            image_size: '1280x'
+        }}
+      {%- else -%}
+        <video
+          class="mw-loader__video"
+          src="{{ s.video_url | escape }}"
+          {% if s.poster != blank %}poster="{{ s.poster | image_url: width: 1280 }}"{% endif %}
+          autoplay
+          muted
+          playsinline
+          preload="auto"
+        ></video>
+      {%- endif -%}
+    </div>
+    {%- if s.show_embers -%}
+      <canvas class="mw-loader__embers" aria-hidden="true"></canvas>
+    {%- endif -%}
+    <div class="mw-loader__grain" aria-hidden="true"></div>
+
+    <div class="mw-loader__bar mw-loader__bar--top">
+      <span class="mw-loader__line" aria-hidden="true"></span>
+      {%- if s.show_skip -%}
+        <button type="button" class="mw-loader__skip">Skip</button>
+      {%- endif -%}
+    </div>
+    <div class="mw-loader__bar mw-loader__bar--bottom">
+      <span class="mw-loader__line" aria-hidden="true"></span>
+      <div class="mw-loader__hud">
+        <span class="mw-loader__label">{{ s.loading_text | escape }}</span>
+        <div class="mw-loader__row">
+          <div
+            class="mw-loader__progress"
+            role="progressbar"
+            aria-label="Loading Elsewhere Apparel Co."
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+          >
+            <span class="mw-loader__fill"></span>
+          </div>
+          <span class="mw-loader__pct">0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var el = document.getElementById('mw-loader');
+      if (!el) return;
+
+      var KEY = 'mwLoaderShown';
+      var designMode = el.dataset.designMode === 'true';
+      var oncePerSession = el.dataset.frequency === 'session' && !designMode;
+
+      try {
+        if (oncePerSession && sessionStorage.getItem(KEY)) {
+          el.parentNode.removeChild(el);
+          return;
+        }
+      } catch (e) {}
+
+      var root = document.documentElement;
+      root.classList.add('mw-loader-lock');
+
+      var video = el.querySelector('video');
+      var bar = el.querySelector('.mw-loader__progress');
+      var pctEl = el.querySelector('.mw-loader__pct');
+      var labelEl = el.querySelector('.mw-loader__label');
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var maxMs = (parseFloat(el.dataset.max) || 8) * 1000;
+      var pageLoaded = document.readyState === 'complete';
+      var videoDone = false;
+      var forced = false;
+      var leaving = false;
+      var shown = 0;
+      var imgFrac = 0;
+      var lastImgCheck = 0;
+      var lastPct = -1;
+
+      /* ---------- Real progress: page resources + video playback ---------- */
+      function checkImages(now) {
+        if (now - lastImgCheck < 200) return;
+        lastImgCheck = now;
+        var imgs = document.images, total = 0, done = 0;
+        for (var i = 0; i < imgs.length; i++) {
+          if (imgs[i].loading === 'lazy') continue;
+          total++;
+          if (imgs[i].complete) done++;
+        }
+        imgFrac = total ? done / total : 1;
+      }
+      function pageFrac() {
+        if (pageLoaded) return 1;
+        var base = document.readyState === 'loading' ? 0.08 : 0.4;
+        return Math.min(0.94, base + (0.94 - base) * imgFrac);
+      }
+      function videoFrac() {
+        if (videoDone || !video) return 1;
+        if (video.duration && isFinite(video.duration)) return Math.min(1, video.currentTime / video.duration);
+        return 0;
+      }
+
+      function tick(now) {
+        if (leaving) return;
+        checkImages(now);
+        var target = forced ? 1 : 0.55 * pageFrac() + 0.45 * videoFrac();
+        var ease = forced ? 0.18 : 0.08;
+        shown = Math.max(shown, shown + (target - shown) * ease);
+        if (target >= 1 && shown > 0.995) shown = 1;
+        var pct = Math.floor(shown * 100);
+        el.style.setProperty('--mw-p', shown.toFixed(4));
+        if (pct !== lastPct) {
+          lastPct = pct;
+          if (pctEl) pctEl.textContent = pct + '%';
+          if (bar) bar.setAttribute('aria-valuenow', pct);
+        }
+        if (shown >= 1) { setTimeout(leave, 250); return; }
+        requestAnimationFrame(tick);
+      }
+
+      /* ---------- Embers ---------- */
+      var embersRunning = false;
+      function startEmbers() {
+        var canvas = el.querySelector('.mw-loader__embers');
+        if (!canvas || reduceMotion || !canvas.getContext) return;
+        var ctx = canvas.getContext('2d');
+        var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        var w, h, parts = [];
+        function size() {
+          w = canvas.width = Math.round(window.innerWidth * dpr);
+          h = canvas.height = Math.round(window.innerHeight * dpr);
+        }
+        size();
+        window.addEventListener('resize', size);
+        function sprite(r, g, b) {
+          var c = document.createElement('canvas'), s = 32;
+          c.width = c.height = s;
+          var x = c.getContext('2d'), gr = x.createRadialGradient(s / 2, s / 2, 0, s / 2, s / 2, s / 2);
+          gr.addColorStop(0, 'rgba(255,245,220,1)');
+          gr.addColorStop(0.25, 'rgba(' + r + ',' + g + ',' + b + ',0.9)');
+          gr.addColorStop(1, 'rgba(' + r + ',' + g + ',' + b + ',0)');
+          x.fillStyle = gr;
+          x.fillRect(0, 0, s, s);
+          return c;
+        }
+        var sprites = [sprite(232, 189, 92), sprite(214, 60, 30), sprite(255, 150, 60)];
+        var count = window.innerWidth < 700 ? 34 : 70;
+        function spawn(p, initial) {
+          p.x = Math.random() * w;
+          p.y = initial ? Math.random() * h : h + 20 * dpr;
+          p.vy = -(0.25 + Math.random() * 0.9) * dpr;
+          p.vx = (Math.random() - 0.5) * 0.3 * dpr;
+          p.size = (4 + Math.random() * 10) * dpr;
+          p.life = 0;
+          p.max = 240 + Math.random() * 320;
+          p.phase = Math.random() * Math.PI * 2;
+          p.img = sprites[(Math.random() * sprites.length) | 0];
+          return p;
+        }
+        for (var i = 0; i < count; i++) parts.push(spawn({}, true));
+        var last = performance.now();
+        embersRunning = true;
+        (function frame(now) {
+          if (!embersRunning) return;
+          var dt = Math.min(3, (now - last) / 16.67);
+          last = now;
+          ctx.clearRect(0, 0, w, h);
+          ctx.globalCompositeOperation = 'lighter';
+          for (var i = 0; i < parts.length; i++) {
+            var p = parts[i];
+            p.life += dt;
+            p.x += (p.vx + Math.sin(p.phase + p.life * 0.03) * 0.35 * dpr) * dt;
+            p.y += p.vy * dt;
+            var t = p.life / p.max;
+            var a = t < 0.15 ? t / 0.15 : t > 0.7 ? Math.max(0, (1 - t) / 0.3) : 1;
+            if (t >= 1 || p.y < -30) { spawn(p, false); continue; }
+            ctx.globalAlpha = a * 0.85;
+            ctx.drawImage(p.img, p.x - p.size / 2, p.y - p.size / 2, p.size, p.size);
+          }
+          requestAnimationFrame(frame);
+        })(last);
+      }
+
+      /* ---------- Exit ---------- */
+      function leave() {
+        if (leaving) return;
+        leaving = true;
+        try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+        el.style.setProperty('--mw-p', '1');
+        if (pctEl) pctEl.textContent = '100%';
+        if (labelEl) labelEl.textContent = 'Welcome';
+        el.classList.add('is-leaving');
+        setTimeout(function () { root.classList.remove('mw-loader-lock'); }, 350);
+        setTimeout(function () {
+          embersRunning = false;
+          if (video) { try { video.pause(); } catch (e) {} }
+          if (el.parentNode) el.parentNode.removeChild(el);
+        }, reduceMotion ? 400 : 1200);
+      }
+
+      function finishVideo() { videoDone = true; }
+
+      window.addEventListener('load', function () { pageLoaded = true; });
+
+      if (video && !reduceMotion) {
+        video.muted = true;
+        video.addEventListener('ended', finishVideo);
+        video.addEventListener('error', finishVideo);
+        var attempt = video.play && video.play();
+        // Autoplay blocked (e.g. iOS Low Power Mode): show the still frame briefly.
+        if (attempt && attempt.catch) attempt.catch(function () { setTimeout(finishVideo, 1200); });
+      } else {
+        if (video) video.removeAttribute('autoplay');
+        setTimeout(finishVideo, 1200);
+      }
+
+      if (el.dataset.embers === 'true') startEmbers();
+      requestAnimationFrame(tick);
+
+      // Never hold the page longer than the max time: fill the bar quickly and exit.
+      // The timer fallback covers background tabs, where animation frames are paused.
+      setTimeout(function () {
+        forced = true;
+        setTimeout(leave, 1500);
+      }, maxMs);
+
+      var skip = el.querySelector('.mw-loader__skip');
+      if (skip) skip.addEventListener('click', leave);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') leave(); });
+    })();
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Loading screen",
+  "class": "mw-loader-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enabled",
+      "label": "Show loading screen",
+      "default": true
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video",
+      "info": "Upload the loader video (many-worlds-loader.mp4)."
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Or video URL",
+      "info": "Used only if no video is selected above. Paste a Content > Files link.",
+      "default": "https://cdn.shopify.com/videos/c/vp/8b266f75013c4b56909938907e6f3429/8b266f75013c4b56909938907e6f3429.HD-720p-1.6Mbps-100232770.mp4"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster",
+      "label": "Poster image (for video URL only)"
+    },
+    {
+      "type": "text",
+      "id": "loading_text",
+      "label": "Loading text",
+      "default": "Entering the worlds"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_embers",
+      "label": "Floating embers",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "frequency",
+      "label": "When to show",
+      "options": [
+        { "value": "session", "label": "Once per visit" },
+        { "value": "always", "label": "Every page load" }
+      ],
+      "default": "session"
+    },
+    {
+      "type": "range",
+      "id": "max_seconds",
+      "label": "Maximum time on screen",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "unit": "s",
+      "default": 8
+    },
+    {
+      "type": "select",
+      "id": "fit",
+      "label": "Video fit",
+      "options": [
+        { "value": "contain", "label": "Show whole logo" },
+        { "value": "cover", "label": "Fill screen (may crop)" }
+      ],
+      "default": "contain"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_skip",
+      "label": "Show Skip button",
+      "default": true
+    }
+  ]
+}
+{% endschema %}
