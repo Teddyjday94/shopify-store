@@ -42,7 +42,8 @@ POSTER = dict(blueprint=282, provider=234, ratio=0.75,
                       '18″ x 24″ / Matte': 2800, '24″ x 36″ / Matte': 3800},
               features=["Museum-grade matte paper, 175gsm", "Archival inks, no glare",
                         "Ships rolled in a protective tube", "Frame not included"])
-DESKMAT = dict(blueprint=488, provider=1, ratio=9921 / 5197,
+# Desk mats use the AI-extended panoramas in designs/mat-hd (2:1); a design without one gets no desk mat.
+DESKMAT = dict(blueprint=488, provider=1, ratio=1776 / 896,
                prices={'12" × 18"': 2800, '12" × 22"': 3000, '16" × 32"': 4000},
                features=["Smooth polyester top for mouse and pen", "Non-slip natural rubber base, 4mm",
                          "Stitched edges that will not fray", "Sized for laptop, keyboard or full setup"])
@@ -95,7 +96,9 @@ def specs():
             yield "posters", POSTER, f"{name} Poster", f"print-wall/{slug}-poster.jpg", \
                 coll + ["accessory", "home", "poster", "wall art"], \
                 f"The {name} artwork as a matte art print, in four sizes from 11×14 to 24×36."
-            yield "deskmats", DESKMAT, f"{name} Desk Mat", f"print-wall/{slug}-deskmat.jpg", \
+            if not os.path.exists(os.path.join(DESIGNS, "mat-hd", f"{slug}.jpg")):
+                continue
+            yield "deskmats", DESKMAT, f"{name} Desk Mat", f"mat-hd/{slug}.jpg", \
                 coll + ["accessory", "home", "desk mat"], \
                 f"The {name} artwork across a full desk mat, in three sizes."
     for slug, name, _, line in RELATABLE:
