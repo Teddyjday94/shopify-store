@@ -1,4 +1,4 @@
-// Print artwork for the Many Worlds Supply Co. launch products (originally Elsewhere Supply Co.).
+// Print artwork for the Elsewhere Apparel Co. launch products (formerly Elsewhere Supply Co., then Many Worlds Supply Co.).
 // Each design is plain HTML/SVG rendered to a transparent PNG by render.js.
 // `width` is the CSS width of the artwork; `scale` multiplies it to the final pixel width.
 
@@ -92,7 +92,7 @@ const designs = [
       <div class="label">
         <div class="row">
           <div style="font-size:24px;line-height:1.35">
-            <b>FROM:</b> MANY WORLDS SUPPLY CO.<br>
+            <b>FROM:</b> ELSEWHERE APPAREL CO.<br>
             <b>TO:</b> WHOEVER KEEPS ASKING
           </div>
           <div class="stamp">PRIORITY: LOW</div>

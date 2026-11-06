@@ -1,7 +1,8 @@
-"""Swap rebranded print files (Elsewhere -> Many Worlds) onto existing Printify products and republish.
+"""Swap rebranded print files onto existing Printify products and republish.
 
+Current rename: Many Worlds Supply Co. -> Elsewhere Apparel Co. (the earlier one was Elsewhere -> Many Worlds).
 Every product image whose file name is listed below gets the new file in the same spot (x, y, scale, angle).
-The Elsewhere beanie is also renamed. Products already swapped are recorded in rebrand_done.json, so the
+The wordmark beanie is also renamed. Products already swapped are recorded in rebrand2_done.json, so the
 script can be re-run after a rate limit.
 
 Usage:
@@ -18,11 +19,12 @@ from pathlib import Path
 from create_products import Printify
 
 RAW = "https://raw.githubusercontent.com/Teddyjday94/shopify-store/{commit}/designs/{path}"
-DONE = Path(__file__).with_name("rebrand_done.json")
+DONE = Path(__file__).with_name("rebrand2_done.json")
 
 SWAPS = {}
 for slug in ["01-lead-the-charge", "02-rise-from-ruin", "03-sleep-paralysis-club", "04-one-way-ferry",
-             "05-born-ready", "06-fallen-not-finished", "07-above-it-all", "08-going-with-the-flow"]:
+             "05-born-ready", "06-fallen-not-finished", "07-above-it-all", "08-going-with-the-flow",
+             "09-long-live-the-king", "10-queen-forever", "11-nine-tails", "12-masterless"]:
     for side in ("back", "front"):
         SWAPS[f"{slug}-{side}.png"] = f"print-drop4/{slug}-{side}.png"
 for slug in ["01-on-the-naughty-list-again", "02-suck-it-up-buttercup", "03-dear-santa-bring-bourbon",
@@ -34,15 +36,16 @@ for slug in ["01-in-my-own-lane", "02-butterfly-effect", "03-lucky-charm", "04-s
         SWAPS[f"{slug}-back-{ink}.png"] = f"print-back/{slug}-back-{ink}.png"
 SWAPS["02-ships-6-7-business-days-black.png"] = "print/02-ships-6-7-business-days-black.png"
 for ink in ("black", "white"):
-    SWAPS[f"09-elsewhere-beanie-{ink}.png"] = f"print/09-many-worlds-beanie-{ink}.png"
+    SWAPS[f"09-many-worlds-beanie-{ink}.png"] = f"print/09-elsewhere-beanie-{ink}.png"
+for mug in ["21-not-ai-just-tired", "22-same-chaos-different-day", "23-do-not-perceive-me", "24-currently-elsewhere"]:
+    SWAPS[f"{mug}-mug.png"] = f"print-home/{mug}-mug.png"
 
-RENAME = {"Elsewhere Cuffed Beanie": dict(
-    title="Many Worlds Cuffed Beanie",
-    description=("<p>The Many Worlds wordmark, stitched across a classic cuffed knit beanie.</p><ul>"
+RENAME = {"Many Worlds Cuffed Beanie": dict(
+    title="Elsewhere Cuffed Beanie",
+    description=("<p>The Elsewhere wordmark, stitched across a classic cuffed knit beanie.</p><ul>"
                  "<li>Embroidered, not printed</li><li>Soft acrylic rib knit with a fold-over cuff</li>"
-                 "<li>One size, adjustable</li><li>Made to order just for you</li></ul><p><em>One of many.</em></p>"),
-    tags=["beanie", "embroidered", "hat", "many worlds"])}
-
+                 "<li>One size, adjustable</li><li>Made to order just for you</li></ul><p><em>Currently elsewhere.</em></p>"),
+    tags=["beanie", "embroidered", "hat", "elsewhere"])}
 
 def main():
     ap = argparse.ArgumentParser()
@@ -61,7 +64,7 @@ def main():
                 "file_name": Path(path).name, "url": RAW.format(commit=args.commit, path=path)})["id"]
         return uploads[path]
 
-    for page in (1, 2, 3, 4):
+    for page in range(1, 8):
         for p in api.get(f"/shops/{shop}/products.json?limit=50&page={page}")["data"]:
             names = {i["name"] for a in p["print_areas"] for ph in a["placeholders"] for i in ph["images"]}
             hits = sorted(names & SWAPS.keys())

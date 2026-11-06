@@ -28,7 +28,7 @@ const front = (lines) => `<!doctype html><html><head>${head}<style>
   #art{display:inline-block;padding:10px;color:#f6efe2}
   .t{font-family:'Anton';font-size:120px;line-height:.92;text-transform:uppercase;white-space:nowrap}
   .l{font:700 30px 'Space Mono';letter-spacing:.3em;margin-top:16px;color:#d4232b}
-</style></head><body><div id="art"><div class="t">${lines.join('<br>')}</div><div class="l">MANY WORLDS / CHRISTMAS</div></div></body></html>`;
+</style></head><body><div id="art"><div class="t">${lines.join('<br>')}</div><div class="l">ELSEWHERE / CHRISTMAS</div></div></body></html>`;
 
 const hat = (lines) => `<!doctype html><html><head>${head}<style>
   #art{display:inline-block;padding:8px;font-family:'Anton';font-size:190px;line-height:1;letter-spacing:.03em;

@@ -28,7 +28,7 @@ const head = `<style>
 </style>`;
 
 const sloganMug = (lines) => {
-  const side = `<div class="side"><div class="t">${lines.join('<br>')}</div><div class="l">MANY WORLDS SUPPLY CO.</div></div>`;
+  const side = `<div class="side"><div class="t">${lines.join('<br>')}</div><div class="l">ELSEWHERE APPAREL CO.</div></div>`;
   return `<!doctype html><html><head>${head}<style>
   #art{width:${MUG_W}px;height:${MUG_H}px;display:flex;justify-content:space-around;align-items:center;color:#111}
   .side{width:42%;text-align:center}
