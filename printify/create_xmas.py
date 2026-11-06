@@ -7,6 +7,7 @@ would pick up any other garment color. Hats get the slogan in white on the front
 Usage:
     python3 printify/create_xmas.py            # dry run
     python3 printify/create_xmas.py --apply    # create + publish
+    python3 printify/create_xmas.py --apply --refresh   # existing tees/hoodies: swap in the current back print
 """
 
 import argparse
@@ -70,9 +71,32 @@ def hat_place(name, w, h, fill=0.85):
     return dict(x=0.5, y=0.5, scale=round(fill * min(1.0, (h / w) / aspect(name)), 4))
 
 
+def refresh(api, shop, pid, back_id, name):
+    """Point an existing product's back print at new artwork, re-placed for its aspect; the front stays."""
+    path = f"/shops/{shop}/products/{pid}.json"
+    p = api.get(path)
+    w, h = placeholder_sizes(api, p["blueprint_id"], p["print_provider_id"])["back"]
+    areas = []
+    for area in p["print_areas"]:
+        phs = []
+        for ph in area["placeholders"]:
+            if not ph["images"]:
+                continue
+            i = ph["images"][0]
+            img = dict(id=back_id, angle=0, **back_place(name, w, h)) if ph["position"] == "back" else \
+                dict(id=i["id"], x=i["x"], y=i["y"], scale=i["scale"], angle=i["angle"])
+            phs.append({"position": ph["position"], "images": [img]})
+        areas.append({"variant_ids": area["variant_ids"], "placeholders": phs})
+    api.call("PUT", path, json={"print_areas": areas})
+    api.post(f"{path[:-5]}/publish.json", {
+        "title": False, "description": False, "images": True, "variants": False,
+        "tags": False, "keyFeatures": False, "shipping_template": False})
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--apply", action="store_true")
+    ap.add_argument("--refresh", action="store_true", help="swap the back print on existing tees and hoodies")
     ap.add_argument("--commit", help="git commit holding designs/print-xmas (pushed to GitHub)")
     args = ap.parse_args()
     if args.apply and not args.commit:
@@ -80,7 +104,7 @@ def main():
 
     api = Printify(os.environ.get("PRINTIFY_API_TOKEN"))
     shop = next(s for s in api.get("/shops.json") if s.get("sales_channel") == "shopify")["id"]
-    existing = {p["title"] for page in (1, 2, 3, 4) for p in
+    existing = {p["title"]: p["id"] for page in (1, 2, 3, 4) for p in
                 api.get(f"/shops/{shop}/products.json?limit=50&page={page}")["data"]}
     uploads = {}
 
@@ -94,7 +118,13 @@ def main():
         for spec in (TEE, HOODIE, HAT):
             title = f"{name} {spec['kind']}"
             if title in existing:
-                print(f"skip  {title}: already exists")
+                if args.refresh and spec is not HAT:
+                    print(f"{'swap' if args.apply else 'plan'}  {title}: new back print")
+                    if args.apply:
+                        refresh(api, shop, existing[title], image(f"{slug}-back.png"), f"{slug}-back.png")
+                        time.sleep(20)
+                else:
+                    print(f"skip  {title}: already exists")
                 continue
             catalog = api.get(f"/catalog/blueprints/{spec['blueprint']}/print_providers/{spec['provider']}/variants.json")["variants"]
             chosen = [v for v in catalog if v["options"].get("color") in spec["colors"]

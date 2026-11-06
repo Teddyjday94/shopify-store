@@ -63,7 +63,7 @@ function front(lines) {
 (async () => {
   fs.mkdirSync(OUT, { recursive: true });
   const browser = await chromium.launch();
-  const page = await (await browser.newContext({ viewport: { width: 1500, height: 2400 }, deviceScaleFactor: 2.5 })).newPage();
+  const page = await (await browser.newContext({ viewport: { width: 1500, height: 2400 }, deviceScaleFactor: 10 / 3 })).newPage();
   const only = process.argv.slice(2);
   for (const [name, title, line, lines] of designs.filter(([n]) => !only.length || only.includes(n))) {
     for (const [file, html] of [[`${name}-back.png`, back(name, title, line)], [`${name}-front.png`, front(lines)]]) {

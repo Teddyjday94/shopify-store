@@ -112,6 +112,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--apply", action="store_true")
     ap.add_argument("--refresh", action="store_true")
+    ap.add_argument("--only", nargs="+", metavar="SLUG", help="limit to these design slugs, e.g. 01 09")
     ap.add_argument("--commit", required=True, help="pushed commit holding designs/print-drop4")
     args = ap.parse_args()
     apply = args.apply
@@ -128,6 +129,8 @@ def main():
         return uploads[name]
 
     for slug, name, alt, tags, intro, line in DESIGNS:
+        if args.only and not any(slug.startswith(o) for o in args.only):
+            continue
         for spec in (TEE, HOODIE):
             title = f"{name} {spec['kind']}"
             back, front = f"{slug}-back.png", f"{slug}-front.png"
