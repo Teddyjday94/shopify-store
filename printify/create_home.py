@@ -63,12 +63,15 @@ def main():
     ap.add_argument("--commit", required=True)
     ap.add_argument("--apply", action="store_true")
     ap.add_argument("--refresh", action="store_true")
+    ap.add_argument("--only", nargs="+", metavar="TITLE", help="limit to products whose title starts with one of these")
     args = ap.parse_args()
     api = Printify(os.environ.get("PRINTIFY_API_TOKEN"))
     shop = next(s for s in api.get("/shops.json") if s.get("sales_channel") == "shopify")["id"]
     existing = {p["title"]: p for page in (1, 2, 3, 4) for p in
                 api.get(f"/shops/{shop}/products.json?limit=50&page={page}")["data"]}
     for spec, title, art, tags, line, intro in specs():
+        if args.only and not title.startswith(tuple(args.only)):
+            continue
         if title in existing:
             if not (args.refresh and ("christmas" in tags or "relatable" in tags)):
                 print(f"skip  {title}")

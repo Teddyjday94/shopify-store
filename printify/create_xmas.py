@@ -97,6 +97,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--apply", action="store_true")
     ap.add_argument("--refresh", action="store_true", help="swap the back print on existing tees and hoodies")
+    ap.add_argument("--only", nargs="+", metavar="SLUG", help="limit to these design slugs, e.g. 01 03")
     ap.add_argument("--commit", help="git commit holding designs/print-xmas (pushed to GitHub)")
     args = ap.parse_args()
     if args.apply and not args.commit:
@@ -115,6 +116,8 @@ def main():
         return uploads[name]
 
     for slug, name, tags, intro, line in DESIGNS:
+        if args.only and not slug.startswith(tuple(args.only)):
+            continue
         for spec in (TEE, HOODIE, HAT):
             title = f"{name} {spec['kind']}"
             if title in existing:
