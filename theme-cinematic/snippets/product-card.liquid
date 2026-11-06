@@ -44,7 +44,7 @@
   endif
 -%}
 <a class="card outfit-frame" href="{{ product.url }}">
-  <div class="outfit-frame__rail label"><span>{% if index %}Piece {{ index | prepend: '00' | slice: -3, 3 }}{% else %}Many Worlds issue{% endif %}</span><span>{{ product.type | default: 'In rotation' | escape }}</span></div>
+  <div class="outfit-frame__rail label"><span>{% if index %}Piece {{ index | prepend: '00' | slice: -3, 3 }}{% else %}Elsewhere issue{% endif %}</span><span>{{ product.type | default: 'In rotation' | escape }}</span></div>
   <div class="card__media">
     {%- if product.available == false -%}
       <span class="card__tag stamp">{{ 'products.sold_out' | t }}</span>

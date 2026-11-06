@@ -1,0 +1,61 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "cinematic": {
+      "type": "mw-cinematic-home",
+      "blocks": {
+        "immortalized": {
+          "type": "world",
+          "settings": {
+            "collection": "the-immortalized-collection",
+            "title": "THE IMMORTALIZED",
+            "category": "World 004",
+            "subtitle": "Legends without an ending"
+          }
+        },
+        "ownlane": {
+          "type": "world",
+          "settings": {
+            "collection": "own-lane",
+            "title": "OWN LANE",
+            "category": "Unfiltered",
+            "subtitle": "For the ones who move differently"
+          }
+        },
+        "holiday": {
+          "type": "world",
+          "settings": {
+            "collection": "the-christmas-collection",
+            "title": "AFTER DARK",
+            "category": "Seasonal World",
+            "subtitle": "Unexpected holiday energy"
+          }
+        }
+      },
+      "block_order": [
+        "immortalized",
+        "ownlane",
+        "holiday"
+      ],
+      "settings": {
+        "featured_collection": "the-immortalized-collection",
+        "heading_first": "CURRENTLY",
+        "heading_second": "ELSEWHERE.",
+        "heading_accent": "ONE CREW.",
+        "primary_label": "Explore collections",
+        "secondary_label": "Shop the new drop"
+      }
+    }
+  },
+  "order": [
+    "cinematic"
+  ]
+}

@@ -1,0 +1,44 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": "Default",
+  "presets": {
+    "Default": {
+      "color_paper": "#0C0B0E",
+      "color_ink": "#F1E5D1",
+      "color_accent": "#B83128",
+      "color_card": "#171416",
+      "tagline": "Apparel for other realities",
+      "card_show_second_image": true,
+      "card_tag": "Printed to order",
+      "color_pop_1": "#D6A674",
+      "color_pop_2": "#2E2428",
+      "color_pop_3": "#CA4635",
+      "color_pop_4": "#BE9469",
+      "animations": true,
+      "worlds_enabled": true,
+      "world_crossing": "shopify://shop_images/elsewhere-world-crossing.png",
+      "world_tide": "shopify://shop_images/elsewhere-world-tide.png",
+      "world_garden": "shopify://shop_images/elsewhere-world-garden.png",
+      "world_dunes": "shopify://shop_images/elsewhere-world-dunes.png",
+      "cinema_opening": true,
+      "cinema_parallax": true,
+      "cinema_grain": false,
+      "sections": {
+        "loading-screen": {
+          "type": "loading-screen",
+          "settings": {
+            "enabled": false
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,197 @@
+<footer class="footer">
+
+  {%- liquid
+    assign credits_scene = section.settings.credits_scene_image
+    if credits_scene == blank
+      assign credits_scene = settings.world_crossing
+    endif
+  -%}
+  <div class="mw-end-title mw-end-title--panorama">
+    <div class="mw-end-title__landscape" aria-hidden="true">
+      {%- if credits_scene != blank -%}
+        {{ credits_scene | image_url: width: 2200 | image_tag: class: 'mw-end-title__landscape-img', loading: 'lazy', widths: '750, 1150, 1600, 2200', sizes: '100vw', alt: '' }}
+      {%- else -%}
+        <img class="mw-end-title__landscape-img" src="https://cdn.shopify.com/s/files/1/0765/5086/5057/files/many-worlds-nine-tails-cinematic-hero.png?v=1793908475" width="1648" height="928" loading="lazy" alt="">
+      {%- endif -%}
+      <span class="mw-end-title__shadow"></span>
+      <span class="mw-end-title__light"></span>
+    </div>
+    <div class="page-width mw-end-title__frame">
+      <div class="mw-end-title__frame-top"><span>ELSEWHERE / AFTER THE CREDITS</span><span>AN OPEN ENDING — VOL. 001</span></div>
+      <div class="mw-end-title__layout">
+        <div class="mw-end-title__headline">
+          <p class="mw-end-title__eyebrow"><span class="mw-end-title__dash" aria-hidden="true"></span>{{ section.settings.credits_kicker | escape }}</p>
+          <h2>{{ section.settings.credits_heading | escape }} <em>{{ section.settings.credits_accent | escape }}</em></h2>
+        </div>
+        <div class="mw-end-title__aside">
+          <span class="mw-end-title__chapter">CHAPTER / ∞</span>
+          <p>{{ section.settings.credits_text | escape }}</p>
+          <a href="{{ routes.all_products_collection_url }}">{{ section.settings.credits_link_label | escape }} <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'up-right' %}</span></a>
+        </div>
+      </div>
+      <div class="mw-end-title__frame-bottom"><span>NO FINAL DESTINATION</span><span>KEEP EXPLORING <span aria-hidden="true"><span class="mw-ui-diamond" aria-hidden="true"></span></span></span></div>
+    </div>
+  </div>
+  <div class="page-width">
+    <div class="footer__grid">
+      <div>
+        <div class="box footer__reply">
+          <dl class="kv label">
+            <dt>Re:</dt><dd>{{ section.settings.reply_subject }}</dd>
+          </dl>
+          <hr class="rule rule--dashed" style="margin: 14px 0;">
+          <div class="rte">{{ section.settings.reply_body }}</div>
+        </div>
+
+        {%- if section.settings.show_newsletter -%}
+          <div style="margin-top: 22px;">
+            <p class="label" style="margin: 0 0 8px;">{{ section.settings.newsletter_heading }}</p>
+            {%- form 'customer', id: 'FooterNewsletter' -%}
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              {%- if form.posted_successfully? -%}
+                <p class="notice" role="status">{{ 'newsletter.success' | t }}</p>
+              {%- else -%}
+                {%- if form.errors -%}
+                  <p class="notice notice--error" role="alert">{{ form.errors | default_errors }}</p>
+                {%- endif -%}
+                <div class="inline-form">
+                  <label class="visually-hidden" for="FooterNewsletterEmail">{{ 'newsletter.label' | t }}</label>
+                  <input class="input" id="FooterNewsletterEmail" type="email" name="contact[email]" required
+                    autocomplete="email" placeholder="{{ 'newsletter.placeholder' | t }}">
+                  <button class="btn" type="submit">{{ 'newsletter.submit' | t }}</button>
+                </div>
+              {%- endif -%}
+            {%- endform -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- for block in section.blocks -%}
+        <div {{ block.shopify_attributes }}>
+          <p class="label" style="margin: 0 0 10px;">{{ block.settings.heading }}</p>
+          <ul>
+            {%- for link in block.settings.menu.links -%}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    <div class="footer__bottom label">
+      <span>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}</span>
+      <span>{{ section.settings.small_print }}</span>
+      <button class="motion-toggle" data-motion-toggle type="button" aria-pressed="false" hidden>Pause motion</button>
+    </div>
+  </div>
+
+  {%- if section.settings.show_wordmark -%}
+    {%- liquid
+      assign finale_product = section.settings.finale_product
+      if finale_product == blank
+        assign finale_product = all_products['nine-tails-hoodie']
+      endif
+      assign finale_collection = section.settings.finale_collection
+      if finale_collection == blank
+        assign finale_collection = collections['the-immortalized-collection']
+      endif
+    -%}
+    <section class="mw-footer-finale" aria-labelledby="MWFinaleTitle">
+      <div class="mw-footer-finale__atmosphere" aria-hidden="true">
+        <span class="mw-footer-finale__orbit mw-footer-finale__orbit--one"></span>
+        <span class="mw-footer-finale__orbit mw-footer-finale__orbit--two"></span>
+        <span class="mw-footer-finale__glow"></span>
+        <span class="mw-footer-finale__mist mw-footer-finale__mist--one"></span>
+        <span class="mw-footer-finale__mist mw-footer-finale__mist--two"></span>
+        <span class="mw-footer-finale__petal mw-footer-finale__petal--1"></span>
+        <span class="mw-footer-finale__petal mw-footer-finale__petal--2"></span>
+        <span class="mw-footer-finale__petal mw-footer-finale__petal--3"></span>
+        <span class="mw-footer-finale__petal mw-footer-finale__petal--4"></span>
+        <span class="mw-footer-finale__petal mw-footer-finale__petal--5"></span>
+      </div>
+      <div class="page-width mw-footer-finale__inner">
+        <div class="mw-footer-finale__eyebrow-row">
+          <span class="mw-footer-finale__chapter"><span aria-hidden="true"><span class="mw-ui-diamond" aria-hidden="true"></span></span> WORLD NO. 004 <span aria-hidden="true">/</span> ELSEWHERE APPAREL CO.</span>
+          <span class="mw-footer-finale__date">EST. 2026 <span aria-hidden="true">/</span> APPAREL FOR OTHER REALITIES</span>
+        </div>
+        <div class="mw-footer-finale__main">
+          <div class="mw-footer-finale__copy">
+            <span class="mw-footer-finale__overline"><span class="mw-footer-finale__redline" aria-hidden="true"></span> {{ section.settings.finale_kicker | escape }}</span>
+            <h2 class="mw-footer-finale__word" id="MWFinaleTitle">{{ section.settings.wordmark | escape }}</h2>
+            <div class="mw-footer-finale__signature"><span class="mw-footer-finale__signature-line" aria-hidden="true"></span> APPAREL CO. <span class="mw-footer-finale__signature-line" aria-hidden="true"></span></div>
+            <p class="mw-footer-finale__subtitle">{{ section.settings.finale_subtitle | escape }}</p>
+            <div class="mw-footer-finale__actions">
+              <a class="mw-footer-finale__cta" href="{{ finale_collection.url | default: routes.all_products_collection_url }}">{{ section.settings.finale_link_label | escape }} <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'right' %}</span></a>
+              {%- if finale_product != blank -%}
+                <a class="mw-footer-finale__product-link" href="{{ finale_product.url }}">DISCOVER THE NINE TAILS HOODIE <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'up-right' %}</span></a>
+              {%- endif -%}
+            </div>
+            <p class="mw-footer-finale__copy-note"><span aria-hidden="true"><span class="mw-ui-diamond" aria-hidden="true"></span></span> {{ section.settings.finale_bottom_line | escape }}</p>
+          </div>
+          <a class="mw-footer-finale__artwork" href="{{ finale_collection.url | default: routes.all_products_collection_url }}" aria-label="Explore {{ section.settings.finale_world_title | escape }} collection">
+            <div class="mw-footer-finale__poster">
+              {%- if section.settings.finale_image != blank -%}
+                {{ section.settings.finale_image | image_url: width: 1200 | image_tag: class: 'mw-footer-finale__poster-img', loading: 'lazy', widths: '460, 680, 900, 1200', sizes: '(min-width: 900px) 43vw, 88vw', alt: section.settings.finale_world_title }}
+              {%- else -%}
+                <img src="https://cdn.shopify.com/s/files/1/0765/5086/5057/files/many-worlds-nine-tails-cinematic-hero.png?v=1793908475" class="mw-footer-finale__poster-img" loading="lazy" decoding="async" width="1648" height="928" alt="">
+              {%- endif -%}
+              <span class="mw-footer-finale__poster-shade" aria-hidden="true"></span>
+              <span class="mw-footer-finale__frame-corner mw-footer-finale__frame-corner--tl" aria-hidden="true"></span>
+              <span class="mw-footer-finale__frame-corner mw-footer-finale__frame-corner--br" aria-hidden="true"></span>
+              <span class="mw-footer-finale__poster-top">THE WORLDS / VOL. 004 <span><span class="mw-ui-dot" aria-hidden="true"></span> IN FOCUS</span></span>
+              <span class="mw-footer-finale__poster-bottom"><span><small>FEATURED WORLD</small><strong>{{ section.settings.finale_world_title | escape }}</strong></span><span class="mw-footer-finale__poster-arrow" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'up-right' %}</span></span>
+            </div>
+            <span class="mw-footer-finale__plate"><span>THE NINE TAILS // 004</span><span>ENTER THE UNIVERSE <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'up-right' %}</span></span></span>
+          </a>
+        </div>
+        <div class="mw-footer-finale__closing">
+          <span>EAC <span aria-hidden="true"><span class="mw-ui-diamond" aria-hidden="true"></span></span> {{ 'now' | date: '%Y' }}</span>
+          <span class="mw-footer-finale__closing-middle">DIFFERENT STORIES. SAME UNIVERSE.</span>
+          <a href="{{ routes.root_url }}" aria-label="Back to the beginning">BACK TO THE BEGINNING <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'up' %}</span></a>
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "section-footer",
+  "settings": [
+    { "type": "text", "id": "credits_kicker", "label": "Cinematic credits eyebrow", "default": "Every ending opens another door" },
+    { "type": "text", "id": "credits_heading", "label": "Cinematic credits headline", "default": "THE STORY" },
+    { "type": "text", "id": "credits_accent", "label": "Cinematic credits accent", "default": "GOES ON." },
+    { "type": "text", "id": "credits_text", "label": "Cinematic credits copy", "default": "An entire universe is only one piece away." },
+    { "type": "image_picker", "id": "credits_scene_image", "label": "End credits background", "info": "Leave blank to use The Crossing world artwork." },
+    { "type": "text", "id": "credits_link_label", "label": "End credits button", "default": "Continue the journey" },
+    { "type": "text", "id": "reply_subject", "label": "Auto-reply subject", "default": "Out of office" },
+    { "type": "richtext", "id": "reply_body", "label": "Auto-reply message", "default": "<p>Thanks for stopping by. Everything here is printed to order, just for you, then shipped wherever you are. Questions? Reply anytime. We'll answer when we're back from elsewhere.</p>" },
+    { "type": "checkbox", "id": "show_newsletter", "label": "Show email signup", "default": true },
+    { "type": "text", "id": "newsletter_heading", "label": "Email signup heading", "default": "Get notified about new drops" },
+    { "type": "text", "id": "small_print", "label": "Small print", "default": "Made elsewhere. Worn here." },
+    { "type": "checkbox", "id": "show_wordmark", "label": "Show big wordmark", "default": true },
+    { "type": "text", "id": "wordmark", "label": "Wordmark", "default": "Elsewhere" },
+    { "type": "text", "id": "finale_kicker", "label": "Finale eyebrow", "default": "After the credits" },
+    { "type": "text", "id": "finale_subtitle", "label": "Finale subtitle", "default": "Every world begins with a story. Wear yours." },
+    { "type": "text", "id": "finale_link_label", "label": "Finale button", "default": "Explore another world" },
+    { "type": "text", "id": "finale_bottom_line", "label": "Finale bottom caption", "default": "An open door to the unexpected" },
+    { "type": "image_picker", "id": "finale_image", "label": "Featured world artwork", "info": "Defaults to the cinematic Nine Tails campaign photograph." },
+    { "type": "collection", "id": "finale_collection", "label": "Featured world collection" },
+    { "type": "product", "id": "finale_product", "label": "Featured product link" },
+    { "type": "text", "id": "finale_world_title", "label": "Featured world label", "default": "The Immortalized" }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Menu",
+      "limit": 2,
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Shop" },
+        { "type": "link_list", "id": "menu", "label": "Menu", "default": "footer" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

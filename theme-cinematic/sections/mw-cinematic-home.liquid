@@ -1,0 +1,189 @@
+
+{%- liquid
+  assign featured = section.settings.featured_collection
+  if featured == blank
+    assign featured = collections['the-immortalized-collection']
+  endif
+-%}
+<section class="mw-home" data-mw-home>
+  <div class="mw-hero">
+    {%- if section.settings.hero_image != blank -%}
+      {{ section.settings.hero_image | image_url: width: 2000 | image_tag: class: 'mw-hero__image', loading: 'eager', fetchpriority: 'high', widths: '760, 1100, 1500, 2000', sizes: '100vw', alt: '' }}
+    {%- else -%}
+      <img class="mw-hero__image" src="https://cdn.shopify.com/s/files/1/0765/5086/5057/files/many-worlds-nine-tails-cinematic-hero.png?v=1793908475" alt="" fetchpriority="high" width="1672" height="941">
+    {%- endif -%}
+    <div class="mw-hero__fade" aria-hidden="true"></div>
+    <div class="mw-hero__mist" aria-hidden="true"></div>
+    <div class="mw-hero__particles" aria-hidden="true"></div>
+    <div class="mw-shell mw-hero__inner">
+      <div class="mw-hero__copy">
+        <p class="mw-kicker mw-hero__kicker"><span class="mw-kicker__line"></span>{{ section.settings.eyebrow | escape }}</p>
+        <h1 class="mw-hero__title">{{ section.settings.heading_first | escape }}<br><span>{{ section.settings.heading_second | escape }}</span><br><em>{{ section.settings.heading_accent | escape }}</em></h1>
+        <p class="mw-hero__subtitle">{{ section.settings.subtitle | escape }}</p>
+        <div class="mw-actions">
+          <a class="mw-button mw-button--primary" href="#mw-worlds">{{ section.settings.primary_label | escape }} <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'right' %}</span></a>
+          <a class="mw-button mw-button--outline" href="{{ featured.url | default: routes.all_products_collection_url }}">{{ section.settings.secondary_label | escape }}</a>
+        </div>
+      </div>
+      <div class="mw-hero__foot"><span>{{ section.settings.hero_footnote | escape }}</span><a href="#mw-worlds">{{ section.settings.scroll_label | escape }} <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'down' %}</span></a></div>
+    </div>
+  </div>
+  <section class="mw-worlds mw-shell" id="mw-worlds" aria-labelledby="mw-worlds-heading">
+    <div class="mw-heading" data-mw-reveal>
+      <p class="mw-kicker">{{ section.settings.worlds_kicker | escape }}</p>
+      <h2 id="mw-worlds-heading">{{ section.settings.worlds_heading | escape }}</h2>
+      <p>{{ section.settings.worlds_subtitle | escape }}</p>
+    </div>
+    <div class="mw-world-grid">
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign world_collection = block.settings.collection
+        assign poster = block.settings.poster
+        if poster == blank
+          assign poster = world_collection.image
+        endif
+        if poster == blank
+          assign poster = world_collection.products.first.featured_image
+        endif
+      -%}
+      {%- if world_collection != blank -%}
+        <a class="mw-world mw-world--{{ forloop.index }}" href="{{ world_collection.url }}" data-mw-reveal {{ block.shopify_attributes }}>
+          {%- if poster != blank -%}
+            {{ poster | image_url: width: 1100 | image_tag: class: 'mw-world__image', loading: 'lazy', widths: '400, 650, 850, 1100', sizes: '(min-width: 850px) 33vw, 85vw', alt: '' }}
+          {%- endif -%}
+          <span class="mw-world__scrim" aria-hidden="true"></span>
+          <span class="mw-world__no">0{{ forloop.index }} / {{ block.settings.category | escape }}</span>
+          <span class="mw-world__body"><span class="mw-world__text"><span class="mw-world__title">{{ block.settings.title | default: world_collection.title | escape }}</span><span class="mw-world__subtitle">{{ block.settings.subtitle | escape }}</span></span><span class="mw-world__arrow" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'right' %}</span></span>
+        </a>
+      {%- endif -%}
+    {%- endfor -%}
+    </div>
+  </section>
+  <section class="mw-featured" aria-labelledby="mw-featured-heading">
+    <div class="mw-shell">
+      <div class="mw-featured__head" data-mw-reveal>
+        <div><p class="mw-kicker">{{ section.settings.featured_kicker | escape }}</p><h2 id="mw-featured-heading">{{ section.settings.featured_heading | escape }}</h2></div>
+        <a class="mw-textlink" href="{{ featured.url | default: routes.all_products_collection_url }}">{{ section.settings.featured_link_label | escape }} <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'up-right' %}</span></a>
+      </div>
+      <div class="mw-product-grid">
+        {%- for product in featured.products limit: 4 -%}
+          <a class="mw-product" href="{{ product.url }}" data-mw-reveal>
+            <span class="mw-product__media">
+              {%- if product.featured_image -%}
+                {{ product.featured_image | image_url: width: 880 | image_tag: loading: 'lazy', widths: '330, 500, 650, 880', sizes: '(min-width: 1000px) 24vw, (min-width: 600px) 47vw, 88vw', alt: product.title }}
+              {%- endif -%}
+              <span class="mw-product__view">{{ section.settings.product_view_label | escape }} <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'up-right' %}</span></span>
+            </span>
+            <span class="mw-product__info"><span class="mw-product__title">{{ product.title | escape }}</span><span class="mw-product__price">{{ product.price | money }}</span></span>
+          </a>
+        {%- else -%}
+          <p>{{ section.settings.empty_collection_text | escape }}</p>
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+
+  {%- liquid
+    assign story_scene = section.settings.story_scene_image
+    if story_scene == blank
+      assign story_scene = settings.world_garden
+    endif
+    assign story_product = section.settings.story_product
+    if story_product == blank
+      assign story_product = all_products['nine-tails-hoodie']
+    endif
+  -%}
+  <section class="mw-story mw-story--editorial" aria-labelledby="mw-story-heading">
+    <div class="mw-story__landscape" aria-hidden="true">
+      {%- if story_scene != blank -%}
+        {{ story_scene | image_url: width: 2000 | image_tag: class: 'mw-story__landscape-img', loading: 'lazy', widths: '750, 1150, 1500, 2000', sizes: '100vw', alt: '' }}
+      {%- else -%}
+        <img class="mw-story__landscape-img" src="https://cdn.shopify.com/s/files/1/0765/5086/5057/files/many-worlds-nine-tails-cinematic-hero.png?v=1793908475" width="1648" height="928" loading="lazy" alt="">
+      {%- endif -%}
+      <span class="mw-story__landscape-fade"></span>
+      <span class="mw-story__landscape-mist"></span>
+    </div>
+    <div class="mw-shell mw-story__inner">
+      <div class="mw-story__copy" data-mw-reveal>
+        <p class="mw-story__index"><span class="mw-story__line" aria-hidden="true"></span> {{ section.settings.story_kicker | escape }} <span class="mw-story__index-no">/ 003</span></p>
+        <h2 id="mw-story-heading">{{ section.settings.story_heading | escape }}</h2>
+        <span class="mw-story__rule" aria-hidden="true"></span>
+        <p class="mw-story__description">{{ section.settings.story_text | escape }}</p>
+        <a class="mw-story__action" href="{{ routes.all_products_collection_url }}"><span>{{ section.settings.story_link_label | escape }}</span><span class="mw-story__action-arrow" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'up-right' %}</span></a>
+        <p class="mw-story__closing-note">{{ section.settings.story_note | escape }}</p>
+      </div>
+      {%- if story_product != blank -%}
+        <a class="mw-story__product" href="{{ story_product.url }}" aria-label="View {{ story_product.title | escape }}" data-mw-reveal>
+          <div class="mw-story__product-image">
+            {%- if story_product.featured_image != blank -%}
+              {{ story_product.featured_image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '400, 650, 900, 1000', sizes: '(min-width: 900px) 32vw, 75vw', alt: story_product.title }}
+            {%- endif -%}
+            <span class="mw-story__product-aura" aria-hidden="true"></span>
+          </div>
+          <div class="mw-story__product-meta">
+            <span><small>{{ section.settings.story_product_kicker | escape }}</small><strong>{{ story_product.title | escape }}</strong></span>
+            <span class="mw-story__product-arrow" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'up-right' %}</span>
+          </div>
+        </a>
+      {%- endif -%}
+    </div>
+    <div class="mw-shell mw-story__foot"><span>THE ELSEWHERE ARCHIVE</span><span>REALITY / REIMAGINED</span></div>
+  </section>
+</section>
+{% schema %}
+{
+  "name": "Elsewhere Cinematic",
+  "settings": [
+    {"type":"header","content":"Hero"},
+    {"type":"image_picker","id":"hero_image","label":"Hero background (optional)","info":"Uses the new blood-moon artwork if left empty."},
+    {"type":"text","id":"eyebrow","label":"Kicker","default":"Apparel for other realities"},
+    {"type":"text","id":"heading_first","label":"First line","default":"CURRENTLY"},
+    {"type":"text","id":"heading_second","label":"Second line","default":"ELSEWHERE."},
+    {"type":"text","id":"heading_accent","label":"Accent line","default":"ONE CREW."},
+    {"type":"textarea","id":"subtitle","label":"Hero description","default":"Original graphic apparel inspired by fantasy, culture, and the unexpected."},
+    {"type":"text","id":"primary_label","label":"Primary button","default":"Explore collections"},
+    {"type":"text","id":"secondary_label","label":"Secondary button","default":"Shop the new drop"},
+    {"type":"text","id":"hero_footnote","label":"Hero footnote","default":"Different stories. Same universe."},
+    {"type":"text","id":"scroll_label","label":"Scroll link","default":"Discover the worlds"},
+    {"type":"header","content":"Brand pillars"},
+    {"type":"text","id":"pillar_1_title","label":"Pillar 1 title","default":"Original Art"},
+    {"type":"text","id":"pillar_1_text","label":"Pillar 1 text","default":"Designed with imagination"},
+    {"type":"text","id":"pillar_2_title","label":"Pillar 2 title","default":"Distinctive Drops"},
+    {"type":"text","id":"pillar_2_text","label":"Pillar 2 text","default":"New stories, new releases"},
+    {"type":"text","id":"pillar_3_title","label":"Pillar 3 title","default":"Multiple Worlds"},
+    {"type":"text","id":"pillar_3_text","label":"Pillar 3 text","default":"Different styles. Same home."},
+    {"type":"text","id":"pillar_4_title","label":"Pillar 4 title","default":"Wear the Story"},
+    {"type":"text","id":"pillar_4_text","label":"Pillar 4 text","default":"More than just a tee"},
+    {"type":"header","content":"Worlds"},
+    {"type":"text","id":"worlds_kicker","label":"Worlds eyebrow","default":"Enter the universe"},
+    {"type":"text","id":"worlds_heading","label":"Worlds heading","default":"EXPLORE THE WORLDS"},
+    {"type":"text","id":"worlds_subtitle","label":"Worlds description","default":"Every drop opens a new door."},
+    {"type":"header","content":"Featured products"},
+    {"type":"collection","id":"featured_collection","label":"Featured collection"},
+    {"type":"text","id":"featured_kicker","label":"Featured eyebrow","default":"Now showing"},
+    {"type":"text","id":"featured_heading","label":"Featured heading","default":"FEATURED DROPS"},
+    {"type":"text","id":"featured_link_label","label":"View all label","default":"View the collection"},
+    {"type":"text","id":"product_view_label","label":"Product hover label","default":"View piece"},
+    {"type":"text","id":"empty_collection_text","label":"Empty state","default":"New pieces are on the way."},
+    {"type":"header","content":"Brand story"},
+    {"type":"text","id":"story_kicker","label":"Story eyebrow","default":"Our world, your rules"},
+    {"type":"text","id":"story_heading","label":"Story heading","default":"WEAR ANOTHER WORLD."},
+    {"type":"textarea","id":"story_text","label":"Story description","default":"Apparel from places that don't exist. Made for people who won't fit into just one world."},
+    {"type":"text","id":"story_link_label","label":"Story button","default":"Find your next world"},
+    {"type":"image_picker","id":"story_scene_image","label":"Story cinematic backdrop","info":"Leave blank to use the After Hours world scenery."},
+    {"type":"product","id":"story_product","label":"Featured outfit","info":"Leave blank to feature the Nine Tails Hoodie."},
+    {"type":"text","id":"story_product_kicker","label":"Product caption","default":"Featured from this world"},
+    {"type":"text","id":"story_note","label":"Small closing note","default":"A different story in every piece."}
+  ],
+  "blocks": [
+    {"type":"world","name":"Collection world","limit":6,"settings":[
+      {"type":"collection","id":"collection","label":"Collection"},
+      {"type":"image_picker","id":"poster","label":"Cinematic poster image","info":"Leave empty to show the collection's first product."},
+      {"type":"text","id":"title","label":"World title","default":"The Collection"},
+      {"type":"text","id":"category","label":"Category code","default":"New world"},
+      {"type":"text","id":"subtitle","label":"Small caption","default":"Enter the collection"}
+    ]}
+  ],
+  "presets":[{"name":"Elsewhere Cinematic","blocks":[{"type":"world"},{"type":"world"},{"type":"world"}]}]
+}
+{% endschema %}
