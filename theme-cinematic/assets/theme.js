@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMenu();
   initFilters();
   initReveal();
+  initCollectionSwap();
   document.querySelectorAll('[data-product]').forEach(initProduct);
 });
 
@@ -40,15 +41,75 @@ function initFilters() {
     timer = setTimeout(() => form.requestSubmit(), e.target.type === 'number' ? 600 : 0);
   });
   form.addEventListener('submit', (e) => {
-    // Drop empty fields so URLs stay clean.
+    // Drop empty fields so URLs stay clean, then load the filtered list in place.
     e.preventDefault();
     const params = new URLSearchParams();
     new FormData(form).forEach((value, key) => { if (value !== '') params.append(key, value); });
-    window.location.search = params.toString();
+    const url = new URL(window.location.href);
+    url.search = params.toString();
+    if (!loadCollection(url.href)) window.location.search = params.toString();
   });
   const panels = Array.from(form.querySelectorAll('[data-dropdown]'));
   document.addEventListener('click', (e) => {
     panels.forEach((d) => { if (!d.contains(e.target)) d.open = false; });
+  });
+}
+
+// Collection pages: moving between collections (Shop / Collections tabs, header dropdowns, filter chips,
+// pagination) swaps the product list in place, like a filter, instead of loading a new page.
+function collectionUrl(href) {
+  let url;
+  try { url = new URL(href, window.location.href); } catch { return null; }
+  if (url.origin !== window.location.origin) return null;
+  return /^\/collections\/[^/]+\/?$/.test(url.pathname) ? url : null;  // a collection, not /collections or a product
+}
+
+let collectionRequest = 0;
+function loadCollection(href, { push = true } = {}) {
+  const view = document.querySelector('[data-collection-view]');
+  const url = collectionUrl(href);
+  if (!view || !url) return false;
+  const request = ++collectionRequest;
+  view.classList.add('is-loading');
+  fetch(url.href, { headers: { 'X-Requested-With': 'fetch' } })
+    .then((r) => { if (!r.ok) throw new Error(r.status); return r.text(); })
+    .then((html) => {
+      if (request !== collectionRequest) return;
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const next = doc.querySelector('[data-collection-view]');
+      if (!next) throw new Error('no collection view');
+      view.replaceWith(next);
+      document.title = doc.title;
+      if (push) window.history.pushState({ collection: true }, '', url.href);
+      document.querySelectorAll('#HeaderNav details[open]').forEach((d) => { d.open = false; });
+      const nav = document.getElementById('HeaderNav');
+      if (nav && nav.classList.contains('is-open')) {
+        nav.classList.remove('is-open');
+        const toggle = document.querySelector('[data-menu-toggle]');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      }
+      const anchor = next.querySelector('[data-collection-tabs]') || next;
+      if (anchor.getBoundingClientRect().top < 0) anchor.scrollIntoView({ block: 'start' });
+      initFilters();
+      initReveal();
+      next.querySelectorAll('.card').forEach((card) => card.classList.add('is-visible'));
+    })
+    .catch(() => { window.location.assign(url.href); });
+  return true;
+}
+
+function initCollectionSwap() {
+  if (!document.querySelector('[data-collection-view]')) return;
+  window.history.replaceState({ collection: true }, '');
+  document.addEventListener('click', (e) => {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const link = e.target instanceof Element ? e.target.closest('a[href]') : null;
+    if (!link || (link.target && link.target !== '_self') || link.hasAttribute('download')) return;
+    if (!collectionUrl(link.href)) return;
+    if (loadCollection(link.href)) e.preventDefault();
+  }, true);  // capture: runs before the page-transition curtain
+  window.addEventListener('popstate', (e) => {
+    if (e.state && e.state.collection) loadCollection(window.location.href, { push: false });
   });
 }
 
