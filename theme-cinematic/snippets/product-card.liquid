@@ -1,0 +1,84 @@
+{% doc %}
+@param {product} product - Product to display
+@param {number} [index] - Position in the current collection
+@param {boolean} [lazy] - Lazy-load the main product image
+{% enddoc %}
+{%- liquid
+  assign lazy_load = true
+  if lazy == false
+    assign lazy_load = false
+  endif
+  assign loading = 'lazy'
+  unless lazy_load
+    assign loading = 'eager'
+  endunless
+
+  # Hoodies preview their back print: the photo labeled "... in Black, back print" (or any back print),
+  # with the front (if printed) as the hover image. Everything else uses the product's first photo.
+  assign preview = product.featured_media
+  assign hover = product.media[1]
+  if product.title contains 'Hoodie'
+    assign back_any = nil
+    assign back_black = nil
+    assign front_any = nil
+    for media in product.media
+      if media.alt contains ', back print'
+        if back_any == nil
+          assign back_any = media
+        endif
+        if back_black == nil and media.alt contains ' in Black,'
+          assign back_black = media
+        endif
+      elsif media.alt contains ', front print' and front_any == nil
+        assign front_any = media
+      endif
+    endfor
+    if back_black
+      assign preview = back_black
+    elsif back_any
+      assign preview = back_any
+    endif
+    if preview != product.featured_media
+      assign hover = front_any
+    endif
+  endif
+-%}
+<a class="card outfit-frame" href="{{ product.url }}">
+  <div class="outfit-frame__rail label"><span>{% if index %}Piece {{ index | prepend: '00' | slice: -3, 3 }}{% else %}Many Worlds issue{% endif %}</span><span>{{ product.type | default: 'In rotation' | escape }}</span></div>
+  <div class="card__media">
+    {%- if product.available == false -%}
+      <span class="card__tag stamp">{{ 'products.sold_out' | t }}</span>
+    {%- elsif product.compare_at_price > product.price -%}
+      <span class="card__tag stamp">{{ 'products.on_sale' | t }}</span>
+    {%- endif -%}
+
+    {%- if preview -%}
+      {{ preview | image_url: width: 1440 | image_tag:
+        widths: '360, 540, 720, 1000, 1440',
+        sizes: '(min-width: 1440px) 450px, (min-width: 990px) 31vw, 50vw',
+        loading: loading,
+        alt: preview.alt | default: product.title
+      }}
+      {%- if settings.card_show_second_image and hover -%}
+        {{ hover | image_url: width: 1440 | image_tag:
+          widths: '360, 540, 720, 1000, 1440',
+          sizes: '(min-width: 1440px) 450px, (min-width: 990px) 31vw, 50vw',
+          loading: 'lazy',
+          alt: ''
+        }}
+      {%- endif -%}
+    {%- endif -%}
+    <span class="outfit-frame__view label" aria-hidden="true">View piece &nearr;</span>
+  </div>
+  <div class="card__info">
+    <h3 class="card__title">{{ product.title }}</h3>
+    {%- if settings.card_tag != blank -%}
+      <span class="label muted">{{ settings.card_tag }}</span>
+    {%- endif -%}
+    <div class="card__meta">
+      {% render 'price', product: product %}
+      <span class="label" aria-hidden="true">&rarr;</span>
+    </div>
+  </div>
+</a>
+
