@@ -16,6 +16,7 @@ import os
 import time
 
 from create_products import Printify
+from create_relatable import DESIGNS as RELATABLE
 
 RAW = "https://raw.githubusercontent.com/Teddyjday94/shopify-store/{commit}/designs/print-home/{name}"
 
@@ -48,6 +49,10 @@ def specs():
             f"The {name} design, die-cut style, on both sides of a white mug."
         yield ORNAMENT, f"{name} Ornament", f"{slug}-ornament.png", tags + ["ornament"], line, \
             f"The {name} design, die-cut style, on a round white ceramic ornament, for a tree with a sense of humor."
+    for slug, name, _, line in RELATABLE:
+        yield MUG, f"{name} Mug", f"{int(slug[:2]) + 30}-{slug[3:]}-mug.png", \
+            ["relatable collection", "relatable", "accessory", "home", "mug", "funny"], line, \
+            f"The {name} design, die-cut style, on both sides of a white mug."
     for slug, name, line in SLOGANS:
         yield MUG, f"{name} Mug", f"{slug}-mug.png", ["accessory", "home", "mug", "funny"], line, \
             f"\"{name}\" in bold black type on both sides of a white mug."

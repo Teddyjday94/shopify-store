@@ -3,13 +3,14 @@ keeping only a thin black edge that follows the art's outline (so cream letterin
 and printed straight on the white mug or ornament. No black band, no box.
 
 Mug: two copies at the wrap's full height. Ornament: 12% larger than the size at which the circle cuts off
-nothing, so the art fills the circle; the circle trims edge decoration but no lettering.
+nothing (the circle trims edge decoration, never lettering), over a heavy blur of the design's own
+colors, so the whole circle is filled with no white space.
 Usage: python3 designs/src/render_home_xmas.py
 """
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageFilter
+from PIL import Image, ImageEnhance, ImageFilter
 from scipy import ndimage
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -65,9 +66,20 @@ def ornament(art):
     best *= 1.12                                    # zoom in: trim edge decoration, keep lettering
     h = int(ORN * best)
     a = art.resize((round(art.width * h / art.height), h), Image.LANCZOS)
-    canvas = Image.new("RGBA", (ORN, ORN), (0, 0, 0, 0))
+    canvas = blurred_fill(art).convert("RGBA")
     canvas.alpha_composite(a, ((ORN - a.width) // 2, (ORN - h) // 2))
-    return canvas, best
+    return canvas.convert("RGB"), best
+
+
+def blurred_fill(art):
+    """The design's own colors, stretched over the whole circle and heavily blurred."""
+    rgb = Image.new("RGB", art.size, "black")
+    rgb.paste(art, (0, 0), art)
+    s = ORN / min(rgb.size) * 1.25
+    bg = rgb.resize((int(rgb.width * s), int(rgb.height * s)), Image.LANCZOS)
+    left, top = (bg.width - ORN) // 2, (bg.height - ORN) // 2
+    bg = bg.crop((left, top, left + ORN, top + ORN)).filter(ImageFilter.GaussianBlur(70))
+    return ImageEnhance.Color(ImageEnhance.Brightness(bg).enhance(0.75)).enhance(1.15)
 
 
 for n in NAMES:
