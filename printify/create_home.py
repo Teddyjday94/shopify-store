@@ -70,7 +70,7 @@ def main():
                 api.get(f"/shops/{shop}/products.json?limit=50&page={page}")["data"]}
     for spec, title, art, tags, line, intro in specs():
         if title in existing:
-            if not (args.refresh and "christmas" in tags):
+            if not (args.refresh and ("christmas" in tags or "relatable" in tags)):
                 print(f"skip  {title}")
                 continue
             print(f"{'swap' if args.apply else 'plan'}  {title}: new print file")

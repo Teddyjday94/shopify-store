@@ -1,11 +1,13 @@
 """Create the Relatable Collection: a tee and a hoodie for each design, big print on the front.
 
 Print files: designs/print-relatable (prep_relatable.py). Cream/white type with dark outlines, so dark
-garments only. Existing products (by title) are skipped.
+garments only. Existing products (by title) are skipped, unless --refresh: then their print file is swapped for
+the current one (same placement) and the mockups republished.
 
 Usage:
-    python3 printify/create_relatable.py --commit SHA            # dry run
+    python3 printify/create_relatable.py --commit SHA                      # dry run
     python3 printify/create_relatable.py --commit SHA --apply
+    python3 printify/create_relatable.py --commit SHA --apply --refresh
 """
 
 import argparse
@@ -55,14 +57,29 @@ def front_place(name, w, h, max_w=0.80, max_h=0.92):
     return dict(x=0.5, y=round(0.03 + scale * ratio / 2, 4), scale=scale)
 
 
+def swap(api, shop, pid, image_id):
+    """Point every placed image at image_id, keeping position and size, then republish the mockups."""
+    full = api.get(f"/shops/{shop}/products/{pid}.json")
+    areas = [{"variant_ids": a["variant_ids"], "placeholders": [
+        {"position": ph["position"], "images": [dict(id=image_id, x=i["x"], y=i["y"], scale=i["scale"], angle=i["angle"])
+                                                for i in ph["images"]]}
+        for ph in a["placeholders"] if ph["images"]]} for a in full["print_areas"]]
+    api.call("PUT", f"/shops/{shop}/products/{pid}.json", json={"print_areas": areas})
+    api.post(f"/shops/{shop}/products/{pid}/publish.json", {
+        "title": False, "description": False, "images": True, "variants": False,
+        "tags": False, "keyFeatures": False, "shipping_template": False})
+    time.sleep(20)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--commit", required=True)
     ap.add_argument("--apply", action="store_true")
+    ap.add_argument("--refresh", action="store_true")
     args = ap.parse_args()
     api = Printify(os.environ.get("PRINTIFY_API_TOKEN"))
     shop = next(s for s in api.get("/shops.json") if s.get("sales_channel") == "shopify")["id"]
-    existing = {p["title"] for page in (1, 2, 3, 4) for p in
+    existing = {p["title"]: p for page in (1, 2, 3, 4) for p in
                 api.get(f"/shops/{shop}/products.json?limit=50&page={page}")["data"]}
     uploads = {}
     for slug, name, intro, line in DESIGNS:
@@ -70,7 +87,14 @@ def main():
         for spec in (TEE, HOODIE):
             title = f"{name} {spec['kind']}"
             if title in existing:
-                print(f"skip  {title}")
+                if not args.refresh:
+                    print(f"skip  {title}")
+                    continue
+                print(f"{'swap' if args.apply else 'plan'}  {title}: new print file")
+                if args.apply:
+                    if art not in uploads:
+                        uploads[art] = api.post("/uploads/images.json", {"file_name": art, "url": RAW.format(commit=args.commit, name=art)})["id"]
+                    swap(api, shop, existing[title]["id"], uploads[art])
                 continue
             catalog = api.get(f"/catalog/blueprints/{spec['blueprint']}/print_providers/{spec['provider']}/variants.json")["variants"]
             chosen = [v for v in catalog if v["options"].get("color") in spec["colors"] and v["options"].get("size") in TEE_SIZES]

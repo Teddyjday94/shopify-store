@@ -9,7 +9,7 @@ from PIL import Image, ImageFilter
 from scipy import ndimage
 
 ROOT = Path(__file__).resolve().parents[1]
-SRC, OUT = ROOT / "relatable-src", ROOT / "print-home"
+SRC, OUT = ROOT / "print-relatable", ROOT / "print-home"   # print files: sharpest copies
 MUG_W, MUG_H = 4950, 2310   # 2475 x 1155 wrap at 2x
 
 
@@ -20,6 +20,7 @@ def disk(r):
 
 def diecut(path, close=34, edge=14):
     im = Image.open(path).convert("RGBA")
+    im.thumbnail((1600, 1600), Image.LANCZOS)   # source scale the outline was tuned at; still > the mug's 1100px print height
     content = np.asarray(im.getchannel("A")) > 40
     content = ndimage.binary_opening(content, structure=disk(2))
     pad = close + 2
