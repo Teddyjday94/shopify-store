@@ -23,6 +23,8 @@ for src in sorted(SRC.glob("*.png")):
     a[a[..., 3] < 12, 3] = 0                              # invisible dust
     im = Image.fromarray(a, "RGBA")
     im = im.crop(im.getchannel("A").getbbox())
+    if hd and max(im.size) > 4800:                     # 4800px tall is >300 DPI at the biggest print size
+        im = im.resize((round(im.width * 4800 / max(im.size)), round(im.height * 4800 / max(im.size))), Image.LANCZOS)
     if not hd:
         big = im.resize((im.width * 3, im.height * 3), Image.LANCZOS)
         rgb = big.convert("RGB").filter(ImageFilter.UnsharpMask(radius=3, percent=60, threshold=2))
