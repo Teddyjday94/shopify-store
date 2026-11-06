@@ -1,0 +1,80 @@
+/* Product gallery: one large image with arrows, and a single compact row of the selected
+   color's photos (front and back) underneath. Loaded by sections/main-product.liquid. */
+
+.product .gallery__main {
+  position: relative;
+  touch-action: pan-y;
+}
+
+.product .gallery__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background: rgba(10, 8, 10, 0.55);
+  color: #fff;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.product .gallery__arrow:hover,
+.product .gallery__arrow:focus-visible {
+  background: rgba(10, 8, 10, 0.8);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+.product .gallery__arrow--prev { left: 12px; }
+.product .gallery__arrow--next { right: 12px; }
+.product .gallery__arrow[hidden] { display: none; }
+
+.product .gallery__side {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 2;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(10, 8, 10, 0.6);
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.product .gallery__side[hidden] { display: none; }
+
+/* Thumbnails: one row, scrolls sideways if there are many. */
+.product .gallery__thumbs {
+  display: flex !important;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  padding: 2px 2px 6px;
+  grid-template-columns: none !important;
+}
+.product .gallery__thumb {
+  flex: 0 0 auto;
+  width: 84px;
+  height: 84px;
+}
+.product .gallery__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product .gallery__thumb[hidden] { display: none !important; }
+.product.gallery--single .gallery__thumbs { display: none !important; }
+
+@media (max-width: 640px) {
+  .product .gallery__arrow { width: 38px; height: 38px; font-size: 26px; }
+  .product .gallery__thumb { width: 64px; height: 64px; }
+}
