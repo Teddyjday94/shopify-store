@@ -1,1 +1,4 @@
 __pycache__/
+
+# Poster and desk mat renders (163 MB); rebuild with designs/src/render_wallart.py
+designs/print-wall/
