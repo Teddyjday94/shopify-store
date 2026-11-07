@@ -1,175 +1,225 @@
 # Content calendar — Weeks 1–2 (Nov 9–22, 2026)
 
-One video a day on TikTok, and the same video as an Instagram Reel (download a copy with
-no TikTok watermark, or edit in CapCut and export once). Plus 2 Instagram carousels per week.
-
-**How to read each post**
-- **Hook** = the text on screen in the first second. Big, centered, readable without sound.
-- **Shots** = what to film or generate. Prompt codes like `[V3]` refer to `artlist-prompts.md`.
-- **Caption** = paste as written. Add the hashtags on the last line.
-- **Sound** = an Artlist track (search terms given) or TikTok's Commercial Music Library.
-  Not trending songs. A business account can't use them.
-
-**About week 1:** your samples won't have arrived yet, so week 1 uses product photos,
-animated art and AI mockups (labeled). Week 2 switches to real shirts on real people.
-If samples are late, swap in the matching week 1 style instead.
-
-**Every post:** turn on the platform's **AI-generated** label if anything in it was made
-with AI. Tag the product (TikTok/Instagram product tags) once the Shopify apps are connected.
-Reply to the first comments within an hour of posting.
+One video a day on TikTok, and the same video as an Instagram Reel, plus 2 Instagram carousels a week.
+Prompt codes like `[V3]` point to `artlist-prompts.md`. Upload files are in `marketing/artlist-inputs/`.
 
 ---
 
-## Week 1 — Nov 9–15 · "Who we are" + Christmas art
+## Do these before the first post (they decide whether views turn into sales)
 
-### Mon Nov 9 — Brand intro (founder voiceover)
-- **Hook:** `I made a clothing brand for people who showed up but didn't fully arrive`
-- **Shots:** 4–5 quick cuts (about 1.5 s each) of product photos/mockups: Currently Elsewhere
-  Hoodie, Not AI tee, Ships in 6–7 tee, Do Not Perceive Me beanie, a Christmas hoodie.
-  `[V7]` for subtle motion. End card: logo + "link in bio."
-- **Voiceover (your voice, or Artlist voiceover):** "I made a clothing brand for people who are
-  physically present but mentally elsewhere. These are the shirts. You know who you are."
-- **Caption:** for the ones who RSVP'd yes and immediately regretted it. elsewhere apparel co. is open.
-- **Hashtags:** #introvert #funnyshirts #smallbusiness #graphictees #relatable
-- **Sound:** Artlist search "lo-fi indie quirky"
-
-### Tue Nov 10 — Not AI. Just Tired.
-- **Hook:** `Coworker: "did you use ChatGPT for this?"`
-- **Shots:** a desk with a messy laptop setup (`[F2]` background or your real desk) → cut to the
-  Not AI tee (mockup `[W2]` or product photo with a slow push-in `[V7]`). Second text:
-  `no. I'm just like this.`
-- **Caption:** verified human. low battery. 100% organic exhaustion. — Not AI. Just Tired. Tee
-- **Hashtags:** #notai #corporatehumor #worklife #funnytshirt #tired
-- **Sound:** Artlist search "awkward comedic pizzicato"
-
-### Wed Nov 11 — Christmas art reveal #1: Dear Santa, Bring Bourbon
-- **Hook:** `my letter to santa this year is very short`
-- **Shots:** `[V1]` animated Bourbon art (ice clinks, glow). End on the hoodie mockup and
-  "Christmas Collection — link in bio."
-- **Caption:** Dear Santa. Bourbon. That's the whole list. Tees, hoodies, dad hats, mugs & ornaments.
-- **Hashtags:** #bourbon #christmasgift #giftsforhim #whiskey #christmas2026
-- **Sound:** Artlist search "lo-fi jazzy christmas"
-
-### Thu Nov 12 — Do Not Perceive Me (Photo Mode carousel on TikTok)
-- **Hook (slide 1):** `introvert errands starter pack`
-- **Slides:** 1) hook over `[F1]` background 2) noise-canceling headphones 3) self-checkout
-  4) "Do Not Perceive Me" beanie product photo 5) "phone on 1% and that's fine" 6) store link
-  in text.
-- **Caption:** in and out. no small talk. no eye contact. beanie does the talking.
-- **Hashtags:** #introvertproblems #doNotPerceiveMe #beanie #introvertlife #socialbattery
-- **Sound:** Artlist search "minimal lo-fi chill beat"
-
-### Fri Nov 13 — Christmas art reveal #2: Holly Jolly Chaos
-- **Hook:** `the vibe at my house on december 24th`
-- **Shots:** `[V3]` animated snowman (sunglasses glint, snow falls) → hoodie mockup.
-- **Caption:** holly. jolly. absolutely not under control. Holly Jolly Chaos — tees, hoodies, mugs, ornaments.
-- **Hashtags:** #christmaschaos #funnychristmas #uglysweater #holidayvibes #christmasgift
-- **Sound:** Artlist search "chaotic christmas comedy"
-
-### Sat Nov 14 — Ships in 6–7 Business Days
-- **Hook:** `Mom: "so when are you getting married?"`
-- **Shots:** the family dinner table (`[F4]` background or real) → text `me:` → Ships in 6–7 tee
-  (`[W3]` mockup or product photo push-in).
-- **Caption:** estimated arrival: eventually. please stop tracking the package.
-- **Hashtags:** #familyquestions #holidayseason #singlelife #funnyshirt #relatable
-- **Sound:** Artlist search "comedic tension sting"
-
-### Sun Nov 15 — Christmas art reveal #3: The Gift Is Me
-- **Hook:** `what I'm bringing to the white elephant`
-- **Shots:** `[V2]` animated gift art (the bow tightens, gold sparkle) → hoodie mockup, back print.
-- **Caption:** wrapped myself. you're welcome. The Gift Is Me — available in tee, hoodie, dad hat, mug & ornament.
-- **Hashtags:** #whiteelephant #christmasparty #funnygift #giftideas #christmas2026
-- **Sound:** Artlist search "upbeat sassy christmas"
-
-### Instagram carousels (week 1)
-**Tue — "Which one are you?"** 6 slides, one product each (Currently Elsewhere, Not AI, Ships
-6–7, Odysseus, Seasonal Depression, Do Not Perceive Me) on `[F5]` cream backgrounds.
-- **Caption:** be honest. comment your number. we'll know if you lie. (we won't, we're not paying attention.)
-
-**Sat — "Gifts for the friend who cancels plans"** cover + 5 products + "link in bio."
-- **Caption:** they'll cancel the gift exchange too, but at least you tried. save this for later.
+- [ ] **Put the back art first on the Christmas tees and hoodies.** Right now the first photo on
+      all 10 is the plain front with a tiny chest print. Instagram/TikTok product tags and link
+      previews show that photo, so someone who just watched the snowman video sees a plain
+      black tee. Make the "back print" photo the first image (or ask Claude to do it).
+- [ ] **Bio link → the Christmas Collection, not the homepage:**
+      `elsewheresupplyco.myshopify.com/collections/the-christmas-collection?utm_source=tiktok`
+      (use `utm_source=instagram` on Instagram). Switch it to the homepage after Dec 12.
+- [ ] Install Shopify's **TikTok** and **Facebook & Instagram** apps so you can tag products in posts.
+- [ ] Order Printify samples (Currently Elsewhere Hoodie, Not AI tee, beanie, Gift Is Me and Bourbon
+      hoodies, one mug) by **Mon Nov 9** so they arrive for week 2.
+- [ ] Spend 15 minutes a day for 2 days scrolling and commenting on the account's niche
+      (introvert humor, funny Christmas gifts) before posting, so TikTok learns who to show you to.
 
 ---
 
-## Week 2 — Nov 16–22 · Real shirts + gift season
+## How every video is built (the 4-beat formula)
 
-*(Samples should be in hand. Film all 7 videos in one session on Sunday Nov 15 or Monday Nov 16.)*
+| Time | Beat | Rule |
+|---|---|---|
+| 0–1 s | **Hook** | Big text on screen + something moving. Readable with the sound off. No logo, no "hi guys." |
+| 1–4 s | **Setup** | The relatable situation. One location, one idea. |
+| 4–8 s | **Reveal** | The shirt. The print fills at least a third of the screen and stays still for 1+ second. |
+| End | **Loop** | Cut back to something that matches the first frame so the video replays seamlessly. Replays count as watch time. |
 
-### Mon Nov 16 — Unboxing the first samples
-- **Hook:** `the first shirts from my clothing brand just arrived`
-- **Shots:** real hands opening the package, holding up each piece to the camera, a close-up
-  of the print texture. Honest reaction.
-- **Caption:** they're real. I'm emotional. which one should I wear first?
-- **Hashtags:** #smallbusiness #unboxing #clothingbrand #startup #graphictees
-- **Sound:** Artlist search "warm acoustic hopeful"
+- **Length:** 7–12 seconds. Shorter is better until a video proves people stay.
+- **On-screen text** stays in the middle 2/3 of the screen (top and bottom get covered by buttons).
+- **Captions start with what people search for** ("funny christmas gift for dad…"). TikTok works
+  like a search engine now, so the first words of the caption help people find the video.
+- **3–5 hashtags.** One broad, two niche, one product. More does not help.
+- **Comment prompt:** every caption asks one easy question. Comments push reach.
+- **Music:** Artlist or TikTok's Commercial Music Library only. Volume low under the on-screen text moments.
+- **AI label:** turn it on for any post that contains AI-generated people or scenes.
 
-### Tue Nov 17 — Currently Elsewhere Hoodie
-- **Hook:** `me at every event I RSVP'd yes to`
-- **Shots:** you (or a friend) on the couch in the hoodie, staring into space while the phone
-  buzzes (add group-chat ping sounds). Slow zoom in on the chest print.
-- **Caption:** physically present. mentally elsewhere. will respond upon return.
-- **Hashtags:** #introvert #socialbattery #outofoffice #cozyhoodie #relatable
-- **Sound:** group-chat ping sound effects (Artlist SFX "message notification") over a quiet bed
+**Posting time (Central):** weekdays **7:00 pm**, weekends **11:00 am**. After 7 days, check
+TikTok Analytics → Followers → "Most active times" and move to your audience's actual peak.
 
-### Wed Nov 18 — Dear Santa, Bring Bourbon (real)
-- **Hook:** `pov: you know exactly what you want for christmas`
-- **Shots:** pour bourbon over ice (close-up), turn around in the hoodie → back print.
-  21+ only on camera.
-- **Caption:** low maintenance. high proof. — Dear Santa, Bring Bourbon Hoodie
-- **Hashtags:** #bourbon #giftsfordad #whiskeylover #christmasgift #christmas2026
-- **Sound:** Artlist search "smooth lounge jazz christmas"
+**Hook B:** every post has a backup hook. If a video does worse than your average after 48
+hours, re-post the same video 3–4 days later with Hook B. Don't delete the first one.
 
-### Thu Nov 19 — The Gift Is Me (real)
-- **Hook:** `showing up to the family party empty-handed like`
-- **Shots:** door opens, walk in holding nothing, turn slowly → The Gift Is Me back print.
-- **Caption:** my presence is the present. — The Gift Is Me Hoodie
-- **Hashtags:** #christmasparty #familychristmas #funnygift #giftideas #holidayhumor
-- **Sound:** Artlist search "dramatic orchestral reveal comedic"
+**Ad-safe** = OK to boost later. Alcohol and middle-finger content is fine organically, but
+TikTok/Meta ads usually reject it, so never pay to boost those.
 
-### Fri Nov 20 — Odysseus Layover
-- **Hook:** `odysseus took 10 years to get home. I can survive a 4 hour layover.`
-- **Shots:** airport/airplane seat (or `[F3]` departures board background), tee in frame.
-- **Caption:** holiday travel survival kit: one (1) shirt with perspective. — Odysseus Layover Tee
-- **Hashtags:** #holidaytravel #layover #greekmythology #travelhumor #funnytshirt
-- **Sound:** Artlist search "epic choir comedic"
+---
 
-### Sat Nov 21 — Seasonal Depression World Tour Hoodie
-- **Hook:** `it's 4:45pm and the sun has already clocked out`
-- **Shots:** window at dusk going dark → you under a blanket in the hoodie, slow turn to show
-  the back "tour dates" print. Second text: `now touring: my couch. all winter.`
-- **Caption:** the world tour nobody asked for. indoor venues only. — Seasonal Depression World Tour Hoodie
-- **Hashtags:** #seasonaldepression #wintervibes #cozyhoodie #relatable #introvert
-- **Sound:** Artlist search "melancholy indie rock anthem"
+## Week 1 — Nov 9–15 · Christmas art + the relatable core
+*(No samples yet: product photos, animated art and labeled AI mockups.)*
 
-### Sun Nov 22 — Mugs & ornaments under $20
-- **Hook:** `stocking stuffers for people with a questionable sense of humor`
-- **Shots:** real mug with steam on a desk, ornament on a tree (or `[P3]`/`[P4]` + `[V5]`/`[V6]`).
-  Price text on screen: `$18 · $15`.
-- **Caption:** under $20. over-delivers on attitude. Christmas mugs & ornaments in all 5 designs.
-- **Hashtags:** #stockingstuffers #giftsunder20 #christmasmug #christmasornament #secretsanta
-- **Sound:** Artlist search "cozy christmas lo-fi"
+### Mon Nov 9 · 7 pm · The Gift Is Me (animated art) · ad-safe ✅
+- **Hook A:** `what I'm bringing to the white elephant this year`
+- **Hook B:** `my family asked what I want for christmas. I said "nothing, I AM the gift"`
+- **Beats:** 0–1 s hook over the art's first frame → 1–6 s `[V2]` bow settles, glitter →
+  6–9 s hoodie back photo `[V7]` with text `The Gift Is Me — hoodie, tee, hat, mug, ornament` → loop to the art.
+- **Caption:** funny white elephant gift idea that's actually wearable 🎁 wrapped myself. you're welcome. would you bring this or get kicked out?
+- **Hashtags:** #whiteelephant #funnychristmasgift #christmas2026 #christmashoodie
+- **Sound:** Artlist "sassy christmas swing"
 
-### Instagram carousels (week 2)
-**Tue — "The Christmas Collection, ranked by chaos"** 5 designs, ending on Holly Jolly Chaos.
-- **Caption:** ranked by how much your family will talk about you after. 1 = mild. 5 = therapy.
+### Tue Nov 10 · 7 pm · Not AI. Just Tired. · ad-safe ✅
+- **Hook A:** `Coworker: "did you use ChatGPT for this?"`
+- **Hook B:** `me proving I'm a real person at 4pm on a tuesday`
+- **Beats:** 0–1 s hook over a desk at night `[F2]` → 1–4 s text `me:` + slow push-in →
+  4–8 s `[W2]` mockup turns to camera, deadpan → text `no. I'm just like this.` → loop.
+- **Caption:** funny work shirt for the chronically tired. verified human. low battery. what's the most AI thing you've been accused of?
+- **Hashtags:** #corporatehumor #worklife #funnytshirt #notai
+- **Sound:** Artlist "awkward comedic pizzicato"
 
-**Fri — "Christmas gift guide: by person"** Dad → Bourbon. Coworker → Not AI. Introvert friend
-→ Currently Elsewhere. Your sibling → Suck It Up Buttercup. Mom → ornament.
-- **Caption:** gift guide for people you love (and tolerate). save it, send it to the group chat.
+### Wed Nov 11 · 7 pm · Dear Santa, Bring Bourbon (animated art) · organic only ⚠️
+- **Hook A:** `my letter to santa is one word long`
+- **Hook B:** `gift idea for the dad who says he doesn't want anything`
+- **Beats:** hook → `[V1]` ice shifts, glass glints → hoodie back photo `[V7]` with
+  `tee · hoodie · dad hat · mug · ornament` → loop.
+- **Caption:** christmas gift for bourbon lovers 🥃 Dear Santa. Bourbon. That's the list. tag the person who'd wear this to dinner.
+- **Hashtags:** #giftsfordad #bourbon #christmasgiftideas #whiskeylover
+- **Sound:** Artlist "lo-fi jazzy christmas"
+
+### Thu Nov 12 · 7 pm · Ships in 6–7 Business Days · ad-safe ✅
+- **Hook A:** `Mom at thanksgiving: "so when are you getting married?"`
+- **Hook B:** `how I'm answering every family question this year`
+- **Beats:** hook over the dinner table `[F4]` → text `me:` → `[W3]` mockup raises an eyebrow →
+  close-up of the shipping-label print → loop.
+- **Caption:** funny shirt for family holiday questions. estimated arrival: eventually. what's the question you're dreading this year?
+- **Hashtags:** #thanksgiving #familyquestions #funnytshirt #relatable
+- **Sound:** Artlist "comedic tension sting"
+
+### Fri Nov 13 · 7 pm · Holly Jolly Chaos (animated art) · ad-safe ✅
+- **Hook A:** `the vibe at my house on december 24th`
+- **Hook B:** `rate your family's christmas chaos 1–10`
+- **Beats:** hook → `[V3]` snow falls, sunglasses glint → hoodie back photo → loop.
+- **Caption:** funny christmas hoodie for chaotic families ☃️ holly. jolly. absolutely not under control. what number is your family?
+- **Hashtags:** #christmaschaos #funnychristmas #christmashoodie #holidayvibes
+- **Sound:** Artlist "chaotic christmas comedy"
+
+### Sat Nov 14 · 11 am · Do Not Perceive Me (TikTok Photo Mode / IG carousel) · ad-safe ✅
+- **Slide 1 (hook):** `introvert errands starter pack` over `[F1]`
+- **Slides 2–5:** noise-canceling headphones · self-checkout only · phone at 1% "and that's fine" ·
+  the beanie `[P5]` with `Do Not Perceive Me Beanie — $26`
+- **Slide 6:** `link in bio` + collection screenshot
+- **Caption:** introvert gift idea: a beanie that does the talking. what's your #1 errand rule?
+- **Hashtags:** #introvert #introvertproblems #beanie #giftsforintroverts
+- **Sound:** Artlist "minimal lo-fi chill beat"
+
+### Sun Nov 15 · 11 am · Founder story · ad-safe ✅
+- **Hook A:** `I started a clothing brand for people who showed up but didn't fully arrive`
+- **Hook B:** `my clothing brand is 2 weeks old. here's every shirt.`
+- **Beats:** fast cuts (about 1 s each) through 6 product photos with slight motion `[V7]`, your
+  voiceover: *"Physically present. Mentally elsewhere. I made shirts about it. If you know, you know."*
+  End on the Christmas art and `link in bio`.
+- **Caption:** small clothing brand for introverts and the permanently tired. which shirt is you? (wrong answers only)
+- **Hashtags:** #smallbusiness #clothingbrand #introvert #graphictees
+- **Sound:** Artlist "indie lo-fi quirky"
+
+### Instagram carousels, week 1
+- **Tue · "Which one are you?"**: 6 slides (Currently Elsewhere, Not AI, Ships 6–7, Odysseus,
+  Seasonal Depression, Do Not Perceive Me) on `[F5]`. Caption: *be honest. comment your number.
+  we'll know if you lie. (we won't, we're not paying attention.)*
+- **Sat · "Christmas gifts for people who'd rather skip Christmas"**: cover + Gift Is Me, Holly
+  Jolly, Bourbon, a mug, an ornament with prices. Caption: *save this. send it to the group chat.
+  pretend it was your idea.*
+
+---
+
+## Week 2 — Nov 16–22 · Real shirts, real people
+
+**Batch-film Sunday Nov 15 or Monday Nov 16.** One afternoon, phone on a tripod by a window,
+3 outfits. Film each video's beats twice (two takes), plus 10 extra seconds of just the print
+up close for each product. You'll use those close-ups for weeks.
+
+### Mon Nov 16 · 7 pm · Sample unboxing · ad-safe ✅
+- **Hook A:** `the first shirts from my clothing brand just showed up`
+- **Hook B:** `opening my first ever samples (please be good)`
+- **Beats:** real hands open the mailer → hold up each piece → print close-ups → honest reaction.
+- **Caption:** small business unboxing: my first samples. which one should I wear first?
+- **Hashtags:** #smallbusiness #unboxing #clothingbrand #packagingorders
+
+### Tue Nov 17 · 7 pm · Currently Elsewhere Hoodie · ad-safe ✅
+- **Hook A:** `me at every event I RSVP'd yes to`
+- **Hook B:** `social battery at 2%, still showing up`
+- **Beats:** group-chat pings (Artlist SFX "message notification") → you on the couch, staring into
+  space → slow push-in to the chest print → loop to the first ping.
+- **Caption:** cozy introvert hoodie. physically present, mentally elsewhere. will respond upon return. who's your "currently elsewhere" friend? tag them.
+- **Hashtags:** #introvert #socialbattery #cozyhoodie #relatable
+
+### Wed Nov 18 · 7 pm · Dear Santa, Bring Bourbon (real) · organic only ⚠️
+- **Hook A:** `pov: you know exactly what you want for christmas`
+- **Hook B:** `the easiest person to shop for this year`
+- **Beats:** bourbon poured over ice (close-up) → you turn your back to the camera → back print
+  fills the screen. 21+ only on camera; never film someone drinking in the video.
+- **Caption:** christmas gift for whiskey and bourbon lovers. low maintenance. high proof. who's getting this?
+- **Hashtags:** #giftsfordad #bourbon #whiskeylover #christmasgiftideas
+
+### Thu Nov 19 · 7 pm · The Gift Is Me (real) · ad-safe ✅
+- **Hook A:** `showing up to the family party empty-handed like`
+- **Hook B:** `"did you bring anything?" "yes. me."`
+- **Beats:** door opens → walk in holding nothing → slow turn → back print → loop to the door.
+- **Caption:** funny christmas hoodie for the family party. my presence is the present. what's the worst gift you've ever brought?
+- **Hashtags:** #familychristmas #funnychristmasgift #whiteelephant #christmashoodie
+
+### Fri Nov 20 · 7 pm · Odysseus Layover · ad-safe ✅
+- **Hook A:** `odysseus took 10 years to get home. I can survive a 4 hour layover.`
+- **Hook B:** `thanksgiving travel survival kit: 1 shirt with perspective`
+- **Beats:** an airport gate or a car packed for the drive → tee in frame → print close-up.
+- **Caption:** funny travel shirt for holiday flights. thanksgiving travel delays hit different with perspective. longest layover you've survived?
+- **Hashtags:** #thanksgivingtravel #layover #greekmythology #traveltshirt
+
+### Sat Nov 21 · 11 am · Seasonal Depression World Tour Hoodie · ad-safe ✅
+- **Hook A:** `it's 4:45pm and the sun has already clocked out`
+- **Hook B:** `my winter plans: indoor venues only`
+- **Beats:** a window at dusk going dark → you under a blanket in the hoodie → turn to show the back
+  "tour" print → text `now touring: my couch. all winter.` → loop to the window.
+- **Caption:** cozy winter hoodie for the seasonal depression era. the world tour nobody asked for. what's your winter survival ritual?
+- **Hashtags:** #wintervibes #seasonaldepression #cozyhoodie #relatable
+
+### Sun Nov 22 · 11 am · Mugs & ornaments under $20 · ad-safe ✅ (use Gift Is Me / Holly Jolly)
+- **Hook A:** `stocking stuffers for people with a questionable sense of humor`
+- **Hook B:** `secret santa gifts under $20 that don't feel cheap`
+- **Beats:** real mug with steam `[V5]` → ornament on a tree `[V6]` → price text `$18 · $15` → loop.
+- **Caption:** funny secret santa gifts under $20. mugs $18, ornaments $15, all 5 designs. which design are you giving?
+- **Hashtags:** #secretsanta #giftsunder20 #stockingstuffers #christmasmug
+
+### Instagram carousels, week 2
+- **Tue · "The Christmas Collection, ranked by chaos"**: 5 designs, 1 = mild → 5 = Holly Jolly
+  Chaos. Caption: *ranked by how much your family will talk about you after.*
+- **Fri · "Gift guide by person"**: Dad → Bourbon · Coworker → Not AI · Introvert friend →
+  Currently Elsewhere · Sibling → Suck It Up Buttercup · Mom → ornament. Caption: *gift guide for
+  people you love (and tolerate). send it to the group chat.*
 
 ---
 
 ## Instagram Stories (daily, 2–3 frames, no polish needed)
-- Polls: "Bourbon or Gift Is Me?" / "Hoodie or tee?"
-- Behind the scenes: designing on the laptop, packaging, the sample arriving.
-- Reshare every new Reel to Stories with a "NEW" sticker and a link sticker.
-- Quiz sticker: "How many business days?" (6–7, obviously).
+- A poll each day ("Bourbon or Gift Is Me?" / "Hoodie or tee?"). Polls keep you at the front of the Stories row.
+- Reshare every Reel with a "NEW" sticker and a link sticker to the product.
+- Behind the scenes: designing, the samples arriving, filming bloopers.
 
-## Bios
-**TikTok / Instagram:** `Clothes for people who showed up but didn't fully arrive. 🎄 Christmas drop ↓`
-**Link:** `https://elsewheresupplyco.myshopify.com/?utm_source=tiktok` (and `utm_source=instagram`)
+## Bio
+`Clothes for people who showed up but didn't fully arrive. 🎄 Christmas drop ↓`
 
-## Rules for the comments
-- Reply to every comment for the first 2 weeks. Answer the best ones with a **video reply** (free extra post).
-- "Where do I buy?" → "link in bio! 🖤" + pin the comment.
-- Mean or rude comment → reply with a joke once, or ignore. Never argue.
+## Comments
+- Reply to every comment for the first 2 weeks. Answer the best ones with a **video reply** (a free extra post).
+- "Where do I buy?" → reply "link in bio 🖤" and pin that comment.
+- Rude comments: one joke reply or ignore. Never argue.
+
+---
+
+## Scorecard (fill in 48 hours after each post)
+
+| Date | Post | Views | Avg watch time | % watched full | Shares | Profile visits | Link clicks* |
+|---|---|---|---|---|---|---|---|
+| Nov 9 | Gift Is Me art | | | | | | |
+| Nov 10 | Not AI | | | | | | |
+| … | | | | | | | |
+
+\*Link clicks: Shopify → Analytics → Reports → Sessions by UTM source (`tiktok` / `instagram`).
+
+**Every Sunday:**
+1. **Top 2 posts** (by % watched full + shares): make 2 new versions of each next week (new hook, new location, same idea).
+2. **Bottom 2:** re-post with Hook B once. If they flop again, drop that idea.
+3. **Most-clicked product:** it gets the next real-person video and the first ad boost once you're ready to spend.

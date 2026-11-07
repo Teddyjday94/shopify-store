@@ -105,8 +105,11 @@ reuse that footage for months.
 
 - [ ] Switch TikTok and Instagram to **Business** accounts, same handle on both if possible.
 - [ ] Bio: one line + link. Example: *"Clothes for people who showed up but didn't fully
-      arrive. ↓ Christmas drop"* Link to the store with `?utm_source=tiktok` /
+      arrive. ↓ Christmas drop"* Until Dec 12, link straight to the **Christmas Collection**
+      (`/collections/the-christmas-collection`), not the homepage, with `?utm_source=tiktok` /
       `?utm_source=instagram` so Shopify shows which platform sends buyers.
+- [ ] Make the **back-print photo the first image** on the 10 Christmas tees and hoodies. Product
+      tags and link previews show the first photo, and right now it's a plain front.
 - [ ] Install Shopify's **TikTok** app and the **Facebook & Instagram** app. They sync your
       catalog, so you can **tag products** in posts and set up the tracking pixels.
 - [ ] Look into **TikTok Shop** (Printify connects to it). Its affiliate program lets
@@ -140,6 +143,10 @@ reuse that footage for months.
 After 2–3 weeks, look for posts with **good watch time and shares** (not just likes). Boost
 those as **Spark Ads** on TikTok or **boosted Reels** on Instagram at **$5–15/day**,
 with the audience set to US, 18–34, interested in humor, introvert or cozy content, and gift shopping.
+
+Only boost **ad-safe** posts. Bourbon (alcohol), Suck It Up Buttercup (middle finger) and On the
+Naughty List Again (pin-up) are fine to post normally, but ads featuring them usually get rejected.
+Use the core line, The Gift Is Me and Holly Jolly Chaos for ads.
 
 Rule of thumb: if an ad costs more than **about $10 per sale on a tee** or **about $15 on a
 hoodie**, you lose money. Stop that ad and try a different video. Don't raise the budget
