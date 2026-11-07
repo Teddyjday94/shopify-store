@@ -1,37 +1,4 @@
 <footer class="footer">
-
-  {%- liquid
-    assign credits_scene = section.settings.credits_scene_image
-    if credits_scene == blank
-      assign credits_scene = settings.world_crossing
-    endif
-  -%}
-  <div class="mw-end-title mw-end-title--panorama">
-    <div class="mw-end-title__landscape" aria-hidden="true">
-      {%- if credits_scene != blank -%}
-        {{ credits_scene | image_url: width: 2200 | image_tag: class: 'mw-end-title__landscape-img', loading: 'lazy', widths: '750, 1150, 1600, 2200', sizes: '100vw', alt: '' }}
-      {%- else -%}
-        <img class="mw-end-title__landscape-img" src="https://cdn.shopify.com/s/files/1/0765/5086/5057/files/many-worlds-nine-tails-cinematic-hero.png?v=1793908475" width="1648" height="928" loading="lazy" alt="">
-      {%- endif -%}
-      <span class="mw-end-title__shadow"></span>
-      <span class="mw-end-title__light"></span>
-    </div>
-    <div class="page-width mw-end-title__frame">
-      <div class="mw-end-title__frame-top"><span>ELSEWHERE / AFTER THE CREDITS</span><span>AN OPEN ENDING — VOL. 001</span></div>
-      <div class="mw-end-title__layout">
-        <div class="mw-end-title__headline">
-          <p class="mw-end-title__eyebrow"><span class="mw-end-title__dash" aria-hidden="true"></span>{{ section.settings.credits_kicker | escape }}</p>
-          <h2>{{ section.settings.credits_heading | escape }} <em>{{ section.settings.credits_accent | escape }}</em></h2>
-        </div>
-        <div class="mw-end-title__aside">
-          <span class="mw-end-title__chapter">CHAPTER / ∞</span>
-          <p>{{ section.settings.credits_text | escape }}</p>
-          <a href="{{ routes.all_products_collection_url }}">{{ section.settings.credits_link_label | escape }} <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'up-right' %}</span></a>
-        </div>
-      </div>
-      <div class="mw-end-title__frame-bottom"><span>NO FINAL DESTINATION</span><span>KEEP EXPLORING <span aria-hidden="true"><span class="mw-ui-diamond" aria-hidden="true"></span></span></span></div>
-    </div>
-  </div>
   <div class="page-width">
     <div class="footer__grid">
       <div>

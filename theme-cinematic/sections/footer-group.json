@@ -39,7 +39,7 @@
         "show_newsletter": true,
         "newsletter_heading": "Get notified when new drops land",
         "small_print": "Made elsewhere. Worn right here.",
-        "show_wordmark": true,
+        "show_wordmark": false,
         "wordmark": "Elsewhere",
         "credits_kicker": "Every ending opens another door",
         "credits_heading": "THE STORY",

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}"{% unless settings.animations %} class="motion-paused"{% endunless %}>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#0b090d">
+    <link rel="canonical" href="{{ canonical_url }}">
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 64, height: 64 }}">
+    {%- endif -%}
+
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; {{ current_tags | join: ', ' }}{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    {% render 'meta-tags' %}
+    {% render 'theme-styles' %}
+    {{ 'cinematic.css' | asset_url | stylesheet_tag }}
+    {{ 'cinematic-detail.css' | asset_url | stylesheet_tag }}
+    {{ 'elsewhere-worlds.css' | asset_url | stylesheet_tag }}
+    {{ 'page-transitions.css' | asset_url | stylesheet_tag }}
+    {{ 'mw-bloodmoon.css' | asset_url | stylesheet_tag }}
+    {{ 'mw-cinema-motion.css' | asset_url | stylesheet_tag }}
+    {{ 'mw-editorial-scenes.css' | asset_url | stylesheet_tag }}
+    {{ 'mw-scroll-journey.css' | asset_url | stylesheet_tag }}
+    {{ 'mw-hero-smooth.css' | asset_url | stylesheet_tag }}
+    <script>
+      try { if (localStorage.getItem('elsewhere-motion-paused') === 'true' || matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion-paused'); } catch {}
+    </script>
+    {% if settings.animations %}<script data-transition-bootstrap>
+      try {
+        const pending = JSON.parse(sessionStorage.getItem('elsewhere-page-transition') || 'null');
+        const valid = pending && ['shutters','aperture','dissolve'].includes(pending.style) && Date.now() - pending.at >= 0 && Date.now() - pending.at < 20000 && pending.path === location.pathname + location.search;
+        if (valid && !document.documentElement.classList.contains('motion-paused') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.documentElement.dataset.transitionStyle = pending.style;
+          document.documentElement.dataset.transitionCaption = pending.caption || 'See you on the other side.';
+          document.documentElement.classList.add('cinema-entering');
+        }
+        sessionStorage.removeItem('elsewhere-page-transition');
+      } catch {}
+    </script>{% endif %}
+    <script>
+      window.themeStrings = {
+        addToCart: {{ 'products.add_to_cart' | t | json }},
+        soldOut: {{ 'products.sold_out' | t | json }},
+        unavailable: {{ 'products.unavailable' | t | json }}
+      };
+    </script>
+    <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'cinematic.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'cinematic-navigation.js' | asset_url }}" defer="defer"></script>
+
+    <script src="{{ 'mw-bloodmoon.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'mw-cinema-motion.js' | asset_url }}" defer="defer"></script>
+    {{ content_for_header }}
+  </head>
+
+{%- liquid
+    assign world_key = 'crossing'
+    assign world_subject = collection.handle | append: ' ' | append: product.handle | append: ' ' | append: product.type | downcase
+    if world_subject contains 'hoodie' or world_subject contains 'sweatshirt'
+      assign world_key = 'garden'
+    elsif world_subject contains 'hat' or world_subject contains 'beanie' or world_subject contains 'cap'
+      assign world_key = 'dunes'
+    elsif template.name == 'collection' or template.name == 'product' or template.name == 'search'
+      assign world_key = 'tide'
+    elsif page.handle == 'about'
+      assign world_key = 'garden'
+    elsif page.handle == 'shipping' or page.handle == 'returns'
+      assign world_key = 'dunes'
+    elsif page.handle == 'contact'
+      assign world_key = 'tide'
+    endif
+    assign world_setting = 'world_' | append: world_key
+    assign world_image = settings[world_setting]
+  -%}
+  <body data-mw-intro="{{ settings.cinema_opening }}" data-mw-parallax="{{ settings.cinema_parallax }}" data-world="{{ world_key }}"{% if settings.worlds_enabled and world_image != blank %} style="--world-scenery: url('{{ world_image | image_url: width: 1672 }}');"{% endif %} class="template-{{ template.name | handle }}{% if settings.animations %} motion{% endif %}{% if settings.worlds_enabled %} has-worlds{% endif %}">
+    {% section 'loading-screen' %}
+    {% if settings.worlds_enabled %}{% render 'world-scenery', image: world_image, kind: 'page' %}{% endif %}
+    <a class="skip-link" href="#MainContent">Skip to content</a>
+    {% if settings.cinema_grain %}<div class="mw-grain" aria-hidden="true"></div>{% endif %}
+    {% render 'page-transition' %}
+    {% sections 'header-group' %}
+
+    <main id="MainContent" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    {% sections 'footer-group' %}
+  </body>
+</html>

@@ -340,3 +340,30 @@ html.motion-paused .mw-cine-reveal,.motion-paused .mw-cine-reveal {opacity:1!imp
 .mw-cart-kicker {font:600 11px/1.6 var(--sans);color:#d5a37d;text-transform:uppercase;letter-spacing:.27em;margin:4px 0 17px;}
 body[data-mw-parallax="false"] .mw-hero__image {animation:none!important;}
 @media(max-width:600px){.mw-product-chapter{font-size:9px;letter-spacing:.12em;flex-wrap:wrap}.mw-cart-kicker{font-size:9px;letter-spacing:.13em}}
+
+/* Page heroes: heavy Inter Tight instead of the display serif, and plain text instead of the boxed description. */
+body .collection-hero .display,
+body.template-list-collections #MainContent .display,
+body.template-blog #MainContent .display,
+body.template-article #MainContent .display,
+body.template-page #MainContent .display,
+body.template-search #MainContent .display,
+body.template-cart .section--tight > .page-width > .display,
+body .mw-home h1 {
+  font-family: var(--sans) !important;
+  font-weight: 800;
+  font-style: normal;
+  letter-spacing: -.04em;
+  line-height: .92;
+  text-transform: none;
+}
+body .mw-home h1 em, body .mw-home h1 i { font-family: var(--sans); font-weight: 800; }
+body .collection-hero__meta {
+  background: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  font: 400 16px/1.6 var(--sans) !important;
+  color: #eadccd !important;
+  max-width: 600px;
+}
