@@ -234,7 +234,7 @@ words correct.
 | Holiday, a little naughty | "lo-fi jazzy christmas", "sassy christmas swing" | Bourbon, Gift Is Me |
 | Chaos | "chaotic christmas comedy", "frantic jingle bells" | Holly Jolly Chaos |
 | Big reveal | "dramatic orchestral comedic", "epic choir" | Odysseus, back-print reveals |
-| Black Friday | "suspense build hip hop", "countdown tension" | Teaser posts |
+| Winter blues anthem | "melancholy indie rock anthem" | Seasonal Depression World Tour |
 
 Sound effects: "message notification," "ice clink glass," "sleigh bells short," "record scratch."
 

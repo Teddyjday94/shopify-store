@@ -133,13 +133,13 @@ Reply to the first comments within an hour of posting.
 - **Hashtags:** #holidaytravel #layover #greekmythology #travelhumor #funnytshirt
 - **Sound:** Artlist search "epic choir comedic"
 
-### Sat Nov 21 — Black Friday teaser
-- **Hook:** `something's happening on black friday. that's all I'm allowed to say.`
-- **Shots:** quick cuts of all the real samples, the last frame is a blacked-out "Nov 27."
-- **Caption:** turn on notifications. or don't. we're not your mom. 11/27.
-- **Hashtags:** #blackfriday #smallbusinesssaturday #clothingbrand #giftideas
-- **Sound:** Artlist search "suspense build hip hop"
-- *Only post this once you've decided on a real Black Friday offer.*
+### Sat Nov 21 — Seasonal Depression World Tour Hoodie
+- **Hook:** `it's 4:45pm and the sun has already clocked out`
+- **Shots:** window at dusk going dark → you under a blanket in the hoodie, slow turn to show
+  the back "tour dates" print. Second text: `now touring: my couch. all winter.`
+- **Caption:** the world tour nobody asked for. indoor venues only. — Seasonal Depression World Tour Hoodie
+- **Hashtags:** #seasonaldepression #wintervibes #cozyhoodie #relatable #introvert
+- **Sound:** Artlist search "melancholy indie rock anthem"
 
 ### Sun Nov 22 — Mugs & ornaments under $20
 - **Hook:** `stocking stuffers for people with a questionable sense of humor`

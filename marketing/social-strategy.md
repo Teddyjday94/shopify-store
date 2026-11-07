@@ -11,7 +11,8 @@ Written Nov 7, 2026. Store: elsewheresupplyco.myshopify.com. 191 print-on-demand
 - **The margins are thin.** About $10–15 per tee, $15–20 per hoodie. That rules out
   buying growth with ads early on. **Organic first**: let free posts show which designs
   people respond to, then put small ad money behind the posts that already worked.
-- **The calendar matters right now.** Black Friday is **Nov 27**, Cyber Monday **Nov 30**.
+- **The calendar matters right now.** Holiday shopping peaks over the next 5 weeks.
+  We're **not running a Black Friday sale**. Full price, sold on the jokes and the gifting.
   Print-on-demand needs about 2–5 days to print plus shipping, so the last safe
   "arrives by Christmas" order date is likely around **Dec 10–12**. Check Printify's
   posted holiday cutoffs and use their date. That leaves about 5 weeks for the Christmas
@@ -37,7 +38,7 @@ Written Nov 7, 2026. Store: elsewheresupplyco.myshopify.com. 191 print-on-demand
 3. **Behind the brand (about 15%).** "I started a clothing brand for people who showed up
    but didn't fully arrive." Designing a shirt, the first sample arriving, an honest
    "here's what didn't sell." Founder posts build trust faster than polished ads.
-4. **Gift / deal posts (about 10%).** Gift guides, Black Friday, "last day to order for
+4. **Gift / deadline posts (about 10%).** Gift guides, stocking stuffers, "last day to order for
    Christmas." Only post these when the deal or deadline is real.
 
 ## 10 ready-to-film video ideas
@@ -130,7 +131,7 @@ reuse that footage for months.
 |---|---|---|
 | 1 | Nov 9–15 | Set up accounts and apps, order samples, post skits for the brand core while samples arrive (hanger shots, mockups, animated art) |
 | 2 | Nov 16–22 | Samples arrive → film a batch. Christmas skits (#6–8), gift-guide carousels |
-| 3 | Nov 23–30 | Black Friday / Cyber Monday. Run a real offer (e.g. 15% off sitewide or a free mug with any hoodie). Teaser posts, announcement, "last day" post |
+| 3 | Nov 23–30 | Thanksgiving week: family-gathering skits (Ships 6–7, Gift Is Me, Currently Elsewhere), gift-guide carousels for the big shopping weekend. No sale. |
 | 4 | Dec 1–7 | Repost the best Christmas videos with new hooks. "Order by [Printify cutoff] for Christmas" countdown |
 | 5 | Dec 8–12 | Final cutoff push, then switch to "gift for yourself / New Year" and the brand core |
 
