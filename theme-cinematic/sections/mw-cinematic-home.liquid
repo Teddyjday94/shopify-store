@@ -66,7 +66,12 @@
         <a class="mw-textlink" href="{{ featured.url | default: routes.all_products_collection_url }}">{{ section.settings.featured_link_label | escape }} <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'up-right' %}</span></a>
       </div>
       <div class="mw-product-grid">
-        {%- for product in featured.products limit: 4 -%}
+        {%- comment -%} Clothing first: skip accessories (mugs, phone cases, posters) in this row. {%- endcomment -%}
+        {%- assign shown = 0 -%}
+        {%- for product in featured.products -%}
+          {%- if product.tags contains 'accessory' -%}{%- continue -%}{%- endif -%}
+          {%- if shown >= 4 -%}{%- break -%}{%- endif -%}
+          {%- assign shown = shown | plus: 1 -%}
           <a class="mw-product" href="{{ product.url }}" data-mw-reveal>
             <span class="mw-product__media">
               {%- if product.featured_image -%}
@@ -76,9 +81,10 @@
             </span>
             <span class="mw-product__info"><span class="mw-product__title">{{ product.title | escape }}</span><span class="mw-product__price">{{ product.price | money }}</span></span>
           </a>
-        {%- else -%}
-          <p>{{ section.settings.empty_collection_text | escape }}</p>
         {%- endfor -%}
+        {%- if shown == 0 -%}
+          <p>{{ section.settings.empty_collection_text | escape }}</p>
+        {%- endif -%}
       </div>
     </div>
   </section>
