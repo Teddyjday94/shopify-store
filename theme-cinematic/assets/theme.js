@@ -144,6 +144,14 @@ function initCollectionSwap() {
   };
   document.addEventListener('pointerdown', warm, { passive: true });
   document.addEventListener('mouseover', warm, { passive: true });
+  // Once the page has settled, quietly preload every tab's collection (one at a time) so switching is instant.
+  const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 1));
+  setTimeout(() => idle(async () => {
+    const links = Array.from(document.querySelectorAll('[data-collection-tabs] .tab')).map((a) => a.href);
+    for (const href of links) {
+      try { await fetchCollection(href); } catch { /* a failed preload just loads on tap */ }
+    }
+  }), 1500);
   document.addEventListener('click', (e) => {
     if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     const link = e.target instanceof Element ? e.target.closest('a[href]') : null;
