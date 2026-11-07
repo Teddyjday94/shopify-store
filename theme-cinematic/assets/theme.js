@@ -311,10 +311,11 @@ function initProduct(root) {
   });
 }
 
-// Hover zoom on the product photo (mouse and trackpad only). A layer over the photo shows a
-// 2400px copy of the current image at ZOOM x, centered on the cursor. Touch screens keep swiping.
+// Hover magnifier on the product photo (mouse and trackpad only). A round lens follows the cursor
+// and shows that spot of a 2400px copy of the current image at ZOOM x. Touch screens keep swiping.
 (() => {
-  const ZOOM = 2.5;
+  const ZOOM = 2.5;   // magnification inside the lens
+  const SIZE = 220;   // lens diameter in px
   if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
   document.querySelectorAll('.product .gallery__main').forEach((stage) => {
     const img = stage.querySelector('img');
@@ -322,6 +323,7 @@ function initProduct(root) {
     const lens = document.createElement('div');
     lens.className = 'gallery__zoom';
     lens.setAttribute('aria-hidden', 'true');
+    lens.style.width = lens.style.height = `${SIZE}px`;
     stage.appendChild(lens);
     let shownFor = '';
 
@@ -331,37 +333,24 @@ function initProduct(root) {
       return /([?&])width=\d+/.test(src) ? src.replace(/([?&])width=\d+/, '$1width=2400')
         : src + (src.includes('?') ? '&' : '?') + 'width=2400';
     };
-    const place = (e) => {
-      const r = img.getBoundingClientRect();
-      const x = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1);
-      const y = Math.min(Math.max((e.clientY - r.top) / r.height, 0), 1);
-      lens.style.backgroundPosition = `${(x * 100).toFixed(2)}% ${(y * 100).toFixed(2)}%`;
-    };
-    const sizeLens = () => {
-      // Match the lens to the photo's box inside the stage, so the zoom lines up with the image.
-      const s = stage.getBoundingClientRect(), r = img.getBoundingClientRect();
-      Object.assign(lens.style, { left: `${r.left - s.left}px`, top: `${r.top - s.top}px`,
-        width: `${r.width}px`, height: `${r.height}px`, backgroundSize: `${ZOOM * 100}%` });
-    };
-
-    stage.addEventListener('mouseenter', (e) => {
-      if (e.target.closest && e.target.closest('button')) return;
-      const url = bigUrl();
-      if (url && url !== shownFor) { lens.style.backgroundImage = `url("${url}")`; shownFor = url; }
-      sizeLens(); place(e);
-      stage.classList.add('is-zooming');
-    });
-    stage.addEventListener('mousemove', (e) => {
+    const move = (e) => {
       const onButton = e.target.closest && e.target.closest('button');
-      stage.classList.toggle('is-zooming', !onButton);
-      if (!onButton) {
-        const url = bigUrl();
-        if (url !== shownFor) { lens.style.backgroundImage = `url("${url}")`; shownFor = url; sizeLens(); }
-        place(e);
-      }
-    });
+      const r = img.getBoundingClientRect(), s = stage.getBoundingClientRect();
+      const inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+      stage.classList.toggle('is-zooming', inside && !onButton);
+      if (!inside || onButton) return;
+      const url = bigUrl();
+      if (url !== shownFor) { lens.style.backgroundImage = `url("${url}")`; shownFor = url; }
+      const x = e.clientX - r.left, y = e.clientY - r.top;
+      lens.style.left = `${e.clientX - s.left - SIZE / 2}px`;
+      lens.style.top = `${e.clientY - s.top - SIZE / 2}px`;
+      lens.style.backgroundSize = `${r.width * ZOOM}px ${r.height * ZOOM}px`;
+      lens.style.backgroundPosition = `${SIZE / 2 - x * ZOOM}px ${SIZE / 2 - y * ZOOM}px`;
+    };
+    stage.addEventListener('mouseenter', move);
+    stage.addEventListener('mousemove', move);
     stage.addEventListener('mouseleave', () => stage.classList.remove('is-zooming'));
-    // Clicking an arrow or thumbnail changes the photo; drop the zoom until the cursor moves again.
+    // Clicking an arrow or thumbnail changes the photo; hide the lens until the cursor moves again.
     new MutationObserver(() => stage.classList.remove('is-zooming')).observe(img, { attributes: true, attributeFilter: ['src'] });
   });
 })();

@@ -79,18 +79,23 @@
   .product .gallery__thumb { width: 64px; height: 64px; }
 }
 
-/* Hover zoom (see the hover-zoom block at the end of theme.js). Mouse and trackpad only. */
+/* Hover magnifier (see the hover-magnifier block at the end of theme.js). Mouse and trackpad only. */
 @media (hover: hover) and (pointer: fine) {
   .product .gallery__main { cursor: zoom-in; }
+  .product .gallery__main.is-zooming { cursor: none; }
   .product .gallery__zoom {
     position: absolute;
     z-index: 2;
     pointer-events: none;
-    opacity: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, .9);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .45), inset 0 0 0 1px rgba(0, 0, 0, .25);
     background-color: #f4f2ee;
     background-repeat: no-repeat;
-    transition: opacity .18s ease;
+    opacity: 0;
+    transform: scale(.85);
+    transition: opacity .15s ease, transform .15s ease;
   }
-  .product .gallery__main.is-zooming .gallery__zoom { opacity: 1; }
+  .product .gallery__main.is-zooming .gallery__zoom { opacity: 1; transform: scale(1); }
   .product .gallery__arrow, .product .gallery__side { z-index: 3; }
 }
