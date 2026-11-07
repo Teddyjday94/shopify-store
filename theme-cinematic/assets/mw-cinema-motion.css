@@ -369,3 +369,18 @@ body .collection-hero__meta {
 
 /* Opening flash ("ELSEWHERE" over a dark red screen on first visit): removed. */
 .mw-first-arrival::before, .mw-first-arrival::after { display: none !important; content: none !important; }
+
+/* Page transitions: just the image. No red glow, tint overlays, panel sheen/edge lines or glowing star. */
+.page-curtain__scene,
+.has-worlds .page-curtain__scene {
+  background: url("https://cdn.shopify.com/s/files/1/0765/5086/5057/files/many-worlds-bloodmoon-cinematic-hero.webp?v=1793907660") center / cover no-repeat, #110e10 !important;
+}
+.page-curtain__panel::before,
+.page-curtain__aperture::before {
+  background: url("https://cdn.shopify.com/s/files/1/0765/5086/5057/files/many-worlds-bloodmoon-cinematic-hero.webp?v=1793907660") center / cover no-repeat, #110e10 !important;
+}
+.page-curtain__panel { border-right: 0 !important; }
+.page-curtain__panel::after { background: none !important; border-top: 0 !important; }
+.page-curtain__aperture--top { border-bottom: 0 !important; }
+.page-curtain__star { text-shadow: none !important; }
+.page-curtain__brand { text-shadow: 0 2px 14px #000c !important; }
