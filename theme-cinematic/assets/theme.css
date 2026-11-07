@@ -4,9 +4,9 @@
    @font-face rules and color settings live in layout/theme.liquid (they need asset URLs / settings). */
 
 :root {
-  --display: 'Instrument Serif', var(--display);
-  --sans: 'Inter Tight', 'Helvetica Neue', var(--sans);
-  --heavy: 'Inter Tight Strong', 'Inter Tight', 'Helvetica Neue', var(--sans);
+  --display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --sans: 'Inter Tight', 'Helvetica Neue', Arial, sans-serif;
+  --heavy: 'Inter Tight Strong', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif;
   --mono: 'IBM Plex Mono', ui-monospace, 'Courier New', monospace;
   --border: 3px;
   --gutter: clamp(16px, 4vw, 40px);
