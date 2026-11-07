@@ -72,10 +72,33 @@
           {%- if product.tags contains 'accessory' -%}{%- continue -%}{%- endif -%}
           {%- if shown >= 4 -%}{%- break -%}{%- endif -%}
           {%- assign shown = shown | plus: 1 -%}
+          {%- liquid
+            # Hoodies are printed on the back: show the "... in Black, back print" photo (or any back print).
+            assign tile = product.featured_image
+            if product.title contains 'Hoodie'
+              assign back_any = nil
+              assign back_black = nil
+              for media in product.media
+                if media.alt contains ', back print'
+                  if back_any == nil
+                    assign back_any = media
+                  endif
+                  if back_black == nil and media.alt contains ' in Black,'
+                    assign back_black = media
+                  endif
+                endif
+              endfor
+              if back_black
+                assign tile = back_black.preview_image
+              elsif back_any
+                assign tile = back_any.preview_image
+              endif
+            endif
+          -%}
           <a class="mw-product" href="{{ product.url }}" data-mw-reveal>
             <span class="mw-product__media">
-              {%- if product.featured_image -%}
-                {{ product.featured_image | image_url: width: 880 | image_tag: loading: 'lazy', widths: '330, 500, 650, 880', sizes: '(min-width: 1000px) 24vw, (min-width: 600px) 47vw, 88vw', alt: product.title }}
+              {%- if tile -%}
+                {{ tile | image_url: width: 880 | image_tag: loading: 'lazy', widths: '330, 500, 650, 880', sizes: '(min-width: 1000px) 24vw, (min-width: 600px) 47vw, 88vw', alt: product.title }}
               {%- endif -%}
               <span class="mw-product__view">{{ section.settings.product_view_label | escape }} <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'up-right' %}</span></span>
             </span>
