@@ -93,7 +93,7 @@ body.motion:not(.motion-paused) .mw-hero__kicker .mw-kicker__line { animation:mw
 .mw-pillar { transition:background .45s,transform .5s var(--mw-ease); }
 .mw-pillar:hover { background:#4121192c; transform:translateY(-2px); }
 .mw-pillar__glyph { transition:transform .75s var(--mw-ease),text-shadow .6s; }
-.mw-pillar:hover .mw-pillar__glyph { transform:rotate(-18deg) scale(1.14); text-shadow:0 0 20px #cc71518c; }
+.mw-pillar:hover .mw-pillar__glyph { transform:rotate(-18deg) scale(1.14); }
 .mw-world { transform-style:preserve-3d; }
 .mw-world::after {
   content:""; pointer-events:none; position:absolute; inset:0;
@@ -157,7 +157,6 @@ body.motion:not(.motion-paused) .card__media { position:relative; }
   animation:mw-banner-breathe 13s ease-in-out infinite alternate;
 }
 .collection-hero.world-collection .display { transition:text-shadow .5s; }
-.collection-hero.world-collection .display:hover { text-shadow:0 0 35px #bb372b55; }
 @keyframes mw-banner-breathe { from{opacity:.3;transform:scale(1)}to{opacity:.9;transform:scale(1.06)} }
 .tabs-bar {backdrop-filter:blur(10px);}
 .tab {transition:border-color .3s,transform .35s var(--mw-ease),background .3s; }
