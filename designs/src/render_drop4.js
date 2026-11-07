@@ -42,12 +42,14 @@ function back(name, title, line) {
     .frame img{display:block;width:100%}
     .title{font-family:'Anton';font-size:150px;line-height:1;text-transform:uppercase;letter-spacing:.01em;
       white-space:nowrap;margin-top:22px;text-align:center}
-    .row{display:flex;justify-content:space-between;gap:30px;margin-top:14px;padding-top:14px;border-top:3px solid #f4ecdc;white-space:nowrap}
-    .line{font:700 24px 'Space Mono'}
+    .row{margin-top:16px;padding-top:18px;border-top:4px solid #f4ecdc;text-align:center;white-space:nowrap}
+    /* Sized to stay legible on the garment and in product photos (about 2x the original 22-24px). */
+    .row .label{font:700 44px 'Space Mono';letter-spacing:.16em;margin-right:-.16em;color:#fff}
+    .line{font:700 36px 'Space Mono';margin-top:10px;color:#f4ecdc}
   </style></head><body><div id="art">
     <div class="frame"><img src="${img}"></div>
     <div class="title">${title}</div>
-    <div class="row"><div class="label">Elsewhere Apparel Co. / Immortalized</div><div class="line">${line}</div></div>
+    <div class="row"><div class="label">Elsewhere Apparel Co. · Immortalized</div><div class="line">${line}</div></div>
   </div></body></html>`;
 }
 
@@ -55,7 +57,7 @@ function front(lines) {
   return `<!doctype html><html><head><style>${css}
     #art{display:inline-block;padding:10px;text-align:left}
     .t{font-family:'Anton';font-size:120px;line-height:.9;text-transform:uppercase;white-space:nowrap}
-    .label{font-size:30px;margin-top:16px}
+    .label{font-size:33px;letter-spacing:.2em;margin-top:18px}
   </style></head><body><div id="art"><div class="t">${lines.join('<br>')}</div>
     <div class="label">Elsewhere / Immortalized</div></div></body></html>`;
 }
