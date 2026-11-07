@@ -351,10 +351,10 @@ body.template-search #MainContent .display,
 body.template-cart .section--tight > .page-width > .display,
 body .mw-home h1 {
   font-family: var(--sans) !important;
-  font-weight: 800;
+  font-weight: 800 !important;
   font-style: normal;
-  letter-spacing: -.04em;
-  line-height: .92;
+  letter-spacing: -.04em !important;
+  line-height: .92 !important;
   text-transform: none;
 }
 body .mw-home h1 em, body .mw-home h1 i { font-family: var(--sans); font-weight: 800; }
