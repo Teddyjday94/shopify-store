@@ -384,3 +384,4 @@ body .collection-hero__meta {
 .page-curtain__aperture--top { border-bottom: 0 !important; }
 .page-curtain__star { text-shadow: none !important; }
 .page-curtain__brand { text-shadow: 0 2px 14px #000c !important; }
+.page-curtain__frame { display: none !important; }
