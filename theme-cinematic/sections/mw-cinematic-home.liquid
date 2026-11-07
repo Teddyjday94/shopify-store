@@ -28,37 +28,6 @@
       <div class="mw-hero__foot"><span>{{ section.settings.hero_footnote | escape }}</span><a href="#mw-worlds">{{ section.settings.scroll_label | escape }} <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'down' %}</span></a></div>
     </div>
   </div>
-  <section class="mw-worlds mw-shell" id="mw-worlds" aria-labelledby="mw-worlds-heading">
-    <div class="mw-heading" data-mw-reveal>
-      <p class="mw-kicker">{{ section.settings.worlds_kicker | escape }}</p>
-      <h2 id="mw-worlds-heading">{{ section.settings.worlds_heading | escape }}</h2>
-      <p>{{ section.settings.worlds_subtitle | escape }}</p>
-    </div>
-    <div class="mw-world-grid">
-    {%- for block in section.blocks -%}
-      {%- liquid
-        assign world_collection = block.settings.collection
-        assign poster = block.settings.poster
-        if poster == blank
-          assign poster = world_collection.image
-        endif
-        if poster == blank
-          assign poster = world_collection.products.first.featured_image
-        endif
-      -%}
-      {%- if world_collection != blank -%}
-        <a class="mw-world mw-world--{{ forloop.index }}" href="{{ world_collection.url }}" data-mw-reveal {{ block.shopify_attributes }}>
-          {%- if poster != blank -%}
-            {{ poster | image_url: width: 1100 | image_tag: class: 'mw-world__image', loading: 'lazy', widths: '400, 650, 850, 1100', sizes: '(min-width: 850px) 33vw, 85vw', alt: '' }}
-          {%- endif -%}
-          <span class="mw-world__scrim" aria-hidden="true"></span>
-          <span class="mw-world__no">0{{ forloop.index }} / {{ block.settings.category | escape }}</span>
-          <span class="mw-world__body"><span class="mw-world__text"><span class="mw-world__title">{{ block.settings.title | default: world_collection.title | escape }}</span><span class="mw-world__subtitle">{{ block.settings.subtitle | escape }}</span></span><span class="mw-world__arrow" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'right' %}</span></span>
-        </a>
-      {%- endif -%}
-    {%- endfor -%}
-    </div>
-  </section>
   <section class="mw-featured" aria-labelledby="mw-featured-heading">
     <div class="mw-shell">
       <div class="mw-featured__head" data-mw-reveal>
@@ -109,6 +78,37 @@
           <p>{{ section.settings.empty_collection_text | escape }}</p>
         {%- endif -%}
       </div>
+    </div>
+  </section>
+  <section class="mw-worlds mw-shell" id="mw-worlds" aria-labelledby="mw-worlds-heading">
+    <div class="mw-heading" data-mw-reveal>
+      <p class="mw-kicker">{{ section.settings.worlds_kicker | escape }}</p>
+      <h2 id="mw-worlds-heading">{{ section.settings.worlds_heading | escape }}</h2>
+      <p>{{ section.settings.worlds_subtitle | escape }}</p>
+    </div>
+    <div class="mw-world-grid">
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign world_collection = block.settings.collection
+        assign poster = block.settings.poster
+        if poster == blank
+          assign poster = world_collection.image
+        endif
+        if poster == blank
+          assign poster = world_collection.products.first.featured_image
+        endif
+      -%}
+      {%- if world_collection != blank -%}
+        <a class="mw-world mw-world--{{ forloop.index }}" href="{{ world_collection.url }}" data-mw-reveal {{ block.shopify_attributes }}>
+          {%- if poster != blank -%}
+            {{ poster | image_url: width: 1100 | image_tag: class: 'mw-world__image', loading: 'lazy', widths: '400, 650, 850, 1100', sizes: '(min-width: 850px) 33vw, 85vw', alt: '' }}
+          {%- endif -%}
+          <span class="mw-world__scrim" aria-hidden="true"></span>
+          <span class="mw-world__no">0{{ forloop.index }} / {{ block.settings.category | escape }}</span>
+          <span class="mw-world__body"><span class="mw-world__text"><span class="mw-world__title">{{ block.settings.title | default: world_collection.title | escape }}</span><span class="mw-world__subtitle">{{ block.settings.subtitle | escape }}</span></span><span class="mw-world__arrow" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'right' %}</span></span>
+        </a>
+      {%- endif -%}
+    {%- endfor -%}
     </div>
   </section>
 
