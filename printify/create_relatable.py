@@ -49,6 +49,10 @@ DESIGNS = [
     ("16-people-one-star", "People: One Star", "A one-star review of humanity.", "Very bad. Would not recommend."),
 ]
 
+# Designs pulled from the store; scripts skip them so they are never recreated.
+RETIRED = {"04-my-kind-of-leg-day"}
+DESIGNS = [d for d in DESIGNS if d[0] not in RETIRED]
+
 
 def front_place(name, w, h, max_w=0.80, max_h=0.92):
     with Image.open(ART / name) as im:
