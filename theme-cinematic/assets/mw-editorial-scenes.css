@@ -42,12 +42,12 @@
   margin: 24px 0 25px; padding: 0; max-width: 12ch;
   color: #f2e5d2; text-transform: uppercase; text-align: left;
   font: 400 clamp(48px,5.9vw,102px)/.99 var(--display);
-  letter-spacing: -.055em; text-wrap: balance; text-shadow: 0 5px 32px #0008;
+  letter-spacing:-.012em; text-wrap: balance; text-shadow: 0 5px 32px #0008;
 }
 .mw-story--editorial .mw-story__rule { display: block; width: 84px; height: 1px; background: #d66e5b; }
 .mw-story--editorial .mw-story__description {
   max-width: 39ch; margin: 21px 0 28px; color: #e0d3c4;
-  font: 400 clamp(16px,1.35vw,19px)/1.65 var(--display);
+  font: 400 clamp(16px,1.35vw,19px)/1.65 var(--sans);
   text-align: left; text-shadow: 0 2px 14px #0008;
 }
 .mw-story--editorial .mw-story__action {
@@ -132,14 +132,14 @@
 .footer .mw-end-title--panorama .mw-end-title__dash { width: 38px; height: 1px; background: #e66d58; }
 .footer .mw-end-title--panorama h2 {
   margin: 0; max-width: 720px; font: 400 clamp(50px,6.4vw,103px)/.94 var(--display);
-  text-transform: uppercase; letter-spacing: -.05em; color: #f0e2d0; text-align: left; text-wrap: balance;
+  text-transform: uppercase; letter-spacing:-.012em; color: #f0e2d0; text-align: left; text-wrap: balance;
   text-shadow: 0 4px 24px #000b;
 }
 .footer .mw-end-title--panorama h2 em { display: block; margin-top: 10px; color: #e58b73; font-style: italic; }
 .footer .mw-end-title--panorama .mw-end-title__aside { max-width: 335px; padding-left: 22px; border-left: 1px solid #d3a8868c; }
 .footer .mw-end-title--panorama .mw-end-title__chapter { color: #e0b79b; font: 700 10.5px var(--sans); letter-spacing: .21em; }
 .footer .mw-end-title--panorama .mw-end-title__aside p {
-  margin: 15px 0 22px; color: #f2ded1; max-width: none; font: 400 clamp(15px,1.3vw,19px)/1.5 var(--display);
+  margin: 15px 0 22px; color: #f2ded1; max-width: none; font: 400 clamp(15px,1.3vw,19px)/1.5 var(--sans);
   text-align: left; text-shadow: 0 1px 10px #0009;
 }
 .footer .mw-end-title--panorama .mw-end-title__aside a {
@@ -263,7 +263,7 @@ body.motion-paused .mw-story--editorial *, body.motion-paused .mw-end-title--pan
   text-wrap: balance;
   font-size: clamp(26px,2.65vw,42px);
   line-height: 1.03;
-  letter-spacing: -.035em;
+  letter-spacing:-.012em;
   text-shadow: 0 2px 18px #030305ef;
 }
 .mw-home .mw-world__subtitle {
@@ -399,7 +399,7 @@ body.motion-paused .mw-story--editorial *, body.motion-paused .mw-end-title--pan
 @media (max-width: 390px) {
   .mw-home .mw-world__title {
     font-size: clamp(25px,7.4vw,30px);
-    letter-spacing: -.055em;
+    letter-spacing:-.012em;
   }
   .mw-story--editorial .mw-story__action { font-size: 9px; padding-left: 12px; }
   .mw-story--editorial .mw-story__action-arrow { width: 39px; height: 39px; flex-basis: 39px; }
