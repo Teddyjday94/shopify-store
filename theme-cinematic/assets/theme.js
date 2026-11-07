@@ -65,20 +65,56 @@ function collectionUrl(href) {
 }
 
 let collectionRequest = 0;
+const collectionPages = new Map();  // url -> Promise<html>; tapped or hovered collections load early and stay cached
+
+function fetchCollection(href) {
+  const url = collectionUrl(href);
+  if (!url) return null;
+  if (!collectionPages.has(url.href)) {
+    const page = fetch(url.href, { headers: { 'X-Requested-With': 'fetch' } })
+      .then((r) => { if (!r.ok) throw new Error(r.status); return r.text(); });
+    page.catch(() => collectionPages.delete(url.href));
+    collectionPages.set(url.href, page);
+  }
+  return collectionPages.get(url.href);
+}
+
+function markActiveTab(href) {
+  const target = collectionUrl(href);
+  if (!target) return;
+  document.querySelectorAll('[data-collection-tabs] .tab').forEach((tab) => {
+    const on = collectionUrl(tab.href)?.pathname === target.pathname;
+    tab.classList.toggle('is-active', on);
+    if (on) tab.setAttribute('aria-current', 'page'); else tab.removeAttribute('aria-current');
+  });
+}
+
 function loadCollection(href, { push = true } = {}) {
   const view = document.querySelector('[data-collection-view]');
   const url = collectionUrl(href);
   if (!view || !url) return false;
   const request = ++collectionRequest;
-  view.classList.add('is-loading');
-  fetch(url.href, { headers: { 'X-Requested-With': 'fetch' } })
-    .then((r) => { if (!r.ok) throw new Error(r.status); return r.text(); })
+  markActiveTab(url.href);                       // instant feedback on the tapped tab
+  const loading = setTimeout(() => view.classList.add('is-loading'), 120);  // only dim if it is actually slow
+  fetchCollection(url.href)
     .then((html) => {
+      clearTimeout(loading);
       if (request !== collectionRequest) return;
       const doc = new DOMParser().parseFromString(html, 'text/html');
       const next = doc.querySelector('[data-collection-view]');
       if (!next) throw new Error('no collection view');
-      view.replaceWith(next);
+      const swap = () => {
+        view.replaceWith(next);
+        next.querySelectorAll('.card').forEach((card) => card.classList.add('is-visible'));
+      };
+      // Crossfade where the browser supports view transitions (Chrome, Safari 18+); otherwise fade the new list in.
+      if (document.startViewTransition && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.startViewTransition(swap);
+      } else {
+        next.classList.add('is-entering');
+        swap();
+        requestAnimationFrame(() => requestAnimationFrame(() => next.classList.remove('is-entering')));
+      }
       document.title = doc.title;
       if (push) window.history.pushState({ collection: true }, '', url.href);
       document.querySelectorAll('#HeaderNav details[open]').forEach((d) => { d.open = false; });
@@ -92,15 +128,22 @@ function loadCollection(href, { push = true } = {}) {
       if (anchor.getBoundingClientRect().top < 0) anchor.scrollIntoView({ block: 'start' });
       initFilters();
       initReveal();
-      next.querySelectorAll('.card').forEach((card) => card.classList.add('is-visible'));
     })
-    .catch(() => { window.location.assign(url.href); });
+    .catch(() => { clearTimeout(loading); window.location.assign(url.href); });
   return true;
 }
 
 function initCollectionSwap() {
   if (!document.querySelector('[data-collection-view]')) return;
   window.history.replaceState({ collection: true }, '');
+  collectionPages.set(window.location.href.split('#')[0], Promise.resolve(document.documentElement.outerHTML));
+  // Start loading a collection as soon as a finger touches its link or the mouse rests on it.
+  const warm = (e) => {
+    const link = e.target instanceof Element ? e.target.closest('a[href]') : null;
+    if (link && collectionUrl(link.href)) fetchCollection(link.href);
+  };
+  document.addEventListener('pointerdown', warm, { passive: true });
+  document.addEventListener('mouseover', warm, { passive: true });
   document.addEventListener('click', (e) => {
     if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     const link = e.target instanceof Element ? e.target.closest('a[href]') : null;

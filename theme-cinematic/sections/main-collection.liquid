@@ -158,8 +158,16 @@
 {%- endpaginate -%}
 
 <style>
-  .collection-view { transition: opacity .2s ease; }
-  .collection-view.is-loading { opacity: .45; pointer-events: none; }
+  /* In-place collection swaps: only the product grid dims, and only if loading is slow; new content fades in. */
+  .collection-view .grid, .collection-view .collection-hero { transition: opacity .25s ease; }
+  .collection-view.is-loading .grid { opacity: .55; }
+  .collection-view.is-loading { pointer-events: none; }
+  .collection-view.is-entering .grid, .collection-view.is-entering .collection-hero { opacity: 0; transition: none; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .28s; animation-timing-function: ease; }
+  /* Touch screens keep :hover on the tapped spot; don't let that paint a second tab red. */
+  @media (hover: none) {
+    .tab:not(.is-active):hover { background: #141214; color: #eadcc7; border-color: #e0ccae38; transform: none; }
+  }
 </style>
 
 {% schema %}
