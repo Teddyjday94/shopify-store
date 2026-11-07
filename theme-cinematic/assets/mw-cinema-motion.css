@@ -367,3 +367,6 @@ body .collection-hero__meta {
   color: #eadccd !important;
   max-width: 600px;
 }
+
+/* Opening flash ("ELSEWHERE" over a dark red screen on first visit): removed. */
+.mw-first-arrival::before, .mw-first-arrival::after { display: none !important; content: none !important; }
