@@ -170,13 +170,13 @@
 }
 .is-active .mw-portal-transition__caption { animation:mw-portal-caption 1.2s ease-in-out both; }
 .mw-portal-transition__eyebrow {
-  font:700 clamp(8px,1vw,11px)/1.5 Arial,Helvetica,sans-serif;
+  font:700 clamp(8px,1vw,11px)/1.5 var(--sans);
   letter-spacing:.33em;
   color:var(--mw-portal-bright);
 }
 .mw-portal-transition__eyebrow span { padding-inline:8px; }
 .mw-portal-transition__caption strong {
-  font:400 clamp(22px,3.2vw,44px)/1.08 Georgia,'Times New Roman',serif;
+  font:400 clamp(22px,3.2vw,44px)/1.08 var(--display);
   text-transform:uppercase;
   letter-spacing:-.035em;
   max-width:16ch;

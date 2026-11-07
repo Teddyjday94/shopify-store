@@ -1,12 +1,13 @@
 /* Elsewhere Apparel Co. — theme styles
-   Paper + ink, Anton for display, Space Mono for everything else.
+   Paper + ink. Instrument Serif for display, Inter Tight for text, IBM Plex Mono for labels.
    Recurring motifs: shipping labels (boxed, dashed rules, barcodes), rubber stamps, auto-replies.
    @font-face rules and color settings live in layout/theme.liquid (they need asset URLs / settings). */
 
 :root {
-  --display: 'Anton', 'Impact', 'Arial Narrow', sans-serif;
-  --heavy: 'Archivo Black', 'Arial Black', sans-serif;
-  --mono: 'Space Mono', ui-monospace, 'Courier New', monospace;
+  --display: 'Instrument Serif', var(--display);
+  --sans: 'Inter Tight', 'Helvetica Neue', var(--sans);
+  --heavy: 'Inter Tight Strong', 'Inter Tight', 'Helvetica Neue', var(--sans);
+  --mono: 'IBM Plex Mono', ui-monospace, 'Courier New', monospace;
   --border: 3px;
   --gutter: clamp(16px, 4vw, 40px);
   --max: 1320px;
@@ -18,8 +19,8 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--mono);
-  font-size: 15px;
+  font-family: var(--sans);
+  font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -41,17 +42,17 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 /* ---------- Type ---------- */
 .display {
-  font-family: var(--display); font-weight: 400; text-transform: uppercase;
-  line-height: 0.92; letter-spacing: 0.005em; margin: 0;
+  font-family: var(--display); font-weight: 400; text-transform: none;
+  line-height: 0.95; letter-spacing: -0.012em; margin: 0;
 }
 .display--xl { font-size: clamp(64px, 13vw, 200px); }
 .display--lg { font-size: clamp(48px, 8vw, 120px); }
 .display--md { font-size: clamp(36px, 5vw, 64px); }
 .display--sm { font-size: clamp(26px, 3vw, 36px); }
-.heavy { font-family: var(--heavy); font-weight: 400; text-transform: uppercase; letter-spacing: 0.04em; }
+.heavy { font-family: var(--heavy); font-weight: 600; letter-spacing: 0; }
 .label {
-  font-family: var(--mono); font-size: 12px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.12em;
+  font-family: var(--mono); font-size: 11.5px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.14em;
 }
 .muted { color: var(--muted); }
 .rte > :first-child { margin-top: 0; }
@@ -195,7 +196,7 @@ textarea.input { padding: 12px 14px; min-height: 140px; }
 .card__no { position: absolute; top: 10px; left: 10px; background: var(--paper); border: 2px solid var(--ink); padding: 1px 8px; z-index: 1; }
 .card__tag { position: absolute; top: 12px; right: 10px; z-index: 1; font-size: 11px; }
 .card__info { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
-.card__title { font-family: var(--heavy); text-transform: uppercase; font-size: 15px; line-height: 1.2; letter-spacing: 0.02em; margin: 0; }
+.card__title { font-family: var(--heavy); font-size: 16px; line-height: 1.25; letter-spacing: -0.005em; margin: 0; }
 .card__meta { display: flex; justify-content: space-between; align-items: baseline; margin-top: auto; padding-top: 8px; border-top: 1px dashed var(--ink); }
 @media (max-width: 520px) { .card__title { font-size: 13px; } .card__info { padding: 10px; } }
 
@@ -317,7 +318,7 @@ textarea.input { padding: 12px 14px; min-height: 140px; }
 .cart-item { display: grid; grid-template-columns: 110px 1fr auto; gap: 18px; padding: 18px 0; border-bottom: 2px dashed var(--ink); align-items: start; }
 .cart-item__media { border: 2px solid var(--ink); background: var(--card); aspect-ratio: 1; }
 .cart-item__media img { width: 100%; height: 100%; object-fit: cover; }
-.cart-item__title { font-family: var(--heavy); text-transform: uppercase; text-decoration: none; }
+.cart-item__title { font-family: var(--heavy); text-decoration: none; }
 .cart-item__remove { background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; font-size: 13px; }
 .cart-summary { padding: 22px; }
 .cart-summary .kv { margin: 14px 0; }
