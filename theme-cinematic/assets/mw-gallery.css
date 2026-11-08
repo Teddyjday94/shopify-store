@@ -78,3 +78,11 @@
   .product .gallery__arrow { width: 38px; height: 38px; font-size: 26px; }
   .product .gallery__thumb { width: 64px; height: 64px; }
 }
+
+/* Never let a long thumbnail row (e.g. posters, which show every photo) stretch the page wider than the
+   screen: grid/flex children may shrink, and the row scrolls sideways inside the column instead. */
+.product > * { min-width: 0; }
+.product .gallery, .product .gallery__main, .product .gallery__thumbs { min-width: 0; max-width: 100%; }
+@media (max-width: 900px) {
+  .product { grid-template-columns: minmax(0, 1fr) !important; }
+}
