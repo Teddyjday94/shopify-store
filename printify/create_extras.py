@@ -37,6 +37,7 @@ XMAS = [
     ("05-holly-jolly-chaos", "Holly Jolly Chaos"),
 ]
 
+POSTERS_ON = False
 POSTER = dict(blueprint=282, provider=234, ratio=0.75,
               prices={'11″ x 14″ / Matte': 1700, '12″ x 18″ / Matte': 2700,
                       '18″ x 24″ / Matte': 3700, '24″ x 36″ / Matte': 4700},
@@ -93,9 +94,10 @@ def specs():
     for group, art, coll in ((IMMORTALIZED, "immortalized", ["immortalized", "drop 004"]),
                              (XMAS, "christmas", ["christmas collection", "christmas", "holiday"])):
         for slug, name in group:
-            yield "posters", POSTER, f"{name} Poster", f"print-wall/{slug}-poster.jpg", \
-                coll + ["accessory", "home", "poster", "wall art"], \
-                f"The {name} artwork as a matte art print, in four sizes from 11×14 to 24×36."
+            if POSTERS_ON:   # posters were removed from the store; set True to bring them back
+                yield "posters", POSTER, f"{name} Poster", f"print-wall/{slug}-poster.jpg", \
+                    coll + ["accessory", "home", "poster", "wall art"], \
+                    f"The {name} artwork as a matte art print, in four sizes from 11×14 to 24×36."
             if not os.path.exists(os.path.join(DESIGNS, "mat-hd", f"{slug}.jpg")):
                 continue
             yield "deskmats", DESKMAT, f"{name} Desk Mat", f"mat-hd/{slug}.jpg", \
