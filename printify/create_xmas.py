@@ -28,7 +28,7 @@ TAGS = ["christmas", "holiday"]
 TEE = dict(kind="Tee", blueprint=12, provider=29, price=2700, colors=["Black"], sizes=TEE_SIZES,
            features=["Full-color front print",
                      "Soft, lightweight 100% combed cotton", "Retail unisex fit"])
-HOODIE = dict(kind="Hoodie", blueprint=77, provider=39, price=3700, colors=["Black"], sizes=TEE_SIZES,
+HOODIE = dict(kind="Hoodie", blueprint=77, provider=39, price=4700, colors=["Black"], sizes=TEE_SIZES,
               features=["Full-color back print, small chest print up front",
                         "Medium-heavy cotton/poly blend, fleece-lined", "Double-lined hood, front pouch pocket",
                         "Unisex fit, size up for oversized"])
