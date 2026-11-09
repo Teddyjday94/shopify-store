@@ -1,7 +1,7 @@
 """Create the Christmas Collection: a tee, a hoodie and a dad hat for each design.
 
-Tees and hoodies carry the full art on the back (designs/print-xmas/*-back.png, black keyed out)
-and a small chest mark up front, on Black only: the art is painted on black and dark details
+Tees carry the full art on the front only (designs/print-xmas/*-back.png, black keyed out).
+Hoodies carry it on the back with a small chest mark up front. Both come on Black only: the art is painted on black and dark details
 would pick up any other garment color. Hats get the slogan in white on the front panel.
 
 Usage:
@@ -25,8 +25,8 @@ RAW = "https://raw.githubusercontent.com/Teddyjday94/shopify-store/{commit}/desi
 ART = ROOT / "designs" / "print-xmas"
 TAGS = ["christmas", "holiday"]
 
-TEE = dict(kind="Tee", blueprint=12, provider=29, price=2600, colors=["Black"], sizes=TEE_SIZES,
-           features=["Full-color back print, small chest print up front",
+TEE = dict(kind="Tee", blueprint=12, provider=29, price=2400, colors=["Black"], sizes=TEE_SIZES,
+           features=["Full-color front print",
                      "Soft, lightweight 100% combed cotton", "Retail unisex fit"])
 HOODIE = dict(kind="Hoodie", blueprint=77, provider=39, price=4500, colors=["Black"], sizes=TEE_SIZES,
               features=["Full-color back print, small chest print up front",
@@ -121,7 +121,7 @@ def main():
         for spec in (TEE, HOODIE, HAT):
             title = f"{name} {spec['kind']}"
             if title in existing:
-                if args.refresh and spec is not HAT:
+                if args.refresh and spec is HOODIE:
                     print(f"{'swap' if args.apply else 'plan'}  {title}: new back print")
                     if args.apply:
                         refresh(api, shop, existing[title], image(f"{slug}-back.png"), f"{slug}-back.png")
@@ -136,6 +136,8 @@ def main():
             if spec is HAT:
                 (pos, (w, h)), = sizes.items()
                 art = [(pos, f"{slug}-hat.png", hat_place(f"{slug}-hat.png", w, h))]
+            elif spec is TEE:
+                art = [("front", f"{slug}-back.png", back_place(f"{slug}-back.png", *sizes["front"]))]
             else:
                 art = [("back", f"{slug}-back.png", back_place(f"{slug}-back.png", *sizes["back"])),
                        ("front", f"{slug}-front.png", chest_place(f"{slug}-front.png", *sizes["front"]))]
