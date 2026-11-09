@@ -3,6 +3,8 @@
 Each hoodie is recreated on provider 27 with the same title, description, tags, colors and price; its back art
 is scaled to fill 97% of the back area (width or height, whichever runs out first) from 3% below the top. The
 new product is published, then the old one is deleted (Printify can't change a product's provider in place).
+Deleting in Printify does not always remove the old listing from Shopify: check the store afterwards and delete
+any leftover old listing there (it is no longer linked to Printify, so its orders would not be printed).
 
 Usage: python3 printify/horror_hoodies_big.py [--apply] [--only TITLE]
 """

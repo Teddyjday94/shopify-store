@@ -43,6 +43,9 @@ def main(out, prefixes=()):
                 continue
             if prefixes and not p["title"].startswith(tuple(prefixes)):
                 continue
+            if not (p.get("external") or {}).get("id"):
+                print(p["title"], "not in the store yet, skipped")
+                continue
             colors = {}
             for v in p["variants"]:
                 if v["is_enabled"]:
