@@ -25,7 +25,7 @@ RAW = "https://raw.githubusercontent.com/Teddyjday94/shopify-store/{commit}/desi
 ART = ROOT / "designs" / "print-xmas"
 TAGS = ["christmas", "holiday"]
 
-TEE = dict(kind="Tee", blueprint=12, provider=29, price=3000, colors=["Black"], sizes=TEE_SIZES,
+TEE = dict(kind="Tee", blueprint=12, provider=29, price=2600, colors=["Black"], sizes=TEE_SIZES,
            features=["Full-color back print, small chest print up front",
                      "Soft, lightweight 100% combed cotton", "Retail unisex fit"])
 HOODIE = dict(kind="Hoodie", blueprint=77, provider=39, price=4500, colors=["Black"], sizes=TEE_SIZES,
