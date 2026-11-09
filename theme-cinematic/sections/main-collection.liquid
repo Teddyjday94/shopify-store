@@ -3,13 +3,75 @@
   Collections tabs, the header dropdowns, filter chips, pagination) are loaded in place by theme.js and swap
   just this block, so moving between collections works like a filter instead of a new page.
 {%- endcomment -%}
-{%- paginate collection.products by section.settings.per_page -%}
+{%- liquid
+  # The Shop row (first menu dropdown) holds categories; the other dropdowns hold collections. A category can be
+  # layered on a collection with ?view=<category handle>, which loads templates/collection.<handle>.json: the
+  # page then lists only the products that are in both. Without ?view, the page is just the collection.
+  assign menu = section.settings.browse_menu
+  assign cat_group = nil
+  for group in menu.links
+    if group.links.size > 0
+      assign cat_group = group
+      break
+    endif
+  endfor
+  assign cat_handles = ''
+  for link in cat_group.links
+    assign h = link.url | split: '?' | first | split: '/' | last
+    assign cat_handles = cat_handles | append: h | append: ','
+  endfor
+  assign cat_list = cat_handles | split: ','
+  assign category = ''
+  assign theme = collection.handle
+  if template.suffix != blank and template.suffix != collection.handle
+    assign category = template.suffix
+  elsif cat_list contains collection.handle
+    assign theme = ''
+    unless collection.handle == 'all'
+      assign category = collection.handle
+    endunless
+  endif
+  assign category_title = ''
+  for link in cat_group.links
+    assign h = link.url | split: '?' | first | split: '/' | last
+    if h == category
+      assign category_title = link.title
+    endif
+  endfor
+  assign layered = false
+  if category != blank and theme != blank
+    assign layered = true
+  endif
+  assign sort_param = ''
+  if collection.sort_by != blank
+    assign sort_param = 'sort_by=' | append: collection.sort_by
+  endif
+  assign per_page = section.settings.per_page
+  if layered
+    assign per_page = 250
+  endif
+-%}
+{%- paginate collection.products by per_page -%}
+    {%- capture cards -%}
+      {%- assign shown = 0 -%}
+      {%- for product in collection.products -%}
+        {%- if layered -%}
+          {%- assign in_handles = product.collections | map: 'handle' -%}
+          {%- unless in_handles contains category -%}{%- continue -%}{%- endunless -%}
+        {%- endif -%}
+        {%- assign shown = shown | plus: 1 -%}
+        {%- assign index = paginate.current_offset | plus: shown -%}
+        {%- assign eager = false -%}
+        {%- if shown <= 3 -%}{%- assign eager = true -%}{%- endif -%}
+        {% render 'product-card', product: product, index: index, lazy: eager %}
+      {%- endfor -%}
+    {%- endcapture -%}
 <div class="collection-view" data-collection-view>
   <div class="collection-hero world-collection">
     <div class="page-width">
-      <p class="label muted" style="margin: 0 0 10px;">Dept. / {{ collection.handle | upcase }}</p>
+      <p class="label muted" style="margin: 0 0 10px;">Dept. / {% if layered %}{{ category | upcase }} / {% endif %}{{ collection.handle | upcase }}</p>
       <p class="world-collection__invitation">A different state of mind.</p>
-      <h1 class="display display--lg">{{ collection.title }}</h1>
+      <h1 class="display display--lg">{% if layered %}{{ category_title }} &middot; {% endif %}{{ collection.title }}</h1>
       <div class="collection-hero__meta">
         {%- if collection.description != blank -%}
           <div class="rte" style="max-width: 640px;">{{ collection.description }}</div>
@@ -20,16 +82,54 @@
   </div>
 
   {%- comment -%} Category tabs: every collection link inside the chosen menu's dropdowns. {%- endcomment -%}
-  {%- if section.settings.browse_menu != blank -%}
+  {%- if menu != blank -%}
     <nav class="tabs-bar" aria-label="Browse" data-collection-tabs>
       <div class="page-width">
-        {%- for group in section.settings.browse_menu.links -%}
+        {%- for group in menu.links -%}
           {%- if group.links.size > 0 -%}
             <div class="tabs">
               <span class="label muted tabs__label">{{ group.title }}</span>
               {%- for link in group.links -%}
-                <a class="tab label{% if link.url == collection.url %} is-active{% endif %}" href="{{ link.url }}"
-                  {% if link.url == collection.url %}aria-current="page"{% endif %}>{{ link.title }}</a>
+                {%- liquid
+                  assign h = link.url | split: '?' | first | split: '/' | last
+                  if group.title == cat_group.title
+                    if theme != blank
+                      assign href = '/collections/' | append: theme
+                      unless h == 'all'
+                        assign href = href | append: '?view=' | append: h
+                      endunless
+                    else
+                      assign href = link.url
+                    endif
+                    assign active = false
+                    if h == category or h == 'all' and category == blank
+                      assign active = true
+                    endif
+                  else
+                    assign active = false
+                    if h == theme
+                      assign active = true
+                      if category != blank
+                        assign href = '/collections/' | append: category
+                      else
+                        assign href = '/collections/all'
+                      endif
+                    elsif category != blank
+                      assign href = link.url | split: '?' | first | append: '?view=' | append: category
+                    else
+                      assign href = link.url
+                    endif
+                  endif
+                  if sort_param != blank
+                    if href contains '?'
+                      assign href = href | append: '&' | append: sort_param
+                    else
+                      assign href = href | append: '?' | append: sort_param
+                    endif
+                  endif
+                -%}
+                <a class="tab label{% if active %} is-active{% endif %}" href="{{ href }}"
+                  {% if active %}aria-current="page"{% endif %}>{{ link.title }}</a>
               {%- endfor -%}
             </div>
           {%- endif -%}
@@ -40,6 +140,7 @@
 
   <div class="page-width section--tight" style="padding-top: 0;">
     <form class="filters" method="get" data-filter-form>
+      {%- if layered -%}<input type="hidden" name="view" value="{{ category }}">{%- endif -%}
       <div class="toolbar label">
         <div class="filters__groups">
           {%- for filter in collection.filters -%}
@@ -86,7 +187,7 @@
         </div>
 
         <div class="filters__right">
-          <span>{{ 'collections.count' | t: count: collection.products_count }}</span>
+          <span>{%- if layered -%}{{ 'collections.count' | t: count: shown }}{%- else -%}{{ 'collections.count' | t: count: collection.products_count }}{%- endif -%}</span>
           {%- if collection.sort_options.size > 0 -%}
             {%- assign current_sort = collection.sort_by | default: collection.default_sort_by -%}
             <label class="visually-hidden" for="SortBy">{{ 'collections.sort_by' | t }}</label>
@@ -117,35 +218,30 @@
         <div class="active-filters label">
           {%- for filter in collection.filters -%}
             {%- for value in filter.active_values -%}
-              <a class="chip" href="{{ value.url_to_remove }}">{{ value.label }} <span aria-hidden="true">&times;</span><span class="visually-hidden">Remove filter</span></a>
+              <a class="chip" href="{{ value.url_to_remove }}{% if layered %}{% unless value.url_to_remove contains 'view=' %}{% if value.url_to_remove contains '?' %}&{% else %}?{% endif %}view={{ category }}{% endunless %}{% endif %}">{{ value.label }} <span aria-hidden="true">&times;</span><span class="visually-hidden">Remove filter</span></a>
             {%- endfor -%}
             {%- if filter.type == 'price_range' -%}
               {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
-                <a class="chip" href="{{ filter.url_to_remove }}">
+                <a class="chip" href="{{ filter.url_to_remove }}{% if layered %}{% unless filter.url_to_remove contains 'view=' %}{% if filter.url_to_remove contains '?' %}&{% else %}?{% endif %}view={{ category }}{% endunless %}{% endif %}">
                   {{ filter.min_value.value | default: 0 | money }}&ndash;{{ filter.max_value.value | default: filter.range_max | money }}
                   <span aria-hidden="true">&times;</span><span class="visually-hidden">Remove filter</span>
                 </a>
               {%- endif -%}
             {%- endif -%}
           {%- endfor -%}
-          <a class="chip chip--clear" href="{{ collection.url }}?sort_by={{ collection.sort_by }}">Clear all</a>
+          <a class="chip chip--clear" href="{{ collection.url }}?{% if layered %}view={{ category }}&{% endif %}sort_by={{ collection.sort_by }}">Clear all</a>
         </div>
       {%- endif -%}
     </form>
 
-    {%- if collection.products.size > 0 -%}
-      <div class="grid" style="--cols: {{ section.settings.columns }};">
-        {%- for product in collection.products -%}
-          {%- assign index = paginate.current_offset | plus: forloop.index -%}
-          {%- assign eager = false -%}
-          {%- if forloop.index <= 3 -%}{%- assign eager = true -%}{%- endif -%}
-          {% render 'product-card', product: product, index: index, lazy: eager %}
-        {%- endfor -%}
-      </div>
+    {%- if shown > 0 -%}
+      <div class="grid" style="--cols: {{ section.settings.columns }};">{{ cards }}</div>
     {%- else -%}
       <p class="empty">
         {%- if active_count > 0 -%}
-          Nothing matches those filters. <a href="{{ collection.url }}">Clear them</a> and try again.
+          Nothing matches those filters. <a href="{{ collection.url }}{% if layered %}?view={{ category }}{% endif %}">Clear them</a> and try again.
+        {%- elsif layered -%}
+          Nothing in {{ category_title }} here yet. <a href="{{ collection.url }}">See all of {{ collection.title }}</a>.
         {%- else -%}
           {{ 'collections.empty' | t }}
         {%- endif -%}

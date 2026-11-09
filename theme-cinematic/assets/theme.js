@@ -32,9 +32,12 @@ function initReveal() {
 document.addEventListener('shopify:section:load', initReveal);
 
 // Collection filters: apply on change; price inputs apply after a short pause.
+// Called again after every in-place swap, once the new form is in the page.
+const readyForms = new WeakSet();
 function initFilters() {
   const form = document.querySelector('[data-filter-form]');
-  if (!form) return;
+  if (!form || readyForms.has(form)) return;
+  readyForms.add(form);
   let timer;
   form.addEventListener('change', (e) => {
     clearTimeout(timer);
@@ -49,11 +52,13 @@ function initFilters() {
     url.search = params.toString();
     if (!loadCollection(url.href)) window.location.search = params.toString();
   });
-  const panels = Array.from(form.querySelectorAll('[data-dropdown]'));
-  document.addEventListener('click', (e) => {
-    panels.forEach((d) => { if (!d.contains(e.target)) d.open = false; });
-  });
 }
+// Close open filter panels on an outside click (one listener for whichever form is current).
+document.addEventListener('click', (e) => {
+  document.querySelectorAll('[data-filter-form] [data-dropdown][open]').forEach((d) => {
+    if (!d.contains(e.target)) d.open = false;
+  });
+});
 
 // Collection pages: moving between collections (Shop / Collections tabs, header dropdowns, filter chips,
 // pagination) swaps the product list in place, like a filter, instead of loading a new page.
@@ -79,13 +84,16 @@ function fetchCollection(href) {
   return collectionPages.get(url.href);
 }
 
+// Instant feedback on the tapped tab: it lights up (or, tapping the selected collection, clears) within its row.
+// The swapped-in page then renders the real state.
 function markActiveTab(href) {
-  const target = collectionUrl(href);
-  if (!target) return;
-  document.querySelectorAll('[data-collection-tabs] .tab').forEach((tab) => {
-    const on = collectionUrl(tab.href)?.pathname === target.pathname;
-    tab.classList.toggle('is-active', on);
-    if (on) tab.setAttribute('aria-current', 'page'); else tab.removeAttribute('aria-current');
+  const tab = Array.from(document.querySelectorAll('[data-collection-tabs] .tab')).find((t) => t.href === href);
+  if (!tab) return;
+  const turnOn = !tab.classList.contains('is-active');
+  tab.parentElement.querySelectorAll('.tab').forEach((t) => {
+    const on = t === tab && turnOn;
+    t.classList.toggle('is-active', on);
+    if (on) t.setAttribute('aria-current', 'page'); else t.removeAttribute('aria-current');
   });
 }
 
@@ -94,7 +102,7 @@ function loadCollection(href, { push = true } = {}) {
   const url = collectionUrl(href);
   if (!view || !url) return false;
   const request = ++collectionRequest;
-  markActiveTab(url.href);                       // instant feedback on the tapped tab
+  markActiveTab(url.href);
   const loading = setTimeout(() => view.classList.add('is-loading'), 120);  // only dim if it is actually slow
   fetchCollection(url.href)
     .then((html) => {
@@ -106,6 +114,10 @@ function loadCollection(href, { push = true } = {}) {
       const swap = () => {
         view.replaceWith(next);
         next.querySelectorAll('.card').forEach((card) => card.classList.add('is-visible'));
+        // Wire up the new sort menu and filters now that they are in the page. (With a view transition this
+        // runs a moment later than the code below, so it can't happen out there.)
+        initFilters();
+        initReveal();
       };
       // Crossfade where the browser supports view transitions (Chrome, Safari 18+); otherwise fade the new list in.
       if (document.startViewTransition && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -126,8 +138,6 @@ function loadCollection(href, { push = true } = {}) {
       }
       const anchor = next.querySelector('[data-collection-tabs]') || next;
       if (anchor.getBoundingClientRect().top < 0) anchor.scrollIntoView({ block: 'start' });
-      initFilters();
-      initReveal();
     })
     .catch(() => { clearTimeout(loading); window.location.assign(url.href); });
   return true;
