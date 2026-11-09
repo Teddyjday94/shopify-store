@@ -50,7 +50,7 @@ DESIGNS = [
 ]
 
 # Designs pulled from the store; scripts skip them so they are never recreated.
-RETIRED = {"04-my-kind-of-leg-day"}
+RETIRED = {"04-my-kind-of-leg-day", "09-built-character", "10-currently-avoiding"}
 DESIGNS = [d for d in DESIGNS if d[0] not in RETIRED]
 
 
