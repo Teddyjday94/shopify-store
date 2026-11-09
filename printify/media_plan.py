@@ -13,7 +13,7 @@ import sys
 
 from create_products import Printify
 
-TAGS = ("immortalized", "drop 004", "christmas collection", "player two", "horror collection")
+TAGS = ("immortalized", "drop 004", "christmas collection", "player two", "horror collection", "realms")
 SIZES = {"XS", "S", "M", "L", "XL", "2XL", "3XL"}
 
 
