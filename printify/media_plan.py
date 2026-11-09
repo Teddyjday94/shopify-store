@@ -34,8 +34,11 @@ def main(out, prefixes=()):
     api = Printify(os.environ.get("PRINTIFY_API_TOKEN"))
     shop = next(s for s in api.get("/shops.json") if s.get("sales_channel") == "shopify")["id"]
     plan = {}
-    for page in (1, 2, 3, 4):
-        for p in api.get(f"/shops/{shop}/products.json?limit=50&page={page}")["data"]:
+    page, last = 1, 1
+    while page <= last:
+        data = api.get(f"/shops/{shop}/products.json?limit=50&page={page}")
+        last, page = data["last_page"], page + 1
+        for p in data["data"]:
             if not any(t in p["tags"] for t in TAGS) or "dad hat" in p["tags"]:
                 continue
             if prefixes and not p["title"].startswith(tuple(prefixes)):
@@ -44,7 +47,7 @@ def main(out, prefixes=()):
             for v in p["variants"]:
                 if v["is_enabled"]:
                     colors.setdefault(color_of(p, v), set()).add(v["id"])
-            order = sorted(colors, key=lambda c: c != "Black")
+            order = sorted(colors, key=lambda c: c not in ("Black", "Solid Black"))
             media = [(c, side, pick(p, colors[c], side)) for side in ("back", "front") for c in order]
             plan[p["external"]["id"]] = {"title": p["title"], "media": [
                 {"color": c, "side": s, "url": u, "alt": f"{p['title']} in {c}, {s} print"} for c, s, u in media]}
