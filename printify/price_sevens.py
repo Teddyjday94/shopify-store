@@ -59,12 +59,6 @@ def main():
             continue  # never published to the store
         enabled = [v for v in p["variants"] if v["is_enabled"]]
         prices = {v["id"]: new_price(p["title"], v["price"]) for v in enabled}
-        # The priciest blanks to print move up a step so they still earn a fair margin: back-printed hoodies
-        # (about $29-31 to make) sell for $47, and front-and-back women's tees (about $21-23) for $37.
-        top_cost = max(v["cost"] for v in enabled)
-        for kind, floor, price in (("Hoodie", 2900, 4700), ("Women's Tee", 2000, 3700)):
-            if p["title"].endswith(kind) and top_cost >= floor:
-                prices = {i: price for i in prices}
         if None in prices.values():
             print(f"??    {p['title']}: no rule for {sorted({v['price'] for v in enabled})}")
             continue

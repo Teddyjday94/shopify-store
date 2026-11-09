@@ -46,7 +46,7 @@ IMMORTALIZED = {"Masterless": WITH_RED, "Queen Forever": WITH_NAVY,
                 "Sleep Paralysis Club": WITH_RED, "Rise From Ruin": WITH_RED, "Lead the Charge": WITH_RED}
 # Front-and-back prints cost about $6.50 more on this blank, so those sell for $29 (2XL $32) instead of the
 # unisex $26; everything else keeps the unisex price.
-PRICE = {f"{n} Tee": 3700 for n in IMMORTALIZED}  # front and back: about $21 to make
+PRICE = {f"{n} Tee": 2700 for n in IMMORTALIZED}  # all tees $27 now
 
 COLORS = {
     "In My Own Lane Tee": OWN_LANE, "Butterfly Effect Tee": OWN_LANE, "Lucky Charm Tee": OWN_LANE,

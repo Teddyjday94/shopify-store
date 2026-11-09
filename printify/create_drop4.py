@@ -27,7 +27,7 @@ ART = ROOT / "designs" / "print-drop4"
 
 TEE = dict(kind="Tee", blueprint=12, provider=29, price=2700,
            features=["Soft, lightweight 100% combed cotton", "Retail unisex fit"])
-HOODIE = dict(kind="Hoodie", blueprint=77, provider=39, price=4700,
+HOODIE = dict(kind="Hoodie", blueprint=77, provider=39, price=3700,
               features=["Medium-heavy cotton/poly blend, fleece-lined", "Double-lined hood, front pouch pocket",
                         "Unisex fit, size up for oversized"])
 
