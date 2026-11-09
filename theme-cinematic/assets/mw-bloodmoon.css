@@ -90,7 +90,7 @@ body { background:#09090b; color:var(--mw-cream); }
 .mw-product__title { color:#eee2d3; }
 .mw-product__price { color:#d7af82; white-space:nowrap; }
 .mw-story { position:relative; min-height:370px; display:flex; align-items:center; justify-content:center; background:radial-gradient(ellipse at center,#42201c 0%,#171114 58%,#0b0b0d 93%); overflow:hidden; text-align:center; }
-.mw-story__image { position:absolute; inset:0; opacity:.16; background-image:url("https://cdn.shopify.com/s/files/1/0765/5086/5057/files/many-worlds-nine-tails-cinematic-hero.png?v=1793908475"); background-size:cover; background-position:center 37%; filter:blur(1px); }
+.mw-story__image { position:absolute; inset:0; opacity:.16; background-image:url("https://cdn.shopify.com/s/files/1/0765/5086/5057/files/elsewhere-world-garden.png"); background-size:cover; background-position:center 37%; filter:blur(1px); }
 .mw-story__inner { position:relative; padding-block:70px; }
 .mw-story .mw-kicker { color:#d8ae88; margin:0 0 16px; }
 .mw-story h2 { font-size:clamp(39px,5.5vw,83px); line-height:1.02; letter-spacing:.02em; margin:0 0 13px; }
@@ -153,7 +153,7 @@ body { background:#09090b; color:var(--mw-cream); }
 
 .collection-hero.world-collection {
   position:relative; isolation:isolate; min-height:350px; display:flex; align-items:center; overflow:hidden;
-  background:linear-gradient(90deg,#09090bf5 0%,#09090bde 43%,#09090b55 100%),linear-gradient(0deg,#09090b 0%,transparent 57%),url("https://cdn.shopify.com/s/files/1/0765/5086/5057/files/many-worlds-nine-tails-cinematic-hero.png?v=1793908475") center 42%/cover no-repeat;
+  background:linear-gradient(90deg,#09090bf5 0%,#09090bde 43%,#09090b55 100%),linear-gradient(0deg,#09090b 0%,transparent 57%),url("https://cdn.shopify.com/s/files/1/0765/5086/5057/files/elsewhere-world-garden.png") center 42%/cover no-repeat;
   border-bottom:1px solid #c2a17a42; padding:80px 0;
 }
 .collection-hero.world-collection .page-width {position:relative; width:100%;}
