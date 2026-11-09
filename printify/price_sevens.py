@@ -6,12 +6,17 @@ otherwise share a price: posters $17/27/37/47, desk mats $27/37/47.
 
 Updates the price in Printify and publishes only the variants, so Shopify picks up the new prices.
 
+Printify limits how many publishes it accepts in a while, so publishes are paced, a refusal waits and
+retries, and every product that reached Shopify is recorded in --done (so a re-run picks up where it stopped,
+including a product whose price changed in Printify but was never published).
+
 Usage:
     python3 printify/price_sevens.py            # dry run
-    python3 printify/price_sevens.py --apply
+    python3 printify/price_sevens.py --apply [--done FILE]
 """
 
 import argparse
+import json
 import os
 import time
 
@@ -36,7 +41,9 @@ def new_price(title, old):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--apply", action="store_true")
+    ap.add_argument("--done", default="price_sevens_done.json", help="ids already published at the new price")
     args = ap.parse_args()
+    done = set(json.load(open(args.done))) if os.path.exists(args.done) else set()
     api = Printify(os.environ.get("PRINTIFY_API_TOKEN"))
     shop = next(s for s in api.get("/shops.json") if s.get("sales_channel") == "shopify")["id"]
     products, page = [], 1
@@ -55,7 +62,8 @@ def main():
         if None in prices.values():
             print(f"??    {p['title']}: no rule for {sorted({v['price'] for v in enabled})}")
             continue
-        if all(prices[v["id"]] == v["price"] for v in enabled):
+        priced = all(prices[v["id"]] == v["price"] for v in enabled)
+        if priced and (p["id"] in done or not args.apply):
             print(f"same  {p['title']}")
             continue
         low = min(prices[v["id"]] - v["cost"] for v in enabled)
@@ -64,13 +72,24 @@ def main():
               f"  (min profit ${low / 100:.2f})")
         if not args.apply:
             continue
-        api.call("PUT", f"/shops/{shop}/products/{p['id']}.json", json={"variants": [
-            {"id": v["id"], "price": prices.get(v["id"], v["price"]), "is_enabled": v["is_enabled"]}
-            for v in p["variants"]]})
-        api.post(f"/shops/{shop}/products/{p['id']}/publish.json", {
-            "title": False, "description": False, "images": False, "variants": True,
-            "tags": False, "keyFeatures": False, "shipping_template": False})
-        time.sleep(8)
+        if not priced:
+            api.call("PUT", f"/shops/{shop}/products/{p['id']}.json", json={"variants": [
+                {"id": v["id"], "price": prices.get(v["id"], v["price"]), "is_enabled": v["is_enabled"]}
+                for v in p["variants"]]})
+        for wait in (0, 120, 300, 600, 900):
+            time.sleep(wait)
+            try:
+                api.post(f"/shops/{shop}/products/{p['id']}/publish.json", {
+                    "title": False, "description": False, "images": False, "variants": True,
+                    "tags": False, "keyFeatures": False, "shipping_template": False})
+                break
+            except RuntimeError as e:
+                print(f"      publish refused ({e}); waiting", flush=True)
+        else:
+            raise SystemExit(f"Printify keeps refusing publishes; stopped at {p['title']}")
+        done.add(p["id"])
+        json.dump(sorted(done), open(args.done, "w"))
+        time.sleep(15)
 
 
 if __name__ == "__main__":
