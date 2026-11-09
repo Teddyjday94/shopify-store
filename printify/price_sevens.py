@@ -31,7 +31,7 @@ BY_SIZE = {"Poster": {2000: 1700, 2400: 2700, 2800: 3700, 3800: 4700},
 def new_price(title, old):
     for kind, table in BY_SIZE.items():
         if title.endswith(kind):
-            return table.get(old)
+            return old if old in table.values() else table.get(old)  # already repriced: keep it
     for kind, price in FLAT:
         if title.endswith(kind):
             return price
