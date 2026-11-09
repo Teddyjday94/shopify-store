@@ -56,7 +56,7 @@
     {%- liquid
       assign finale_product = section.settings.finale_product
       if finale_product == blank
-        assign finale_product = all_products['nine-tails-hoodie']
+        assign finale_product = all_products['masterless-hoodie']
       endif
       assign finale_collection = section.settings.finale_collection
       if finale_collection == blank
@@ -90,7 +90,7 @@
             <div class="mw-footer-finale__actions">
               <a class="mw-footer-finale__cta" href="{{ finale_collection.url | default: routes.all_products_collection_url }}">{{ section.settings.finale_link_label | escape }} <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'right' %}</span></a>
               {%- if finale_product != blank -%}
-                <a class="mw-footer-finale__product-link" href="{{ finale_product.url }}">DISCOVER THE NINE TAILS HOODIE <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'up-right' %}</span></a>
+                <a class="mw-footer-finale__product-link" href="{{ finale_product.url }}">DISCOVER THE {{ finale_product.title | upcase | escape }} <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'up-right' %}</span></a>
               {%- endif -%}
             </div>
             <p class="mw-footer-finale__copy-note"><span aria-hidden="true"><span class="mw-ui-diamond" aria-hidden="true"></span></span> {{ section.settings.finale_bottom_line | escape }}</p>
@@ -108,7 +108,7 @@
               <span class="mw-footer-finale__poster-top">THE WORLDS / VOL. 004 <span><span class="mw-ui-dot" aria-hidden="true"></span> IN FOCUS</span></span>
               <span class="mw-footer-finale__poster-bottom"><span><small>FEATURED WORLD</small><strong>{{ section.settings.finale_world_title | escape }}</strong></span><span class="mw-footer-finale__poster-arrow" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'up-right' %}</span></span>
             </div>
-            <span class="mw-footer-finale__plate"><span>THE NINE TAILS // 004</span><span>ENTER THE UNIVERSE <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'up-right' %}</span></span></span>
+            <span class="mw-footer-finale__plate"><span>THE IMMORTALIZED // 004</span><span>ENTER THE UNIVERSE <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'up-right' %}</span></span></span>
           </a>
         </div>
         <div class="mw-footer-finale__closing">

@@ -29,7 +29,7 @@ IMMORTALIZED = [
     ("05-born-ready", "Born Ready"), ("06-fallen-not-finished", "Fallen, Not Finished"),
     ("07-above-it-all", "Above It All"), ("08-going-with-the-flow", "Going With the Flow"),
     ("09-long-live-the-king", "Long Live the King"), ("10-queen-forever", "Queen Forever"),
-    ("11-nine-tails", "Nine Tails"), ("12-masterless", "Masterless"),
+    ("12-masterless", "Masterless"),  # 11 Nine Tails retired: Printify won't publish that artwork
 ]
 XMAS = [
     ("01-on-the-naughty-list-again", "On the Naughty List Again"), ("02-suck-it-up-buttercup", "Suck It Up Buttercup"),

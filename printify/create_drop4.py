@@ -31,6 +31,7 @@ HOODIE = dict(kind="Hoodie", blueprint=77, provider=39, price=4500,
               features=["Medium-heavy cotton/poly blend, fleece-lined", "Double-lined hood, front pouch pocket",
                         "Unisex fit, size up for oversized"])
 
+RETIRED = {"11-nine-tails"}  # Printify won't publish this artwork; removed from the store
 DESIGNS = [
     ("01-lead-the-charge", "Lead the Charge", "Maroon", ["general", "horse", "army"],
      "A general on a rearing white horse points the whole army up the mountain.", "Someone has to go first."),
@@ -129,6 +130,8 @@ def main():
         return uploads[name]
 
     for slug, name, alt, tags, intro, line in DESIGNS:
+        if slug in RETIRED:
+            continue
         if args.only and not any(slug.startswith(o) for o in args.only):
             continue
         for spec in (TEE, HOODIE):

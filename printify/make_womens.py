@@ -40,7 +40,7 @@ PLAYER_TWO = ["Respawn Pending", "Final Boss Energy", "Out of Orbit", "Forbidden
               "Main Character Syndrome", "Critical Failure", "No Signal"]
 CHRISTMAS = ["Holly Jolly Chaos", "The Gift Is Me", "Dear Santa, Bring Bourbon", "Suck It Up Buttercup",
              "On the Naughty List Again"]
-IMMORTALIZED = {"Nine Tails": WITH_NAVY, "Masterless": WITH_RED, "Queen Forever": WITH_NAVY,
+IMMORTALIZED = {"Masterless": WITH_RED, "Queen Forever": WITH_NAVY,
                 "Long Live the King": WITH_RED, "Going With the Flow": BLACK, "Above It All": WITH_BROWN,
                 "Fallen, Not Finished": WITH_RED, "Born Ready": WITH_NAVY, "One Way Ferry": WITH_NAVY,
                 "Sleep Paralysis Club": WITH_RED, "Rise From Ruin": WITH_RED, "Lead the Charge": WITH_RED}
