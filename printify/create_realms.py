@@ -5,11 +5,10 @@ Black hoodie (Gildan 18500 on Print Geek, provider 27, the largest back area for
 filling the back. Tees $27, hoodies $37, one price for every size. Print files are the 4x upscales in
 designs/realms-src (<slug>-4x.png, about 4,500 px wide).
 
-Usage: python3 printify/create_realms.py [--apply] [--only SLUG]
+Usage: python3 printify/create_realms.py [--apply] [--only SLUG] [--commit SHA]
 """
 
 import argparse
-import base64
 import os
 import time
 
@@ -18,6 +17,7 @@ from PIL import Image
 from create_products import Printify
 from fit import placeholder_sizes
 
+RAW = "https://raw.githubusercontent.com/Teddyjday94/shopify-store/{commit}/designs/realms-src/{name}"
 SRC = os.path.join(os.path.dirname(__file__), "..", "designs", "realms-src")
 SIZES = {"S", "M", "L", "XL", "2XL"}
 EDGE, TOP = 0.97, 0.03
@@ -66,6 +66,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--apply", action="store_true")
     ap.add_argument("--only")
+    ap.add_argument("--commit", default="2d6801f", help="pushed git commit holding designs/realms-src")
     args = ap.parse_args()
     api = Printify(os.environ.get("PRINTIFY_API_TOKEN"))
     shop = next(s for s in api.get("/shops.json") if s.get("sales_channel") == "shopify")["id"]
@@ -96,10 +97,9 @@ def main():
                   f"{dpi:.0f} DPI", flush=True)
             if not args.apply:
                 continue
-            if path not in uploads:
-                with open(path, "rb") as f:
-                    uploads[path] = api.post("/uploads/images.json", {
-                        "file_name": f"{slug}.png", "contents": base64.b64encode(f.read()).decode()})["id"]
+            if path not in uploads:   # 30-40 MB files: too large to send inline, so Printify fetches them from GitHub
+                uploads[path] = api.post("/uploads/images.json", {
+                    "file_name": f"{slug}.png", "url": RAW.format(commit=args.commit, name=f"{slug}-4x.png")})["id"]
             features = "".join(f"<li>{x}</li>" for x in [*spec["features"], "Printed to order just for you"])
             product = api.post(f"/shops/{shop}/products.json", {
                 "title": title,
