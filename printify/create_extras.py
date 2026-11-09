@@ -38,16 +38,16 @@ XMAS = [
 ]
 
 POSTER = dict(blueprint=282, provider=234, ratio=0.75,
-              prices={'11″ x 14″ / Matte': 2000, '12″ x 18″ / Matte': 2400,
-                      '18″ x 24″ / Matte': 2800, '24″ x 36″ / Matte': 3800},
+              prices={'11″ x 14″ / Matte': 1700, '12″ x 18″ / Matte': 2700,
+                      '18″ x 24″ / Matte': 3700, '24″ x 36″ / Matte': 4700},
               features=["Museum-grade matte paper, 175gsm", "Archival inks, no glare",
                         "Ships rolled in a protective tube", "Frame not included"])
 # Desk mats use the AI-extended panoramas in designs/mat-hd (2:1); a design without one gets no desk mat.
 DESKMAT = dict(blueprint=488, provider=1, ratio=1776 / 896,
-               prices={'12" × 18"': 2800, '12" × 22"': 3000, '16" × 32"': 4000},
+               prices={'12" × 18"': 2700, '12" × 22"': 3700, '16" × 32"': 4700},
                features=["Smooth polyester top for mouse and pen", "Non-slip natural rubber base, 4mm",
                          "Stitched edges that will not fray", "Sized for laptop, keyboard or full setup"])
-CASE = dict(blueprint=269, provider=99, ratio=1500 / 2700, prices=None, price=2800,
+CASE = dict(blueprint=269, provider=99, ratio=1500 / 2700, prices=None, price=2700,
             features=["Two-layer tough case: hard shell over an impact-absorbing lining",
                       "Glossy finish, full-wrap print", "Wireless charging compatible",
                       "iPhone 11 through 18 and Samsung Galaxy S21 through S26"])

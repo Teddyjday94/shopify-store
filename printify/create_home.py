@@ -20,10 +20,10 @@ from create_relatable import DESIGNS as RELATABLE
 
 RAW = "https://raw.githubusercontent.com/Teddyjday94/shopify-store/{commit}/designs/print-home/{name}"
 
-MUG = dict(kind="Mug", blueprint=478, provider=39, prices={"11oz": 1800, "15oz": 2100},
+MUG = dict(kind="Mug", blueprint=478, provider=39, prices={"11oz": 1700, "15oz": 1700},
            features=["Glossy white ceramic, design wraps around both sides",
                      "Available in 11oz and 15oz", "Dishwasher and microwave safe, lead and BPA free"])
-ORNAMENT = dict(kind="Ornament", blueprint=531, provider=99, prices={"Circle / One Size": 1500},
+ORNAMENT = dict(kind="Ornament", blueprint=531, provider=99, prices={"Circle / One Size": 1700},
                 features=["Round glossy ceramic, 3mm thick", "Printed on the front",
                           "Gold-toned hanging string included"])
 

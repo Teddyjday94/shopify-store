@@ -30,7 +30,7 @@ PRINT_DIR = ROOT / "designs" / "print"
 API = "https://api.printify.com/v1"
 
 TEE_SIZES = ["S", "M", "L", "XL", "2XL"]
-XXL_UPCHARGE = 300  # cents added to 2XL variants
+XXL_UPCHARGE = 0  # 2XL sells at the same price as other sizes (all prices end in 7)
 
 # Preferred US print providers, best first. Falls back to any provider with the colors.
 PREFERRED_PROVIDERS = ["Monster Digital", "SwiftPOD", "Printify Choice", "Print Geek", "District Photo", "Fulfill Engine"]

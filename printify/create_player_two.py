@@ -57,9 +57,9 @@ DESIGNS = [
      ["gaming", "rpg", "fantasy", "pixel"]),
 ]
 
-TEE = dict(kind="Tee", blueprint=12, provider=29, price=2400, colors={"Black", "Dark Grey Heather"},
+TEE = dict(kind="Tee", blueprint=12, provider=29, price=2700, colors={"Black", "Dark Grey Heather"},
            features=["Big back print", "Soft, lightweight 100% combed cotton", "Retail unisex fit"])
-HOODIE = dict(kind="Hoodie", blueprint=77, provider=39, price=4000, colors={"Black", "Dark Heather"},
+HOODIE = dict(kind="Hoodie", blueprint=77, provider=39, price=3700, colors={"Black", "Dark Heather"},
               features=["Big back print", "Medium-heavy cotton/poly blend, fleece-lined",
                         "Double-lined hood, front pouch pocket", "Unisex fit, size up for oversized"])
 EDGE, TOP = 0.92, 0.03   # art fills at most 92% of the back's width or height, starting 3% from the top
