@@ -19,7 +19,7 @@ Facts worth remembering between sessions. Update as things change.
 - Automatic discount: free US shipping on orders $60+
 
 ## Collections
-Relatable, Player Two, Horror, Realms, Christmas, Immortalized (incl. Old Gods), Own Lane, Drop 002;
+Relatable, Player Two, Horror, Realms, Christmas, Immortalized (incl. Old Gods), Female Lead (was Own Lane, handle still own-lane), Drop 002;
 shop categories Men's, Women's, Tees, Hoodies, Hats & beanies, Home & Accessories.
 
 ## Retired designs (do not recreate)
