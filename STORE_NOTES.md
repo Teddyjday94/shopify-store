@@ -18,6 +18,11 @@ Facts worth remembering between sessions. Update as things change.
 - Discount codes: none (ELSEWHERE15 / MANYWORLDS15 deleted 2026-11-10)
 - Automatic discount: free US shipping on orders $60+
 
+## Orders
+- Printify order approval: automatically after 1 hour (set 2026-11-10). Returns page says cancel within 1 hour.
+- First sale #1001 (2026-11-10): Born Ready Women's Tee, $27 + $4.95 shipping. Printify charged $21.10 item
+  (front+back print) + $5.35 shipping + $2.47 sales tax; Shopify fee $1.23; profit about $1.80.
+
 ## Collections
 Renamed 2026-11-10 (old name -> new):
 Relatable -> Inner Monologue, Player Two -> Side Quest, Horror -> Creature Feature, Realms -> Here Be Dragons,
