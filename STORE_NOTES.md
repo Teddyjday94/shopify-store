@@ -29,4 +29,5 @@ Monster of the Week (held: resembles a trademarked character).
 ## Conventions
 - Theme edits: the live theme can't be written directly; duplicate it, edit the copy, and the owner publishes.
 - Hoodie product photos: labeled "<Title> in <Color>, back print" so cards and galleries show the design first.
+- Homepage hero video: Garden ambient loop (Artlist, 5s ping-ponged to 10s), Shopify Files elsewhere-garden-loop.mp4/.webm; source in media/video/. Toggle in the hero section settings.
 - Printify limits publishes (~75 in a burst); scripts pace and retry.
