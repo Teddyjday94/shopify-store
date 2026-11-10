@@ -19,8 +19,15 @@ Facts worth remembering between sessions. Update as things change.
 - Automatic discount: free US shipping on orders $60+
 
 ## Collections
-Relatable, Player Two, Horror, Realms, Christmas, Immortalized (incl. Old Gods), Female Lead (was Own Lane, handle still own-lane), Drop 002;
-shop categories Men's, Women's, Tees, Hoodies, Hats & beanies, Home & Accessories.
+Renamed 2026-11-10 (old name -> new):
+Relatable -> Inner Monologue, Player Two -> Side Quest, Horror -> Creature Feature, Realms -> Here Be Dragons,
+Christmas -> Naughty List, Immortalized -> Legends Never Die (incl. Old Gods), Own Lane -> Female Lead, Drop 002 -> Tired But Here.
+Handles still old (the-relatable-collection, player-two, horror-collection, realms, the-christmas-collection,
+the-immortalized-collection, own-lane, drop-002) until the "Garden Video" theme is published; then switch to
+inner-monologue, side-quest, creature-feature, here-be-dragons, naughty-list, legends-never-die, female-lead,
+tired-but-here with redirects, and hide the duplicate "Immortalized" (handle immortalized, a subset) with a redirect.
+Product tags (e.g. "relatable collection", "horror collection") drive scripts; leave them.
+Shop categories: Men's, Women's, Tees, Hoodies, Hats & beanies, Home & Accessories.
 
 ## Retired designs (do not recreate)
 My Kind of Leg Day, Built Character, Currently Avoiding, Nine Tails (Printify would not publish its art),
