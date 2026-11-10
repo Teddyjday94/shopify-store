@@ -40,6 +40,8 @@ Monster of the Week (held: resembles a trademarked character).
 
 ## Conventions
 - Theme edits: the live theme can't be written directly; duplicate it, edit the copy, and the owner publishes.
+- Tees are front-print only (2026-11-10: the 22 Legends Never Die tees had painting on back + front emblem;
+  painting moved to the front). Unisex cost $11.77 (2XL $14.38), women's $14.53 (2XL $16.26), all $27.
 - Hoodie product photos: labeled "<Title> in <Color>, back print" so cards and galleries show the design first.
 - Homepage hero video: Garden cinemagraph loop (Artlist 5s clip locked to the still with media/video/cinemagraph.py; only moving areas come from the clip), Shopify Files elsewhere-garden-loop-v2.mp4/.webm; source in media/video/. Toggle in the hero section settings.
 - Printify limits publishes (~75 in a burst); scripts pace and retry.
