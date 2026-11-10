@@ -34,6 +34,11 @@ tired-but-here with redirects, and hide the duplicate "Immortalized" (handle imm
 Product tags (e.g. "relatable collection", "horror collection") drive scripts; leave them.
 Shop categories: Men's, Women's, Tees, Hoodies, Hats & beanies, Home & Accessories.
 
+## Art notes
+- Legends Never Die paintings (designs/src/render_drop4.js -> designs/print-drop4) read
+  "ELSEWHERE APPAREL CO. · LEGENDS NEVER DIE"; hoodie chest mark "ELSEWHERE / LEGENDS NEVER DIE" (2026-11-10).
+- Shopify sometimes fails to fetch fresh Printify mockups (status FAILED); check media status after swaps and re-add.
+
 ## Retired designs (do not recreate)
 My Kind of Leg Day, Built Character, Currently Avoiding, Nine Tails (Printify would not publish its art),
 Monster of the Week (held: resembles a trademarked character).
