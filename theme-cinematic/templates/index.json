@@ -25,9 +25,9 @@
           "type": "world",
           "settings": {
             "collection": "own-lane",
-            "title": "OWN LANE",
-            "category": "Unfiltered",
-            "subtitle": "For the ones who move differently"
+            "title": "FEMALE LEAD",
+            "category": "Main Character",
+            "subtitle": "She was never the sidekick"
           }
         },
         "holiday": {
@@ -46,7 +46,7 @@
         "holiday"
       ],
       "settings": {
-        "featured_collection": "the-immortalized-collection",
+        "featured_collection": "the-relatable-collection",
         "heading_first": "CURRENTLY",
         "heading_second": "ELSEWHERE.",
         "heading_accent": "ONE CREW.",
