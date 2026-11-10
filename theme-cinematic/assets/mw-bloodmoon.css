@@ -690,5 +690,7 @@ body.template-page #MainContent > .shopify-section:has(.mw-contact-section) {
 }
 /* Hero video loop: fades in over the still once it is actually playing. */
 .mw-hero__video { opacity:0; transition:opacity 1.2s ease; pointer-events:none; background:transparent; }
+/* Hold the frame still while the loop plays: a scaling video shimmers. */
+.mw-hero:has(.mw-hero__video.is-playing) .mw-hero__image { animation:none !important; }
 .mw-hero__video.is-playing { opacity:1; }
 @media (prefers-reduced-motion: reduce) { .mw-hero__video { display:none; } }
