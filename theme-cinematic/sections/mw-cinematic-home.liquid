@@ -58,29 +58,82 @@
         <a class="mw-textlink" href="{{ featured.url | default: routes.all_products_collection_url }}">{{ section.settings.featured_link_label | escape }} <span class="mw-ui-inline" aria-hidden="true">{% render 'mw-icon-arrow', direction: 'up-right' %}</span></a>
       </div>
       <div class="mw-product-grid">
-        {%- comment -%} Clothing first: skip accessories (mugs, phone cases, posters) in this row. {%- endcomment -%}
+        {%- comment -%}
+          A mixed row: a hoodie, a unisex tee, a women's tee and a second hoodie, each a different
+          design, so the row isn't four of the same shirt. Accessories are skipped. Any empty slot
+          is filled with another clothing piece in a design not shown yet.
+        {%- endcomment -%}
+        {%- liquid
+          assign wants = 'hoodie,tee,womens,hoodie,any,any,any,any' | split: ','
+          assign picks = ''
+          assign used = '|'
+          assign picked = 0
+        -%}
+        {%- paginate featured.products by 100 -%}
+          {%- for want in wants -%}
+            {%- if picked >= 4 -%}{%- break -%}{%- endif -%}
+            {%- for product in featured.products -%}
+              {%- liquid
+                if product.tags contains 'accessory'
+                  continue
+                endif
+                assign kind = 'other'
+                if product.title contains 'Hoodie'
+                  assign kind = 'hoodie'
+                elsif product.title contains "Women's"
+                  assign kind = 'womens'
+                elsif product.title contains 'Tee'
+                  assign kind = 'tee'
+                endif
+                if want != 'any' and kind != want
+                  continue
+                endif
+                assign design = product.title | remove: " Women's Tee" | remove: ' Hoodie' | remove: ' Tee'
+                assign key = '|' | append: design | append: '|'
+                if used contains key
+                  continue
+                endif
+                assign used = used | append: design | append: '|'
+                assign picks = picks | append: product.handle | append: ','
+                assign picked = picked | plus: 1
+                break
+              -%}
+            {%- endfor -%}
+          {%- endfor -%}
+        {%- endpaginate -%}
+        {%- assign pick_list = picks | split: ',' -%}
         {%- assign shown = 0 -%}
-        {%- for product in featured.products -%}
-          {%- if product.tags contains 'accessory' -%}{%- continue -%}{%- endif -%}
-          {%- if shown >= 4 -%}{%- break -%}{%- endif -%}
+        {%- assign hoodies_shown = 0 -%}
+        {%- for handle in pick_list -%}
+          {%- assign product = all_products[handle] -%}
+          {%- if product == blank -%}{%- continue -%}{%- endif -%}
           {%- assign shown = shown | plus: 1 -%}
           {%- liquid
-            # Hoodies are printed on the back: show the "... in Black, back print" photo (or any back print).
+            # Hoodies are printed on the back: show a back-print photo. The first hoodie is in
+            # Black; the next one in another color, so the row doesn't repeat.
             assign tile = product.featured_image
             if product.title contains 'Hoodie'
+              assign hoodies_shown = hoodies_shown | plus: 1
               assign back_any = nil
               assign back_black = nil
+              assign back_color = nil
               for media in product.media
                 if media.alt contains ', back print'
                   if back_any == nil
                     assign back_any = media
                   endif
-                  if back_black == nil and media.alt contains ' in Black,'
-                    assign back_black = media
+                  if media.alt contains ' in Black,'
+                    if back_black == nil
+                      assign back_black = media
+                    endif
+                  elsif back_color == nil
+                    assign back_color = media
                   endif
                 endif
               endfor
-              if back_black
+              if hoodies_shown > 1 and back_color
+                assign tile = back_color.preview_image
+              elsif back_black
                 assign tile = back_black.preview_image
               elsif back_any
                 assign tile = back_any.preview_image
