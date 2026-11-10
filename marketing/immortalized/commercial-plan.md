@@ -133,3 +133,22 @@ Free: print close-up, end card, editing, text, color grade, music license (Artli
 - Post the 15 s master first as a regular post. If it beats your average on watch time and shares
   after 48 h, boost it as a Spark Ad at $10–15/day (all designs in it are ad-safe).
 - Bio link → `/collections/the-immortalized-collection?utm_source=tiktok&utm_campaign=immortalized_commercial`
+
+## Posting (music option B: platform-licensed sound)
+
+Files: `final/immortalized-master-silent.mp4` (16 s) and `final/immortalized-ad6-silent.mp4` (6 s). Both are silent; add sound inside each app.
+
+**TikTok (Business account):** upload → "Sounds" → **Commercial Music Library** tab only → search *"dark trap"*, *"epic orchestral trap"* or *"cinematic hip hop"* → pick a track whose drop lands near 0:02–0:03 (Creed's turn). Turn on **AI-generated content** under More options.
+**Instagram Reels (Business account):** "Add audio" → use tracks marked available for business (Meta Sound Collection). Advanced settings → **AI info** label on.
+
+**Caption (TikTok):**
+> some legends refuse to die. 🗡️ the immortalized collection: 11 paintings, framed like vintage posters on the back. tees $27 · hoodies $37. which legend are you wearing?
+
+**Caption (Instagram):**
+> Old stories that refuse to die. The Immortalized Collection: generals, goddesses, skeleton kings, ronin and fallen angels, painted and framed across the back. 11 legends. Tees $27 · Hoodies $37. Link in bio.
+> Which one are you? 👇
+
+**Hashtags:** #streetwear #graphichoodie #darkart #samurai #clothingbrand
+**Pinned comment:** "all 11 designs → link in bio 🖤"
+**Link:** `elsewheresupplyco.myshopify.com/collections/the-immortalized-collection?utm_source=tiktok&utm_campaign=immortalized_commercial` (use `utm_source=instagram` on IG)
+**Post time:** 7 pm Central on a weekday. Post the 6 s cut 3–4 days later as a second video, or keep it for a Spark Ad if the 16 s version beats your average watch time and shares after 48 h.
