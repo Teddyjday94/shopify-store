@@ -41,7 +41,10 @@ Monster of the Week (held: resembles a trademarked character).
 ## Conventions
 - Theme edits: the live theme can't be written directly; duplicate it, edit the copy, and the owner publishes.
 - Tees are front-print only (2026-11-10: the 22 Legends Never Die tees had painting on back + front emblem;
-  painting moved to the front). Unisex cost $11.77 (2XL $14.38), women's $14.53 (2XL $16.26), all $27.
+  painting moved to the front). Unisex cost $11.77 (2XL $14.38), all $27.
+- Women's tees: Gildan 5000L at SwiftPOD (blueprint 466, provider 39) since 2026-11-10, art filling the
+  ~14x16 in area; cost $10.82 (2XL $13.19), $27. Colors: Black, Navy, Red, White, Light Pink.
+  Was Next Level 3900 (Monster Digital), whose ~10x12 in area kept the art small. See printify/move_womens.py.
 - Hoodie product photos: labeled "<Title> in <Color>, back print" so cards and galleries show the design first.
 - Homepage hero video: Garden cinemagraph loop (Artlist 5s clip locked to the still with media/video/cinemagraph.py; only moving areas come from the clip), Shopify Files elsewhere-garden-loop-v2.mp4/.webm; source in media/video/. Toggle in the hero section settings.
 - Printify limits publishes (~75 in a burst); scripts pace and retry.
