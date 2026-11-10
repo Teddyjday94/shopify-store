@@ -12,6 +12,23 @@
     {%- else -%}
       <img class="mw-hero__image" src="https://cdn.shopify.com/s/files/1/0765/5086/5057/files/elsewhere-world-garden.png" alt="" fetchpriority="high" width="1672" height="941">
     {%- endif -%}
+    {%- if section.settings.hero_video and section.settings.hero_image == blank -%}
+      {%- comment -%} Ambient Garden loop over the still. Skipped when motion is off or reduced; the still stays underneath as the fallback. {%- endcomment -%}
+      <video class="mw-hero__image mw-hero__video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" poster="https://cdn.shopify.com/s/files/1/0765/5086/5057/files/elsewhere-world-garden.png" data-mw-hero-video>
+        <source src="https://cdn.shopify.com/s/files/1/0765/5086/5057/files/elsewhere-garden-loop.webm" type="video/webm">
+        <source src="https://cdn.shopify.com/s/files/1/0765/5086/5057/files/elsewhere-garden-loop.mp4" type="video/mp4">
+      </video>
+      <script>
+        (function () {
+          var v = document.currentScript.previousElementSibling;
+          var off = document.documentElement.classList.contains('motion-paused') || matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (off) { v.remove(); return; }
+          v.addEventListener('playing', function () { v.classList.add('is-playing'); }, { once: true });
+          v.preload = 'auto';
+          var p = v.play(); if (p && p.catch) p.catch(function () { v.remove(); });
+        })();
+      </script>
+    {%- endif -%}
     <div class="mw-hero__fade" aria-hidden="true"></div>
     <div class="mw-hero__mist" aria-hidden="true"></div>
     <div class="mw-hero__particles" aria-hidden="true"></div>
@@ -164,7 +181,8 @@
   "name": "Elsewhere Cinematic",
   "settings": [
     {"type":"header","content":"Hero"},
-    {"type":"image_picker","id":"hero_image","label":"Hero background (optional)","info":"Uses the new blood-moon artwork if left empty."},
+    {"type":"image_picker","id":"hero_image","label":"Hero background (optional)","info":"Uses the Garden world artwork if left empty."},
+    {"type":"checkbox","id":"hero_video","label":"Play the Garden video loop","default":true,"info":"Only plays with the default Garden background. Visitors with reduced motion see the still image."},
     {"type":"text","id":"eyebrow","label":"Kicker","default":"Apparel for other realities"},
     {"type":"text","id":"heading_first","label":"First line","default":"CURRENTLY"},
     {"type":"text","id":"heading_second","label":"Second line","default":"ELSEWHERE."},

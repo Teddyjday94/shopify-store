@@ -688,3 +688,7 @@ body.template-page #MainContent > .shopify-section:has(.mw-contact-section) {
 @media(prefers-reduced-motion:reduce) {
   .mw-contact-fields .input,.mw-contact-send {transition:none !important;}
 }
+/* Hero video loop: fades in over the still once it is actually playing. */
+.mw-hero__video { opacity:0; transition:opacity 1.2s ease; pointer-events:none; background:transparent; }
+.mw-hero__video.is-playing { opacity:1; }
+@media (prefers-reduced-motion: reduce) { .mw-hero__video { display:none; } }
