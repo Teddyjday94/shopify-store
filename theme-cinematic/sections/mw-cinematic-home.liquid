@@ -1,6 +1,12 @@
 
 {%- liquid
   assign featured = section.settings.featured_collection
+  if featured == blank and section.settings.featured_handle != blank
+    assign featured = collections[section.settings.featured_handle]
+  endif
+  if featured == blank
+    assign featured = collections['legends-never-die']
+  endif
   if featured == blank
     assign featured = collections['the-immortalized-collection']
   endif
@@ -107,6 +113,9 @@
     {%- for block in section.blocks -%}
       {%- liquid
         assign world_collection = block.settings.collection
+        if world_collection == blank and block.settings.collection_handle != blank
+          assign world_collection = collections[block.settings.collection_handle]
+        endif
         assign poster = block.settings.poster
         if poster == blank
           assign poster = world_collection.image
@@ -207,6 +216,7 @@
     {"type":"text","id":"worlds_subtitle","label":"Worlds description","default":"Every drop opens a new door."},
     {"type":"header","content":"Featured products"},
     {"type":"collection","id":"featured_collection","label":"Featured collection"},
+    {"type":"text","id":"featured_handle","label":"Featured collection handle (backup)","info":"Used if the collection above can't be found, e.g. after its URL changes."},
     {"type":"text","id":"featured_kicker","label":"Featured eyebrow","default":"Now showing"},
     {"type":"text","id":"featured_heading","label":"Featured heading","default":"FEATURED DROPS"},
     {"type":"text","id":"featured_link_label","label":"View all label","default":"View the collection"},
@@ -225,6 +235,7 @@
   "blocks": [
     {"type":"world","name":"Collection world","limit":6,"settings":[
       {"type":"collection","id":"collection","label":"Collection"},
+      {"type":"text","id":"collection_handle","label":"Collection handle (backup)","info":"Used if the collection above can't be found, e.g. after its URL changes."},
       {"type":"image_picker","id":"poster","label":"Cinematic poster image","info":"Leave empty to show the collection's first product."},
       {"type":"text","id":"title","label":"World title","default":"The Collection"},
       {"type":"text","id":"category","label":"Category code","default":"New world"},

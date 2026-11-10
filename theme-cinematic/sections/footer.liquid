@@ -60,6 +60,9 @@
       endif
       assign finale_collection = section.settings.finale_collection
       if finale_collection == blank
+        assign finale_collection = collections['legends-never-die']
+      endif
+      if finale_collection == blank
         assign finale_collection = collections['the-immortalized-collection']
       endif
     -%}
