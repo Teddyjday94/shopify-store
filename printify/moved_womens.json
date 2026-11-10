@@ -1,0 +1,32 @@
+{
+  "6af1e6070f9a2f318000aab7": {
+    "title": "Born Ready Women's Tee",
+    "old_shopify": "8872878735521",
+    "old_handle": "born-ready-womens-tee",
+    "new_printify": "6af37481f6491c921e019173",
+    "colors": [
+      "Black",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ],
+    "old_deleted": true,
+    "swapped": true
+  },
+  "6af1e4f5393409037404e38d": {
+    "title": "Things I Do in My Spare Time Women's Tee",
+    "old_shopify": "8872865530017",
+    "old_handle": "things-i-do-in-my-spare-time-womens-tee",
+    "new_printify": "6af3749143c414fdd40987d0",
+    "colors": [
+      "Black",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ],
+    "old_deleted": true,
+    "swapped": true
+  }
+}
