@@ -1,0 +1,38 @@
+/* Type pairing (2026-11-12): Anton for big headings, Barlow Semi Condensed for supporting text.
+   Replaces Instrument Serif everywhere. Loaded last from layout/theme.liquid; the @font-face rules
+   for Barlow live there too (they need asset_url). To go back, remove this file's <link>. */
+:root {
+  --support: "Barlow Semi Condensed", "Arial Narrow", Arial, sans-serif;
+  --headline: "Anton", "Arial Narrow", Impact, sans-serif;
+  --display: var(--support);
+}
+.field-guide { --fg-serif: var(--support); }
+
+/* Supporting text: a sans needs a little more weight than the old serif on dark backgrounds. */
+.fg-hero__dek,
+.fg-section-head > p,
+.fg-world__copy strong + span,
+.fg-campaign p:not(.fg-meta),
+.fg-dispatch__copy > p:not(.fg-meta),
+.display--sm { font-weight: 500; letter-spacing: .005em; }
+.fg-product__caption strong,
+.field-guide .collection-view .card__title,
+.card__title { font-weight: 600; letter-spacing: .005em; }
+.world-collection__invitation,
+.mw-contact-intro small, .mw-contact-heading ~ * small { font-style: normal; }
+
+/* Big headings match the homepage headlines. */
+h1.display,
+h2.display,
+.display--lg,
+.mw-contact-heading,
+.field-guide.template-product .product__title,
+.fg-lead-card__label strong {
+  font-family: var(--headline);
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  line-height: 1;
+}
+.header__logo .display { font-family: var(--headline); letter-spacing: .07em; }

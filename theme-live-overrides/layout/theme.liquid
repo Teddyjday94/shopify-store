@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}"{% unless settings.animations %} class="motion-paused"{% endunless %}>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#0b090d">
+    {%- liquid
+      assign motion_pages = 'index,collection,list-collections,product,page,blog,article' | split: ','
+      assign field_opening = false
+      if settings.animations and settings.cinema_opening and template.name == 'index' and request.design_mode == false
+        assign field_opening = true
+        assign field_opening_poster = 'https://cdn.shopify.com/s/files/1/0765/5086/5057/files/elsewhere-three-worlds-hd.webp?v=1794343992'
+      endif
+    -%}
+    {% if settings.animations and request.design_mode == false and motion_pages contains template.name %}
+      <style>
+        @media (prefers-reduced-motion: no-preference) {
+          @view-transition { navigation: auto; types: fg-route; }
+        }
+      </style>
+    {% endif %}
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let paused = false;
+        try { paused = localStorage.getItem('elsewhere-motion-paused') === 'true'; } catch {}
+        if (paused) root.classList.add('motion-paused');
+        {% if settings.animations and request.design_mode == false and motion_pages contains template.name %}
+          const fromStore = document.referrer.startsWith(location.origin + '/');
+          const skipWhenPaused = ({ viewTransition }) => {
+            if (root.classList.contains('motion-paused') || root.classList.contains('fg-intro-active')) {
+              viewTransition?.skipTransition();
+            }
+          };
+          const revealPage = ({ viewTransition } = {}) => {
+            if (viewTransition) {
+              skipWhenPaused({ viewTransition });
+            } else if (fromStore && !reduced && !root.classList.contains('motion-paused')
+              && !root.classList.contains('fg-intro-active')) {
+              root.classList.add('fg-fallback-arrival');
+            }
+          };
+          addEventListener('pageswap', skipWhenPaused);
+          if ('onpagereveal' in window) addEventListener('pagereveal', revealPage);
+          else revealPage();
+        {% endif %}
+        {% if field_opening %}
+          try {
+            if (paused || reduced) return;
+            const replay = new URLSearchParams(location.search).get('replay_intro') === '1';
+            const seen = sessionStorage.getItem('elsewhere-three-worlds-seen') === '1';
+            const sameSite = document.referrer.startsWith(location.origin + '/');
+            const restored = performance.getEntriesByType('navigation')[0]?.type === 'back_forward';
+            if (!replay && (seen || sameSite || restored)) return;
+            root.dataset.fgIntroStarted = String(performance.now());
+            root.classList.add('fg-intro-pending');
+            const poster = document.createElement('link');
+            poster.rel = 'preload';
+            poster.as = 'image';
+            const posterUrl = {{ field_opening_poster | json }};
+            poster.href = matchMedia('(max-width: 620px)').matches ? posterUrl + '&width=640' : posterUrl;
+            poster.fetchPriority = 'high';
+            root.dataset.fgIntroPoster = poster.href;
+            document.head.append(poster);
+            setTimeout(() => {
+              root.classList.remove('fg-intro-pending', 'fg-intro-active', 'fg-intro--leaving');
+              delete root.dataset.fgIntroStarted;
+              delete root.dataset.fgIntroPoster;
+            }, 4100);
+          } catch {}
+        {% endif %}
+      })();
+    </script>
+    <link rel="canonical" href="{{ canonical_url }}">
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 64, height: 64 }}">
+    {%- endif -%}
+
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; {{ current_tags | join: ', ' }}{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    {% render 'meta-tags' %}
+    {% render 'theme-styles' %}
+    {{ 'cinematic.css' | asset_url | stylesheet_tag }}
+    {{ 'cinematic-detail.css' | asset_url | stylesheet_tag }}
+    {{ 'elsewhere-worlds.css' | asset_url | stylesheet_tag }}
+    {{ 'mw-bloodmoon.css' | asset_url | stylesheet_tag }}
+    {{ 'mw-cinema-motion.css' | asset_url | stylesheet_tag }}
+    {{ 'mw-editorial-scenes.css' | asset_url | stylesheet_tag }}
+    {{ 'mw-scroll-journey.css' | asset_url | stylesheet_tag }}
+    {{ 'mw-hero-smooth.css' | asset_url | stylesheet_tag }}
+    {{ 'field-guide.css' | asset_url | stylesheet_tag }}
+    {% if settings.animations and request.design_mode == false and motion_pages contains template.name %}
+      {{ 'field-guide-transit.css' | asset_url | stylesheet_tag }}
+    {% endif %}
+    {%- comment -%} Type pairing: Barlow Semi Condensed for supporting text, Anton for big headings (replaces Instrument Serif). {%- endcomment -%}
+    <link rel="preload" href="{{ 'barlow-semi-condensed-500.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin="anonymous">
+    <style>
+      @font-face { font-family: 'Barlow Semi Condensed'; src: url({{ 'barlow-semi-condensed-400.woff2' | asset_url }}) format('woff2'); font-weight: 400; font-display: swap; }
+      @font-face { font-family: 'Barlow Semi Condensed'; src: url({{ 'barlow-semi-condensed-500.woff2' | asset_url }}) format('woff2'); font-weight: 500; font-display: swap; }
+      @font-face { font-family: 'Barlow Semi Condensed'; src: url({{ 'barlow-semi-condensed-600.woff2' | asset_url }}) format('woff2'); font-weight: 600 900; font-display: swap; }
+    </style>
+    {{ 'type-pairing.css' | asset_url | stylesheet_tag }}
+    {% if template.name == 'index' %}
+      <script src="{{ 'field-guide.js' | asset_url }}" defer="defer"></script>
+    {% endif %}
+    <script>
+      window.themeStrings = {
+        addToCart: {{ 'products.add_to_cart' | t | json }},
+        soldOut: {{ 'products.sold_out' | t | json }},
+        unavailable: {{ 'products.unavailable' | t | json }}
+      };
+    </script>
+    <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'cinematic.js' | asset_url }}" defer="defer"></script>
+
+    <script src="{{ 'mw-bloodmoon.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'mw-cinema-motion.js' | asset_url }}" defer="defer"></script>
+    {{ content_for_header }}
+  </head>
+
+{%- liquid
+    assign world_key = 'crossing'
+    assign world_subject = collection.handle | append: ' ' | append: product.handle | append: ' ' | append: product.type | downcase
+    if world_subject contains 'hoodie' or world_subject contains 'sweatshirt'
+      assign world_key = 'garden'
+    elsif world_subject contains 'hat' or world_subject contains 'beanie' or world_subject contains 'cap'
+      assign world_key = 'dunes'
+    elsif template.name == 'collection' or template.name == 'product' or template.name == 'search'
+      assign world_key = 'tide'
+    elsif page.handle == 'about'
+      assign world_key = 'garden'
+    elsif page.handle == 'shipping' or page.handle == 'returns'
+      assign world_key = 'dunes'
+    elsif page.handle == 'contact'
+      assign world_key = 'tide'
+    endif
+    assign world_setting = 'world_' | append: world_key
+    assign world_image = settings[world_setting]
+  -%}
+  <body data-mw-intro="false" data-mw-parallax="{{ settings.cinema_parallax }}" data-world="{{ world_key }}"{% if settings.worlds_enabled and world_image != blank %} style="--world-scenery: url('{{ world_image | image_url: width: 1672 }}');"{% endif %} class="field-guide template-{{ template.name | handle }}{% if settings.animations %} motion{% endif %}{% if settings.worlds_enabled %} has-worlds{% endif %}">
+    {% if field_opening %}
+      {% render 'field-guide-transit', poster: field_opening_poster %}
+      <script src="{{ 'field-guide-transit.js' | asset_url }}" async></script>
+    {% endif %}
+    {% if settings.worlds_enabled and template.name != 'index' %}{% render 'world-scenery', image: world_image, kind: 'page' %}{% endif %}
+    <a class="skip-link" href="#MainContent">Skip to content</a>
+    {% if settings.cinema_grain %}<div class="mw-grain" aria-hidden="true"></div>{% endif %}
+    {% sections 'header-group' %}
+
+    <main id="MainContent" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    {% sections 'footer-group' %}
+  </body>
+</html>
