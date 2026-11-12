@@ -1,0 +1,255 @@
+{%- liquid
+  assign featured = section.settings.featured
+  if featured == blank
+    assign featured = collections['inner-monologue'] | default: collections['the-relatable-collection']
+  endif
+  assign garden = section.settings.poster | default: settings.world_garden
+  assign campaign_hero = false
+  if section.settings.poster == blank and section.settings.film == blank
+    assign campaign_hero = true
+  endif
+-%}
+<div class="fg-home">
+  <section class="fg-hero{% if campaign_hero %} fg-hero--campaign{% endif %}" aria-labelledby="fg-title-{{ section.id }}">
+    <div class="fg-wrap fg-hero__layout">
+      <div class="fg-hero__top fg-meta"><span>Elsewhere Field Guide / Vol. 01</span><span>Apparel for other realities</span></div>
+      <div class="fg-hero__screen" aria-hidden="true">
+        {%- if campaign_hero -%}
+          <picture class="fg-hero__media">
+            <source media="(max-width: 620px)" srcset="https://cdn.shopify.com/s/files/1/0765/5086/5057/files/elsewhere-hero-clear-phone.webp?v=1794351654" width="648" height="1152">
+            <img src="https://cdn.shopify.com/s/files/1/0765/5086/5057/files/elsewhere-hero-clear-wide.webp?v=1794351654" srcset="https://cdn.shopify.com/s/files/1/0765/5086/5057/files/elsewhere-hero-clear-wide.webp?v=1794351654&amp;width=960 960w, https://cdn.shopify.com/s/files/1/0765/5086/5057/files/elsewhere-hero-clear-wide.webp?v=1794351654 1280w"
+              sizes="100vw" width="1280" height="720" fetchpriority="high" alt="">
+          </picture>
+        {%- elsif garden != blank -%}
+          {{ garden | image_url: width: 1672 | image_tag: class: 'fg-hero__media', widths: '480, 750, 1100, 1500, 1672', sizes: '100vw', fetchpriority: 'high', loading: 'eager', alt: '' }}
+        {%- endif -%}
+        {%- if section.settings.show_film and settings.animations -%}
+          <video class="fg-hero__media fg-hero__film" muted loop playsinline preload="none" data-field-film>
+            {%- if campaign_hero -%}
+              <source data-src="https://cdn.shopify.com/videos/c/o/v/2286bf6e2a214e1b83daf4696f4c4ee9.mp4" data-compact-src="https://cdn.shopify.com/videos/c/o/v/acd03b0849984cafb28768beb7a2956f.mp4" type="video/mp4">
+            {%- elsif section.settings.film != blank -%}
+              {%- for source in section.settings.film.sources -%}
+                <source data-src="{{ source.url | escape }}" type="{{ source.mime_type | escape }}">
+              {%- endfor -%}
+            {%- endif -%}
+          </video>
+        {%- endif -%}
+        <div class="fg-hero__shade"></div>
+      </div>
+      <div class="fg-hero__copy">
+        <p class="fg-meta fg-kicker">00 / {% if campaign_hero %}The Crossing{% else %}The Garden{% endif %}</p>
+        <h1 id="fg-title-{{ section.id }}">{{ section.settings.heading | escape }}<br><em>{{ section.settings.accent | escape }}</em></h1>
+        <p class="fg-hero__dek">{{ section.settings.description | escape }}</p>
+        <div class="fg-actions">
+          <a class="fg-button" href="{{ featured.url | default: routes.all_products_collection_url }}">Shop the featured drop {% render 'mw-icon-arrow', direction: 'right' %}</a>
+          <a class="fg-quiet" href="#field-worlds">Explore the worlds {% render 'mw-icon-arrow', direction: 'down' %}</a>
+        </div>
+      </div>
+      <div class="fg-hero__bottom fg-meta">
+        <span>Field footage / {% if campaign_hero %}Campaign Reel{% else %}The Garden{% endif %}</span>
+        <button type="button" class="fg-film-control" data-field-film-toggle hidden>Pause film</button>
+      </div>
+    </div>
+  </section>
+
+  {%- if featured.products.size > 0 -%}
+    <section class="fg-feature" aria-labelledby="fg-drop-{{ section.id }}">
+      <div class="fg-wrap">
+        <header class="fg-section-head">
+          <div><p class="fg-meta fg-kicker">01 / Featured drop</p><h2 id="fg-drop-{{ section.id }}">{{ featured.title | escape }}<em>.</em></h2></div>
+          <a class="fg-quiet" href="{{ featured.url }}">Shop the collection {% render 'mw-icon-arrow', direction: 'up-right' %}</a>
+        </header>
+        <div class="fg-products">
+          {%- liquid
+            assign wants = 'hoodie,tee,womens,hoodie,any,any,any,any' | split: ','
+            assign picks = ''
+            assign used = '|'
+            assign picked = 0
+          -%}
+          {%- paginate featured.products by 100 -%}
+            {%- for want in wants -%}
+              {%- if picked >= 4 -%}{%- break -%}{%- endif -%}
+              {%- for product in featured.products -%}
+                {%- liquid
+                  if product.tags contains 'accessory' or product.featured_image == blank
+                    continue
+                  endif
+                  assign kind = 'other'
+                  if product.title contains 'Hoodie'
+                    assign kind = 'hoodie'
+                  elsif product.title contains "Women's"
+                    assign kind = 'womens'
+                  elsif product.title contains 'Tee'
+                    assign kind = 'tee'
+                  endif
+                  if want != 'any' and kind != want
+                    continue
+                  endif
+                  assign design = product.title | remove: " Women's Tee" | remove: ' Hoodie' | remove: ' Tee'
+                  assign key = '|' | append: design | append: '|'
+                  if used contains key
+                    continue
+                  endif
+                  assign used = used | append: design | append: '|'
+                  assign picks = picks | append: product.handle | append: ','
+                  assign picked = picked | plus: 1
+                  break
+                -%}
+              {%- endfor -%}
+            {%- endfor -%}
+          {%- endpaginate -%}
+          {%- assign pick_list = picks | split: ',' -%}
+          {%- assign shown = 0 -%}
+          {%- assign hoodies_shown = 0 -%}
+          {%- for handle in pick_list -%}
+            {%- assign product = all_products[handle] -%}
+            {%- if product == blank -%}{%- continue -%}{%- endif -%}
+            {%- assign shown = shown | plus: 1 -%}
+            {%- liquid
+              assign photo = product.featured_image
+              if product.title contains 'Hoodie'
+                assign hoodies_shown = hoodies_shown | plus: 1
+                assign back = nil
+                assign back_black = nil
+                assign back_color = nil
+                for media in product.media
+                  if media.alt contains ', back print' and media.preview_image != blank
+                    assign back = back | default: media.preview_image
+                    if media.alt contains ' in Black,'
+                      assign back_black = back_black | default: media.preview_image
+                    else
+                      assign back_color = back_color | default: media.preview_image
+                    endif
+                  endif
+                endfor
+                if hoodies_shown > 1 and back_color != blank
+                  assign photo = back_color
+                else
+                  assign photo = back_black | default: back | default: photo
+                endif
+              endif
+            -%}
+            <a class="fg-product" href="{{ product.url }}">
+              <span class="fg-product__image">{{ photo | image_url: width: 850 | image_tag: widths: '320, 480, 640, 850', sizes: '(min-width: 860px) 24vw, 47vw', loading: 'lazy', alt: '' }}</span>
+              <span class="fg-product__caption">
+                <span><span class="fg-meta fg-product__number">Piece / 0{{ shown }}</span><strong>{{ product.title | escape }}</strong></span>
+                <span>{% if product.price_varies %}From {% endif %}{{ product.price | money }}</span>
+              </span>
+            </a>
+          {%- endfor -%}
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
+
+  <section class="fg-worlds" id="field-worlds" aria-labelledby="fg-worlds-{{ section.id }}">
+    <div class="fg-wrap">
+      <header class="fg-section-head">
+        <div><p class="fg-meta fg-kicker">02 / The collection index</p><h2 id="fg-worlds-{{ section.id }}">Pick a world<em>.</em></h2></div>
+        <p>Different stories. Same universe.</p>
+      </header>
+      <div class="fg-worlds__grid">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign world = block.settings.collection
+            if world == blank
+              assign world = collections[block.settings.handle] | default: collections[block.settings.legacy_handle]
+            endif
+            assign art = block.settings.image | default: world.image | default: world.products.first.featured_image
+          -%}
+          {%- if world != blank -%}
+            <a class="fg-world{% if world.handle == 'female-lead' or world.handle == 'own-lane' %} fg-world--female{% elsif world.handle == 'side-quest' or world.handle == 'player-two' %} fg-world--side{% elsif world.handle == 'creature-feature' or world.handle == 'horror-collection' %} fg-world--creature{% elsif world.handle == 'naughty-list' or world.handle == 'the-christmas-collection' %} fg-world--seasonal{% endif %}{% if block.settings.center_art %} fg-world--centered{% endif %}" href="{{ world.url }}" {{ block.shopify_attributes }}>
+              {%- if art != blank -%}
+                {{ art | image_url: width: 1440 | image_tag: class: 'fg-world__image', widths: '480, 720, 1000, 1440', sizes: '(min-width: 860px) 57vw, 100vw', loading: 'lazy', alt: '' }}
+              {%- endif -%}
+              {%- if block.settings.video_url != blank and settings.animations -%}
+                {%- comment -%} Looping tile film over the still; the still stays as the poster and the fallback when motion is off. {%- endcomment -%}
+                <video class="fg-world__image fg-world__film" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-world-film
+                  {% if art != blank %}poster="{{ art | image_url: width: 1000 }}"{% endif %}>
+                  <source data-src="{{ block.settings.video_url | escape }}" type="video/mp4">
+                </video>
+              {%- endif -%}
+              <span class="fg-world__code fg-meta">World / 0{{ forloop.index }}</span>
+              <span class="fg-world__copy">
+                <span><strong>{{ world.title | escape }}</strong><span>{{ block.settings.caption | escape }}</span></span>
+                <span class="fg-world__arrow">{% render 'mw-icon-arrow', direction: 'up-right' %}</span>
+              </span>
+            </a>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      <a class="fg-quiet fg-all-worlds" href="{{ routes.collections_url }}">Browse all collections {% render 'mw-icon-arrow', direction: 'right' %}</a>
+    </div>
+  </section>
+  <style>
+    /* Artwork chosen for a tile is pre-cropped around the design: show it centered, unzoomed. */
+    .fg-world--centered .fg-world__image { object-position: center; scale: 1; }
+    .fg-world__film { opacity: 0; transition: opacity .8s ease; }
+    .fg-world__film.is-playing { opacity: 1; }
+    html.motion-paused .fg-world__film { display: none; }
+    @media (prefers-reduced-motion: reduce) { .fg-world__film { display: none; } }
+  </style>
+  <script>
+    (() => {
+      const films = document.querySelectorAll('[data-world-film]');
+      if (!films.length) return;
+      const off = () => document.documentElement.classList.contains('motion-paused') || matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const start = (v) => {
+        if (off()) return;
+        if (!v.dataset.loaded) {
+          v.querySelectorAll('source[data-src]').forEach((s) => { s.src = s.dataset.src; });
+          v.dataset.loaded = '1';
+          v.load();
+          v.addEventListener('playing', () => v.classList.add('is-playing'), { once: true });
+        }
+        const p = v.play(); if (p && p.catch) p.catch(() => {});
+      };
+      if (!('IntersectionObserver' in window)) { films.forEach(start); return; }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) start(e.target); else if (e.target.dataset.loaded) e.target.pause(); });
+      }, { rootMargin: '200px 0px' });
+      films.forEach((v) => io.observe(v));
+    })();
+  </script>
+
+  <section class="fg-dispatch" aria-labelledby="fg-dispatch-{{ section.id }}">
+    {%- if settings.world_crossing != blank -%}
+      {{ settings.world_crossing | image_url: width: 1500 | image_tag: class: 'fg-dispatch__image', widths: '480, 750, 1100, 1500', sizes: '(min-width: 860px) 54vw, 100vw', loading: 'lazy', alt: '' }}
+    {%- endif -%}
+    <div class="fg-dispatch__copy">
+      <p class="fg-meta fg-kicker">03 / A note from Elsewhere</p>
+      <h2 id="fg-dispatch-{{ section.id }}">Not made<br>to fit in<em>.</em></h2>
+      <p>Original graphic apparel inspired by fantasy, culture, and the unexpected.</p>
+      <a class="fg-quiet" href="{{ section.settings.about_url | default: '/pages/about' }}">Our story {% render 'mw-icon-arrow', direction: 'up-right' %}</a>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Elsewhere field guide",
+  "settings": [
+    {"type":"text","id":"heading","label":"Hero heading","default":"Currently"},
+    {"type":"text","id":"accent","label":"Hero accent","default":"Elsewhere."},
+    {"type":"text","id":"description","label":"Hero description","default":"Original graphic apparel for every version of you."},
+    {"type":"image_picker","id":"poster","label":"Hero poster"},
+    {"type":"checkbox","id":"show_film","label":"Show the ambient film","default":true},
+    {"type":"video","id":"film","label":"Custom ambient film"},
+    {"type":"collection","id":"featured","label":"Featured collection"},
+    {"type":"url","id":"about_url","label":"About link"}
+  ],
+  "max_blocks": 5,
+  "blocks": [
+    {"type":"world","name":"Collection world","settings":[
+      {"type":"collection","id":"collection","label":"Collection"},
+      {"type":"text","id":"handle","label":"Collection handle"},
+      {"type":"text","id":"legacy_handle","label":"Previous collection handle"},
+      {"type":"image_picker","id":"image","label":"Artwork"},
+      {"type":"checkbox","id":"center_art","label":"Show artwork centered","info":"For artwork already cropped around the design: no zoom, no offset.","default":false},
+      {"type":"text","id":"video_url","label":"Looping video URL (MP4)","info":"Plays muted over the artwork, which stays as the still for visitors with motion off."},
+      {"type":"text","id":"caption","label":"Caption"}
+    ]}
+  ],
+  "presets": [{"name":"Elsewhere field guide"}]
+}
+{% endschema %}

@@ -1,0 +1,78 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "field_guide": {
+      "type": "field-guide-home",
+      "settings": {
+        "show_film": true
+      },
+      "blocks": {
+        "legends": {
+          "type": "world",
+          "settings": {
+            "handle": "legends-never-die",
+            "legacy_handle": "the-immortalized-collection",
+            "image": "shopify://shop_images/elsewhere-legends-rise-from-ruin.jpg",
+            "center_art": true,
+            "video_url": "https://cdn.shopify.com/s/files/1/0765/5086/5057/files/elsewhere-legends-rise-from-ruin.mp4?v=1794510493",
+            "caption": "Legends without an ending."
+          }
+        },
+        "creature": {
+          "type": "world",
+          "settings": {
+            "handle": "creature-feature",
+            "legacy_handle": "horror-collection",
+            "image": "shopify://shop_images/elsewhere-creature-horror-club.jpg",
+            "center_art": true,
+            "caption": "Original horror, after dark."
+          }
+        },
+        "female": {
+          "type": "world",
+          "settings": {
+            "handle": "female-lead",
+            "legacy_handle": "own-lane",
+            "image": "shopify://shop_images/elsewhere-sisterhood-campaign.jpg",
+            "caption": "She was never the sidekick."
+          }
+        },
+        "side": {
+          "type": "world",
+          "settings": {
+            "handle": "side-quest",
+            "legacy_handle": "player-two",
+            "image": "shopify://shop_images/elsewhere-side-quest-respawn-pending.jpg",
+            "caption": "For the ones who never stick to the main story."
+          }
+        },
+        "naughty_list": {
+          "type": "world",
+          "settings": {
+            "handle": "naughty-list",
+            "legacy_handle": "the-christmas-collection",
+            "caption": "Unexpected holiday energy."
+          }
+        }
+      },
+      "block_order": [
+        "legends",
+        "creature",
+        "female",
+        "side",
+        "naughty_list"
+      ]
+    }
+  },
+  "order": [
+    "field_guide"
+  ]
+}
