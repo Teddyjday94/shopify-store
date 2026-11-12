@@ -43,6 +43,12 @@ Shop categories: Men's, Women's, Tees, Hoodies, Hats & beanies, Home & Accessori
 My Kind of Leg Day, Built Character, Currently Avoiding, Nine Tails (Printify would not publish its art),
 Monster of the Week (held: resembles a trademarked character).
 
+## Themes
+- Live theme (2026-11-12): "Hero Video Preview" (156465922209), the Field Guide design, built outside this repo.
+  Only the files in theme-live-overrides/ are stored here. theme-cinematic/ is the older design.
+- Fonts: Anton (big headings), Barlow Semi Condensed (supporting text, card titles), Inter Tight (body),
+  IBM Plex Mono (labels). Instrument Serif was dropped 2026-11-12 in copy "New Fonts" (156527263905).
+
 ## Conventions
 - Theme edits: the live theme can't be written directly; duplicate it, edit the copy, and the owner publishes.
 - Tees are front-print only (2026-11-10: the 22 Legends Never Die tees had painting on back + front emblem;
