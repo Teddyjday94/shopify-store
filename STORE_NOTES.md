@@ -47,7 +47,10 @@ Monster of the Week (held: resembles a trademarked character).
 - Live theme (2026-11-12): "Hero Video Preview" (156465922209), the Field Guide design, built outside this repo.
   Only the files in theme-live-overrides/ are stored here. theme-cinematic/ is the older design.
 - Fonts: Anton (big headings), Barlow Semi Condensed (supporting text, card titles), Inter Tight (body),
-  IBM Plex Mono (labels). Instrument Serif was dropped 2026-11-12 in copy "New Fonts" (156527263905).
+  IBM Plex Mono (labels). Instrument Serif was dropped 2026-11-12 in copy "New Fonts" (156527263905, now live).
+- Homepage world tiles (2026-11-12, copy "Tile Media" 156570779809): Legends Never Die = looping Rise From Ruin
+  video, Creature Feature = Horror Club photo, both cropped centered on the artwork (media/homepage/).
+- Shopify caps a store at 20 themes and this connection can't delete themes; the owner removes old drafts in admin.
 
 ## Conventions
 - Theme edits: the live theme can't be written directly; duplicate it, edit the copy, and the owner publishes.
