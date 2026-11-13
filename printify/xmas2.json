@@ -1,0 +1,222 @@
+{
+  "06-santa-knows-tee": {
+    "printify": "6af7714f9629bbe854039fe0",
+    "title": "Santa Knows (And So Do I) Tee",
+    "kind": "tee",
+    "cost": [
+      1177,
+      1438
+    ]
+  },
+  "06-santa-knows-womens": {
+    "printify": "6af7715daa7a8b17d208d43f",
+    "title": "Santa Knows (And So Do I) Women's Tee",
+    "kind": "womens",
+    "cost": [
+      1082,
+      1319
+    ]
+  },
+  "06-santa-knows-hoodie": {
+    "printify": "6af771690cd4ff7bf9003513",
+    "title": "Santa Knows (And So Do I) Hoodie",
+    "kind": "hoodie",
+    "cost": [
+      2267,
+      2484
+    ]
+  },
+  "06-santa-knows-mug": {
+    "printify": "6af77179c1e040f12b0a92d1",
+    "title": "Santa Knows (And So Do I) Mug",
+    "kind": "mug",
+    "cost": [
+      575,
+      624
+    ]
+  },
+  "06-santa-knows-ornament": {
+    "printify": "6af7718c72c3dfd8520d5427",
+    "title": "Santa Knows (And So Do I) Ornament",
+    "kind": "ornament",
+    "cost": [
+      631
+    ]
+  },
+  "07-christmas-calories-dont-count-tee": {
+    "printify": "6af771a0d8f95ddb070d3c66",
+    "title": "Christmas Calories Don't Count Tee",
+    "kind": "tee",
+    "cost": [
+      1177,
+      1438
+    ]
+  },
+  "07-christmas-calories-dont-count-womens": {
+    "printify": "6af771ac72c3dfd8520d545b",
+    "title": "Christmas Calories Don't Count Women's Tee",
+    "kind": "womens",
+    "cost": [
+      1082,
+      1319
+    ]
+  },
+  "07-christmas-calories-dont-count-hoodie": {
+    "printify": "6af771b9c1e040f12b0a9322",
+    "title": "Christmas Calories Don't Count Hoodie",
+    "kind": "hoodie",
+    "cost": [
+      2267,
+      2484
+    ]
+  },
+  "07-christmas-calories-dont-count-mug": {
+    "printify": "6af771c8dbddd3ec260cb77e",
+    "title": "Christmas Calories Don't Count Mug",
+    "kind": "mug",
+    "cost": [
+      575,
+      624
+    ]
+  },
+  "07-christmas-calories-dont-count-ornament": {
+    "printify": "6af771d856006e5c8a0e820d",
+    "title": "Christmas Calories Don't Count Ornament",
+    "kind": "ornament",
+    "cost": [
+      631
+    ]
+  },
+  "08-may-your-days-be-merry-tee": {
+    "printify": "6af771e8402938d2d305ab11",
+    "title": "May Your Days Be Merry Tee",
+    "kind": "tee",
+    "cost": [
+      1177,
+      1438
+    ]
+  },
+  "08-may-your-days-be-merry-womens": {
+    "printify": "6af771f556006e5c8a0e823a",
+    "title": "May Your Days Be Merry Women's Tee",
+    "kind": "womens",
+    "cost": [
+      1082,
+      1319
+    ]
+  },
+  "08-may-your-days-be-merry-hoodie": {
+    "printify": "6af7720145a65aa8f50e09ad",
+    "title": "May Your Days Be Merry Hoodie",
+    "kind": "hoodie",
+    "cost": [
+      2267,
+      2484
+    ]
+  },
+  "08-may-your-days-be-merry-mug": {
+    "printify": "6af77210aa7a8b17d208d509",
+    "title": "May Your Days Be Merry Mug",
+    "kind": "mug",
+    "cost": [
+      575,
+      624
+    ]
+  },
+  "08-may-your-days-be-merry-ornament": {
+    "printify": "6af77221402938d2d305ab38",
+    "title": "May Your Days Be Merry Ornament",
+    "kind": "ornament",
+    "cost": [
+      631
+    ]
+  },
+  "09-hot-cocoa-fixes-almost-everything-tee": {
+    "printify": "6af7723272c3dfd8520d54e8",
+    "title": "Hot Cocoa Fixes (Almost) Everything Tee",
+    "kind": "tee",
+    "cost": [
+      1177,
+      1438
+    ]
+  },
+  "09-hot-cocoa-fixes-almost-everything-womens": {
+    "printify": "6af7723e402938d2d305ab4b",
+    "title": "Hot Cocoa Fixes (Almost) Everything Women's Tee",
+    "kind": "womens",
+    "cost": [
+      1082,
+      1319
+    ]
+  },
+  "09-hot-cocoa-fixes-almost-everything-hoodie": {
+    "printify": "6af7724a56006e5c8a0e827a",
+    "title": "Hot Cocoa Fixes (Almost) Everything Hoodie",
+    "kind": "hoodie",
+    "cost": [
+      2267,
+      2484
+    ]
+  },
+  "09-hot-cocoa-fixes-almost-everything-mug": {
+    "printify": "6af77259aa7a8b17d208d536",
+    "title": "Hot Cocoa Fixes (Almost) Everything Mug",
+    "kind": "mug",
+    "cost": [
+      575,
+      624
+    ]
+  },
+  "09-hot-cocoa-fixes-almost-everything-ornament": {
+    "printify": "6af7726ac1e040f12b0a939e",
+    "title": "Hot Cocoa Fixes (Almost) Everything Ornament",
+    "kind": "ornament",
+    "cost": [
+      631
+    ]
+  },
+  "10-dear-santa-i-can-explain-tee": {
+    "printify": "6af7727a9629bbe85403a0bd",
+    "title": "Dear Santa, I Can Explain Tee",
+    "kind": "tee",
+    "cost": [
+      1177,
+      1438
+    ]
+  },
+  "10-dear-santa-i-can-explain-womens": {
+    "printify": "6af77287a8eb50ee060c9a37",
+    "title": "Dear Santa, I Can Explain Women's Tee",
+    "kind": "womens",
+    "cost": [
+      1082,
+      1319
+    ]
+  },
+  "10-dear-santa-i-can-explain-hoodie": {
+    "printify": "6af7729341ef09295b07ac17",
+    "title": "Dear Santa, I Can Explain Hoodie",
+    "kind": "hoodie",
+    "cost": [
+      2267,
+      2484
+    ]
+  },
+  "10-dear-santa-i-can-explain-mug": {
+    "printify": "6af772a1402938d2d305ab8c",
+    "title": "Dear Santa, I Can Explain Mug",
+    "kind": "mug",
+    "cost": [
+      575,
+      624
+    ]
+  },
+  "10-dear-santa-i-can-explain-ornament": {
+    "printify": "6af772b245a65aa8f50e0a65",
+    "title": "Dear Santa, I Can Explain Ornament",
+    "kind": "ornament",
+    "cost": [
+      631
+    ]
+  }
+}
