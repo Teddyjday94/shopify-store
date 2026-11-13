@@ -8,11 +8,12 @@ const font = (p) => `data:font/woff2;base64,${fs.readFileSync(path.join(ROOT, p)
 const FACES = `
   @font-face{font-family:Anton;src:url(${font('theme/assets/anton.woff2')})}
   @font-face{font-family:Graduate;src:url(${font('designs/src/fonts/graduate-400.woff2')})}
+  @font-face{font-family:AlfaSlab;src:url(${font('designs/src/fonts/alfa-slab-one-400.woff2')})}
   @font-face{font-family:Orbitron;src:url(${font('designs/src/fonts/orbitron-900.woff2')});font-weight:900}`;
 const W = 4724, H = 1181; // horizontal canvas; rotated to 1181 x 4724
 const STYLES = {
   legends: `font-family:Anton;color:#F1E5D1;letter-spacing:.04em;`,
-  horror: `font-family:Graduate;color:#F1E5D1;-webkit-text-stroke:14px #B3261E;paint-order:stroke fill;letter-spacing:.03em;`,
+  horror: `font-family:AlfaSlab;color:#F1E5D1;-webkit-text-stroke:34px #B3261E;paint-order:stroke fill;letter-spacing:.05em;`,
   signal: `font-family:Orbitron;font-weight:900;font-style:italic;color:#F4F4F4;letter-spacing:.06em;`,
 };
 const SLEEVES = [
