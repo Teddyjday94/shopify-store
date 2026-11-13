@@ -29,12 +29,11 @@ Facts worth remembering between sessions. Update as things change.
 - Each sleeve print adds about $6.50. Lettering: designs/sleeves (designs/src/render_sleeves.js);
   products: printify/create_sleeve_drop.py, printify/sleeve_drop.json.
 
-## Christmas batch 2 (2026-11-13)
-- Santa Knows (And So Do I), Christmas Calories Don't Count, May Your Days Be Merry, Hot Cocoa Fixes (Almost)
-  Everything, Dear Santa I Can Explain, It's Fine I'm Fine Everything Is Fine. Each: tee $27, women's tee $27,
-  hoodie $37 (back print), mug $17, ornament $17, Black apparel. All in Naughty List + Shop channel.
-- Source art designs/xmas2-src, upscaled print files designs/print-xmas2, mug/ornament art designs/print-home;
-  script printify/create_xmas2.py, ids printify/xmas2.json.
+## Christmas line removed (2026-11-13)
+- Deleted all 60 Christmas products (batch 1: Naughty List Again, Suck It Up Buttercup, Bring Bourbon,
+  Gift Is Me, Holly Jolly Chaos; batch 2: the six added 2026-11-13) from Printify and Shopify, plus the
+  Naughty List collection (handle the-christmas-collection) and its main-menu link. Homepage tile hides
+  itself when the collection is missing. Art and scripts stay in the repo (designs/xmas2-src, create_xmas2.py).
 
 ## Collections
 Renamed 2026-11-10 (old name -> new):
