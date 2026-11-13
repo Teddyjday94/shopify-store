@@ -29,6 +29,13 @@ Facts worth remembering between sessions. Update as things change.
 - Each sleeve print adds about $6.50. Lettering: designs/sleeves (designs/src/render_sleeves.js);
   products: printify/create_sleeve_drop.py, printify/sleeve_drop.json.
 
+## Christmas batch 2 (2026-11-13)
+- Santa Knows (And So Do I), Christmas Calories Don't Count, May Your Days Be Merry, Hot Cocoa Fixes (Almost)
+  Everything, Dear Santa I Can Explain, It's Fine I'm Fine Everything Is Fine. Each: tee $27, women's tee $27,
+  hoodie $37 (back print), mug $17, ornament $17, Black apparel. All in Naughty List + Shop channel.
+- Source art designs/xmas2-src, upscaled print files designs/print-xmas2, mug/ornament art designs/print-home;
+  script printify/create_xmas2.py, ids printify/xmas2.json.
+
 ## Collections
 Renamed 2026-11-10 (old name -> new):
 Relatable -> Inner Monologue, Player Two -> Side Quest, Horror -> Creature Feature, Realms -> Here Be Dragons,
