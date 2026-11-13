@@ -29,6 +29,16 @@ Facts worth remembering between sessions. Update as things change.
 - Each sleeve print adds about $6.50. Lettering: designs/sleeves (designs/src/render_sleeves.js);
   products: printify/create_sleeve_drop.py, printify/sleeve_drop.json.
 
+## Designs removed (2026-11-13)
+- Deleted (Printify + Shopify, all product types): the whole Inner Monologue collection (13 designs, 65
+  products; collection the-relatable-collection deleted and removed from the main menu); Side Quest:
+  Forbidden Knowledge, Talk Nerdy to Me, PhD in Overthinking, Critical Failure; Creature Feature: Sweet
+  Dreams Are Cancelled, Sweet Dreams Don't Live Here, Horror Movies Raised Me, Sleep Deprived & Horror
+  Obsessed, Sleep Is for People Without Nightmares; Here Be Dragons: Midnight Leap, Rain on the Gargoyle,
+  My Origin Story Is Mostly Bad Decisions, Happily Ever After? Hard Pass.; Legends Never Die: One Way
+  Ferry, Above It All, Lead the Charge; Tired But Here: Systems Still Functional, A Quieter Mind, Same
+  Mind Brighter Days. 114 products total.
+
 ## Christmas line removed (2026-11-13)
 - Deleted all 60 Christmas products (batch 1: Naughty List Again, Suck It Up Buttercup, Bring Bourbon,
   Gift Is Me, Holly Jolly Chaos; batch 2: the six added 2026-11-13) from Printify and Shopify, plus the
