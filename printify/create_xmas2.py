@@ -34,6 +34,9 @@ DESIGNS = [
     ("10-dear-santa-i-can-explain", "Dear Santa, I Can Explain", ["santa", "naughty", "funny"],
      "Script lettering, a Santa hat and a confession in progress: Dear Santa... I can explain...",
      "It was like that when I got here."),
+    ("11-its-fine-im-fine", "It's Fine, I'm Fine, Everything Is Fine", ["funny", "christmas lights"],
+     "Groovy red, cream and green lettering strung with Christmas lights: it's fine, I'm fine, everything is fine.",
+     "Totally fine. Ask again in January."),
 ]
 KINDS = [
     dict(key="tee", title="{n} Tee", bp=12, pp=29, price=2700, pos="front", tags=["tee"], images=False,
