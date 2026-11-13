@@ -23,6 +23,12 @@ Facts worth remembering between sessions. Update as things change.
 - First sale #1001 (2026-11-10): Born Ready Women's Tee, $27 + $4.95 shipping. Printify charged $21.10 item
   (front+back print) + $5.35 shipping + $2.47 sales tax; Shopify fee $1.23; profit about $1.80.
 
+## Sleeve test drop (2026-11-13)
+- Rise From Ruin, Horror Club, No Signal: Long Sleeve Tee (Gildan 2400, front + both sleeves, $37, cost $26.63)
+  and Sleeve Edition Hoodie (Gildan 18500, back + both sleeves, $47, cost $35.79), SwiftPOD, Black only.
+- Each sleeve print adds about $6.50. Lettering: designs/sleeves (designs/src/render_sleeves.js);
+  products: printify/create_sleeve_drop.py, printify/sleeve_drop.json.
+
 ## Collections
 Renamed 2026-11-10 (old name -> new):
 Relatable -> Inner Monologue, Player Two -> Side Quest, Horror -> Creature Feature, Realms -> Here Be Dragons,

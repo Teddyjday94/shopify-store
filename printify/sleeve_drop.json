@@ -1,0 +1,62 @@
+{
+  "rise-from-ruin-longsleeve": {
+    "printify": "6af74935a8eb50ee060c740d",
+    "title": "Rise From Ruin Long Sleeve Tee",
+    "cost": [
+      2663,
+      2880
+    ],
+    "published": true,
+    "shopify": "8888689295521"
+  },
+  "rise-from-ruin-hoodie": {
+    "printify": "6af7496ddbddd3ec260c914e",
+    "title": "Rise From Ruin Sleeve Edition Hoodie",
+    "cost": [
+      3579,
+      3796
+    ],
+    "published": true,
+    "shopify": "8888689557665"
+  },
+  "no-signal-longsleeve": {
+    "printify": "6af7497556006e5c8a0e5a43",
+    "title": "No Signal Long Sleeve Tee",
+    "cost": [
+      2663,
+      2880
+    ],
+    "published": true,
+    "shopify": "8888689983649"
+  },
+  "no-signal-hoodie": {
+    "printify": "6af74976dbddd3ec260c915e",
+    "title": "No Signal Sleeve Edition Hoodie",
+    "cost": [
+      3579,
+      3796
+    ],
+    "published": true,
+    "shopify": "8888690114721"
+  },
+  "horror-club-longsleeve": {
+    "printify": "6af749c638951948c7004754",
+    "title": "Horror Club Long Sleeve Tee",
+    "cost": [
+      2663,
+      2880
+    ],
+    "published": true,
+    "shopify": "8888689688737"
+  },
+  "horror-club-hoodie": {
+    "printify": "6af749c7a332cec9310c76bd",
+    "title": "Horror Club Sleeve Edition Hoodie",
+    "cost": [
+      3579,
+      3796
+    ],
+    "published": true,
+    "shopify": "8888689852577"
+  }
+}
