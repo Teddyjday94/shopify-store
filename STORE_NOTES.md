@@ -72,8 +72,11 @@ Monster of the Week (held: resembles a trademarked character).
   Only the files in theme-live-overrides/ are stored here. theme-cinematic/ is the older design.
 - Fonts: Anton (big headings), Barlow Semi Condensed (supporting text, card titles), Inter Tight (body),
   IBM Plex Mono (labels). Instrument Serif was dropped 2026-11-12 in copy "New Fonts" (156527263905, now live).
-- Homepage world tiles (2026-11-12, copy "Tile Media" 156570779809): Legends Never Die = looping Rise From Ruin
-  video, Creature Feature = Horror Club photo, both cropped centered on the artwork (media/homepage/).
+- Homepage world tiles (2026-11-12, copy "Tile Media" 156570779809, live 2026-11-13): Legends Never Die =
+  looping Rise From Ruin video, Creature Feature = Horror Club photo, cropped centered (media/homepage/).
+- 2026-11-14, copy "Born Ready Tile" (156638544033), waiting for the owner to publish: Legends tile = Born Ready
+  painting (media/homepage/elsewhere-legends-born-ready.jpg, no video; Rise From Ruin was deleted), and the
+  empty Naughty List block removed.
 - Shopify caps a store at 20 themes and this connection can't delete themes; the owner removes old drafts in admin.
 
 ## Conventions

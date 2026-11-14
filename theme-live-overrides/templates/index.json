@@ -20,9 +20,8 @@
           "settings": {
             "handle": "legends-never-die",
             "legacy_handle": "the-immortalized-collection",
-            "image": "shopify://shop_images/elsewhere-legends-rise-from-ruin.jpg",
+            "image": "shopify://shop_images/elsewhere-legends-born-ready.jpg",
             "center_art": true,
-            "video_url": "https://cdn.shopify.com/s/files/1/0765/5086/5057/files/elsewhere-legends-rise-from-ruin.mp4?v=1794510493",
             "caption": "Legends without an ending."
           }
         },
@@ -53,22 +52,13 @@
             "image": "shopify://shop_images/elsewhere-side-quest-respawn-pending.jpg",
             "caption": "For the ones who never stick to the main story."
           }
-        },
-        "naughty_list": {
-          "type": "world",
-          "settings": {
-            "handle": "naughty-list",
-            "legacy_handle": "the-christmas-collection",
-            "caption": "Unexpected holiday energy."
-          }
         }
       },
       "block_order": [
         "legends",
         "creature",
         "female",
-        "side",
-        "naughty_list"
+        "side"
       ]
     }
   },
