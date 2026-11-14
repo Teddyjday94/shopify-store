@@ -24,7 +24,7 @@ Facts worth remembering between sessions. Update as things change.
   (front+back print) + $5.35 shipping + $2.47 sales tax; Shopify fee $1.23; profit about $1.80.
 
 ## Sleeve test drop (2026-11-13)
-- Rise From Ruin, Horror Club, No Signal: Long Sleeve Tee (Gildan 2400, front + both sleeves, $37, cost $26.63)
+- Horror Club, No Signal (Rise From Ruin removed 2026-11-14): Long Sleeve Tee (Gildan 2400, front + both sleeves, $37, cost $26.63)
   and Sleeve Edition Hoodie (Gildan 18500, back + both sleeves, $47, cost $35.79), SwiftPOD, Black only.
 - Each sleeve print adds about $6.50. Lettering: designs/sleeves (designs/src/render_sleeves.js);
   products: printify/create_sleeve_drop.py, printify/sleeve_drop.json.
@@ -38,6 +38,8 @@ Facts worth remembering between sessions. Update as things change.
   My Origin Story Is Mostly Bad Decisions, Happily Ever After? Hard Pass.; Legends Never Die: One Way
   Ferry, Above It All, Lead the Charge; Tired But Here: Systems Still Functional, A Quieter Mind, Same
   Mind Brighter Days. 114 products total.
+- 2026-11-14: also deleted Long Live the King, Sleep Paralysis Club and Rise From Ruin (13 products,
+  including the Rise From Ruin long sleeve and Sleeve Edition hoodie from the sleeve test drop).
 
 ## Christmas line removed (2026-11-13)
 - Deleted all 60 Christmas products (batch 1: Naughty List Again, Suck It Up Buttercup, Bring Bourbon,
