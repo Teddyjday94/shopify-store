@@ -41,6 +41,8 @@ Facts worth remembering between sessions. Update as things change.
 - 2026-11-14: also deleted Long Live the King, Sleep Paralysis Club and Rise From Ruin (13 products,
   including the Rise From Ruin long sleeve and Sleeve Edition hoodie from the sleeve test drop).
   Masterless (tee, women's tee, hoodie) deleted the same day.
+  Also deleted: In My Own Lane, Lucky Charm, Respawn Pending (tee, women's tee, hoodie each), Resting Witch
+  Face Tee, This House Eats People Tee. Side Quest homepage tile still uses the Respawn Pending photo.
 
 ## Christmas line removed (2026-11-13)
 - Deleted all 60 Christmas products (batch 1: Naughty List Again, Suck It Up Buttercup, Bring Bourbon,
