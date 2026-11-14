@@ -40,6 +40,7 @@ Facts worth remembering between sessions. Update as things change.
   Mind Brighter Days. 114 products total.
 - 2026-11-14: also deleted Long Live the King, Sleep Paralysis Club and Rise From Ruin (13 products,
   including the Rise From Ruin long sleeve and Sleeve Edition hoodie from the sleeve test drop).
+  Masterless (tee, women's tee, hoodie) deleted the same day.
 
 ## Christmas line removed (2026-11-13)
 - Deleted all 60 Christmas products (batch 1: Naughty List Again, Suck It Up Buttercup, Bring Bourbon,
