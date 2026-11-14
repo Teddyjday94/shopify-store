@@ -49,8 +49,9 @@
           "settings": {
             "handle": "side-quest",
             "legacy_handle": "player-two",
-            "image": "shopify://shop_images/elsewhere-side-quest-respawn-pending.jpg",
-            "caption": "For the ones who never stick to the main story."
+            "image": "shopify://shop_images/elsewhere-side-quest-no-signal.jpg",
+            "caption": "For the ones who never stick to the main story.",
+            "center_art": true
           }
         }
       },

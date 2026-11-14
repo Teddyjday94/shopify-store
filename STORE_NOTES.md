@@ -42,7 +42,7 @@ Facts worth remembering between sessions. Update as things change.
   including the Rise From Ruin long sleeve and Sleeve Edition hoodie from the sleeve test drop).
   Masterless (tee, women's tee, hoodie) deleted the same day.
   Also deleted: In My Own Lane, Lucky Charm, Respawn Pending (tee, women's tee, hoodie each), Resting Witch
-  Face Tee, This House Eats People Tee. Side Quest homepage tile still uses the Respawn Pending photo.
+  Face Tee, This House Eats People Tee. Side Quest tile moved to No Signal.
 
 ## Christmas line removed (2026-11-13)
 - Deleted all 60 Christmas products (batch 1: Naughty List Again, Suck It Up Buttercup, Bring Bourbon,
@@ -79,7 +79,9 @@ Monster of the Week (held: resembles a trademarked character).
   looping Rise From Ruin video, Creature Feature = Horror Club photo, cropped centered (media/homepage/).
 - 2026-11-14, copy "Born Ready Tile" (156638544033), waiting for the owner to publish: Legends tile = Born Ready
   painting (media/homepage/elsewhere-legends-born-ready.jpg, no video; Rise From Ruin was deleted), and the
-  empty Naughty List block removed.
+  empty Naughty List block removed. Side Quest tile = No Signal art on dark (media/homepage/
+  elsewhere-side-quest-no-signal.jpg, art right of center so it clears the tile label on phones and fits the
+  square desktop crop); Respawn Pending was deleted.
 - Shopify caps a store at 20 themes and this connection can't delete themes; the owner removes old drafts in admin.
 
 ## Conventions
