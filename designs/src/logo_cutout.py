@@ -64,7 +64,9 @@ if a.pockets:
         sizes = ndimage.sum(tight, pl, idx)
         means = np.stack([ndimage.mean(px[..., c], pl, idx) for c in range(3)], 1)
         mdist = np.sqrt(((means - bg) ** 2).sum(1))
-        keep = idx[(sizes > H * W * 1.8e-4) & (mdist < 3.5)]
+        # Paper is warm (red above blue); chrome highlights are neutral white. Match on the tint.
+        warm = means[:, 0] - means[:, 2]
+        keep = idx[(sizes > H * W * 1.8e-4) & (mdist < 6) & (np.abs(warm - (bg[0] - bg[2])) < 2.5)]
         pocket = np.isin(pl, keep) & ~bgmask
         bgmask |= ndimage.binary_dilation(pocket, iterations=1) & near
 
