@@ -44,6 +44,15 @@ Facts worth remembering between sessions. Update as things change.
   Also deleted: In My Own Lane, Lucky Charm, Respawn Pending (tee, women's tee, hoodie each), Resting Witch
   Face Tee, This House Eats People Tee. Side Quest tile moved to No Signal.
 
+## Brand collection (2026-11-16)
+- Collection "Brand" (handle brand, auto by tag "brand collection"), in the main menu under Collections.
+- Five Elsewhere Apparel Co. logo designs from the owner: Psychedelic Drip, Groovy Retro, Chrome Globe,
+  Ransom Note, Chrome Script. Each: tee $27, women's tee $27, hoodie $37 (back print), Black only.
+- Sources were phone screenshots (designs/logo-src); upscaled 4x, background cut out with
+  designs/src/logo_cutout.py (--pockets also clears paper trapped inside the art), 4500 px longest side =
+  15 in at 300 DPI (designs/print-brand). Raw upscales (designs/logo-up) are git-ignored.
+- Products: printify/create_brand.py, ids in printify/brand.json.
+
 ## Christmas line removed (2026-11-13)
 - Deleted all 60 Christmas products (batch 1: Naughty List Again, Suck It Up Buttercup, Bring Bourbon,
   Gift Is Me, Holly Jolly Chaos; batch 2: the six added 2026-11-13) from Printify and Shopify, plus the

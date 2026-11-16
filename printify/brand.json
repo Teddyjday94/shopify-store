@@ -6,6 +6,147 @@
     "cost": [
       1177,
       1438
-    ]
+    ],
+    "shopify": "8901421924513"
+  },
+  "01-psychedelic-drip-womens": {
+    "printify": "6afb6f0a2bd121e7b20abece",
+    "title": "Elsewhere Psychedelic Drip Women's Tee",
+    "kind": "womens",
+    "cost": [
+      1082,
+      1319
+    ],
+    "shopify": "8901421990049"
+  },
+  "01-psychedelic-drip-hoodie": {
+    "printify": "6afb6f1698d0423f460efe9a",
+    "title": "Elsewhere Psychedelic Drip Hoodie",
+    "kind": "hoodie",
+    "cost": [
+      2267,
+      2484
+    ],
+    "shopify": "8901422022817"
+  },
+  "02-groovy-retro-tee": {
+    "printify": "6afb6f2698d0423f460efeb3",
+    "title": "Elsewhere Groovy Retro Tee",
+    "kind": "tee",
+    "cost": [
+      1177,
+      1438
+    ],
+    "shopify": "8901422088353"
+  },
+  "02-groovy-retro-womens": {
+    "printify": "6afb6f33754cb1108409e866",
+    "title": "Elsewhere Groovy Retro Women's Tee",
+    "kind": "womens",
+    "cost": [
+      1082,
+      1319
+    ],
+    "shopify": "8901422186657"
+  },
+  "02-groovy-retro-hoodie": {
+    "printify": "6afb6f40754cb1108409e874",
+    "title": "Elsewhere Groovy Retro Hoodie",
+    "kind": "hoodie",
+    "cost": [
+      2267,
+      2484
+    ],
+    "shopify": "8901422219425"
+  },
+  "03-chrome-globe-tee": {
+    "printify": "6afb6f50141ec6078808774f",
+    "title": "Elsewhere Chrome Globe Tee",
+    "kind": "tee",
+    "cost": [
+      1177,
+      1438
+    ],
+    "shopify": "8901422284961"
+  },
+  "03-chrome-globe-womens": {
+    "printify": "6afb6f5d98d0423f460eff19",
+    "title": "Elsewhere Chrome Globe Women's Tee",
+    "kind": "womens",
+    "cost": [
+      1082,
+      1319
+    ],
+    "shopify": "8901422416033"
+  },
+  "03-chrome-globe-hoodie": {
+    "printify": "6afb6f69a1efd1254e00270c",
+    "title": "Elsewhere Chrome Globe Hoodie",
+    "kind": "hoodie",
+    "cost": [
+      2267,
+      2484
+    ],
+    "shopify": "8901422743713"
+  },
+  "04-ransom-note-tee": {
+    "printify": "6afb6f79141ec607880877a3",
+    "title": "Elsewhere Ransom Note Tee",
+    "kind": "tee",
+    "cost": [
+      1177,
+      1438
+    ],
+    "shopify": "8901423005857"
+  },
+  "04-ransom-note-womens": {
+    "printify": "6afb6f8798d0423f460eff7e",
+    "title": "Elsewhere Ransom Note Women's Tee",
+    "kind": "womens",
+    "cost": [
+      1082,
+      1319
+    ],
+    "shopify": "8901423104161"
+  },
+  "04-ransom-note-hoodie": {
+    "printify": "6afb6f94a1efd1254e002755",
+    "title": "Elsewhere Ransom Note Hoodie",
+    "kind": "hoodie",
+    "cost": [
+      2267,
+      2484
+    ],
+    "shopify": "8901423202465"
+  },
+  "05-chrome-script-tee": {
+    "printify": "6afb6fa3141ec607880877f3",
+    "title": "Elsewhere Chrome Script Tee",
+    "kind": "tee",
+    "cost": [
+      1177,
+      1438
+    ],
+    "shopify": "8901423300769"
+  },
+  "05-chrome-script-womens": {
+    "printify": "6afb6fb081a10a445510daae",
+    "title": "Elsewhere Chrome Script Women's Tee",
+    "kind": "womens",
+    "cost": [
+      1082,
+      1319
+    ],
+    "shopify": "8901423399073"
+  },
+  "05-chrome-script-hoodie": {
+    "printify": "6afb6fbc81a10a445510dabb",
+    "title": "Elsewhere Chrome Script Hoodie",
+    "kind": "hoodie",
+    "cost": [
+      2267,
+      2484
+    ],
+    "shopify": "8901423497377"
   }
 }
