@@ -44,6 +44,19 @@ Facts worth remembering between sessions. Update as things change.
   Also deleted: In My Own Lane, Lucky Charm, Respawn Pending (tee, women's tee, hoodie each), Resting Witch
   Face Tee, This House Eats People Tee. Side Quest tile moved to No Signal.
 
+## Product photos and promo pack (2026-11-16)
+- Every tee and women's tee got Printify model and hanging shots (alts "... in <Color>, on a model" / "hanging").
+  Women's tees open on the model shot (fixes the boxy flat look of the Gildan 5000L photo); tees show the
+  model shot as the second photo, which is the product-card hover.
+- Back-printed designs (Final Boss Energy, Out of Orbit, My Other Outfit Is Also Black, I Paused My Game,
+  Main Character Syndrome, No Signal) use back-view model shots on tees; their women's tees keep the flat
+  back shot (Printify has no back model shot for the 5000L).
+- Printify mockup camera ids: tee (Bella+Canvas 3001) front 102044, back 102045, folded 102046, hanging 102047,
+  chair 102049, pairs 102051-102053, models front 102057/102059/102061, models back 102054/102058/102060;
+  women's (Gildan 5000L) front 87728, back 87729, hanging 87730, flat lay 87731, model 87732; hoodie
+  (Gildan 18500) front 98424, back 98425, back-2 98426, models (front only) 98427-98430.
+- Promo pack: media/promo/<design>/ (337 shots, 37 designs, 2048 px), rebuilt by printify/promo_pack.py.
+
 ## Brand collection (2026-11-16)
 - Collection "Brand" (handle brand, auto by tag "brand collection"), in the main menu under Collections.
 - Five Elsewhere Apparel Co. logo designs from the owner: Psychedelic Drip, Groovy Retro, Chrome Globe,
