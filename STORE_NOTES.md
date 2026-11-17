@@ -96,6 +96,11 @@ Facts worth remembering between sessions. Update as things change.
   with the color picker (printify/color_photos.py OUT.graphql --need-black ...). Older listings whose
   original photos had no color label also got a labeled photo in their original color.
 
+- 2026-11-17: hoodie back prints made as big as SwiftPOD's 14 x 16 in back area allows (full width, or full
+  height for tall art; top-aligned) on all 32 hoodies: printify/enlarge_hoodie_backs.py, log in
+  printify/hoodie_backs.json. The labeled "back print" photos were swapped in place with fileUpdate
+  (printify/hoodie_back_photos.py); older unlabeled launch photos were left as they were.
+
 ## Christmas line removed (2026-11-13)
 - Deleted all 60 Christmas products (batch 1: Naughty List Again, Suck It Up Buttercup, Bring Bourbon,
   Gift Is Me, Holly Jolly Chaos; batch 2: the six added 2026-11-13) from Printify and Shopify, plus the
