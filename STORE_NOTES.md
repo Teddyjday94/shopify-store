@@ -76,6 +76,7 @@ Facts worth remembering between sessions. Update as things change.
 - 2026-11-17: front-print versions too ("<Design> Front Print Hoodie", $37, logo across the chest at 85%
   of the 14x10 in front area; printify/create_brand_front.py). They open on Printify's hoodie model shots
   (98428 main, then flat front 98424, then 98427/98429/98430), the only hoodie models Printify has.
+  Currently Elsewhere Hoodie (front print) got the same four model shots (Black), one as the main photo.
 
 ## Christmas line removed (2026-11-13)
 - Deleted all 60 Christmas products (batch 1: Naughty List Again, Suck It Up Buttercup, Bring Bourbon,
