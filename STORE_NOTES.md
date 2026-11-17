@@ -58,6 +58,10 @@ Facts worth remembering between sessions. Update as things change.
 - Product page gallery (theme-live-overrides/assets/theme.js + mw-gallery.css, copy "Swipe Gallery"
   156788424865, waiting for the owner to publish): a photo labeled "<Title> in <Color>, <anything>" joins
   that color's gallery, so model/hanging shots show; swipe, arrows and dots step through them.
+- Female Lead (tag "own lane") is women's tees + hoodies only: the six unisex tees lost the tag 2026-11-17.
+- More model shots: Printify has none beyond the ids above (tee 102062 = second woman, back view).
+  Kittl has hundreds of hoodie/tee model mockups but the account is on the free plan: premium templates
+  (incl. Gildan 18500 back views) won't render; the free hoodie ones (#46, #181, #798) are front views only.
 - Promo pack: media/promo/<design>/ (337 shots, 37 designs, 2048 px), rebuilt by printify/promo_pack.py.
 
 ## Brand collection (2026-11-16)
