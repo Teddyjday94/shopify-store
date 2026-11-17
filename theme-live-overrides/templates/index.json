@@ -25,14 +25,14 @@
             "caption": "Legends without an ending."
           }
         },
-        "creature": {
+        "bound": {
           "type": "world",
           "settings": {
-            "handle": "creature-feature",
-            "legacy_handle": "horror-collection",
-            "image": "shopify://shop_images/elsewhere-creature-horror-club.jpg",
+            "handle": "elsewhere-bound",
+            "legacy_handle": "brand",
+            "image": "shopify://shop_images/elsewhere-bound-dreamscape-v2.jpg",
             "center_art": true,
-            "caption": "Original horror, after dark."
+            "caption": "Wear the destination."
           }
         },
         "female": {
@@ -57,7 +57,7 @@
       },
       "block_order": [
         "legends",
-        "creature",
+        "bound",
         "female",
         "side"
       ]

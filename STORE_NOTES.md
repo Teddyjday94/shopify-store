@@ -47,7 +47,7 @@ Facts worth remembering between sessions. Update as things change.
   Horror Club (tee, long sleeve, hoodie, Sleeve Edition hoodie), Dead Tired, Dead Inside Dressed to Kill,
   I Came. I Screamed. I Left. (tee + hoodie each), Don't Open the Basement Tee. 11 products. Its menu link went
   with the collection; its homepage tile hides itself (the grid now shows three tiles, numbered 01/03/04).
-  Promo pack rebuilt without them.
+  Promo pack rebuilt without them. Its tile was replaced by Elsewhere Bound (see Themes).
 
 ## Product photos and promo pack (2026-11-16)
 - Every tee and women's tee got Printify model and hanging shots (alts "... in <Color>, on a model" / "hanging").
@@ -70,7 +70,9 @@ Facts worth remembering between sessions. Update as things change.
   (incl. Gildan 18500 back views) won't render; the free hoodie ones (#46, #181, #798) are front views only.
 - Promo pack: media/promo/<design>/ (337 shots, 37 designs, 2048 px), rebuilt by printify/promo_pack.py.
 
-## Brand collection (2026-11-16)
+## Brand collection (2026-11-16), renamed Elsewhere Bound 2026-11-17
+- 2026-11-17: renamed "Elsewhere Bound" (handle elsewhere-bound; /collections/brand redirects), caption
+  "Wear the destination.", menu item renamed. Still driven by the tag "brand collection" (scripts use it).
 - Collection "Brand" (handle brand, auto by tag "brand collection"), in the main menu under Collections.
 - Five Elsewhere Apparel Co. logo designs from the owner: Psychedelic Drip, Groovy Retro, Chrome Globe,
   Ransom Note, Chrome Script. Each: tee $27, women's tee $27, hoodie $37 (back print), Black only.
@@ -146,6 +148,9 @@ Monster of the Week (held: resembles a trademarked character).
   empty Naughty List block removed. Side Quest tile = No Signal art on dark (media/homepage/
   elsewhere-side-quest-no-signal.jpg, art right of center so it clears the tile label on phones and fits the
   square desktop crop); Respawn Pending was deleted.
+- 2026-11-17, copy "Elsewhere Bound Tile" (156797599905, from live Swipe Gallery), waiting for the owner to
+  publish: the Creature Feature tile (World / 02) became Elsewhere Bound, Dreamscape art top-right on dark
+  (media/homepage/elsewhere-bound-dreamscape-v2.jpg, Shopify Files), so the title has clear space.
 - Shopify caps a store at 20 themes and this connection can't delete themes; the owner removes old drafts in admin.
 
 ## Conventions
