@@ -13,6 +13,7 @@ Facts worth remembering between sessions. Update as things change.
 - Hoodies: $37
 - Hats, beanies, phone cases: $27
 - Mugs, ornaments: $17
+- Crewneck sweatshirts: $37
 - Desk mats: $27 / $37 / $47 by size
 - Posters: removed from the store (2026-11-10)
 - Discount codes: none (ELSEWHERE15 / MANYWORLDS15 deleted 2026-11-10)
@@ -109,6 +110,26 @@ Facts worth remembering between sessions. Update as things change.
   (printify/hoodie_back_photos.py). The 178 older launch photos on 18 hoodies (unlabeled or description-only)
   were matched to their Printify mockup by thumbnail and swapped the same way (printify/hoodie_launch_photos.py,
   matches in printify/hoodie_launch_matches.json). Every hoodie photo now shows the current print size.
+
+## Crewnecks + ornament gift line (2026-11-17)
+- From the product research (Q4 = biggest POD season; sweatshirt searches at a 5-year high; ornaments are the top POD
+  Christmas item). No crewnecks or ornaments existed before.
+- 38 crewnecks "<Design> Crewneck" (Gildan 18000 at SwiftPOD, blueprint 49/provider 39), one per design with a unisex
+  tee, $37 every size, cost $18.70 (S-XL) to $23.04 (2XL heathers). Art copied from the design's hoodie back print
+  (same 4200x4800 area) onto the crewneck FRONT, same colors as the hoodie; tee-only designs (Not AI, Ships, the five
+  bookish tees) copy the tee front with colors mapped. printify/create_crewnecks.py, ids in printify/crewnecks.json.
+  They land in Hoodies & Sweatshirts, Men's and their design collections automatically. Tags: sweatshirt, crewneck.
+- Crewneck photos: printify/crew_photos.py ("<Title> in <Color>, front print" per color, camera 98502; folded 100648).
+  Something else (store automation or another session) also added a labeled set incl. "back view" right after
+  publishing; the duplicates were deleted, so run crew_photos.py only if a crewneck has no photos.
+- 13 round ceramic ornaments "<Design> Ornament" (blueprint 531, Printify Choice, Circle), $17, cost $6.31: the four
+  Legends paintings (cropped edge to edge), Dragonfall, Lantern Witch, Moonwood Druid, Post-Credits Scene, four
+  Elsewhere logos and Not AI. Just Tired. on black. Art: designs/src/render_ornaments.py -> designs/print-ornament/
+  (the hanging hole is at the top: keep faces out of the top ~10%). printify/create_ornaments.py, printify/ornaments.json.
+- New collection Gifts Under $30 (handle gifts, auto by tag "gift"): ornaments + mugs, hats, beanies, desk mats
+  (those got the "gift" tag). In the main menu under Shop, second item. Menu item Hoodies renamed Hoodies & Crewnecks.
+- New products only reach the Online Store from Printify; publish them to the other 7 channels (Shop, TikTok, Google,
+  Inbox, Pinterest, Instagram & Facebook, X) with publishablePublish like the tees.
 
 ## Christmas line removed (2026-11-13)
 - Deleted all 60 Christmas products (batch 1: Naughty List Again, Suck It Up Buttercup, Bring Bourbon,
