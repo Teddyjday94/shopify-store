@@ -110,6 +110,7 @@
       @font-face { font-family: 'Barlow Semi Condensed'; src: url({{ 'barlow-semi-condensed-600.woff2' | asset_url }}) format('woff2'); font-weight: 600 900; font-display: swap; }
     </style>
     {{ 'type-pairing.css' | asset_url | stylesheet_tag }}
+    {{ 'mw-cart.css' | asset_url | stylesheet_tag }}
     {% if template.name == 'index' %}
       <script src="{{ 'field-guide.js' | asset_url }}" defer="defer"></script>
     {% endif %}
@@ -121,6 +122,7 @@
       };
     </script>
     <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'mw-cart.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'cinematic.js' | asset_url }}" defer="defer"></script>
 
     <script src="{{ 'mw-bloodmoon.js' | asset_url }}" defer="defer"></script>
@@ -162,5 +164,6 @@
     </main>
 
     {% sections 'footer-group' %}
+    {% render 'cart-drawer' %}
   </body>
 </html>

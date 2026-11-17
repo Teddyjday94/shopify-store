@@ -1,0 +1,65 @@
+{%- comment -%}
+  Slide-out cart and product quick view (2026-11-17). Rendered once from layout/theme.liquid.
+  Both are native <dialog>s driven by assets/mw-cart.js; without JavaScript the header cart link and the
+  product forms keep working as before (cart page, normal form posts).
+{%- endcomment -%}
+<dialog class="mw-drawer" id="CartDrawer" aria-labelledby="CartDrawerTitle" data-cart-drawer>
+  <div class="mw-drawer__panel">
+    <header class="mw-drawer__head">
+      <div>
+        <p class="fg-meta mw-drawer__kicker">Packing slip</p>
+        <h2 class="mw-drawer__title" id="CartDrawerTitle">{{ 'cart.title' | t }} <span data-cart-drawer-count></span></h2>
+      </div>
+      <button class="mw-x" type="button" data-cart-close aria-label="Close cart">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+      </button>
+    </header>
+    <div class="mw-drawer__body" data-cart-items></div>
+    <footer class="mw-drawer__foot" data-cart-foot>
+      <dl class="mw-drawer__totals">
+        <div data-cart-discount-row hidden><dt class="fg-meta">Discount</dt><dd data-cart-discount></dd></div>
+        <div><dt class="fg-meta">{{ 'cart.subtotal' | t }}</dt><dd data-cart-subtotal></dd></div>
+      </dl>
+      <p class="mw-drawer__note">{{ 'cart.taxes_shipping' | t }}</p>
+      <form action="{{ routes.cart_url }}" method="post">
+        <button class="btn btn--block mw-drawer__checkout" type="submit" name="checkout">{{ 'cart.checkout' | t }} &rarr;</button>
+      </form>
+      <a class="mw-drawer__view fg-meta" href="{{ routes.cart_url }}">View full cart</a>
+    </footer>
+    <p class="visually-hidden" role="status" data-cart-status></p>
+  </div>
+</dialog>
+
+<dialog class="mw-quick" id="QuickView" aria-labelledby="QuickViewTitle" data-quick-dialog>
+  <div class="mw-quick__panel">
+    <button class="mw-x mw-quick__close" type="button" data-quick-close aria-label="Close quick view">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+    </button>
+    <div class="mw-quick__body" data-quick-body></div>
+  </div>
+</dialog>
+
+<script>
+  window.mwCart = {
+    cart: {{ cart | json }},
+    moneyFormat: {{ shop.money_format | strip_html | json }},
+    root: {{ routes.root_url | json }},
+    cartUrl: {{ routes.cart_url | json }},
+    strings: {
+      empty: {{ 'cart.empty' | t | json }},
+      continueShopping: {{ 'cart.continue' | t | json }},
+      shopUrl: {{ routes.all_products_collection_url | json }},
+      remove: {{ 'cart.remove' | t | json }},
+      addToCart: {{ 'products.add_to_cart' | t | json }},
+      soldOut: {{ 'products.sold_out' | t | json }},
+      unavailable: {{ 'products.unavailable' | t | json }},
+      quantity: {{ 'products.quantity' | t | json }},
+      increase: {{ 'products.increase' | t | json }},
+      decrease: {{ 'products.decrease' | t | json }},
+      adding: "Adding…",
+      added: "Added to your cart",
+      error: "Something went wrong. Please try again.",
+      details: "View full details"
+    }
+  };
+</script>
