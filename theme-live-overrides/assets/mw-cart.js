@@ -121,8 +121,23 @@
     if (missing.length) Promise.all(missing).then(() => { if (drawer.open) renderCart(); });
   }
 
+  function renderShipBar() {
+    const bar = drawer.querySelector('[data-ship-bar]');
+    if (!bar) return;
+    const goal = parseInt(bar.dataset.threshold, 10) || 0;
+    if (!goal || !cart.item_count || (cart.currency && cart.currency !== 'USD')) { bar.hidden = true; return; }
+    bar.hidden = false;
+    const left = goal - cart.total_price;
+    bar.classList.toggle('is-done', left <= 0);
+    bar.querySelector('[data-ship-text]').innerHTML = left > 0
+      ? `You're <strong>${money(left)}</strong> away from free US shipping`
+      : '<strong>Free US shipping</strong> unlocked &mdash; applied at checkout';
+    bar.querySelector('[data-ship-fill]').style.width = Math.min(100, (cart.total_price / goal) * 100) + '%';
+  }
+
   function renderCart() {
     updateCounts();
+    renderShipBar();
     loadLinePhotos();
     if (!cart.item_count) {
       itemsEl.innerHTML = `<div class="mw-drawer__empty"><p class="mw-drawer__empty-title">${esc(S.empty)}</p>

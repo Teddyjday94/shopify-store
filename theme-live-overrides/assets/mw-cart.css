@@ -153,7 +153,7 @@ html.mw-modal-open { overflow: hidden; }
   .mw-quick__stage { aspect-ratio: 4 / 3.4; }
   .mw-quick__info { padding: 18px 16px max(22px, env(safe-area-inset-bottom)); }
   .mw-quick__close { top: 10px; right: 10px; }
-  .mw-drawer__head, .mw-drawer__body, .mw-drawer__foot { padding-inline: 16px; }
+  .mw-drawer__head, .mw-drawer__body, .mw-drawer__foot, .mw-ship { padding-inline: 16px; }
   .mw-line { grid-template-columns: 72px minmax(0, 1fr) auto; gap: 12px; }
 }
 @media (max-width: 620px) {
@@ -212,3 +212,13 @@ html.mw-modal-open { overflow: hidden; }
 .mw-recs__head .fg-kicker { margin: 0 0 8px; }
 .mw-recs__head h2 { margin: 0; font: 400 clamp(2.2rem, 5vw, 4rem)/.95 var(--fg-display, Anton, Impact, sans-serif); text-transform: uppercase; color: var(--fg-paper, #f1e5d1); }
 @media (max-width: 860px) { .mw-recs__grid { --cols: 2 !important; } }
+
+/* Free-shipping progress in the cart drawer (2026-11-17) */
+.mw-ship { padding: 12px 22px 14px; border-bottom: 1px solid var(--line, rgba(242,230,214,.14)); }
+.mw-ship[hidden] { display: none; }
+.mw-ship__text { margin: 0 0 8px; font-size: 13px; color: var(--muted, #b2a79c); }
+.mw-ship__text strong { color: var(--fg, #f2e6d6); font-weight: 600; }
+.mw-ship__track { height: 4px; background: rgba(242,230,214,.12); overflow: hidden; }
+.mw-ship__fill { display: block; height: 100%; width: 0; background: var(--accent, #c8875a); transition: width .4s ease; }
+.mw-ship.is-done .mw-ship__fill { background: #7fb38a; }
+@media (prefers-reduced-motion: reduce) { .mw-ship__fill { transition: none; } }

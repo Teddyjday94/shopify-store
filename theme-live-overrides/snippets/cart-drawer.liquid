@@ -14,6 +14,12 @@
         <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
       </button>
     </header>
+    {%- comment -%} Free-shipping progress (2026-11-17). Matches the automatic discount "Free US shipping over $60"
+      (Discounts in admin); change the threshold here if that discount changes. Amount in cents. {%- endcomment -%}
+    <div class="mw-ship" data-ship-bar data-threshold="6000" hidden>
+      <p class="mw-ship__text" data-ship-text></p>
+      <div class="mw-ship__track" aria-hidden="true"><span class="mw-ship__fill" data-ship-fill></span></div>
+    </div>
     <div class="mw-drawer__body" data-cart-items></div>
     <footer class="mw-drawer__foot" data-cart-foot>
       <dl class="mw-drawer__totals">
