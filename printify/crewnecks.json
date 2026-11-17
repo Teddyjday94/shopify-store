@@ -1,0 +1,733 @@
+{
+  "Born Ready": {
+    "printify": "6afc013d17c004fdc80482d9",
+    "title": "Born Ready Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Sisterhood": {
+    "printify": "6afc0167f24a7e5cbe0a06cf",
+    "title": "Sisterhood Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Dark Chocolate",
+      "Forest Green",
+      "Gold",
+      "Maroon",
+      "Military Green",
+      "Sand",
+      "Sport Grey"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Not AI. Just Tired.": {
+    "printify": "6afc0168fd4d7f230d0ab50e",
+    "title": "Not AI. Just Tired. Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Forest Green",
+      "Gold",
+      "Maroon",
+      "Navy",
+      "Sport Grey",
+      "White"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Read Wildly": {
+    "printify": "6afc016acff4efae12097f61",
+    "title": "Read Wildly Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Light Pink",
+      "Purple",
+      "White"
+    ],
+    "cost": [
+      1870,
+      2150
+    ],
+    "published": true
+  },
+  "WHADID I DO?!": {
+    "printify": "6afc01932a3b28cea10d453e",
+    "title": "WHADID I DO?! Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Elsewhere Dreamscape": {
+    "printify": "6afc019ffd4d7f230d0ab567",
+    "title": "Elsewhere Dreamscape Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Elsewhere Graffiti": {
+    "printify": "6afc01accff4efae12097fcb",
+    "title": "Elsewhere Graffiti Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Elsewhere Chrome Script": {
+    "printify": "6afc01b855472a51c00ecfb2",
+    "title": "Elsewhere Chrome Script Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Elsewhere Ransom Note": {
+    "printify": "6afc01c5fd4d7f230d0ab5ac",
+    "title": "Elsewhere Ransom Note Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Elsewhere Chrome Globe": {
+    "printify": "6afc01d253986ff0200b20ba",
+    "title": "Elsewhere Chrome Globe Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Elsewhere Groovy Retro": {
+    "printify": "6afc01de2a3b28cea10d45b1",
+    "title": "Elsewhere Groovy Retro Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Elsewhere Psychedelic Drip": {
+    "printify": "6afc01ea55472a51c00ecfcd",
+    "title": "Elsewhere Psychedelic Drip Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Moonwood Druid": {
+    "printify": "6afc01f7fdfd6189ab0aad4f",
+    "title": "Moonwood Druid Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Charcoal",
+      "Dark Chocolate",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Lantern Witch": {
+    "printify": "6afc0204fdfd6189ab0aad5b",
+    "title": "Lantern Witch Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Charcoal",
+      "Dark Chocolate",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Dragonfall": {
+    "printify": "6afc021053986ff0200b20df",
+    "title": "Dragonfall Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Charcoal",
+      "Dark Chocolate",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "I'm Only Here for the Post-Credits Scene": {
+    "printify": "6afc021d2a3b28cea10d45de",
+    "title": "I'm Only Here for the Post-Credits Scene Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Charcoal",
+      "Dark Chocolate",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Final Boss Energy": {
+    "printify": "6afc02298235d40d740c6e63",
+    "title": "Final Boss Energy Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Out of Orbit": {
+    "printify": "6afc0236d5072afcdc0b9e13",
+    "title": "Out of Orbit Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "My Other Outfit Is Also Black": {
+    "printify": "6afc0242fdfd6189ab0aad84",
+    "title": "My Other Outfit Is Also Black Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "I Paused My Game to Be Here": {
+    "printify": "6afc024efdfd6189ab0aad8a",
+    "title": "I Paused My Game to Be Here Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Main Character Syndrome": {
+    "printify": "6afc025b55472a51c00ed010",
+    "title": "Main Character Syndrome Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "No Signal": {
+    "printify": "6afc0267d5072afcdc0b9e29",
+    "title": "No Signal Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Queen Forever": {
+    "printify": "6afc0273fd4d7f230d0ab5f8",
+    "title": "Queen Forever Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Going With the Flow": {
+    "printify": "6afc0280fd4d7f230d0ab606",
+    "title": "Going With the Flow Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Fallen, Not Finished": {
+    "printify": "6afc028cfd4d7f230d0ab614",
+    "title": "Fallen, Not Finished Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Pink Crown": {
+    "printify": "6afc0299fd4d7f230d0ab633",
+    "title": "Pink Crown Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Forest Green",
+      "Gold",
+      "Light Pink",
+      "Maroon",
+      "White"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Crown & Curls": {
+    "printify": "6afc02a617c004fdc804840b",
+    "title": "Crown & Curls Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Dark Chocolate",
+      "Forest Green",
+      "Gold",
+      "Maroon",
+      "Sand",
+      "White"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Color Me Bold": {
+    "printify": "6afc02b2f24a7e5cbe0a082c",
+    "title": "Color Me Bold Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Chocolate",
+      "Forest Green",
+      "Gold",
+      "Maroon",
+      "Sport Grey",
+      "White"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Sunflower Soul": {
+    "printify": "6afc02bf55472a51c00ed06c",
+    "title": "Sunflower Soul Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Dark Chocolate",
+      "Forest Green",
+      "Gold",
+      "Maroon",
+      "Royal",
+      "Sand",
+      "White"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Butterfly Effect": {
+    "printify": "6afc02ccfd4d7f230d0ab66c",
+    "title": "Butterfly Effect Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Carolina Blue",
+      "Dark Chocolate",
+      "Forest Green",
+      "Gold",
+      "Light Pink",
+      "Maroon",
+      "Sport Grey",
+      "White"
+    ],
+    "cost": [
+      1870,
+      2079,
+      2150,
+      2304
+    ],
+    "published": true
+  },
+  "Somewhere in a Calmer Place": {
+    "printify": "6afc02d8f17cef87cb02e1b2",
+    "title": "Somewhere in a Calmer Place Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Gold",
+      "Light Blue",
+      "Sand",
+      "Sport Grey",
+      "White"
+    ],
+    "cost": [
+      1870,
+      2150
+    ],
+    "published": true
+  },
+  "Balance": {
+    "printify": "6afc02e4d5072afcdc0b9ea8",
+    "title": "Balance Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Gold",
+      "Light Blue",
+      "Sand",
+      "Sport Grey",
+      "White"
+    ],
+    "cost": [
+      1870,
+      2150
+    ],
+    "published": true
+  },
+  "Same Chaos Different Day": {
+    "printify": "6afc02f1f17cef87cb02e1d4",
+    "title": "Same Chaos Different Day Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Gold",
+      "Light Blue",
+      "Sand",
+      "Sport Grey",
+      "White"
+    ],
+    "cost": [
+      1870,
+      2150
+    ],
+    "published": true
+  },
+  "Ships in 6\u20137 Business Days": {
+    "printify": "6afc02fff17cef87cb02e1fb",
+    "title": "Ships in 6\u20137 Business Days Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Gold",
+      "Light Blue",
+      "Military Green",
+      "Sand",
+      "Sport Grey",
+      "White"
+    ],
+    "cost": [
+      1870,
+      2150
+    ],
+    "published": true
+  },
+  "Please Respect the Plot": {
+    "printify": "6afc030b2a3b28cea10d46f0",
+    "title": "Please Respect the Plot Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Heather",
+      "Light Blue",
+      "Purple"
+    ],
+    "cost": [
+      1870,
+      2150
+    ],
+    "published": true
+  },
+  "Stacked Books": {
+    "printify": "6afc031755472a51c00ed0f1",
+    "title": "Stacked Books Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Light Pink",
+      "Purple",
+      "White"
+    ],
+    "cost": [
+      1870,
+      2150
+    ],
+    "published": true
+  },
+  "Skeleton Reading Book": {
+    "printify": "6afc032455472a51c00ed0f9",
+    "title": "Skeleton Reading Book Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Light Pink",
+      "Purple",
+      "White"
+    ],
+    "cost": [
+      1870,
+      2150
+    ],
+    "published": true
+  },
+  "My Happy Place": {
+    "printify": "6afc0330d5072afcdc0b9f04",
+    "title": "My Happy Place Crewneck",
+    "kind": "crew",
+    "colors": [
+      "Black",
+      "Dark Heather",
+      "Light Pink",
+      "Purple",
+      "White"
+    ],
+    "cost": [
+      1870,
+      2150
+    ],
+    "published": true
+  }
+}

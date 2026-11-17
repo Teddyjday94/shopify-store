@@ -1,0 +1,93 @@
+{
+  "born-ready": {
+    "printify": "6afc028af17cef87cb02e152",
+    "title": "Born Ready Ornament",
+    "kind": "ornament",
+    "cost": 631,
+    "published": true
+  },
+  "fallen-not-finished": {
+    "printify": "6afc029b53986ff0200b2127",
+    "title": "Fallen, Not Finished Ornament",
+    "kind": "ornament",
+    "cost": 631,
+    "published": true
+  },
+  "going-with-the-flow": {
+    "printify": "6afc02adf24a7e5cbe0a0818",
+    "title": "Going With the Flow Ornament",
+    "kind": "ornament",
+    "cost": 631,
+    "published": true
+  },
+  "queen-forever": {
+    "printify": "6afc02be8235d40d740c6eed",
+    "title": "Queen Forever Ornament",
+    "kind": "ornament",
+    "cost": 631,
+    "published": true
+  },
+  "dragonfall": {
+    "printify": "6afc02d0fd4d7f230d0ab671",
+    "title": "Dragonfall Ornament",
+    "kind": "ornament",
+    "cost": 631,
+    "published": true
+  },
+  "lantern-witch": {
+    "printify": "6afc02e1cff4efae12098086",
+    "title": "Lantern Witch Ornament",
+    "kind": "ornament",
+    "cost": 631,
+    "published": true
+  },
+  "moonwood-druid": {
+    "printify": "6afc02f3fd4d7f230d0ab691",
+    "title": "Moonwood Druid Ornament",
+    "kind": "ornament",
+    "cost": 631,
+    "published": true
+  },
+  "post-credits-scene": {
+    "printify": "6afc030455472a51c00ed0da",
+    "title": "I'm Only Here for the Post-Credits Scene Ornament",
+    "kind": "ornament",
+    "cost": 631,
+    "published": true
+  },
+  "elsewhere-psychedelic-drip": {
+    "printify": "6afc0315d5072afcdc0b9ef7",
+    "title": "Elsewhere Psychedelic Drip Ornament",
+    "kind": "ornament",
+    "cost": 631,
+    "published": true
+  },
+  "elsewhere-groovy-retro": {
+    "printify": "6afc032655472a51c00ed0fd",
+    "title": "Elsewhere Groovy Retro Ornament",
+    "kind": "ornament",
+    "cost": 631,
+    "published": true
+  },
+  "elsewhere-chrome-globe": {
+    "printify": "6afc033755472a51c00ed115",
+    "title": "Elsewhere Chrome Globe Ornament",
+    "kind": "ornament",
+    "cost": 631,
+    "published": true
+  },
+  "elsewhere-dreamscape": {
+    "printify": "6afc0349cff4efae120980f1",
+    "title": "Elsewhere Dreamscape Ornament",
+    "kind": "ornament",
+    "cost": 631,
+    "published": true
+  },
+  "not-ai-just-tired": {
+    "printify": "6afc035af17cef87cb02e233",
+    "title": "Not AI. Just Tired. Ornament",
+    "kind": "ornament",
+    "cost": 631,
+    "published": true
+  }
+}
