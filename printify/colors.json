@@ -1,0 +1,47 @@
+{
+  "Elsewhere Chrome Globe Tee": {
+    "printify": "6afb6f50141ec6078808774f",
+    "shopify": "8901422284961",
+    "blueprint": 12,
+    "had": "Black",
+    "added": [
+      "Dark Grey Heather",
+      "Forest",
+      "Maroon",
+      "Military Green",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "WHADID I DO?! Hoodie": {
+    "printify": "6afbb8ef452e689d0f101143",
+    "shopify": "8901642748065",
+    "blueprint": 77,
+    "had": "Black",
+    "added": [
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "sides": [
+      "back"
+    ]
+  },
+  "WHADID I DO?! Women's Tee": {
+    "printify": "6afbb8e14acba633f109cd0b",
+    "shopify": "8901642518689",
+    "blueprint": 466,
+    "had": "Black",
+    "added": [
+      "Navy",
+      "Purple"
+    ],
+    "sides": [
+      "front"
+    ]
+  }
+}

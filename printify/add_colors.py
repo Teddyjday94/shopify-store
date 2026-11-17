@@ -1,71 +1,114 @@
-"""Add shirt colors to an existing Printify product and re-publish it to Shopify.
+"""Add more shirt colors to single-color tees, women's tees and hoodies (2026-11-17).
 
-Usage:
-    python3 printify/add_colors.py <product_id> <color>[:<ink>] [<color>[:<ink>] ...]
+For each product: enable the palette colors in the sizes the product already sells, at the same price per
+size, add them to the existing print area (same art and placement), then publish ONLY the variants to Shopify
+so Shopify-side titles, descriptions and photos stay as they are. Results go to printify/colors.json.
 
-<ink> picks the print area whose artwork file name contains "-<ink>" (e.g. "Moss:white" uses
-the area printing 04-odysseus-layover-white.png). Without it, the product must have a single
-print area. New colors get the product's base price, plus the 2XL upcharge.
+Palettes (dark colors suit the art; the four light-art women's tees get Light Pink):
+  tee (Bella+Canvas 3001):   Navy, Dark Grey Heather, Maroon, Forest, Military Green
+  women's (Gildan 5000L):    Navy, Purple   | White-only women's tees: Light Pink
+  hoodie (Gildan 18500):     Navy, Dark Heather, Maroon, Forest Green, Dark Chocolate
+Sleeve Edition hoodies stay Black (their sleeve lettering was made for black).
+
+Usage: python3 printify/add_colors.py [--only "Exact Title"] [--dry-run]
 """
+import argparse, json, time
+from pathlib import Path
+from create_products import Printify
 
-import os
-import sys
+SHOP = 29509655
+OUT = Path(__file__).with_name("colors.json")
+PALETTE = {
+    12: ["Navy", "Dark Grey Heather", "Maroon", "Forest", "Military Green"],
+    466: ["Navy", "Purple"],
+    77: ["Navy", "Dark Heather", "Maroon", "Forest Green", "Dark Chocolate"],
+}
+LIGHT_WOMENS = ["Light Pink"]
 
-from create_products import Printify, TEE_SIZES, XXL_UPCHARGE
+
+def color_of(product, variant):
+    by_id = {v["id"]: v["title"] for opt in product["options"] if opt["type"] == "color" for v in opt["values"]}
+    return next((by_id[o] for o in variant["options"] if o in by_id), None)
 
 
 def main():
-    product_id, *specs = sys.argv[1:]
-    wanted = dict((s.split(":") + [None])[:2] for s in specs)
-    api = Printify(os.environ.get("PRINTIFY_API_TOKEN"))
-    shop = next(s for s in api.get("/shops.json") if s.get("sales_channel") == "shopify")
-    path = f"/shops/{shop['id']}/products/{product_id}.json"
-    p = api.get(path)
-    catalog = api.get(f"/catalog/blueprints/{p['blueprint_id']}/print_providers/{p['print_provider_id']}/variants.json")
-    options = {v["id"]: v["options"] for v in catalog["variants"]}
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--only")
+    ap.add_argument("--dry-run", action="store_true")
+    args = ap.parse_args()
+    api = Printify(None)
+    done = json.loads(OUT.read_text()) if OUT.exists() else {}
+    catalogs = {}
 
-    missing = set(wanted) - {o.get("color") for o in options.values()}
-    if missing:
-        sys.exit(f"Not offered by this provider: {sorted(missing)}")
-    base = min(v["price"] for v in p["variants"] if v["is_enabled"] and options[v["id"]].get("size") != "2XL")
+    products, page = [], 1
+    while True:
+        r = api.get(f"/shops/{SHOP}/products.json?limit=50&page={page}")
+        products += [x for x in r["data"] if x["blueprint_id"] in PALETTE and (x.get("external") or {}).get("id")]
+        if not r.get("next_page_url") or not r["data"]:
+            break
+        page += 1
 
-    def area_for(ink):
-        if ink is None:
-            if len(p["print_areas"]) != 1:
-                sys.exit("Product has several print areas; give each color an :<ink>")
-            return p["print_areas"][0]
-        names = lambda a: " ".join(i["name"] for ph in a["placeholders"] for i in ph["images"])
-        return next(a for a in p["print_areas"] if f"-{ink}" in names(a))
-
-    added = {}
-    for vid, opt in options.items():
-        color, size = opt.get("color"), opt.get("size")
-        if color in wanted and (size in TEE_SIZES or not size):
-            added[vid] = area_for(wanted[color])
-    for area in p["print_areas"]:
-        area["variant_ids"] = [v for v in area["variant_ids"] if v not in added]
-    for vid, area in added.items():
-        area["variant_ids"].append(vid)
-
-    variants = [{
-        "id": v["id"],
-        "is_enabled": v["is_enabled"] or v["id"] in added,
-        "price": (base + (XXL_UPCHARGE if options[v["id"]].get("size") == "2XL" else 0)) if v["id"] in added else v["price"],
-    } for v in p["variants"]]
-    areas = [{"variant_ids": a["variant_ids"],
-              "placeholders": [ph for ph in a["placeholders"] if ph.get("images")]}
-             for a in p["print_areas"]]
-    api.call("PUT", path, json={"variants": variants, "print_areas": areas})
-    api.post(f"{path[:-5]}/publish.json", {
-        "title": False, "description": False, "images": True, "variants": True,
-        "tags": False, "keyFeatures": False, "shipping_template": False,
-    })
-
-    p = api.get(path)
-    enabled = [v for v in p["variants"] if v["is_enabled"]]
-    colors = sorted({options[v["id"]]["color"] for v in enabled})
-    profit = [(v["price"] - v["cost"]) / 100 for v in enabled]
-    print(f"{p['title']}: {len(enabled)} variants, colors {colors}, profit ${min(profit):.2f}-${max(profit):.2f}")
+    for x in products:
+        title = x["title"]
+        if args.only and title != args.only:
+            continue
+        if title in done or "Sleeve Edition" in title:
+            continue
+        enabled = [v for v in x["variants"] if v["is_enabled"]]
+        colors = {color_of(x, v) for v in enabled}
+        if len(colors) != 1:
+            continue
+        (current,) = colors
+        bp, pp = x["blueprint_id"], x["print_provider_id"]
+        palette = LIGHT_WOMENS if (bp == 466 and current == "White") else PALETTE[bp]
+        if (bp, pp) not in catalogs:
+            catalogs[(bp, pp)] = api.get(f"/catalog/blueprints/{bp}/print_providers/{pp}/variants.json")["variants"]
+        catalog = catalogs[(bp, pp)]
+        size_price = {}
+        for v in enabled:
+            size = next(c["options"]["size"] for c in catalog if c["id"] == v["id"])
+            size_price[size] = v["price"]
+        new = [c for c in catalog if c["options"].get("color") in palette and c["options"].get("size") in size_price]
+        new_ids = {c["id"] for c in new}
+        if not new:
+            print("no new variants for", title)
+            continue
+        variants = []
+        for v in x["variants"]:
+            if v["id"] in new_ids:
+                size = next(c["options"]["size"] for c in new if c["id"] == v["id"])
+                variants.append({"id": v["id"], "price": size_price[size], "is_enabled": True})
+            else:
+                variants.append({"id": v["id"], "price": v["price"], "is_enabled": v["is_enabled"]})
+        enabled_ids = {v["id"] for v in enabled}
+        print_areas = []
+        for pa in x["print_areas"]:
+            ids = list(pa["variant_ids"])
+            if enabled_ids & set(ids):
+                ids += [i for i in new_ids if i not in ids]
+            else:
+                ids = [i for i in ids if i not in new_ids]
+            print_areas.append({"variant_ids": ids, "placeholders": [
+                {"position": ph["position"], "images": [{k: im[k] for k in ("id", "x", "y", "scale", "angle")} for im in ph["images"]]}
+                for ph in pa["placeholders"] if ph["images"]]})
+        added = sorted({c["options"]["color"] for c in new})
+        print(title, current, "+", added, len(new_ids), "variants")
+        if args.dry_run:
+            continue
+        api.call("PUT", f"/shops/{SHOP}/products/{x['id']}.json", json={"variants": variants, "print_areas": print_areas})
+        for wait in (5, 60, 180):
+            time.sleep(wait)
+            try:
+                api.post(f"/shops/{SHOP}/products/{x['id']}/publish.json", {
+                    "title": False, "description": False, "images": False, "variants": True,
+                    "tags": False, "keyFeatures": False, "shipping_template": False})
+                break
+            except Exception as e:
+                print("  publish retry:", str(e)[:120], flush=True)
+        done[title] = {"printify": x["id"], "shopify": x["external"]["id"], "blueprint": bp, "had": current,
+                       "added": added, "sides": sorted({ph["position"] for pa in x["print_areas"] for ph in pa["placeholders"] if ph["images"]})}
+        OUT.write_text(json.dumps(done, indent=2))
+        time.sleep(3)
 
 
 if __name__ == "__main__":
