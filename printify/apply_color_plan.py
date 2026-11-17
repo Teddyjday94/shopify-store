@@ -23,13 +23,13 @@ def main():
         bp, pp = x["blueprint_id"], x["print_provider_id"]
         if (bp, pp) not in catalogs:
             catalogs[(bp, pp)] = api.get(f"/catalog/blueprints/{bp}/print_providers/{pp}/variants.json")["variants"]
-        catalog = {c["id"]: c for c in catalogs[(bp, pp)]}
+        # Colour and size from the product's own variant titles ("Navy / M"): the catalog can drop retired variants.
+        cs = {v["id"]: (v["title"].split(" / ")[0], v["title"].split(" / ")[-1]) for v in x["variants"]}
         enabled = [v for v in x["variants"] if v["is_enabled"]]
         size_price = {}
         for v in enabled:
-            size_price.setdefault(catalog[v["id"]]["options"]["size"], v["price"])
-        new_ids = {c["id"] for c in catalog.values()
-                   if c["options"].get("color") in p["add"] and c["options"].get("size") in size_price}
+            size_price.setdefault(cs[v["id"]][1], v["price"])
+        new_ids = {i for i, (c, sz) in cs.items() if c in p["add"] and sz in size_price}
         present = {v["id"] for v in x["variants"]}
         if not new_ids <= present:
             print("  catalog variants missing from product:", title, len(new_ids - present))
@@ -37,7 +37,7 @@ def main():
         variants = []
         for v in x["variants"]:
             if v["id"] in new_ids:
-                variants.append({"id": v["id"], "price": size_price[catalog[v["id"]]["options"]["size"]], "is_enabled": True})
+                variants.append({"id": v["id"], "price": size_price[cs[v["id"]][1]], "is_enabled": True})
             else:
                 variants.append({"id": v["id"], "price": v["price"], "is_enabled": v["is_enabled"]})
         enabled_ids = {v["id"] for v in enabled}
