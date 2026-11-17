@@ -186,6 +186,12 @@ Monster of the Week (held: resembles a trademarked character).
     filter chips by style (?style=hoodie etc). The page exists live with a fallback text until the theme is
     published. "Shop by design" is added to the Shop dropdown by the theme copy's header (not the menu), so it
     appears only with the new theme.
+- 2026-11-17: the crewnecks (Gildan 18000, created by the "Shopify product research" session) reached Shopify
+  with no photos although Printify had mockups. Added 293 labeled photos with printify/fix_missing_photos.py
+  (per color "<Title> in <Color>, front print", plus back view + folded for the main color), sent as batched
+  productUpdate calls (bulkOperationRunMutation is blocked on this connection). The other session also began
+  adding crewneck photos, so 7 crewnecks (Chrome Script, Ransom Note, Chrome Globe, Groovy Retro, Psychedelic
+  Drip, Moonwood Druid, Lantern Witch) briefly had a second set; remove the later copy once it stops.
 - Shopify caps a store at 20 themes and this connection can't delete themes; the owner removes old drafts in admin.
 
 ## Conventions
