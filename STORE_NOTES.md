@@ -77,6 +77,11 @@ Facts worth remembering between sessions. Update as things change.
   front-print hoodie; printify/create_brand2.py). Dreamscape art came in at 1145x1374 and was upscaled 4x.
 - WHADID I DO?! (owner's art; the first version had the Tune Squad logo on the jersey and was not used):
   Tired But Here (tag "drop 002"), same four products, printify/create_whadid.py, ids in printify/whadid.json.
+- Back print is the main hoodie: each back-print hoodie's description links to its front-print twin
+  ("Prefer it on the front?") and each front-print one links back. Hoodies & Sweatshirts and Brand are
+  sorted by hand (MANUAL): back-print right before its front-print twin; Brand grouped by design (tee,
+  women's, hoodie, front hoodie). New products land at the end of manual collections, so reorder them
+  after each drop. Printify republishing a product would overwrite these description edits.
 - Photos for new products: printify/photo_mutations.py PROGRESS.json OUT.graphql [slug prefixes].
 - Hats collection now matches tag "hat" only; its old title rule (contains Hat/Cap/Beanie) caught
   "Dreamscape".
