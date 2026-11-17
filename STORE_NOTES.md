@@ -162,6 +162,18 @@ Monster of the Week (held: resembles a trademarked character).
   starts on the main photo's color. Drawer shows each line's color photo (new-color variants have no variant
   image, so checkout still shows the product's main photo for them). Browser test: theme-live-overrides/qv_test.js.
   Theme files can be pushed with themeFilesUpsert body type URL pointing at raw.githubusercontent.com/<commit>.
+- 2026-11-17, owner's promo photos (media/promo-photos/, 25 shots; posters keep text and stay off the site):
+  * Product galleries (live): 30 lifestyle photos on 14 products, labeled "<Title> in <Color>, worn ..." (no
+    "print" in the label, so the gallery treats them as extra shots of that color) and moved to position 2,
+    which also makes them the card hover image. Elsewhere Dreamscape/Graffiti/Chrome Globe/Groovy Retro/Ransom
+    Note tees, Graffiti + No Signal hoodies, Main Character tee, Sisterhood/Sunflower Soul/Crown & Curls tees
+    (women's in White, unisex in Natural/White). Skipped: shots showing a print on the wrong side for what we
+    sell (No Signal and Main Character tees are back prints; the trio's front-print Graffiti hoodie) and My
+    Social Battery (no product). Note: elsewhere-drip_tee-woman-street.png actually shows the Dreamscape tee.
+  * Collection banners (live, collection.image is the header background): Side Quest, Hoodies, T-Shirts, Men's
+    use wide crops centered on the print (media/promo-photos/banners/); Elsewhere Bound and Women's use full shots.
+  * Homepage "Worn elsewhere" lookbook (sections/mw-lookbook.liquid, 8 looks linking to products) is in the
+    "Cart Drawer + Quick View" theme copy, waiting to be published with the drawer.
 - Shopify caps a store at 20 themes and this connection can't delete themes; the owner removes old drafts in admin.
 
 ## Conventions
