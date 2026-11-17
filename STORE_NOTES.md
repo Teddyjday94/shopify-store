@@ -193,6 +193,18 @@ Monster of the Week (held: resembles a trademarked character).
   adding crewneck photos, so 7 crewnecks (Chrome Script, Ransom Note, Chrome Globe, Groovy Retro, Psychedelic
   Drip, Moonwood Druid, Lantern Witch) briefly had a second set; that session removed its copies (checked:
   one set per crewneck, all READY; 4 light-color crewnecks keep one extra "in Gold, folded" shot).
+- 2026-11-17: theme copy "Elsewhere Apparel Co. | Shop Helpers" (156808577185, unpublished) adds to product pages:
+  a "Size guide" link + dialog by the Size option (snippets/size-guide.liquid; charts in Shopify Files
+  size-chart-*.jpg from Printify: Bella+Canvas 3001 tee, Comfort Colors for Odysseus, Gildan 2400 long sleeve,
+  18500 hoodie, 18000 crewneck; women's tees have no chart from Printify so no link), a sticky "Add to cart" bar
+  on phones once the main button scrolls away, and "Complete the look" (sections/mw-recs.liquid, loaded by
+  assets/mw-product.js from /recommendations/products?intent=related; skips other styles of the same design).
+  Tested in preview: right chart per garment, 4 recs shown, sticky add opens the cart drawer.
+- Free-shipping mismatch (found 2026-11-17, not fixed): the banner says "Free US shipping on orders $60+", but
+  the General profile is free only at $70+ and the Printify profiles (most products) have no free tier at all.
+  Owner to decide: add a free rate at $60 to every profile, or change the banner. Free-shipping progress bar waits on that.
+- Variant photos (printify/variant_photos.py, 2026-11-17): attaching each variant's colour photo so checkout and
+  order emails show the right colour. Paused after 8 crewnecks; ~2,200 variants on ~100 products remain.
 - Shopify caps a store at 20 themes and this connection can't delete themes; the owner removes old drafts in admin.
 
 ## Conventions
