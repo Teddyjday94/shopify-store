@@ -30,8 +30,7 @@
           "settings": {
             "handle": "elsewhere-bound",
             "legacy_handle": "brand",
-            "image": "shopify://shop_images/elsewhere-bound-dreamscape-v2.jpg",
-            "center_art": true,
+            "image": "shopify://shop_images/elsewhere-bound-chrome-globe.jpg",
             "caption": "Wear the destination."
           }
         },

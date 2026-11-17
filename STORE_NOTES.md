@@ -149,8 +149,9 @@ Monster of the Week (held: resembles a trademarked character).
   elsewhere-side-quest-no-signal.jpg, art right of center so it clears the tile label on phones and fits the
   square desktop crop); Respawn Pending was deleted.
 - 2026-11-17, copy "Elsewhere Bound Tile" (156797599905, from live Swipe Gallery), waiting for the owner to
-  publish: the Creature Feature tile (World / 02) became Elsewhere Bound, Dreamscape art top-right on dark
-  (media/homepage/elsewhere-bound-dreamscape-v2.jpg, Shopify Files), so the title has clear space.
+  publish: the Creature Feature tile (World / 02) became Elsewhere Bound, using the owner's campaign photo
+  (Chrome Globe tee at a bar; original media/homepage/source-elsewhere-bound-chrome-globe.jpg, cropped to
+  head-to-logo as elsewhere-bound-chrome-globe.jpg in Shopify Files).
 - Shopify caps a store at 20 themes and this connection can't delete themes; the owner removes old drafts in admin.
 
 ## Conventions
