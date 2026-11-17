@@ -1,0 +1,43 @@
+{%- comment -%}
+  Groups products by design using the handle convention <design>-<style> (born-ready-tee, born-ready-womens-tee,
+  born-ready-hoodie, ...). Outputs one value, chosen by `part`:
+    base   the design part of the handle (born-ready)
+    label  the style name shown to shoppers (Tee, Women's tee, Hoodie, ...)
+    kind   the filter group (tee, womens, hoodie, longsleeve, extras)
+    rank   sort order of the style (Tee first)
+  Usage: {% capture base %}{% render 'design-key', handle: product.handle, part: 'base' %}{% endcapture %}
+  Longer suffixes come first so "-womens-tee" wins over "-tee".
+{%- endcomment -%}
+{%- liquid
+  assign suffixes = '-sleeve-edition-hoodie|-long-sleeve-tee|-womens-tee|-tee|-hoodie|-dad-hat|-trucker-hat|-bucket-hat|-cuffed-beanie|-beanie|-mug|-desk-mat' | split: '|'
+  assign labels = "Sleeve Edition hoodie|Long sleeve|Women's tee|Tee|Hoodie|Dad hat|Trucker hat|Bucket hat|Beanie|Beanie|Mug|Desk mat" | split: '|'
+  assign kinds = 'hoodie|longsleeve|womens|tee|hoodie|extras|extras|extras|extras|extras|extras|extras' | split: '|'
+  assign ranks = '4|3|1|0|2|5|5|5|5|5|6|7' | split: '|'
+  assign out_base = handle
+  assign out_label = 'Original'
+  assign out_kind = 'extras'
+  assign out_rank = '9'
+  for suffix in suffixes
+    assign n = suffix.size
+    assign neg = 0 | minus: n
+    assign tail = handle | slice: neg, n
+    if tail == suffix and handle.size > n
+      assign keep = handle.size | minus: n
+      assign out_base = handle | slice: 0, keep
+      assign out_label = labels[forloop.index0]
+      assign out_kind = kinds[forloop.index0]
+      assign out_rank = ranks[forloop.index0]
+      break
+    endif
+  endfor
+  case part
+    when 'base'
+      echo out_base
+    when 'label'
+      echo out_label
+    when 'kind'
+      echo out_kind
+    when 'rank'
+      echo out_rank
+  endcase
+-%}

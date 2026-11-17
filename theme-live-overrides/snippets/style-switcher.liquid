@@ -1,0 +1,47 @@
+{%- comment -%}
+  "Choose your style": the same design in every style it comes in (tee, women's tee, hoodie, long sleeve, mug,
+  hats...), found by the handle convention in snippets/design-key.liquid. Shown only when there are 2+ styles.
+  @param product - the product being viewed
+{%- endcomment -%}
+{%- capture base -%}{% render 'design-key', handle: product.handle, part: 'base' %}{%- endcapture -%}
+{%- liquid
+  assign suffixes = '-tee|-womens-tee|-hoodie|-long-sleeve-tee|-sleeve-edition-hoodie|-dad-hat|-trucker-hat|-bucket-hat|-cuffed-beanie|-beanie|-mug|-desk-mat' | split: '|'
+  assign labels = "Tee|Women's tee|Hoodie|Long sleeve|Sleeve Edition|Dad hat|Trucker hat|Bucket hat|Beanie|Beanie|Mug|Desk mat" | split: '|'
+  assign found = 0
+  for suffix in suffixes
+    assign h = base | append: suffix
+    if all_products[h].id
+      assign found = found | plus: 1
+    endif
+  endfor
+-%}
+{%- if found > 1 -%}
+  <nav class="mw-styles" aria-label="Styles of this design">
+    <p class="label mw-styles__title">Choose your style</p>
+    <ul class="mw-styles__list" role="list">
+      {%- for suffix in suffixes -%}
+        {%- assign h = base | append: suffix -%}
+        {%- assign p = all_products[h] -%}
+        {%- unless p.id -%}{%- continue -%}{%- endunless -%}
+        {%- liquid
+          assign shot = p.featured_media
+          if p.title contains 'Hoodie'
+            for m in p.media
+              if m.alt contains ' in Black, back print'
+                assign shot = m
+                break
+              endif
+            endfor
+          endif
+        -%}
+        <li>
+          <a class="mw-style{% if p.id == product.id %} is-current{% endif %}" href="{{ p.url }}"{% if p.id == product.id %} aria-current="page"{% endif %}>
+            <span class="mw-style__img">{% if shot %}{{ shot | image_url: width: 180 | image_tag: loading: 'lazy', alt: '' }}{% endif %}</span>
+            <span class="mw-style__name">{{ labels[forloop.index0] }}</span>
+            <span class="mw-style__price">{{ p.price | money_without_trailing_zeros }}</span>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </nav>
+{%- endif -%}

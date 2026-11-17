@@ -1,0 +1,72 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-designs",
+      "blocks": {
+        "g1": {
+          "type": "group",
+          "settings": {
+            "collection": "elsewhere-bound",
+            "title": ""
+          }
+        },
+        "g2": {
+          "type": "group",
+          "settings": {
+            "collection": "the-immortalized-collection",
+            "title": ""
+          }
+        },
+        "g3": {
+          "type": "group",
+          "settings": {
+            "collection": "player-two",
+            "title": ""
+          }
+        },
+        "g4": {
+          "type": "group",
+          "settings": {
+            "collection": "realms",
+            "title": ""
+          }
+        },
+        "g5": {
+          "type": "group",
+          "settings": {
+            "collection": "own-lane",
+            "title": ""
+          }
+        },
+        "g6": {
+          "type": "group",
+          "settings": {
+            "collection": "drop-002",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

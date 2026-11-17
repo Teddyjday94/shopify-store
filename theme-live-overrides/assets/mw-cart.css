@@ -162,3 +162,20 @@ html.mw-modal-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .mw-drawer__panel, .mw-quick__panel, .mw-drawer::backdrop, .mw-quick::backdrop { transition: none; }
 }
+
+/* ---------- product page: "Choose your style" (snippets/style-switcher.liquid) ---------- */
+.mw-styles { margin: 18px 0 4px; }
+.mw-styles__title { margin: 0 0 10px; }
+.mw-styles__list { display: flex; gap: 8px; margin: 0; padding: 0 0 4px; list-style: none; overflow-x: auto; scrollbar-width: thin; }
+.mw-style {
+  display: grid; grid-template-rows: auto auto auto; justify-items: start; gap: 3px; width: 96px; padding: 6px;
+  color: inherit; text-decoration: none; border: 1px solid #f1e5d133; background: #1b1619;
+}
+.mw-style__img { display: block; width: 100%; aspect-ratio: 1; overflow: hidden; background: #eeece7; }
+.mw-style__img img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.mw-style__name { font: 600 .82rem/1.1 var(--support, "Barlow Semi Condensed", sans-serif); }
+.mw-style__price { font: 500 .74rem/1 var(--fg-mono, "IBM Plex Mono", monospace); color: var(--muted, #b2a79c); }
+.mw-style:hover { border-color: var(--fg-gold, #e7b681); }
+.mw-style.is-current { border-color: var(--fg-gold, #e7b681); box-shadow: inset 0 0 0 1px var(--fg-gold, #e7b681); }
+.mw-style.is-current .mw-style__name::after { content: " ✓"; color: var(--fg-gold, #e7b681); }
+@media (max-width: 620px) { .mw-style { width: 84px; } }

@@ -1,0 +1,270 @@
+{%- comment -%}
+  Shop by design (2026-11-17): every design once, with a button for each style it comes in, grouped by the
+  collections chosen as blocks (in order), then "More designs" for the rest. Designs are matched by the handle
+  convention in snippets/design-key.liquid. The filter row hides designs that don't come in the chosen style.
+{%- endcomment -%}
+{%- paginate collections.all.products by 250 -%}
+{%- liquid
+  # One pass over the catalog: each product's design, style label, filter group and style order, by position.
+  assign all = collections.all.products
+  assign keys = ''
+  assign kinds = ''
+  assign labels = ''
+  assign ranks = ''
+  for p in all
+    capture b
+      render 'design-key', handle: p.handle, part: 'base'
+    endcapture
+    capture k
+      render 'design-key', handle: p.handle, part: 'kind'
+    endcapture
+    capture l
+      render 'design-key', handle: p.handle, part: 'label'
+    endcapture
+    capture r
+      render 'design-key', handle: p.handle, part: 'rank'
+    endcapture
+    assign keys = keys | append: b | append: '|'
+    assign kinds = kinds | append: k | append: '|'
+    assign labels = labels | append: l | append: '|'
+    assign ranks = ranks | append: r | append: '|'
+  endfor
+  assign keys = keys | split: '|'
+  assign kinds = kinds | split: '|'
+  assign labels = labels | split: '|'
+  assign ranks = ranks | split: '|'
+  assign shown = '|'
+-%}
+<section class="mw-designs" data-designs>
+  <div class="fg-wrap">
+    <header class="mw-designs__head">
+      <p class="fg-meta fg-kicker">{{ section.settings.kicker }}</p>
+      <h1>{{ page.title | default: section.settings.heading }}</h1>
+      {%- if section.settings.text != blank -%}<p class="mw-designs__text">{{ section.settings.text }}</p>{%- endif -%}
+    </header>
+
+    <div class="mw-designs__filters" role="group" aria-label="Show designs available as">
+      <button type="button" class="mw-chip is-on" data-kind="all" aria-pressed="true">Everything</button>
+      <button type="button" class="mw-chip" data-kind="tee" aria-pressed="false">Tees</button>
+      <button type="button" class="mw-chip" data-kind="womens" aria-pressed="false">Women's tees</button>
+      <button type="button" class="mw-chip" data-kind="hoodie" aria-pressed="false">Hoodies</button>
+      <button type="button" class="mw-chip" data-kind="longsleeve" aria-pressed="false">Long sleeves</button>
+      <button type="button" class="mw-chip" data-kind="extras" aria-pressed="false">Hats, mugs &amp; more</button>
+    </div>
+    <p class="visually-hidden" role="status" data-designs-status></p>
+
+    {%- assign groups = section.blocks.size | plus: 1 -%}
+    {%- for g in (1..groups) -%}
+      {%- liquid
+        assign block = section.blocks[forloop.index0]
+        if block
+          assign world = block.settings.collection
+          if world == blank
+            continue
+          endif
+          assign source = world.products
+          assign group_title = block.settings.title | default: world.title
+          assign group_url = world.url
+        else
+          assign source = all
+          assign group_title = section.settings.more_title
+          assign group_url = routes.all_products_collection_url
+        endif
+        assign group_bases = ''
+        for p in source
+          capture b
+            render 'design-key', handle: p.handle, part: 'base'
+          endcapture
+          assign marker = '|' | append: b | append: '|'
+          unless shown contains marker or group_bases contains marker
+            assign group_bases = group_bases | append: marker
+          endunless
+        endfor
+        assign shown = shown | append: group_bases
+        assign design_list = group_bases | remove_first: '|' | split: '||'
+      -%}
+      {%- if group_bases != blank -%}
+        <section class="mw-designs__group" data-design-group>
+          <div class="mw-designs__group-head">
+            <h2>{{ group_title }}</h2>
+            <a class="fg-meta" href="{{ group_url }}">See every piece &rarr;</a>
+          </div>
+          <ul class="mw-designs__grid" role="list">
+            {%- for raw in design_list -%}
+              {%- assign base = raw | remove: '|' -%}
+              {%- if base == blank -%}{%- continue -%}{%- endif -%}
+              {%- liquid
+                # This design's products, ordered by style (Tee, Women's tee, Hoodie, ...).
+                # One pass: collect "<rank>:<index>" for this design, then sort (ranks are single digits).
+                assign entries = ''
+                assign card_kinds = ''
+                for q in all
+                  assign i = forloop.index0
+                  if keys[i] == base
+                    assign entries = entries | append: ranks[i] | append: ':' | append: i | append: ','
+                    assign card_kinds = card_kinds | append: kinds[i] | append: ' '
+                  endif
+                endfor
+                assign entries = entries | split: ',' | sort
+                assign styles = ''
+                for e in entries
+                  assign idx = e | split: ':' | last
+                  assign styles = styles | append: idx | append: ','
+                endfor
+                assign style_idx = styles | split: ','
+                assign first_idx = style_idx.first | plus: 0
+                assign cover = all[first_idx]
+                assign name = cover.title | remove: '“' | remove: '”'
+                assign trims = " Women's Tee| Long Sleeve Tee| Sleeve Edition Hoodie| Graphic Tee| Tee| Hoodie| Mug| Dad Hat| Trucker Hat| Bucket Hat| Cuffed Beanie| Beanie| Desk Mat" | split: '|'
+                for t in trims
+                  assign tl = t.size
+                  assign neg = 0 | minus: tl
+                  assign tail = name | slice: neg, tl
+                  if tail == t
+                    assign keep = name.size | minus: tl
+                    assign name = name | slice: 0, keep
+                    break
+                  endif
+                endfor
+                assign shot = cover.featured_media
+                if cover.title contains 'Hoodie'
+                  for m in cover.media
+                    if m.alt contains ' in Black, back print'
+                      assign shot = m
+                      break
+                    endif
+                  endfor
+                endif
+              -%}
+              <li class="mw-design" data-kinds="{{ card_kinds | strip }}">
+                <a class="mw-design__media" href="{{ cover.url }}" tabindex="-1" aria-hidden="true">
+                  {%- if shot -%}
+                    {{ shot | image_url: width: 720 | image_tag: widths: '360, 540, 720', sizes: '(min-width: 990px) 23vw, 46vw', loading: 'lazy', alt: '' }}
+                  {%- endif -%}
+                </a>
+                <div class="mw-design__body">
+                  <h3 class="mw-design__name"><a href="{{ cover.url }}">{{ name | strip }}</a></h3>
+                  <p class="mw-design__count fg-meta">{{ style_idx.size }} {% if style_idx.size == 1 %}style{% else %}styles{% endif %} &middot; from {{ cover.price | money_without_trailing_zeros }}</p>
+                  <ul class="mw-design__styles" role="list" aria-label="{{ name | strip | escape }} styles">
+                    {%- for si in style_idx -%}
+                      {%- assign n = si | plus: 0 -%}
+                      {%- assign q = all[n] -%}
+                      <li><a class="mw-pill" data-kind="{{ kinds[n] }}" href="{{ q.url }}">{{ labels[n] }} <span>{{ q.price | money_without_trailing_zeros }}</span></a></li>
+                    {%- endfor -%}
+                  </ul>
+                </div>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </section>
+      {%- endif -%}
+    {%- endfor -%}
+    <p class="mw-designs__empty" data-designs-empty hidden>No designs in that style yet. <button type="button" class="mw-link" data-kind="all">Show everything</button></p>
+  </div>
+</section>
+{%- endpaginate -%}
+
+<style>
+  .mw-designs { padding-block: clamp(36px, 6vw, 88px); color: var(--fg-paper, #f1e5d1); }
+  .mw-designs__head { margin-bottom: clamp(18px, 3vw, 32px); }
+  .mw-designs__head .fg-kicker { margin: 0 0 10px; }
+  .mw-designs__head h1 { margin: 0; font: 400 clamp(3.2rem, 9vw, 8.5rem)/.9 var(--fg-display, Anton, Impact, sans-serif); text-transform: uppercase; letter-spacing: -.025em; }
+  .mw-designs__text { max-width: 52ch; margin: 14px 0 0; font: 400 1.12rem/1.42 var(--fg-serif, Georgia, serif); color: #e2d5c1; }
+  .mw-designs__filters {
+    position: sticky; top: var(--header-height, 72px); z-index: 5; display: flex; gap: 8px; flex-wrap: wrap;
+    margin: 0 0 clamp(20px, 3vw, 34px); padding: 12px 0; background: var(--fg-ink, #151113); border-block: 1px solid var(--fg-line, #ead7b749);
+  }
+  .mw-chip, .mw-link {
+    min-height: 40px; padding: 0 16px; color: inherit; background: none; border: 1px solid #f1e5d140; cursor: pointer;
+    font: 700 .68rem/1 var(--fg-mono, "IBM Plex Mono", monospace); letter-spacing: .1em; text-transform: uppercase;
+  }
+  .mw-chip:hover { border-color: var(--fg-gold, #e7b681); }
+  .mw-chip.is-on { color: var(--fg-ink, #151113); background: var(--fg-gold, #e7b681); border-color: var(--fg-gold, #e7b681); }
+  .mw-designs__group { margin-bottom: clamp(36px, 6vw, 72px); }
+  .mw-designs__group[hidden] { display: none; }
+  .mw-designs__group-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--fg-line, #ead7b749); }
+  .mw-designs__group-head h2 { margin: 0; font: 400 clamp(2rem, 4.5vw, 3.6rem)/.95 var(--fg-display, Anton, Impact, sans-serif); text-transform: uppercase; }
+  .mw-designs__group-head a { color: var(--fg-gold, #e7b681); text-underline-offset: 3px; }
+  .mw-designs__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(10px, 1.6vw, 22px); margin: 0; padding: 0; list-style: none; }
+  .mw-design { display: flex; flex-direction: column; background: #1b1619; border: 1px solid var(--fg-line, #ead7b749); }
+  .mw-design[hidden] { display: none; }
+  .mw-design__media { display: block; aspect-ratio: 1; overflow: hidden; background: #eeece7; }
+  .mw-design__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.22, 1, .36, 1); }
+  .mw-design:hover .mw-design__media img { transform: scale(1.03); }
+  .mw-design__body { display: flex; flex-direction: column; gap: 8px; padding: 14px; flex: 1; }
+  .mw-design__name { margin: 0; font: 600 clamp(1.05rem, 1.5vw, 1.3rem)/1.15 var(--support, "Barlow Semi Condensed", sans-serif); }
+  .mw-design__name a { color: inherit; text-decoration: none; }
+  .mw-design__name a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .mw-design__count { margin: 0; color: var(--muted, #b2a79c); }
+  .mw-design__styles { display: flex; flex-wrap: wrap; gap: 6px; margin: auto 0 0; padding: 4px 0 0; list-style: none; }
+  .mw-pill {
+    display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 10px; color: inherit; text-decoration: none;
+    border: 1px solid #f1e5d140; font: 600 .82rem/1 var(--support, "Barlow Semi Condensed", sans-serif);
+  }
+  .mw-pill span { color: var(--muted, #b2a79c); font-weight: 500; }
+  .mw-pill:hover, .mw-pill.is-match { color: var(--fg-ink, #151113); background: var(--fg-gold, #e7b681); border-color: var(--fg-gold, #e7b681); }
+  .mw-pill:hover span, .mw-pill.is-match span { color: var(--fg-ink, #151113); }
+  .mw-designs__empty { padding: 30px 0; }
+  @media (max-width: 990px) { .mw-designs__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 680px) {
+    .mw-designs__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .mw-designs__filters { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: -16px; padding-inline: 16px; }
+    .mw-designs__filters::-webkit-scrollbar { display: none; }
+    .mw-chip { flex: none; }
+    .mw-design__body { padding: 10px; }
+    .mw-pill { min-height: 32px; padding: 0 8px; font-size: .74rem; }
+  }
+</style>
+
+<script>
+  (() => {
+    const root = document.querySelector('[data-designs]');
+    if (!root) return;
+    const chips = root.querySelectorAll('.mw-chip');
+    const status = root.querySelector('[data-designs-status]');
+    const empty = root.querySelector('[data-designs-empty]');
+    function show(kind) {
+      chips.forEach((c) => { const on = c.dataset.kind === kind; c.classList.toggle('is-on', on); c.setAttribute('aria-pressed', String(on)); });
+      let total = 0;
+      root.querySelectorAll('[data-design-group]').forEach((group) => {
+        let visible = 0;
+        group.querySelectorAll('.mw-design').forEach((card) => {
+          const ok = kind === 'all' || card.dataset.kinds.split(' ').includes(kind);
+          card.hidden = !ok;
+          card.querySelectorAll('.mw-pill').forEach((p) => p.classList.toggle('is-match', kind !== 'all' && p.dataset.kind === kind));
+          if (ok) visible += 1;
+        });
+        group.hidden = !visible;
+        total += visible;
+      });
+      empty.hidden = total > 0;
+      status.textContent = `${total} designs`;
+      try { history.replaceState(history.state, '', kind === 'all' ? location.pathname : `${location.pathname}?style=${kind}`); } catch (e) {}
+    }
+    root.addEventListener('click', (e) => { const b = e.target.closest('[data-kind]'); if (b && b.tagName === 'BUTTON') show(b.dataset.kind); });
+    const start = new URLSearchParams(location.search).get('style');
+    if (start && root.querySelector(`.mw-chip[data-kind="${CSS.escape(start)}"]`)) show(start);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Shop by design",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Small heading", "default": "Elsewhere Field Guide / Every design" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Shop by design" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Every design once. Pick the art you love, then pick how you want to wear it." },
+    { "type": "text", "id": "more_title", "label": "Heading for everything else", "default": "More designs" }
+  ],
+  "blocks": [
+    {
+      "type": "group",
+      "name": "Collection group",
+      "settings": [
+        { "type": "collection", "id": "collection", "label": "Collection" },
+        { "type": "text", "id": "title", "label": "Heading (optional)" }
+      ]
+    }
+  ]
+}
+{% endschema %}
