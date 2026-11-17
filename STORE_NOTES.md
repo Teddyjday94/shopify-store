@@ -86,6 +86,16 @@ Facts worth remembering between sessions. Update as things change.
   at the owner's request: back print is the only hoodie. Currently Elsewhere Hoodie (always front print) keeps
   Printify's four hoodie model shots, one as its main photo.
 
+## More shirt colors (2026-11-17)
+- 38 single-color products got more colors, same price per size, same art and placement
+  (printify/add_colors.py; results in printify/colors.json):
+  tees + Navy, Dark Grey Heather, Maroon, Forest, Military Green; women's tees + Navy, Purple
+  (the four White women's tees + Light Pink); hoodies + Navy, Dark Heather, Maroon, Forest Green, Dark Chocolate.
+- Sleeve Edition hoodies stay Black (their sleeve lettering was made for black).
+- Each new color has a labeled flat photo ("<Title> in <Color>, front/back print") so the gallery switches
+  with the color picker (printify/color_photos.py OUT.graphql --need-black ...). Older listings whose
+  original photos had no color label also got a labeled photo in their original color.
+
 ## Christmas line removed (2026-11-13)
 - Deleted all 60 Christmas products (batch 1: Naughty List Again, Suck It Up Buttercup, Bring Bourbon,
   Gift Is Me, Holly Jolly Chaos; batch 2: the six added 2026-11-13) from Printify and Shopify, plus the

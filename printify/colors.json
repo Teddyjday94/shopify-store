@@ -104,5 +104,464 @@
     "sides": [
       "front"
     ]
+  },
+  "Elsewhere Graffiti Hoodie": {
+    "printify": "6afbb7ee249981019f04122e",
+    "shopify": "8901641044129",
+    "blueprint": 77,
+    "had": "Black",
+    "added": [
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "sides": [
+      "back"
+    ]
+  },
+  "Elsewhere Graffiti Women's Tee": {
+    "printify": "6afbb7e22bc794f18d0df3ec",
+    "shopify": "8901640978593",
+    "blueprint": 466,
+    "had": "Black",
+    "added": [
+      "Navy",
+      "Purple"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Elsewhere Graffiti Tee": {
+    "printify": "6afbb7d5a23dd0a5a00b316a",
+    "shopify": "8901640945825",
+    "blueprint": 12,
+    "had": "Black",
+    "added": [
+      "Dark Grey Heather",
+      "Forest",
+      "Maroon",
+      "Military Green",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Elsewhere Chrome Script Hoodie": {
+    "printify": "6afb6fbc81a10a445510dabb",
+    "shopify": "8901423497377",
+    "blueprint": 77,
+    "had": "Black",
+    "added": [
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "sides": [
+      "back"
+    ]
+  },
+  "Elsewhere Chrome Script Women's Tee": {
+    "printify": "6afb6fb081a10a445510daae",
+    "shopify": "8901423399073",
+    "blueprint": 466,
+    "had": "Black",
+    "added": [
+      "Navy",
+      "Purple"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Elsewhere Chrome Script Tee": {
+    "printify": "6afb6fa3141ec607880877f3",
+    "shopify": "8901423300769",
+    "blueprint": 12,
+    "had": "Black",
+    "added": [
+      "Dark Grey Heather",
+      "Forest",
+      "Maroon",
+      "Military Green",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Elsewhere Ransom Note Hoodie": {
+    "printify": "6afb6f94a1efd1254e002755",
+    "shopify": "8901423202465",
+    "blueprint": 77,
+    "had": "Black",
+    "added": [
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "sides": [
+      "back"
+    ]
+  },
+  "Elsewhere Ransom Note Women's Tee": {
+    "printify": "6afb6f8798d0423f460eff7e",
+    "shopify": "8901423104161",
+    "blueprint": 466,
+    "had": "Black",
+    "added": [
+      "Navy",
+      "Purple"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Elsewhere Ransom Note Tee": {
+    "printify": "6afb6f79141ec607880877a3",
+    "shopify": "8901423005857",
+    "blueprint": 12,
+    "had": "Black",
+    "added": [
+      "Dark Grey Heather",
+      "Forest",
+      "Maroon",
+      "Military Green",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Elsewhere Chrome Globe Hoodie": {
+    "printify": "6afb6f69a1efd1254e00270c",
+    "shopify": "8901422743713",
+    "blueprint": 77,
+    "had": "Black",
+    "added": [
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "sides": [
+      "back"
+    ]
+  },
+  "Elsewhere Chrome Globe Women's Tee": {
+    "printify": "6afb6f5d98d0423f460eff19",
+    "shopify": "8901422416033",
+    "blueprint": 466,
+    "had": "Black",
+    "added": [
+      "Navy",
+      "Purple"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Elsewhere Groovy Retro Hoodie": {
+    "printify": "6afb6f40754cb1108409e874",
+    "shopify": "8901422219425",
+    "blueprint": 77,
+    "had": "Black",
+    "added": [
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "sides": [
+      "back"
+    ]
+  },
+  "Elsewhere Groovy Retro Women's Tee": {
+    "printify": "6afb6f33754cb1108409e866",
+    "shopify": "8901422186657",
+    "blueprint": 466,
+    "had": "Black",
+    "added": [
+      "Navy",
+      "Purple"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Elsewhere Groovy Retro Tee": {
+    "printify": "6afb6f2698d0423f460efeb3",
+    "shopify": "8901422088353",
+    "blueprint": 12,
+    "had": "Black",
+    "added": [
+      "Dark Grey Heather",
+      "Forest",
+      "Maroon",
+      "Military Green",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Elsewhere Psychedelic Drip Hoodie": {
+    "printify": "6afb6f1698d0423f460efe9a",
+    "shopify": "8901422022817",
+    "blueprint": 77,
+    "had": "Black",
+    "added": [
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "sides": [
+      "back"
+    ]
+  },
+  "Elsewhere Psychedelic Drip Women's Tee": {
+    "printify": "6afb6f0a2bd121e7b20abece",
+    "shopify": "8901421990049",
+    "blueprint": 466,
+    "had": "Black",
+    "added": [
+      "Navy",
+      "Purple"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Elsewhere Psychedelic Drip Tee": {
+    "printify": "6afb6ef7b49d64decd0505b3",
+    "shopify": "8901421924513",
+    "blueprint": 12,
+    "had": "Black",
+    "added": [
+      "Dark Grey Heather",
+      "Forest",
+      "Maroon",
+      "Military Green",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Somewhere in a Calmer Place Women's Tee": {
+    "printify": "6af379084fb4fb83e706822b",
+    "shopify": "8875958272161",
+    "blueprint": 466,
+    "had": "White",
+    "added": [
+      "Light Pink"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Balance Women's Tee": {
+    "printify": "6af378fc6bc401c89f088e05",
+    "shopify": "8875957354657",
+    "blueprint": 466,
+    "had": "White",
+    "added": [
+      "Light Pink"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Same Chaos Different Day Women's Tee": {
+    "printify": "6af378e443c414fdd4098bfc",
+    "shopify": "8875956961441",
+    "blueprint": 466,
+    "had": "White",
+    "added": [
+      "Light Pink"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Ships in 6\u20137 Business Days Women's Tee": {
+    "printify": "6af378af8b684abc3c0cb6dd",
+    "shopify": "8875954438305",
+    "blueprint": 466,
+    "had": "White",
+    "added": [
+      "Light Pink"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Going With the Flow Women's Tee": {
+    "printify": "6af3771b45f16ba7160339ee",
+    "shopify": "8875933597857",
+    "blueprint": 466,
+    "had": "Black",
+    "added": [
+      "Navy",
+      "Purple"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Moonwood Druid Tee": {
+    "printify": "6af24199c2a9a89936044883",
+    "shopify": "8873439330465",
+    "blueprint": 12,
+    "had": "Black",
+    "added": [
+      "Dark Grey Heather",
+      "Forest",
+      "Maroon",
+      "Military Green",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Lantern Witch Tee": {
+    "printify": "6af2412f8f2824f6ff070d87",
+    "shopify": "8873439166625",
+    "blueprint": 12,
+    "had": "Black",
+    "added": [
+      "Dark Grey Heather",
+      "Forest",
+      "Maroon",
+      "Military Green",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Dragonfall Tee": {
+    "printify": "6af240c7a851a92a74016b54",
+    "shopify": "8873439002785",
+    "blueprint": 12,
+    "had": "Black",
+    "added": [
+      "Dark Grey Heather",
+      "Forest",
+      "Maroon",
+      "Military Green",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "I'm Only Here for the Post-Credits Scene Tee": {
+    "printify": "6af2402ac2a9a899360446d9",
+    "shopify": "8873438675105",
+    "blueprint": 12,
+    "had": "Black",
+    "added": [
+      "Dark Grey Heather",
+      "Forest",
+      "Maroon",
+      "Military Green",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Horror Club Tee": {
+    "printify": "6af22ba899f1d00a01056590",
+    "shopify": "8873373696161",
+    "blueprint": 12,
+    "had": "Black",
+    "added": [
+      "Dark Grey Heather",
+      "Forest",
+      "Maroon",
+      "Military Green",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Dead Inside, Dressed to Kill Tee": {
+    "printify": "6af22ba26fc14cd1ce0b7a49",
+    "shopify": "8873373073569",
+    "blueprint": 12,
+    "had": "Black",
+    "added": [
+      "Dark Grey Heather",
+      "Forest",
+      "Maroon",
+      "Military Green",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "I Came. I Screamed. I Left. Tee": {
+    "printify": "6af22b956fc14cd1ce0b7a3e",
+    "shopify": "8873371336865",
+    "blueprint": 12,
+    "had": "Black",
+    "added": [
+      "Dark Grey Heather",
+      "Forest",
+      "Maroon",
+      "Military Green",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Don't Open the Basement Tee": {
+    "printify": "6af22b7ffdce7ca0fe083c19",
+    "shopify": "8873369174177",
+    "blueprint": 12,
+    "had": "Black",
+    "added": [
+      "Dark Grey Heather",
+      "Forest",
+      "Maroon",
+      "Military Green",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Dead Tired Tee": {
+    "printify": "6af22b74dbbd8cf33207aa2d",
+    "shopify": "8873367863457",
+    "blueprint": 12,
+    "had": "Black",
+    "added": [
+      "Dark Grey Heather",
+      "Forest",
+      "Maroon",
+      "Military Green",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ]
   }
 }
