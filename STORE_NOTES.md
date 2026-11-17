@@ -46,8 +46,8 @@ Facts worth remembering between sessions. Update as things change.
 
 ## Product photos and promo pack (2026-11-16)
 - Every tee and women's tee got Printify model and hanging shots (alts "... in <Color>, on a model" / "hanging").
-  Women's tees open on the model shot (fixes the boxy flat look of the Gildan 5000L photo); tees show the
-  model shot as the second photo, which is the product-card hover.
+  Women's tees open on the model shot (fixes the boxy flat look of the Gildan 5000L photo); since
+  2026-11-17 tees open on a model shot too (the man; back view for back-printed tees), so phones show people.
 - Back-printed designs (Final Boss Energy, Out of Orbit, My Other Outfit Is Also Black, I Paused My Game,
   Main Character Syndrome, No Signal) use back-view model shots on tees; their women's tees keep the flat
   back shot (Printify has no back model shot for the 5000L).
