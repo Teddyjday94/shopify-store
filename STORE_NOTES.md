@@ -174,6 +174,18 @@ Monster of the Week (held: resembles a trademarked character).
     use wide crops centered on the print (media/promo-photos/banners/); Elsewhere Bound and Women's use full shots.
   * Homepage "Worn elsewhere" lookbook (sections/mw-lookbook.liquid, 8 looks linking to products) is in the
     "Cart Drawer + Quick View" theme copy, waiting to be published with the drawer.
+- 2026-11-17, browsing by design (in the "Cart Drawer + Quick View" theme copy, waiting to be published):
+  * Designs are matched by handle: <design>-<style> (born-ready-tee, -womens-tee, -hoodie, -crewneck,
+    -long-sleeve-tee, -sleeve-edition-hoodie, -mug, -dad-hat, -trucker-hat, -bucket-hat, -cuffed-beanie, -beanie,
+    -desk-mat, -ornament, -sticker, -poster, -tote-bag, -phone-case). snippets/design-key.liquid holds the list;
+    NEW PRODUCT TYPES MUST USE ONE OF THESE SUFFIXES (or be added there and in snippets/style-switcher.liquid,
+    which may hold at most ~18 because a page can look up only 20 products by handle).
+  * Product pages: "Choose your style" row under the price (snippets/style-switcher.liquid, in main-product).
+  * Page /pages/designs ("Shop by design", template page.designs, sections/main-designs.liquid): each design once,
+    grouped by Elsewhere Bound, Legends, Side Quest, Here Be Dragons, Female Lead, Tired But Here, then the rest;
+    filter chips by style (?style=hoodie etc). The page exists live with a fallback text until the theme is
+    published. "Shop by design" is added to the Shop dropdown by the theme copy's header (not the menu), so it
+    appears only with the new theme.
 - Shopify caps a store at 20 themes and this connection can't delete themes; the owner removes old drafts in admin.
 
 ## Conventions
