@@ -59,7 +59,8 @@ Facts worth remembering between sessions. Update as things change.
   156788424865, waiting for the owner to publish): a photo labeled "<Title> in <Color>, <anything>" joins
   that color's gallery, so model/hanging shots show; swipe, arrows and dots step through them.
 - Female Lead (tag "own lane") is women's tees + hoodies only: the six unisex tees lost the tag 2026-11-17.
-- More model shots: Printify has none beyond the ids above (tee 102062 = second woman, back view).
+- More model shots: Printify has none beyond the ids above (tee 102062 = second woman, back view, added to
+  the six back-printed tees as "on a model, back view 3").
   Kittl has hundreds of hoodie/tee model mockups but the account is on the free plan: premium templates
   (incl. Gildan 18500 back views) won't render; the free hoodie ones (#46, #181, #798) are front views only.
 - Promo pack: media/promo/<design>/ (337 shots, 37 designs, 2048 px), rebuilt by printify/promo_pack.py.
@@ -72,6 +73,9 @@ Facts worth remembering between sessions. Update as things change.
   designs/src/logo_cutout.py (--pockets also clears paper trapped inside the art), 4500 px longest side =
   15 in at 300 DPI (designs/print-brand). Raw upscales (designs/logo-up) are git-ignored.
 - Products: printify/create_brand.py, ids in printify/brand.json.
+- 2026-11-17: front-print versions too ("<Design> Front Print Hoodie", $37, logo across the chest at 85%
+  of the 14x10 in front area; printify/create_brand_front.py). They open on Printify's hoodie model shots
+  (98428 main, then flat front 98424, then 98427/98429/98430), the only hoodie models Printify has.
 
 ## Christmas line removed (2026-11-13)
 - Deleted all 60 Christmas products (batch 1: Naughty List Again, Suck It Up Buttercup, Bring Bourbon,

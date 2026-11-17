@@ -156,7 +156,8 @@
     "cost": [
       2267,
       2484
-    ]
+    ],
+    "shopify": "8901540905121"
   },
   "01-psychedelic-drip-hoodie-front": {
     "printify": "6afb9d4aa44fa49e570d49a2",
@@ -165,7 +166,8 @@
     "cost": [
       2267,
       2484
-    ]
+    ],
+    "shopify": "8901541626017"
   },
   "02-groovy-retro-hoodie-front": {
     "printify": "6afb9d59a44fa49e570d49b5",
@@ -174,6 +176,27 @@
     "cost": [
       2267,
       2484
-    ]
+    ],
+    "shopify": "8901541822625"
+  },
+  "04-ransom-note-hoodie-front": {
+    "printify": "6afb9d66037a5f765201d02f",
+    "title": "Elsewhere Ransom Note Front Print Hoodie",
+    "kind": "hoodie-front",
+    "cost": [
+      2267,
+      2484
+    ],
+    "shopify": "8901542379681"
+  },
+  "05-chrome-script-hoodie-front": {
+    "printify": "6afb9d740d75fb6f9f0bd2a4",
+    "title": "Elsewhere Chrome Script Front Print Hoodie",
+    "kind": "hoodie-front",
+    "cost": [
+      2267,
+      2484
+    ],
+    "shopify": "8901542740129"
   }
 }
