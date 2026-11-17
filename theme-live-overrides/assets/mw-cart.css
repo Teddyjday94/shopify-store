@@ -179,3 +179,36 @@ html.mw-modal-open { overflow: hidden; }
 .mw-style.is-current { border-color: var(--fg-gold, #e7b681); box-shadow: inset 0 0 0 1px var(--fg-gold, #e7b681); }
 .mw-style.is-current .mw-style__name::after { content: " ✓"; color: var(--fg-gold, #e7b681); }
 @media (max-width: 620px) { .mw-style { width: 84px; } }
+
+/* ---------- product page: size guide, sticky add-to-cart bar, "Complete the look" (assets/mw-product.js) ---------- */
+.mw-size-link {
+  margin-left: 10px; padding: 0; color: var(--fg-gold, #e7b681); background: none; border: 0; cursor: pointer;
+  font: 700 .66rem/1 var(--fg-mono, "IBM Plex Mono", monospace); letter-spacing: .1em; text-transform: uppercase;
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.mw-size { width: min(900px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); padding: 0; color: var(--fg-paper, #f1e5d1); background: #151113; border: 1px solid #ead7b738; }
+.mw-size::backdrop { background: #0a070acc; }
+.mw-size__panel { padding: 16px; }
+.mw-size__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.mw-size__head p { margin: 0; }
+.mw-size__img { display: block; width: 100%; height: auto; background: #fff; }
+.mw-size__tip { margin: 12px 0 0; font-size: 14px; color: var(--muted, #b2a79c); }
+.mw-sticky-buy { display: none; }
+@media (max-width: 860px) {
+  .mw-sticky-buy {
+    position: fixed; inset: auto 0 0 0; z-index: 40; display: flex; align-items: center; gap: 12px;
+    padding: 10px 14px max(10px, env(safe-area-inset-bottom)); background: #151113f2; border-top: 1px solid #ead7b738;
+    backdrop-filter: blur(8px); transform: translateY(110%); transition: transform .25s cubic-bezier(.22, 1, .36, 1);
+  }
+  .mw-sticky-buy.is-shown { transform: none; }
+  .mw-sticky-buy__info { flex: 1; min-width: 0; }
+  .mw-sticky-buy__info strong { display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font: 600 .95rem/1.2 var(--support, "Barlow Semi Condensed", sans-serif); }
+  .mw-sticky-buy__info span { font: 500 .85rem/1.2 var(--support, sans-serif); color: var(--fg-gold, #e7b681); }
+  .mw-sticky-buy .btn { flex: none; min-height: 46px; padding-inline: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .mw-sticky-buy { transition: none; } }
+.mw-recs { padding-block: clamp(32px, 5vw, 64px); border-top: 1px solid #ead7b738; }
+.mw-recs__head { margin-bottom: 18px; }
+.mw-recs__head .fg-kicker { margin: 0 0 8px; }
+.mw-recs__head h2 { margin: 0; font: 400 clamp(2.2rem, 5vw, 4rem)/.95 var(--fg-display, Anton, Impact, sans-serif); text-transform: uppercase; color: var(--fg-paper, #f1e5d1); }
+@media (max-width: 860px) { .mw-recs__grid { --cols: 2 !important; } }

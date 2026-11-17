@@ -1,0 +1,30 @@
+{%- comment -%}
+  "Complete the look" (2026-11-17): Shopify's product recommendations, loaded by assets/mw-product.js through the
+  Section Rendering API (/recommendations/products?section_id=mw-recs&product_id=...). Other styles of the same
+  design are skipped (the "Choose your style" row already shows those). Not placed in any template.
+{%- endcomment -%}
+{%- if recommendations.performed and recommendations.products_count > 0 -%}
+  {%- capture own -%}{% render 'design-key', handle: recommendations.source.handle, part: 'base' %}{%- endcapture -%}
+  {%- capture cards -%}
+    {%- assign shown = 0 -%}
+    {%- for p in recommendations.products -%}
+      {%- capture b -%}{% render 'design-key', handle: p.handle, part: 'base' %}{%- endcapture -%}
+      {%- if b == own or shown >= 4 -%}{%- continue -%}{%- endif -%}
+      {%- assign shown = shown | plus: 1 -%}
+      {% render 'product-card', product: p %}
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- if shown > 0 -%}
+    <div class="mw-recs" data-recs-loaded>
+      <div class="mw-recs__head">
+        <p class="fg-meta fg-kicker">Pairs well with</p>
+        <h2>Complete the look</h2>
+      </div>
+      <div class="grid mw-recs__grid" style="--cols: 4;">{{ cards }}</div>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{ "name": "Complete the look", "settings": [] }
+{% endschema %}

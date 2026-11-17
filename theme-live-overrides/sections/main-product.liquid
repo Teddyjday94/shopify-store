@@ -66,7 +66,7 @@
           {%- unless product.has_only_default_variant -%}
             {%- for option in product.options_with_values -%}
               <fieldset class="option">
-                <legend class="label">{{ option.name }}: <span data-option-label="{{ forloop.index0 }}">{{ option.selected_value }}</span></legend>
+                <legend class="label">{{ option.name }}: <span data-option-label="{{ forloop.index0 }}">{{ option.selected_value }}</span>{% if option.name == 'Size' %}{% render 'size-guide', product: product %}{% endif %}</legend>
                 <div class="option__values">
                   {%- assign option_index = forloop.index0 -%}
                   {%- for value in option.values -%}
@@ -99,6 +99,10 @@
           </div>
           <p class="form-error" role="alert" data-form-error hidden></p>
         {%- endform -%}
+        <div class="mw-sticky-buy" data-sticky-buy aria-hidden="true">
+          <div class="mw-sticky-buy__info"><strong>{{ product.title }}</strong><span data-sticky-price>{% render 'price', variant: current_variant %}</span></div>
+          <button class="btn" type="submit" form="{{ form_id }}" data-sticky-add tabindex="-1">{{ 'products.add_to_cart' | t }}</button>
+        </div>
 
         {%- if product.description != blank -%}
           <div class="product__desc rte">{{ product.description }}</div>
@@ -116,6 +120,9 @@
       {%- endfor -%}
     </div>
   </div>
+
+  <div class="page-width" data-recs hidden data-url="{{ routes.product_recommendations_url }}?section_id=mw-recs&product_id={{ product.id }}&limit=8&intent=related"></div>
+  <script src="{{ 'mw-product.js' | asset_url }}" defer="defer"></script>
 
   {%- if product.handle == 'critical-failure-hoodie' -%}
     <div class="page-width">{% render 'field-guide-campaign', id: section.id %}</div>

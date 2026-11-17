@@ -1,0 +1,41 @@
+{%- comment -%}
+  "Size guide" link + dialog showing Printify's official size chart for the garment (2026-11-17). Charts live in
+  Shopify Files (size-chart-*.jpg). Which chart: by handle suffix (see snippets/design-key.liquid); the
+  Odysseus Layover Tee is a different blank. Women's tees have no chart from Printify, so no link is shown.
+  @param product
+{%- endcomment -%}
+{%- liquid
+  assign chart = blank
+  assign h = product.handle
+  if h == 'odysseus-layover-tee'
+    assign chart = 'size-chart-tee-comfort-colors.jpg'
+  elsif h contains '-womens-tee'
+    assign chart = blank
+  elsif h contains '-long-sleeve-tee'
+    assign chart = 'size-chart-long-sleeve-gildan-2400.jpg'
+  elsif h contains '-hoodie'
+    assign chart = 'size-chart-hoodie-gildan-18500.jpg'
+  elsif h contains '-crewneck'
+    assign chart = 'size-chart-crewneck-gildan-18000.jpg'
+  elsif h contains '-tee'
+    assign chart = 'size-chart-tee-bella-canvas-3001.jpg'
+  endif
+-%}
+{%- if chart != blank -%}
+  {%- assign img = images[chart] -%}
+  {%- if img != blank -%}
+    <button type="button" class="mw-size-link" data-size-open aria-haspopup="dialog">Size guide</button>
+    <dialog class="mw-size" data-size-dialog aria-label="Size guide">
+      <div class="mw-size__panel">
+        <div class="mw-size__head">
+          <p class="fg-meta">Size guide &middot; measured flat, in inches and cm</p>
+          <button class="mw-x" type="button" data-size-close aria-label="Close size guide">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+          </button>
+        </div>
+        {{ img | image_url: width: 1600 | image_tag: loading: 'lazy', class: 'mw-size__img', widths: '800, 1200, 1600', sizes: '(min-width: 900px) 860px, 100vw' }}
+        <p class="mw-size__tip">Lay a shirt you love flat and compare its width (armpit to armpit) with the chart. For an oversized look, go one size up.</p>
+      </div>
+    </dialog>
+  {%- endif -%}
+{%- endif -%}
