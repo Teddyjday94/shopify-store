@@ -148,5 +148,23 @@
       2484
     ],
     "shopify": "8901423497377"
+  },
+  "03-chrome-globe-hoodie-front": {
+    "printify": "6afb9d2781a10a4455110439",
+    "title": "Elsewhere Chrome Globe Front Print Hoodie",
+    "kind": "hoodie-front",
+    "cost": [
+      2267,
+      2484
+    ]
+  },
+  "01-psychedelic-drip-hoodie-front": {
+    "printify": "6afb9d4aa44fa49e570d49a2",
+    "title": "Elsewhere Psychedelic Drip Front Print Hoodie",
+    "kind": "hoodie-front",
+    "cost": [
+      2267,
+      2484
+    ]
   }
 }

@@ -3,7 +3,7 @@
 Writes media/promo/<design>/<NN>-<shot>.jpg (2048 px) plus media/promo/README.md.
 Tees: model shots (front or back, whichever side carries the print), chair and folded close-up.
 Women's tees: lifestyle model shot and styled flat lay (front-printed designs only).
-Hoodies: the back print and its alternate angle.
+Hoodies: the back print and its alternate angle; front-print hoodies: the front and four model shots.
 Usage: python3 printify/promo_pack.py
 """
 import json, re, sys, concurrent.futures as cf
@@ -16,13 +16,15 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "media" / "promo"
 TEE_FRONT = [(102052, "two-models"), (102053, "two-models-2"), (102057, "model-woman"), (102059, "model-man"),
              (102061, "model-woman-2"), (102049, "on-chair"), (102046, "folded-closeup")]
-TEE_BACK = [(102060, "model-man-back"), (102058, "model-woman-back"), (102054, "model-man-back-2"), (102045, "flat-back")]
+TEE_BACK = [(102060, "model-man-back"), (102058, "model-woman-back"), (102054, "model-man-back-2"), (102062, "model-woman-back-2"), (102045, "flat-back")]
 WOMENS = [(87732, "womens-lifestyle"), (87731, "womens-flatlay")]
 HOODIE = [(98425, "hoodie-back"), (98426, "hoodie-back-2")]
+HOODIE_FRONT = [(98424, "hoodie-front"), (98427, "hoodie-model-woman"), (98428, "hoodie-model-man"),
+                (98429, "hoodie-model-woman-2"), (98430, "hoodie-model-man-2")]
 
 
 def design_of(title):
-    return re.sub(r"\s+(Sleeve Edition Hoodie|Long Sleeve Tee|Women's Tee|Hoodie|Tee|T-Shirt)$", "", title).strip()
+    return re.sub(r"\s+(Front Print Hoodie|Sleeve Edition Hoodie|Long Sleeve Tee|Women's Tee|Hoodie|Tee|T-Shirt)$", "", title).strip()
 
 
 def slug(s):
@@ -50,7 +52,7 @@ def main():
             elif bp == 466:
                 cams = WOMENS if "front" in sides else []
             else:
-                cams = HOODIE if "back" in sides else []
+                cams = HOODIE if "back" in sides else HOODIE_FRONT if "front" in sides else []
             if "Sleeve Edition" in x["title"]:
                 cams = [(98425, "sleeve-edition-back")]
             for cam, shot in cams:
