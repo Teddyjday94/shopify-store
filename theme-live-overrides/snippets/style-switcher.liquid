@@ -5,8 +5,8 @@
 {%- endcomment -%}
 {%- capture base -%}{% render 'design-key', handle: product.handle, part: 'base' %}{%- endcapture -%}
 {%- liquid
-  assign suffixes = '-tee|-womens-tee|-hoodie|-crewneck|-long-sleeve-tee|-sleeve-edition-hoodie|-dad-hat|-trucker-hat|-bucket-hat|-cuffed-beanie|-beanie|-mug|-desk-mat' | split: '|'
-  assign labels = "Tee|Women's tee|Hoodie|Crewneck|Long sleeve|Sleeve Edition|Dad hat|Trucker hat|Bucket hat|Beanie|Beanie|Mug|Desk mat" | split: '|'
+  assign suffixes = '-tee|-womens-tee|-hoodie|-crewneck|-long-sleeve-tee|-sleeve-edition-hoodie|-dad-hat|-trucker-hat|-bucket-hat|-cuffed-beanie|-beanie|-mug|-desk-mat|-ornament|-sticker|-poster|-tote-bag|-phone-case' | split: '|'
+  assign labels = "Tee|Women's tee|Hoodie|Crewneck|Long sleeve|Sleeve Edition|Dad hat|Trucker hat|Bucket hat|Beanie|Beanie|Mug|Desk mat|Ornament|Sticker|Poster|Tote bag|Phone case" | split: '|'
   assign found = 0
   for suffix in suffixes
     assign h = base | append: suffix

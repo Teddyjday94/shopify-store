@@ -9,10 +9,10 @@
   Longer suffixes come first so "-womens-tee" wins over "-tee".
 {%- endcomment -%}
 {%- liquid
-  assign suffixes = '-sleeve-edition-hoodie|-long-sleeve-tee|-womens-tee|-tee|-hoodie|-crewneck|-dad-hat|-trucker-hat|-bucket-hat|-cuffed-beanie|-beanie|-mug|-desk-mat' | split: '|'
-  assign labels = "Sleeve Edition hoodie|Long sleeve|Women's tee|Tee|Hoodie|Crewneck|Dad hat|Trucker hat|Bucket hat|Beanie|Beanie|Mug|Desk mat" | split: '|'
-  assign kinds = 'hoodie|longsleeve|womens|tee|hoodie|crewneck|extras|extras|extras|extras|extras|extras|extras' | split: '|'
-  assign ranks = '5|4|1|0|2|3|6|6|6|6|6|7|8' | split: '|'
+  assign suffixes = '-sleeve-edition-hoodie|-long-sleeve-tee|-womens-tee|-tee|-hoodie|-crewneck|-dad-hat|-trucker-hat|-bucket-hat|-cuffed-beanie|-beanie|-mug|-desk-mat|-ornament|-sticker|-poster|-tote-bag|-phone-case' | split: '|'
+  assign labels = "Sleeve Edition hoodie|Long sleeve|Women's tee|Tee|Hoodie|Crewneck|Dad hat|Trucker hat|Bucket hat|Beanie|Beanie|Mug|Desk mat|Ornament|Sticker|Poster|Tote bag|Phone case" | split: '|'
+  assign kinds = 'hoodie|longsleeve|womens|tee|hoodie|crewneck|extras|extras|extras|extras|extras|extras|extras|extras|extras|extras|extras|extras' | split: '|'
+  assign ranks = '5|4|1|0|2|3|6|6|6|6|6|7|8|8|8|8|8|8' | split: '|'
   assign out_base = handle
   assign out_label = 'Original'
   assign out_kind = 'extras'
