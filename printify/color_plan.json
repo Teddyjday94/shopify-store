@@ -1,0 +1,3733 @@
+{
+ "My Happy Place Crewneck": {
+  "printify": "6afc0330d5072afcdc0b9f04",
+  "shopify": "8902085050529",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Heather",
+   "Light Pink",
+   "Purple",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.33,
+   "Sand": 0.38,
+   "Graphite Heather": 0.67,
+   "Charcoal": 0.99,
+   "White": 0.57,
+   "Gold": 0.3,
+   "Purple": 1.0,
+   "Light Blue": 0.44,
+   "Red": 0.91,
+   "Royal": 1.0,
+   "Heather Sport Royal": 0.94,
+   "Light Pink": 0.46
+  }
+ },
+ "Skeleton Reading Book Crewneck": {
+  "printify": "6afc032455472a51c00ed0f9",
+  "shopify": "8902084395169",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Light Pink",
+   "Purple",
+   "White"
+  ],
+  "add": [
+   "Gold"
+  ],
+  "scores": {
+   "Sport Grey": 0.82,
+   "Sand": 0.83,
+   "Graphite Heather": 0.78,
+   "Charcoal": 0.77,
+   "White": 0.92,
+   "Gold": 0.8,
+   "Purple": 0.46,
+   "Light Blue": 0.87,
+   "Red": 0.79,
+   "Royal": 0.76,
+   "Heather Sport Royal": 0.79,
+   "Light Pink": 0.88
+  }
+ },
+ "Stacked Books Crewneck": {
+  "printify": "6afc031755472a51c00ed0f1",
+  "shopify": "8902084034721",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Light Pink",
+   "Purple",
+   "White"
+  ],
+  "add": [
+   "Gold"
+  ],
+  "scores": {
+   "Sport Grey": 0.84,
+   "Sand": 0.85,
+   "Graphite Heather": 0.72,
+   "Charcoal": 0.59,
+   "White": 0.88,
+   "Gold": 0.84,
+   "Purple": 0.55,
+   "Light Blue": 0.86,
+   "Red": 0.62,
+   "Royal": 0.48,
+   "Heather Sport Royal": 0.61,
+   "Light Pink": 0.86
+  }
+ },
+ "Please Respect the Plot Crewneck": {
+  "printify": "6afc030b2a3b28cea10d46f0",
+  "shopify": "8902081085601",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Heather",
+   "Light Blue",
+   "Purple"
+  ],
+  "add": [
+   "Sand"
+  ],
+  "scores": {
+   "Sport Grey": 0.8,
+   "Sand": 0.81,
+   "Graphite Heather": 0.59,
+   "Charcoal": 0.49,
+   "White": 0.88,
+   "Gold": 0.79,
+   "Purple": 0.76,
+   "Light Blue": 0.84,
+   "Red": 0.52,
+   "Royal": 0.51,
+   "Heather Sport Royal": 0.5,
+   "Light Pink": 0.85
+  }
+ },
+ "Ships in 6\u20137 Business Days Crewneck": {
+  "printify": "6afc02fff17cef87cb02e1fb",
+  "shopify": "8902079742113",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Gold",
+   "Light Blue",
+   "Military Green",
+   "Sand",
+   "Sport Grey",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 1.0,
+   "Sand": 1.0,
+   "Graphite Heather": 1.0,
+   "Charcoal": 1.0,
+   "White": 1.0,
+   "Gold": 1.0,
+   "Purple": 0.0,
+   "Light Blue": 1.0,
+   "Red": 1.0,
+   "Royal": 1.0,
+   "Heather Sport Royal": 1.0,
+   "Light Pink": 1.0
+  }
+ },
+ "Same Chaos Different Day Crewneck": {
+  "printify": "6afc02f1f17cef87cb02e1d4",
+  "shopify": "8902079348897",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Gold",
+   "Light Blue",
+   "Sand",
+   "Sport Grey",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.83,
+   "Sand": 0.86,
+   "Graphite Heather": 0.73,
+   "Charcoal": 0.69,
+   "White": 0.98,
+   "Gold": 0.82,
+   "Purple": 0.52,
+   "Light Blue": 0.91,
+   "Red": 0.71,
+   "Royal": 0.68,
+   "Heather Sport Royal": 0.7,
+   "Light Pink": 0.92
+  }
+ },
+ "Balance Crewneck": {
+  "printify": "6afc02e4d5072afcdc0b9ea8",
+  "shopify": "8902077939873",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Gold",
+   "Light Blue",
+   "Sand",
+   "Sport Grey",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.93,
+   "Sand": 0.94,
+   "Graphite Heather": 0.78,
+   "Charcoal": 0.65,
+   "White": 0.99,
+   "Gold": 0.92,
+   "Purple": 0.38,
+   "Light Blue": 0.96,
+   "Red": 0.72,
+   "Royal": 0.61,
+   "Heather Sport Royal": 0.71,
+   "Light Pink": 0.96
+  }
+ },
+ "Somewhere in a Calmer Place Crewneck": {
+  "printify": "6afc02d8f17cef87cb02e1b2",
+  "shopify": "8902076760225",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Gold",
+   "Light Blue",
+   "Sand",
+   "Sport Grey",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.75,
+   "Sand": 0.77,
+   "Graphite Heather": 0.74,
+   "Charcoal": 0.78,
+   "White": 0.89,
+   "Gold": 0.73,
+   "Purple": 0.57,
+   "Light Blue": 0.81,
+   "Red": 0.76,
+   "Royal": 0.77,
+   "Heather Sport Royal": 0.77,
+   "Light Pink": 0.82
+  }
+ },
+ "Butterfly Effect Crewneck": {
+  "printify": "6afc02ccfd4d7f230d0ab66c",
+  "shopify": "8902075973793",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Carolina Blue",
+   "Dark Chocolate",
+   "Forest Green",
+   "Gold",
+   "Light Pink",
+   "Maroon",
+   "Sport Grey",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.94,
+   "Sand": 0.95,
+   "Graphite Heather": 0.8,
+   "Charcoal": 0.79,
+   "White": 0.98,
+   "Gold": 0.93,
+   "Purple": 0.32,
+   "Light Blue": 0.97,
+   "Red": 0.8,
+   "Royal": 0.79,
+   "Heather Sport Royal": 0.79,
+   "Light Pink": 0.97
+  }
+ },
+ "Sunflower Soul Crewneck": {
+  "printify": "6afc02bf55472a51c00ed06c",
+  "shopify": "8902075580577",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Dark Chocolate",
+   "Forest Green",
+   "Gold",
+   "Maroon",
+   "Royal",
+   "Sand",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.87,
+   "Sand": 0.89,
+   "Graphite Heather": 0.76,
+   "Charcoal": 0.68,
+   "White": 1.0,
+   "Gold": 0.86,
+   "Purple": 0.45,
+   "Light Blue": 0.94,
+   "Red": 0.72,
+   "Royal": 0.67,
+   "Heather Sport Royal": 0.71,
+   "Light Pink": 0.96
+  }
+ },
+ "Color Me Bold Crewneck": {
+  "printify": "6afc02b2f24a7e5cbe0a082c",
+  "shopify": "8902073483425",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Forest Green",
+   "Gold",
+   "Maroon",
+   "Sport Grey",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.92,
+   "Sand": 0.94,
+   "Graphite Heather": 0.74,
+   "Charcoal": 0.79,
+   "White": 0.97,
+   "Gold": 0.92,
+   "Purple": 0.39,
+   "Light Blue": 0.96,
+   "Red": 0.78,
+   "Royal": 0.78,
+   "Heather Sport Royal": 0.78,
+   "Light Pink": 0.96
+  }
+ },
+ "Crown & Curls Crewneck": {
+  "printify": "6afc02a617c004fdc804840b",
+  "shopify": "8902072565921",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Dark Chocolate",
+   "Forest Green",
+   "Gold",
+   "Maroon",
+   "Sand",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.9,
+   "Sand": 0.93,
+   "Graphite Heather": 0.78,
+   "Charcoal": 0.81,
+   "White": 0.97,
+   "Gold": 0.87,
+   "Purple": 0.38,
+   "Light Blue": 0.95,
+   "Red": 0.83,
+   "Royal": 0.79,
+   "Heather Sport Royal": 0.83,
+   "Light Pink": 0.96
+  }
+ },
+ "Pink Crown Crewneck": {
+  "printify": "6afc0299fd4d7f230d0ab633",
+  "shopify": "8902071812257",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Forest Green",
+   "Gold",
+   "Light Pink",
+   "Maroon",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.87,
+   "Sand": 0.89,
+   "Graphite Heather": 0.79,
+   "Charcoal": 0.78,
+   "White": 0.98,
+   "Gold": 0.87,
+   "Purple": 0.4,
+   "Light Blue": 0.94,
+   "Red": 0.77,
+   "Royal": 0.78,
+   "Heather Sport Royal": 0.76,
+   "Light Pink": 0.95
+  }
+ },
+ "Fallen, Not Finished Crewneck": {
+  "printify": "6afc028cfd4d7f230d0ab614",
+  "shopify": "8902070206625",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Purple",
+   "Royal"
+  ],
+  "scores": {
+   "Sport Grey": 0.84,
+   "Sand": 0.86,
+   "Graphite Heather": 0.69,
+   "Charcoal": 0.59,
+   "White": 0.92,
+   "Gold": 0.84,
+   "Purple": 0.58,
+   "Light Blue": 0.89,
+   "Red": 0.63,
+   "Royal": 0.58,
+   "Heather Sport Royal": 0.62,
+   "Light Pink": 0.89
+  },
+  "manual": true
+ },
+ "Going With the Flow Crewneck": {
+  "printify": "6afc0280fd4d7f230d0ab606",
+  "shopify": "8902069321889",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Purple",
+   "Royal"
+  ],
+  "scores": {
+   "Sport Grey": 0.85,
+   "Sand": 0.87,
+   "Graphite Heather": 0.64,
+   "Charcoal": 0.55,
+   "White": 0.94,
+   "Gold": 0.84,
+   "Purple": 0.64,
+   "Light Blue": 0.9,
+   "Red": 0.59,
+   "Royal": 0.53,
+   "Heather Sport Royal": 0.58,
+   "Light Pink": 0.91
+  },
+  "manual": true
+ },
+ "Queen Forever Crewneck": {
+  "printify": "6afc0273fd4d7f230d0ab5f8",
+  "shopify": "8902068994209",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Purple",
+   "Royal"
+  ],
+  "scores": {
+   "Sport Grey": 0.8,
+   "Sand": 0.82,
+   "Graphite Heather": 0.69,
+   "Charcoal": 0.57,
+   "White": 0.93,
+   "Gold": 0.79,
+   "Purple": 0.65,
+   "Light Blue": 0.87,
+   "Red": 0.63,
+   "Royal": 0.57,
+   "Heather Sport Royal": 0.61,
+   "Light Pink": 0.88
+  },
+  "manual": true
+ },
+ "No Signal Crewneck": {
+  "printify": "6afc0267d5072afcdc0b9e29",
+  "shopify": "8902068338849",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Purple",
+   "Royal"
+  ],
+  "scores": {
+   "Sport Grey": 0.86,
+   "Sand": 0.88,
+   "Graphite Heather": 0.69,
+   "Charcoal": 0.52,
+   "White": 0.93,
+   "Gold": 0.85,
+   "Purple": 0.59,
+   "Light Blue": 0.9,
+   "Red": 0.59,
+   "Royal": 0.49,
+   "Heather Sport Royal": 0.58,
+   "Light Pink": 0.9
+  },
+  "manual": true
+ },
+ "Main Character Syndrome Crewneck": {
+  "printify": "6afc025b55472a51c00ed010",
+  "shopify": "8902067880097",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Sport Grey",
+   "Gold"
+  ],
+  "scores": {
+   "Sport Grey": 0.82,
+   "Sand": 0.83,
+   "Graphite Heather": 0.74,
+   "Charcoal": 0.67,
+   "White": 0.92,
+   "Gold": 0.81,
+   "Purple": 0.53,
+   "Light Blue": 0.86,
+   "Red": 0.71,
+   "Royal": 0.66,
+   "Heather Sport Royal": 0.7,
+   "Light Pink": 0.87
+  }
+ },
+ "I Paused My Game to Be Here Crewneck": {
+  "printify": "6afc024efdfd6189ab0aad8a",
+  "shopify": "8902067486881",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Charcoal",
+   "Royal"
+  ],
+  "scores": {
+   "Sport Grey": 0.71,
+   "Sand": 0.72,
+   "Graphite Heather": 0.62,
+   "Charcoal": 0.85,
+   "White": 0.82,
+   "Gold": 0.69,
+   "Purple": 0.7,
+   "Light Blue": 0.76,
+   "Red": 0.66,
+   "Royal": 0.89,
+   "Heather Sport Royal": 0.66,
+   "Light Pink": 0.77
+  }
+ },
+ "Out of Orbit Crewneck": {
+  "printify": "6afc0236d5072afcdc0b9e13",
+  "shopify": "8902066438305",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Sand",
+   "Light Blue"
+  ],
+  "scores": {
+   "Sport Grey": 0.78,
+   "Sand": 0.81,
+   "Graphite Heather": 0.66,
+   "Charcoal": 0.71,
+   "White": 0.94,
+   "Gold": 0.76,
+   "Purple": 0.64,
+   "Light Blue": 0.88,
+   "Red": 0.7,
+   "Royal": 0.71,
+   "Heather Sport Royal": 0.71,
+   "Light Pink": 0.89
+  }
+ },
+ "Final Boss Energy Crewneck": {
+  "printify": "6afc02298235d40d740c6e63",
+  "shopify": "8902063521953",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Sport Grey",
+   "Gold"
+  ],
+  "scores": {
+   "Sport Grey": 0.83,
+   "Sand": 0.82,
+   "Graphite Heather": 0.7,
+   "Charcoal": 0.68,
+   "White": 0.9,
+   "Gold": 0.83,
+   "Purple": 0.58,
+   "Light Blue": 0.85,
+   "Red": 0.66,
+   "Royal": 0.69,
+   "Heather Sport Royal": 0.66,
+   "Light Pink": 0.86
+  }
+ },
+ "I'm Only Here for the Post-Credits Scene Crewneck": {
+  "printify": "6afc021d2a3b28cea10d45de",
+  "shopify": "8902062932129",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Charcoal",
+   "Dark Chocolate",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Light Blue"
+  ],
+  "scores": {
+   "Sport Grey": 0.78,
+   "Sand": 0.8,
+   "Graphite Heather": 0.74,
+   "Charcoal": 0.73,
+   "White": 0.91,
+   "Gold": 0.77,
+   "Purple": 0.55,
+   "Light Blue": 0.84,
+   "Red": 0.74,
+   "Royal": 0.73,
+   "Heather Sport Royal": 0.74,
+   "Light Pink": 0.85
+  }
+ },
+ "Dragonfall Crewneck": {
+  "printify": "6afc021053986ff0200b20df",
+  "shopify": "8902062145697",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Charcoal",
+   "Dark Chocolate",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Gold"
+  ],
+  "scores": {
+   "Sport Grey": 0.89,
+   "Sand": 0.9,
+   "Graphite Heather": 0.73,
+   "Charcoal": 0.64,
+   "White": 0.96,
+   "Gold": 0.88,
+   "Purple": 0.48,
+   "Light Blue": 0.93,
+   "Red": 0.69,
+   "Royal": 0.63,
+   "Heather Sport Royal": 0.68,
+   "Light Pink": 0.93
+  }
+ },
+ "Lantern Witch Crewneck": {
+  "printify": "6afc0204fdfd6189ab0aad5b",
+  "shopify": "8902061293729",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Charcoal",
+   "Dark Chocolate",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Light Blue"
+  ],
+  "scores": {
+   "Sport Grey": 0.81,
+   "Sand": 0.83,
+   "Graphite Heather": 0.71,
+   "Charcoal": 0.69,
+   "White": 0.93,
+   "Gold": 0.79,
+   "Purple": 0.57,
+   "Light Blue": 0.87,
+   "Red": 0.7,
+   "Royal": 0.68,
+   "Heather Sport Royal": 0.7,
+   "Light Pink": 0.88
+  }
+ },
+ "Moonwood Druid Crewneck": {
+  "printify": "6afc01f7fdfd6189ab0aad4f",
+  "shopify": "8902060540065",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Charcoal",
+   "Dark Chocolate",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Gold"
+  ],
+  "scores": {
+   "Sport Grey": 0.83,
+   "Sand": 0.85,
+   "Graphite Heather": 0.69,
+   "Charcoal": 0.62,
+   "White": 0.93,
+   "Gold": 0.82,
+   "Purple": 0.58,
+   "Light Blue": 0.89,
+   "Red": 0.66,
+   "Royal": 0.6,
+   "Heather Sport Royal": 0.65,
+   "Light Pink": 0.89
+  }
+ },
+ "Elsewhere Psychedelic Drip Crewneck": {
+  "printify": "6afc01ea55472a51c00ecfcd",
+  "shopify": "8902059786401",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Charcoal",
+   "Red"
+  ],
+  "scores": {
+   "Sport Grey": 0.58,
+   "Sand": 0.61,
+   "Graphite Heather": 0.77,
+   "Charcoal": 0.86,
+   "White": 0.78,
+   "Gold": 0.57,
+   "Purple": 0.69,
+   "Light Blue": 0.65,
+   "Red": 0.82,
+   "Royal": 0.87,
+   "Heather Sport Royal": 0.84,
+   "Light Pink": 0.67
+  }
+ },
+ "Elsewhere Groovy Retro Crewneck": {
+  "printify": "6afc01de2a3b28cea10d45b1",
+  "shopify": "8902059098273",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Charcoal",
+   "Red"
+  ],
+  "scores": {
+   "Sport Grey": 0.48,
+   "Sand": 0.53,
+   "Graphite Heather": 0.79,
+   "Charcoal": 0.89,
+   "White": 0.78,
+   "Gold": 0.47,
+   "Purple": 0.76,
+   "Light Blue": 0.62,
+   "Red": 0.87,
+   "Royal": 0.89,
+   "Heather Sport Royal": 0.88,
+   "Light Pink": 0.64
+  }
+ },
+ "Elsewhere Chrome Globe Crewneck": {
+  "printify": "6afc01d253986ff0200b20ba",
+  "shopify": "8902058246305",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "White"
+  ],
+  "scores": {
+   "Sport Grey": 0.71,
+   "Sand": 0.71,
+   "Graphite Heather": 0.7,
+   "Charcoal": 0.76,
+   "White": 0.85,
+   "Gold": 0.7,
+   "Purple": 0.69,
+   "Light Blue": 0.77,
+   "Red": 0.73,
+   "Royal": 0.77,
+   "Heather Sport Royal": 0.74,
+   "Light Pink": 0.78
+  }
+ },
+ "Elsewhere Ransom Note Crewneck": {
+  "printify": "6afc01c5fd4d7f230d0ab5ac",
+  "shopify": "8902057230497",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Graphite Heather",
+   "Royal"
+  ],
+  "scores": {
+   "Sport Grey": 0.43,
+   "Sand": 0.45,
+   "Graphite Heather": 0.88,
+   "Charcoal": 0.91,
+   "White": 0.58,
+   "Gold": 0.42,
+   "Purple": 0.72,
+   "Light Blue": 0.49,
+   "Red": 0.9,
+   "Royal": 0.91,
+   "Heather Sport Royal": 0.9,
+   "Light Pink": 0.5
+  },
+  "manual": true
+ },
+ "Elsewhere Chrome Script Crewneck": {
+  "printify": "6afc01b855472a51c00ecfb2",
+  "shopify": "8902056214689",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "White",
+   "Light Pink"
+  ],
+  "scores": {
+   "Sport Grey": 0.73,
+   "Sand": 0.74,
+   "Graphite Heather": 0.67,
+   "Charcoal": 0.73,
+   "White": 0.87,
+   "Gold": 0.72,
+   "Purple": 0.7,
+   "Light Blue": 0.8,
+   "Red": 0.69,
+   "Royal": 0.74,
+   "Heather Sport Royal": 0.7,
+   "Light Pink": 0.81
+  }
+ },
+ "Elsewhere Graffiti Crewneck": {
+  "printify": "6afc01accff4efae12097fcb",
+  "shopify": "8902055133345",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "White",
+   "Light Blue"
+  ],
+  "scores": {
+   "Sport Grey": 0.76,
+   "Sand": 0.79,
+   "Graphite Heather": 0.74,
+   "Charcoal": 0.74,
+   "White": 0.92,
+   "Gold": 0.75,
+   "Purple": 0.56,
+   "Light Blue": 0.83,
+   "Red": 0.73,
+   "Royal": 0.74,
+   "Heather Sport Royal": 0.73,
+   "Light Pink": 0.84
+  }
+ },
+ "Elsewhere Dreamscape Crewneck": {
+  "printify": "6afc019ffd4d7f230d0ab567",
+  "shopify": "8902054084769",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Sand",
+   "Light Blue"
+  ],
+  "scores": {
+   "Sport Grey": 0.78,
+   "Sand": 0.81,
+   "Graphite Heather": 0.66,
+   "Charcoal": 0.69,
+   "White": 0.92,
+   "Gold": 0.76,
+   "Purple": 0.64,
+   "Light Blue": 0.85,
+   "Red": 0.67,
+   "Royal": 0.69,
+   "Heather Sport Royal": 0.68,
+   "Light Pink": 0.86
+  }
+ },
+ "WHADID I DO?! Crewneck": {
+  "printify": "6afc01932a3b28cea10d453e",
+  "shopify": "8902053658785",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "White",
+   "Light Pink"
+  ],
+  "scores": {
+   "Sport Grey": 0.68,
+   "Sand": 0.72,
+   "Graphite Heather": 0.64,
+   "Charcoal": 0.77,
+   "White": 0.86,
+   "Gold": 0.66,
+   "Purple": 0.74,
+   "Light Blue": 0.79,
+   "Red": 0.73,
+   "Royal": 0.78,
+   "Heather Sport Royal": 0.74,
+   "Light Pink": 0.8
+  }
+ },
+ "Read Wildly Crewneck": {
+  "printify": "6afc016acff4efae12097f61",
+  "shopify": "8902053298337",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Light Pink",
+   "Purple",
+   "White"
+  ],
+  "add": [
+   "Navy"
+  ],
+  "scores": {
+   "Sport Grey": 0.93,
+   "Sand": 0.93,
+   "Graphite Heather": 0.39,
+   "Charcoal": 0.64,
+   "White": 0.94,
+   "Gold": 0.93,
+   "Purple": 1.0,
+   "Light Blue": 0.94,
+   "Red": 0.07,
+   "Royal": 0.64,
+   "Heather Sport Royal": 0.07,
+   "Light Pink": 0.94
+  }
+ },
+ "Not AI. Just Tired. Crewneck": {
+  "printify": "6afc0168fd4d7f230d0ab50e",
+  "shopify": "8902052937889",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Forest Green",
+   "Gold",
+   "Maroon",
+   "Navy",
+   "Sport Grey",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 1.0,
+   "Sand": 0.0,
+   "Graphite Heather": 1.0,
+   "Charcoal": 1.0,
+   "White": 0.0,
+   "Gold": 1.0,
+   "Purple": 1.0,
+   "Light Blue": 0.0,
+   "Red": 1.0,
+   "Royal": 1.0,
+   "Heather Sport Royal": 1.0,
+   "Light Pink": 0.0
+  }
+ },
+ "Sisterhood Crewneck": {
+  "printify": "6afc0167f24a7e5cbe0a06cf",
+  "shopify": "8902052544673",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Dark Chocolate",
+   "Forest Green",
+   "Gold",
+   "Maroon",
+   "Military Green",
+   "Sand",
+   "Sport Grey"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.84,
+   "Sand": 0.85,
+   "Graphite Heather": 0.73,
+   "Charcoal": 0.65,
+   "White": 0.97,
+   "Gold": 0.83,
+   "Purple": 0.51,
+   "Light Blue": 0.94,
+   "Red": 0.71,
+   "Royal": 0.65,
+   "Heather Sport Royal": 0.69,
+   "Light Pink": 0.96
+  }
+ },
+ "Born Ready Crewneck": {
+  "printify": "6afc013d17c004fdc80482d9",
+  "shopify": "8902052085921",
+  "blueprint": 49,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Purple",
+   "Royal"
+  ],
+  "scores": {
+   "Sport Grey": 0.64,
+   "Sand": 0.68,
+   "Graphite Heather": 0.54,
+   "Charcoal": 0.68,
+   "White": 0.88,
+   "Gold": 0.61,
+   "Purple": 0.92,
+   "Light Blue": 0.77,
+   "Red": 0.59,
+   "Royal": 0.71,
+   "Heather Sport Royal": 0.61,
+   "Light Pink": 0.79
+  },
+  "manual": true
+ },
+ "WHADID I DO?! Hoodie": {
+  "printify": "6afbb8ef452e689d0f101143",
+  "shopify": "8901642748065",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "White",
+   "Light Pink"
+  ],
+  "scores": {
+   "Sport Grey": 0.68,
+   "Sand": 0.72,
+   "White": 0.86,
+   "Gold": 0.66,
+   "Purple": 0.74,
+   "Light Blue": 0.79,
+   "Red": 0.73,
+   "Royal": 0.78,
+   "Carolina Blue": 0.59,
+   "Light Pink": 0.8
+  }
+ },
+ "WHADID I DO?! Women's Tee": {
+  "printify": "6afbb8e14acba633f109cd0b",
+  "shopify": "8901642518689",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Navy",
+   "Purple"
+  ],
+  "add": [
+   "White"
+  ],
+  "scores": {
+   "White": 0.86,
+   "Light Pink": 0.8,
+   "Purple": 0.74,
+   "Red": 0.73,
+   "Azalea": 0.61,
+   "Heliconia": 0.61,
+   "Irish Green": 0.63
+  }
+ },
+ "WHADID I DO?! Tee": {
+  "printify": "6afbb8d44acba633f109cd01",
+  "shopify": "8901642223777",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Dark Grey Heather",
+   "Forest",
+   "Maroon",
+   "Military Green",
+   "Navy"
+  ],
+  "add": [
+   "Natural"
+  ],
+  "scores": {
+   "Athletic Heather": 0.67,
+   "Natural": 0.85,
+   "Soft Cream": 0.77,
+   "Deep Heather": 0.6,
+   "Heather Mauve": 0.58,
+   "Heather Columbia Blue": 0.59,
+   "Autumn": 0.74,
+   "Heather Team Purple": 0.74,
+   "Gold": 0.65,
+   "True Royal": 0.77,
+   "Red": 0.76
+  }
+ },
+ "Elsewhere Dreamscape Hoodie": {
+  "printify": "6afbb8262bc794f18d0df43b",
+  "shopify": "8901641306273",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Sand",
+   "Light Blue"
+  ],
+  "scores": {
+   "Sport Grey": 0.78,
+   "Sand": 0.81,
+   "White": 0.92,
+   "Gold": 0.76,
+   "Purple": 0.64,
+   "Light Blue": 0.85,
+   "Red": 0.67,
+   "Royal": 0.69,
+   "Carolina Blue": 0.68,
+   "Light Pink": 0.86
+  }
+ },
+ "Elsewhere Dreamscape Women's Tee": {
+  "printify": "6afbb819452e689d0f1010a2",
+  "shopify": "8901641175201",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Navy",
+   "Purple"
+  ],
+  "add": [
+   "White"
+  ],
+  "scores": {
+   "White": 0.92,
+   "Light Pink": 0.86,
+   "Purple": 0.64,
+   "Red": 0.67,
+   "Azalea": 0.71,
+   "Heliconia": 0.66,
+   "Irish Green": 0.66
+  }
+ },
+ "Elsewhere Dreamscape Tee": {
+  "printify": "6afbb80d81a10a4455111c69",
+  "shopify": "8901641142433",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Dark Grey Heather",
+   "Forest",
+   "Maroon",
+   "Military Green",
+   "Navy"
+  ],
+  "add": [
+   "Natural"
+  ],
+  "scores": {
+   "Athletic Heather": 0.77,
+   "Natural": 0.9,
+   "Soft Cream": 0.84,
+   "Deep Heather": 0.66,
+   "Heather Mauve": 0.67,
+   "Heather Columbia Blue": 0.67,
+   "Autumn": 0.67,
+   "Heather Team Purple": 0.67,
+   "Gold": 0.75,
+   "True Royal": 0.69,
+   "Red": 0.69
+  }
+ },
+ "Elsewhere Graffiti Hoodie": {
+  "printify": "6afbb7ee249981019f04122e",
+  "shopify": "8901641044129",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "White",
+   "Light Blue"
+  ],
+  "scores": {
+   "Sport Grey": 0.76,
+   "Sand": 0.79,
+   "White": 0.92,
+   "Gold": 0.75,
+   "Purple": 0.56,
+   "Light Blue": 0.83,
+   "Red": 0.73,
+   "Royal": 0.74,
+   "Carolina Blue": 0.73,
+   "Light Pink": 0.84
+  }
+ },
+ "Elsewhere Graffiti Women's Tee": {
+  "printify": "6afbb7e22bc794f18d0df3ec",
+  "shopify": "8901640978593",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Navy",
+   "Purple"
+  ],
+  "add": [
+   "White"
+  ],
+  "scores": {
+   "White": 0.92,
+   "Light Pink": 0.84,
+   "Purple": 0.56,
+   "Red": 0.73,
+   "Azalea": 0.73,
+   "Heliconia": 0.74,
+   "Irish Green": 0.74
+  }
+ },
+ "Elsewhere Graffiti Tee": {
+  "printify": "6afbb7d5a23dd0a5a00b316a",
+  "shopify": "8901640945825",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Dark Grey Heather",
+   "Forest",
+   "Maroon",
+   "Military Green",
+   "Navy"
+  ],
+  "add": [
+   "Natural"
+  ],
+  "scores": {
+   "Athletic Heather": 0.76,
+   "Natural": 0.91,
+   "Soft Cream": 0.81,
+   "Deep Heather": 0.75,
+   "Heather Mauve": 0.73,
+   "Heather Columbia Blue": 0.74,
+   "Autumn": 0.73,
+   "Heather Team Purple": 0.73,
+   "Gold": 0.75,
+   "True Royal": 0.74,
+   "Red": 0.73
+  }
+ },
+ "Elsewhere Chrome Script Hoodie": {
+  "printify": "6afb6fbc81a10a445510dabb",
+  "shopify": "8901423497377",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "White",
+   "Light Pink"
+  ],
+  "scores": {
+   "Sport Grey": 0.73,
+   "Sand": 0.74,
+   "White": 0.87,
+   "Gold": 0.72,
+   "Purple": 0.7,
+   "Light Blue": 0.8,
+   "Red": 0.69,
+   "Royal": 0.74,
+   "Carolina Blue": 0.66,
+   "Light Pink": 0.81
+  }
+ },
+ "Elsewhere Chrome Script Women's Tee": {
+  "printify": "6afb6fb081a10a445510daae",
+  "shopify": "8901423399073",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Navy",
+   "Purple"
+  ],
+  "add": [
+   "White"
+  ],
+  "scores": {
+   "White": 0.87,
+   "Light Pink": 0.81,
+   "Purple": 0.7,
+   "Red": 0.69,
+   "Azalea": 0.68,
+   "Heliconia": 0.66,
+   "Irish Green": 0.66
+  }
+ },
+ "Elsewhere Chrome Script Tee": {
+  "printify": "6afb6fa3141ec607880877f3",
+  "shopify": "8901423300769",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Dark Grey Heather",
+   "Forest",
+   "Maroon",
+   "Military Green",
+   "Navy"
+  ],
+  "add": [
+   "Natural"
+  ],
+  "scores": {
+   "Athletic Heather": 0.72,
+   "Natural": 0.86,
+   "Soft Cream": 0.78,
+   "Deep Heather": 0.65,
+   "Heather Mauve": 0.66,
+   "Heather Columbia Blue": 0.65,
+   "Autumn": 0.7,
+   "Heather Team Purple": 0.7,
+   "Gold": 0.72,
+   "True Royal": 0.74,
+   "Red": 0.71
+  }
+ },
+ "Elsewhere Ransom Note Hoodie": {
+  "printify": "6afb6f94a1efd1254e002755",
+  "shopify": "8901423202465",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Royal"
+  ],
+  "scores": {
+   "Sport Grey": 0.43,
+   "Sand": 0.45,
+   "White": 0.58,
+   "Gold": 0.42,
+   "Purple": 0.72,
+   "Light Blue": 0.49,
+   "Red": 0.9,
+   "Royal": 0.91,
+   "Carolina Blue": 0.78,
+   "Light Pink": 0.5
+  },
+  "manual": true
+ },
+ "Elsewhere Ransom Note Women's Tee": {
+  "printify": "6afb6f8798d0423f460eff7e",
+  "shopify": "8901423104161",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Navy",
+   "Purple"
+  ],
+  "add": [
+   "Azalea"
+  ],
+  "scores": {
+   "White": 0.58,
+   "Light Pink": 0.5,
+   "Purple": 0.72,
+   "Red": 0.9,
+   "Azalea": 0.7,
+   "Heliconia": 0.87,
+   "Irish Green": 0.87
+  },
+  "manual": true
+ },
+ "Elsewhere Ransom Note Tee": {
+  "printify": "6afb6f79141ec607880877a3",
+  "shopify": "8901423005857",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Dark Grey Heather",
+   "Forest",
+   "Maroon",
+   "Military Green",
+   "Navy"
+  ],
+  "add": [
+   "Deep Heather",
+   "Heather Mauve"
+  ],
+  "scores": {
+   "Athletic Heather": 0.42,
+   "Natural": 0.55,
+   "Soft Cream": 0.47,
+   "Deep Heather": 0.85,
+   "Heather Mauve": 0.81,
+   "Heather Columbia Blue": 0.83,
+   "Autumn": 0.9,
+   "Heather Team Purple": 0.9,
+   "Gold": 0.42,
+   "True Royal": 0.91,
+   "Red": 0.9
+  }
+ },
+ "Elsewhere Chrome Globe Hoodie": {
+  "printify": "6afb6f69a1efd1254e00270c",
+  "shopify": "8901422743713",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "White"
+  ],
+  "scores": {
+   "Sport Grey": 0.71,
+   "Sand": 0.71,
+   "White": 0.85,
+   "Gold": 0.7,
+   "Purple": 0.69,
+   "Light Blue": 0.77,
+   "Red": 0.73,
+   "Royal": 0.77,
+   "Carolina Blue": 0.67,
+   "Light Pink": 0.78
+  }
+ },
+ "Elsewhere Chrome Globe Women's Tee": {
+  "printify": "6afb6f5d98d0423f460eff19",
+  "shopify": "8901422416033",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Navy",
+   "Purple"
+  ],
+  "add": [
+   "White"
+  ],
+  "scores": {
+   "White": 0.85,
+   "Light Pink": 0.78,
+   "Purple": 0.69,
+   "Red": 0.73,
+   "Azalea": 0.68,
+   "Heliconia": 0.69,
+   "Irish Green": 0.69
+  }
+ },
+ "Elsewhere Chrome Globe Tee": {
+  "printify": "6afb6f50141ec6078808774f",
+  "shopify": "8901422284961",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Dark Grey Heather",
+   "Forest",
+   "Maroon",
+   "Military Green",
+   "Navy"
+  ],
+  "add": [
+   "Natural"
+  ],
+  "scores": {
+   "Athletic Heather": 0.71,
+   "Natural": 0.83,
+   "Soft Cream": 0.74,
+   "Deep Heather": 0.68,
+   "Heather Mauve": 0.67,
+   "Heather Columbia Blue": 0.68,
+   "Autumn": 0.73,
+   "Heather Team Purple": 0.73,
+   "Gold": 0.7,
+   "True Royal": 0.76,
+   "Red": 0.74
+  }
+ },
+ "Elsewhere Groovy Retro Hoodie": {
+  "printify": "6afb6f40754cb1108409e874",
+  "shopify": "8901422219425",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Red"
+  ],
+  "scores": {
+   "Sport Grey": 0.48,
+   "Sand": 0.53,
+   "White": 0.78,
+   "Gold": 0.47,
+   "Purple": 0.76,
+   "Light Blue": 0.62,
+   "Red": 0.87,
+   "Royal": 0.89,
+   "Carolina Blue": 0.55,
+   "Light Pink": 0.64
+  }
+ },
+ "Elsewhere Groovy Retro Women's Tee": {
+  "printify": "6afb6f33754cb1108409e866",
+  "shopify": "8901422186657",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Navy",
+   "Purple"
+  ],
+  "add": [
+   "Red"
+  ],
+  "scores": {
+   "White": 0.78,
+   "Light Pink": 0.64,
+   "Purple": 0.76,
+   "Red": 0.87,
+   "Azalea": 0.52,
+   "Heliconia": 0.74,
+   "Irish Green": 0.76
+  }
+ },
+ "Elsewhere Groovy Retro Tee": {
+  "printify": "6afb6f2698d0423f460efeb3",
+  "shopify": "8901422088353",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Dark Grey Heather",
+   "Forest",
+   "Maroon",
+   "Military Green",
+   "Navy"
+  ],
+  "add": [
+   "Autumn"
+  ],
+  "scores": {
+   "Athletic Heather": 0.47,
+   "Natural": 0.73,
+   "Soft Cream": 0.58,
+   "Deep Heather": 0.71,
+   "Heather Mauve": 0.61,
+   "Heather Columbia Blue": 0.65,
+   "Autumn": 0.88,
+   "Heather Team Purple": 0.88,
+   "Gold": 0.46,
+   "True Royal": 0.89,
+   "Red": 0.88
+  }
+ },
+ "Elsewhere Psychedelic Drip Hoodie": {
+  "printify": "6afb6f1698d0423f460efe9a",
+  "shopify": "8901422022817",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Red"
+  ],
+  "scores": {
+   "Sport Grey": 0.58,
+   "Sand": 0.61,
+   "White": 0.78,
+   "Gold": 0.57,
+   "Purple": 0.69,
+   "Light Blue": 0.65,
+   "Red": 0.82,
+   "Royal": 0.87,
+   "Carolina Blue": 0.65,
+   "Light Pink": 0.67
+  }
+ },
+ "Elsewhere Psychedelic Drip Women's Tee": {
+  "printify": "6afb6f0a2bd121e7b20abece",
+  "shopify": "8901421990049",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Navy",
+   "Purple"
+  ],
+  "add": [
+   "Red"
+  ],
+  "scores": {
+   "White": 0.78,
+   "Light Pink": 0.67,
+   "Purple": 0.69,
+   "Red": 0.82,
+   "Azalea": 0.59,
+   "Heliconia": 0.75,
+   "Irish Green": 0.76
+  }
+ },
+ "Elsewhere Psychedelic Drip Tee": {
+  "printify": "6afb6ef7b49d64decd0505b3",
+  "shopify": "8901421924513",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Dark Grey Heather",
+   "Forest",
+   "Maroon",
+   "Military Green",
+   "Navy"
+  ],
+  "add": [
+   "Autumn"
+  ],
+  "scores": {
+   "Athletic Heather": 0.57,
+   "Natural": 0.73,
+   "Soft Cream": 0.64,
+   "Deep Heather": 0.74,
+   "Heather Mauve": 0.7,
+   "Heather Columbia Blue": 0.72,
+   "Autumn": 0.83,
+   "Heather Team Purple": 0.83,
+   "Gold": 0.57,
+   "True Royal": 0.86,
+   "Red": 0.85
+  }
+ },
+ "No Signal Sleeve Edition Hoodie": {
+  "printify": "6af74976dbddd3ec260c915e",
+  "shopify": "8888690114721",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black"
+  ],
+  "add": [
+   "Navy",
+   "Maroon",
+   "Purple"
+  ],
+  "scores": {
+   "Sport Grey": 0.86,
+   "Sand": 0.88,
+   "White": 0.93,
+   "Gold": 0.85,
+   "Purple": 0.59,
+   "Light Blue": 0.9,
+   "Red": 0.59,
+   "Royal": 0.49,
+   "Carolina Blue": 0.82,
+   "Light Pink": 0.9
+  },
+  "manual": true
+ },
+ "No Signal Long Sleeve Tee": {
+  "printify": "6af7497556006e5c8a0e5a43",
+  "shopify": "8888689983649",
+  "blueprint": 80,
+  "provider": 39,
+  "have": [
+   "Black"
+  ],
+  "add": [
+   "Navy",
+   "Maroon",
+   "Purple"
+  ],
+  "scores": {
+   "Sport Grey": 0.86,
+   "Gold": 0.85,
+   "White": 0.93,
+   "Purple": 0.59,
+   "Red": 0.59,
+   "Royal": 0.49,
+   "Light Blue": 0.9
+  },
+  "manual": true
+ },
+ "Sisterhood Women's Tee": {
+  "printify": "6af3797784c3e9e3630d8e6f",
+  "shopify": "8875963187361",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Light Pink",
+   "Navy",
+   "Red",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "White": 0.92,
+   "Light Pink": 0.88,
+   "Purple": 0.6,
+   "Red": 0.71,
+   "Azalea": 0.73,
+   "Heliconia": 0.79,
+   "Irish Green": 0.77
+  }
+ },
+ "Pink Crown Women's Tee": {
+  "printify": "6af3796b84c3e9e3630d8e61",
+  "shopify": "8875963121825",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Light Pink",
+   "Navy",
+   "Red",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "White": 0.97,
+   "Light Pink": 0.95,
+   "Purple": 0.46,
+   "Red": 0.73,
+   "Azalea": 0.82,
+   "Heliconia": 0.77,
+   "Irish Green": 0.77
+  }
+ },
+ "Crown & Curls Women's Tee": {
+  "printify": "6af3795e45f16ba716033c1b",
+  "shopify": "8875962826913",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Light Pink",
+   "Navy",
+   "Red",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "White": 0.97,
+   "Light Pink": 0.96,
+   "Purple": 0.41,
+   "Red": 0.82,
+   "Azalea": 0.78,
+   "Heliconia": 0.74,
+   "Irish Green": 0.74
+  }
+ },
+ "Color Me Bold Women's Tee": {
+  "printify": "6af379528b684abc3c0cb770",
+  "shopify": "8875962302625",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Light Pink",
+   "Navy",
+   "Red",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "White": 0.97,
+   "Light Pink": 0.96,
+   "Purple": 0.44,
+   "Red": 0.73,
+   "Azalea": 0.83,
+   "Heliconia": 0.71,
+   "Irish Green": 0.71
+  }
+ },
+ "Sunflower Soul Women's Tee": {
+  "printify": "6af37946cb8adff71a029527",
+  "shopify": "8875961221281",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Light Pink",
+   "Navy",
+   "Red",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "White": 1.0,
+   "Light Pink": 0.96,
+   "Purple": 0.49,
+   "Red": 0.69,
+   "Azalea": 0.81,
+   "Heliconia": 0.77,
+   "Irish Green": 0.76
+  }
+ },
+ "Butterfly Effect Women's Tee": {
+  "printify": "6af3792d4fb4fb83e706825c",
+  "shopify": "8875960467617",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Light Pink",
+   "Navy",
+   "Red",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "White": 0.98,
+   "Light Pink": 0.97,
+   "Purple": 0.33,
+   "Red": 0.77,
+   "Azalea": 0.89,
+   "Heliconia": 0.81,
+   "Irish Green": 0.8
+  }
+ },
+ "Somewhere in a Calmer Place Women's Tee": {
+  "printify": "6af379084fb4fb83e706822b",
+  "shopify": "8875958272161",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Light Pink",
+   "White"
+  ],
+  "add": [
+   "Azalea",
+   "Irish Green"
+  ],
+  "scores": {
+   "White": 0.89,
+   "Light Pink": 0.82,
+   "Purple": 0.57,
+   "Red": 0.76,
+   "Azalea": 0.7,
+   "Heliconia": 0.73,
+   "Irish Green": 0.73
+  },
+  "manual": true
+ },
+ "Balance Women's Tee": {
+  "printify": "6af378fc6bc401c89f088e05",
+  "shopify": "8875957354657",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Light Pink",
+   "White"
+  ],
+  "add": [
+   "Azalea",
+   "Heliconia"
+  ],
+  "scores": {
+   "White": 0.99,
+   "Light Pink": 0.96,
+   "Purple": 0.38,
+   "Red": 0.72,
+   "Azalea": 0.88,
+   "Heliconia": 0.8,
+   "Irish Green": 0.79
+  }
+ },
+ "Same Chaos Different Day Women's Tee": {
+  "printify": "6af378e443c414fdd4098bfc",
+  "shopify": "8875956961441",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Light Pink",
+   "White"
+  ],
+  "add": [
+   "Azalea",
+   "Irish Green"
+  ],
+  "scores": {
+   "White": 0.98,
+   "Light Pink": 0.92,
+   "Purple": 0.52,
+   "Red": 0.71,
+   "Azalea": 0.76,
+   "Heliconia": 0.74,
+   "Irish Green": 0.74
+  },
+  "manual": true
+ },
+ "Odysseus Layover Women's Tee": {
+  "printify": "6af378c75a4c0070fd07741c",
+  "shopify": "8875954700449",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Navy",
+   "Red",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "White": 0.0,
+   "Light Pink": 0.0,
+   "Purple": 1.0,
+   "Red": 1.0,
+   "Azalea": 1.0,
+   "Heliconia": 1.0,
+   "Irish Green": 1.0
+  }
+ },
+ "Not AI. Just Tired. Women's Tee": {
+  "printify": "6af378bbf6491c921e01958a",
+  "shopify": "8875954503841",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Navy",
+   "Red",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "White": 0.0,
+   "Light Pink": 0.0,
+   "Purple": 1.0,
+   "Red": 1.0,
+   "Azalea": 1.0,
+   "Heliconia": 1.0,
+   "Irish Green": 1.0
+  }
+ },
+ "Ships in 6\u20137 Business Days Women's Tee": {
+  "printify": "6af378af8b684abc3c0cb6dd",
+  "shopify": "8875954438305",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Light Pink",
+   "White"
+  ],
+  "add": [
+   "Red",
+   "Azalea"
+  ],
+  "scores": {
+   "White": 1.0,
+   "Light Pink": 1.0,
+   "Purple": 0.0,
+   "Red": 1.0,
+   "Azalea": 1.0,
+   "Heliconia": 1.0,
+   "Irish Green": 1.0
+  }
+ },
+ "Final Boss Energy Women's Tee": {
+  "printify": "6af3788c8b684abc3c0cb6ba",
+  "shopify": "8875951554721",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Navy"
+  ],
+  "add": [
+   "White",
+   "Azalea"
+  ],
+  "scores": {
+   "White": 0.9,
+   "Light Pink": 0.86,
+   "Purple": 0.58,
+   "Red": 0.66,
+   "Azalea": 0.82,
+   "Heliconia": 0.72,
+   "Irish Green": 0.71
+  }
+ },
+ "Out of Orbit Women's Tee": {
+  "printify": "6af3787f8b684abc3c0cb6b2",
+  "shopify": "8875950407841",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Navy"
+  ],
+  "add": [
+   "White",
+   "Light Pink"
+  ],
+  "scores": {
+   "White": 0.94,
+   "Light Pink": 0.89,
+   "Purple": 0.64,
+   "Red": 0.7,
+   "Azalea": 0.68,
+   "Heliconia": 0.65,
+   "Irish Green": 0.66
+  }
+ },
+ "I Paused My Game to Be Here Women's Tee": {
+  "printify": "6af37859da607b43c50f79ba",
+  "shopify": "8875949293729",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Navy"
+  ],
+  "add": [
+   "White",
+   "Purple"
+  ],
+  "scores": {
+   "White": 0.82,
+   "Light Pink": 0.77,
+   "Purple": 0.7,
+   "Red": 0.66,
+   "Azalea": 0.8,
+   "Heliconia": 0.61,
+   "Irish Green": 0.61
+  },
+  "manual": true
+ },
+ "Main Character Syndrome Women's Tee": {
+  "printify": "6af37835da607b43c50f798d",
+  "shopify": "8875947360417",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Navy"
+  ],
+  "add": [
+   "White",
+   "Azalea"
+  ],
+  "scores": {
+   "White": 0.92,
+   "Light Pink": 0.87,
+   "Purple": 0.53,
+   "Red": 0.71,
+   "Azalea": 0.8,
+   "Heliconia": 0.76,
+   "Irish Green": 0.76
+  }
+ },
+ "No Signal Women's Tee": {
+  "printify": "6af3781dcb8adff71a0293e7",
+  "shopify": "8875946705057",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Navy"
+  ],
+  "add": [
+   "Purple",
+   "Red"
+  ],
+  "scores": {
+   "White": 0.93,
+   "Light Pink": 0.9,
+   "Purple": 0.59,
+   "Red": 0.59,
+   "Azalea": 0.84,
+   "Heliconia": 0.73,
+   "Irish Green": 0.72
+  },
+  "manual": true
+ },
+ "Queen Forever Women's Tee": {
+  "printify": "6af37772da607b43c50f7859",
+  "shopify": "8875939397793",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Navy"
+  ],
+  "add": [
+   "Purple",
+   "Red"
+  ],
+  "scores": {
+   "White": 0.93,
+   "Light Pink": 0.88,
+   "Purple": 0.65,
+   "Red": 0.63,
+   "Azalea": 0.74,
+   "Heliconia": 0.69,
+   "Irish Green": 0.69
+  },
+  "manual": true
+ },
+ "Going With the Flow Women's Tee": {
+  "printify": "6af3771b45f16ba7160339ee",
+  "shopify": "8875933597857",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Navy",
+   "Purple"
+  ],
+  "add": [
+   "Red"
+  ],
+  "scores": {
+   "White": 0.94,
+   "Light Pink": 0.91,
+   "Purple": 0.64,
+   "Red": 0.59,
+   "Azalea": 0.79,
+   "Heliconia": 0.67,
+   "Irish Green": 0.66
+  },
+  "manual": true
+ },
+ "Fallen, Not Finished Women's Tee": {
+  "printify": "6af37702cb8adff71a0292aa",
+  "shopify": "8875932582049",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Red"
+  ],
+  "add": [
+   "Navy",
+   "Purple"
+  ],
+  "scores": {
+   "White": 0.92,
+   "Light Pink": 0.89,
+   "Purple": 0.58,
+   "Red": 0.63,
+   "Azalea": 0.82,
+   "Heliconia": 0.72,
+   "Irish Green": 0.7
+  },
+  "manual": true
+ },
+ "Born Ready Women's Tee": {
+  "printify": "6af37481f6491c921e019173",
+  "shopify": "8875898372257",
+  "blueprint": 466,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Navy"
+  ],
+  "add": [
+   "Purple",
+   "Red"
+  ],
+  "scores": {
+   "White": 0.88,
+   "Light Pink": 0.79,
+   "Purple": 0.92,
+   "Red": 0.59,
+   "Azalea": 0.54,
+   "Heliconia": 0.52,
+   "Irish Green": 0.52
+  },
+  "manual": true
+ },
+ "Moonwood Druid Hoodie": {
+  "printify": "6af241b1c2a9a89936044894",
+  "shopify": "8873439363233",
+  "blueprint": 77,
+  "provider": 27,
+  "have": [
+   "Black",
+   "Charcoal",
+   "Dark Chocolate",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Light Blue"
+  ],
+  "scores": {
+   "Sport Grey": 0.83,
+   "Sand": 0.85,
+   "Charcoal": 0.62,
+   "White": 0.93,
+   "Light Blue": 0.89,
+   "Red": 0.66,
+   "Royal": 0.6,
+   "Carolina Blue": 0.77,
+   "Light Pink": 0.89
+  }
+ },
+ "Moonwood Druid Tee": {
+  "printify": "6af24199c2a9a89936044883",
+  "shopify": "8873439330465",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Dark Grey Heather",
+   "Forest",
+   "Maroon",
+   "Military Green",
+   "Navy"
+  ],
+  "add": [
+   "Athletic Heather",
+   "Gold"
+  ],
+  "scores": {
+   "Athletic Heather": 0.83,
+   "Natural": 0.92,
+   "Soft Cream": 0.87,
+   "Deep Heather": 0.72,
+   "Heather Mauve": 0.75,
+   "Heather Columbia Blue": 0.74,
+   "Autumn": 0.65,
+   "Heather Team Purple": 0.65,
+   "Gold": 0.82,
+   "True Royal": 0.61,
+   "Red": 0.64
+  }
+ },
+ "Lantern Witch Hoodie": {
+  "printify": "6af24146a851a92a74016bf9",
+  "shopify": "8873439199393",
+  "blueprint": 77,
+  "provider": 27,
+  "have": [
+   "Black",
+   "Charcoal",
+   "Dark Chocolate",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Light Blue"
+  ],
+  "scores": {
+   "Sport Grey": 0.81,
+   "Sand": 0.83,
+   "Charcoal": 0.69,
+   "White": 0.93,
+   "Light Blue": 0.87,
+   "Red": 0.7,
+   "Royal": 0.68,
+   "Carolina Blue": 0.74,
+   "Light Pink": 0.88
+  }
+ },
+ "Lantern Witch Tee": {
+  "printify": "6af2412f8f2824f6ff070d87",
+  "shopify": "8873439166625",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Dark Grey Heather",
+   "Forest",
+   "Maroon",
+   "Military Green",
+   "Navy"
+  ],
+  "add": [
+   "Athletic Heather"
+  ],
+  "scores": {
+   "Athletic Heather": 0.8,
+   "Natural": 0.92,
+   "Soft Cream": 0.85,
+   "Deep Heather": 0.72,
+   "Heather Mauve": 0.73,
+   "Heather Columbia Blue": 0.72,
+   "Autumn": 0.7,
+   "Heather Team Purple": 0.7,
+   "Gold": 0.79,
+   "True Royal": 0.68,
+   "Red": 0.7
+  }
+ },
+ "Dragonfall Hoodie": {
+  "printify": "6af240e0a851a92a74016b74",
+  "shopify": "8873439035553",
+  "blueprint": 77,
+  "provider": 27,
+  "have": [
+   "Black",
+   "Charcoal",
+   "Dark Chocolate",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Light Blue"
+  ],
+  "scores": {
+   "Sport Grey": 0.89,
+   "Sand": 0.9,
+   "Charcoal": 0.64,
+   "White": 0.96,
+   "Light Blue": 0.93,
+   "Red": 0.69,
+   "Royal": 0.63,
+   "Carolina Blue": 0.81,
+   "Light Pink": 0.93
+  }
+ },
+ "Dragonfall Tee": {
+  "printify": "6af240c7a851a92a74016b54",
+  "shopify": "8873439002785",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Dark Grey Heather",
+   "Forest",
+   "Maroon",
+   "Military Green",
+   "Navy"
+  ],
+  "add": [
+   "Athletic Heather",
+   "Gold"
+  ],
+  "scores": {
+   "Athletic Heather": 0.88,
+   "Natural": 0.95,
+   "Soft Cream": 0.92,
+   "Deep Heather": 0.76,
+   "Heather Mauve": 0.8,
+   "Heather Columbia Blue": 0.78,
+   "Autumn": 0.68,
+   "Heather Team Purple": 0.68,
+   "Gold": 0.87,
+   "True Royal": 0.64,
+   "Red": 0.67
+  }
+ },
+ "I'm Only Here for the Post-Credits Scene Hoodie": {
+  "printify": "6af240438f2824f6ff070c6e",
+  "shopify": "8873438806177",
+  "blueprint": 77,
+  "provider": 27,
+  "have": [
+   "Black",
+   "Charcoal",
+   "Dark Chocolate",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Light Blue"
+  ],
+  "scores": {
+   "Sport Grey": 0.78,
+   "Sand": 0.8,
+   "Charcoal": 0.73,
+   "White": 0.91,
+   "Light Blue": 0.84,
+   "Red": 0.74,
+   "Royal": 0.73,
+   "Carolina Blue": 0.75,
+   "Light Pink": 0.85
+  }
+ },
+ "I'm Only Here for the Post-Credits Scene Tee": {
+  "printify": "6af2402ac2a9a899360446d9",
+  "shopify": "8873438675105",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Dark Grey Heather",
+   "Forest",
+   "Maroon",
+   "Military Green",
+   "Navy"
+  ],
+  "add": [
+   "Natural"
+  ],
+  "scores": {
+   "Athletic Heather": 0.77,
+   "Natural": 0.89,
+   "Soft Cream": 0.83,
+   "Deep Heather": 0.75,
+   "Heather Mauve": 0.76,
+   "Heather Columbia Blue": 0.76,
+   "Autumn": 0.74,
+   "Heather Team Purple": 0.74,
+   "Gold": 0.77,
+   "True Royal": 0.73,
+   "Red": 0.74
+  }
+ },
+ "Final Boss Energy Hoodie": {
+  "printify": "6af0da9cfb9024aaf308bbee",
+  "shopify": "8871086981281",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Sport Grey",
+   "Gold"
+  ],
+  "scores": {
+   "Sport Grey": 0.83,
+   "Sand": 0.82,
+   "White": 0.9,
+   "Gold": 0.83,
+   "Purple": 0.58,
+   "Light Blue": 0.85,
+   "Red": 0.66,
+   "Royal": 0.69,
+   "Carolina Blue": 0.8,
+   "Light Pink": 0.86
+  }
+ },
+ "Final Boss Energy Tee": {
+  "printify": "6af0da859219dad501083ab1",
+  "shopify": "8871083966625",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Dark Grey Heather"
+  ],
+  "add": [
+   "Athletic Heather",
+   "Gold"
+  ],
+  "scores": {
+   "Athletic Heather": 0.83,
+   "Natural": 0.89,
+   "Soft Cream": 0.84,
+   "Deep Heather": 0.74,
+   "Heather Mauve": 0.78,
+   "Heather Columbia Blue": 0.76,
+   "Autumn": 0.66,
+   "Heather Team Purple": 0.66,
+   "Gold": 0.83,
+   "True Royal": 0.68,
+   "Red": 0.66
+  }
+ },
+ "Out of Orbit Hoodie": {
+  "printify": "6af0da50fb9024aaf308bbac",
+  "shopify": "8871077478561",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Sand",
+   "Light Blue"
+  ],
+  "scores": {
+   "Sport Grey": 0.78,
+   "Sand": 0.81,
+   "White": 0.94,
+   "Gold": 0.76,
+   "Purple": 0.64,
+   "Light Blue": 0.88,
+   "Red": 0.7,
+   "Royal": 0.71,
+   "Carolina Blue": 0.66,
+   "Light Pink": 0.89
+  }
+ },
+ "Out of Orbit Tee": {
+  "printify": "6af0da397a7a4ea34b0b1b4b",
+  "shopify": "8871074431137",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Dark Grey Heather"
+  ],
+  "add": [
+   "Natural",
+   "Soft Cream"
+  ],
+  "scores": {
+   "Athletic Heather": 0.77,
+   "Natural": 0.93,
+   "Soft Cream": 0.85,
+   "Deep Heather": 0.64,
+   "Heather Mauve": 0.64,
+   "Heather Columbia Blue": 0.64,
+   "Autumn": 0.71,
+   "Heather Team Purple": 0.71,
+   "Gold": 0.76,
+   "True Royal": 0.71,
+   "Red": 0.71
+  }
+ },
+ "I Paused My Game to Be Here Hoodie": {
+  "printify": "6af0d69f7a7a4ea34b0b1769",
+  "shopify": "8871016661153",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "White",
+   "Royal"
+  ],
+  "scores": {
+   "Sport Grey": 0.71,
+   "Sand": 0.72,
+   "White": 0.82,
+   "Gold": 0.69,
+   "Purple": 0.7,
+   "Light Blue": 0.76,
+   "Red": 0.66,
+   "Royal": 0.89,
+   "Carolina Blue": 0.73,
+   "Light Pink": 0.77
+  }
+ },
+ "I Paused My Game to Be Here Tee": {
+  "printify": "6af0d6877a7a4ea34b0b1738",
+  "shopify": "8871016202401",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Dark Grey Heather"
+  ],
+  "add": [
+   "Natural",
+   "True Royal"
+  ],
+  "scores": {
+   "Athletic Heather": 0.7,
+   "Natural": 0.81,
+   "Soft Cream": 0.74,
+   "Deep Heather": 0.6,
+   "Heather Mauve": 0.63,
+   "Heather Columbia Blue": 0.6,
+   "Autumn": 0.66,
+   "Heather Team Purple": 0.66,
+   "Gold": 0.69,
+   "True Royal": 0.88,
+   "Red": 0.69
+  }
+ },
+ "Main Character Syndrome Hoodie": {
+  "printify": "6aefc42d6777c2534d0ed028",
+  "shopify": "8869455921313",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Sport Grey",
+   "Gold"
+  ],
+  "scores": {
+   "Sport Grey": 0.82,
+   "Sand": 0.83,
+   "White": 0.92,
+   "Gold": 0.81,
+   "Purple": 0.53,
+   "Light Blue": 0.86,
+   "Red": 0.71,
+   "Royal": 0.66,
+   "Carolina Blue": 0.81,
+   "Light Pink": 0.87
+  }
+ },
+ "Main Character Syndrome Tee": {
+  "printify": "6aefc415ad99e6137e0f6cc9",
+  "shopify": "8869455528097",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Dark Grey Heather"
+  ],
+  "add": [
+   "Athletic Heather",
+   "Heather Mauve"
+  ],
+  "scores": {
+   "Athletic Heather": 0.82,
+   "Natural": 0.91,
+   "Soft Cream": 0.85,
+   "Deep Heather": 0.79,
+   "Heather Mauve": 0.8,
+   "Heather Columbia Blue": 0.8,
+   "Autumn": 0.7,
+   "Heather Team Purple": 0.7,
+   "Gold": 0.81,
+   "True Royal": 0.66,
+   "Red": 0.69
+  }
+ },
+ "No Signal Hoodie": {
+  "printify": "6aefc1df40b32fadb80b3da4",
+  "shopify": "8869450842273",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Purple",
+   "Royal"
+  ],
+  "scores": {
+   "Sport Grey": 0.86,
+   "Sand": 0.88,
+   "White": 0.93,
+   "Gold": 0.85,
+   "Purple": 0.59,
+   "Light Blue": 0.9,
+   "Red": 0.59,
+   "Royal": 0.49,
+   "Carolina Blue": 0.82,
+   "Light Pink": 0.9
+  },
+  "manual": true
+ },
+ "No Signal Tee": {
+  "printify": "6aefc1c89ed4cd2ce40bad27",
+  "shopify": "8869450743969",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Dark Grey Heather"
+  ],
+  "add": [
+   "Navy",
+   "True Royal"
+  ],
+  "scores": {
+   "Athletic Heather": 0.85,
+   "Natural": 0.92,
+   "Soft Cream": 0.89,
+   "Deep Heather": 0.76,
+   "Heather Mauve": 0.8,
+   "Heather Columbia Blue": 0.78,
+   "Autumn": 0.59,
+   "Heather Team Purple": 0.59,
+   "Gold": 0.84,
+   "True Royal": 0.5,
+   "Red": 0.57
+  },
+  "manual": true
+ },
+ "Queen Forever Hoodie": {
+  "printify": "6aea941b365c19e4ba07e801",
+  "shopify": "8857382781089",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Purple",
+   "Royal"
+  ],
+  "scores": {
+   "Sport Grey": 0.0,
+   "Sand": 0.0,
+   "White": 0.0,
+   "Gold": 0.1,
+   "Purple": 1.0,
+   "Light Blue": 0.0,
+   "Red": 1.0,
+   "Royal": 1.0,
+   "Carolina Blue": 1.0,
+   "Light Pink": 0.0
+  },
+  "manual": true
+ },
+ "Queen Forever Tee": {
+  "printify": "6aea9404365c19e4ba07e79f",
+  "shopify": "8857380290721",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Navy"
+  ],
+  "add": [
+   "Maroon",
+   "Team Purple"
+  ],
+  "scores": {
+   "Athletic Heather": 0.79,
+   "Natural": 0.92,
+   "Soft Cream": 0.85,
+   "Deep Heather": 0.7,
+   "Heather Mauve": 0.7,
+   "Heather Columbia Blue": 0.7,
+   "Autumn": 0.62,
+   "Heather Team Purple": 0.62,
+   "Gold": 0.78,
+   "True Royal": 0.58,
+   "Red": 0.6
+  },
+  "manual": true
+ },
+ "Going With the Flow Hoodie": {
+  "printify": "6ae77a88d037ed7f1f02b9d9",
+  "shopify": "8845005652129",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Purple",
+   "Royal"
+  ],
+  "scores": {
+   "Sport Grey": 0.0,
+   "Sand": 0.0,
+   "White": 0.0,
+   "Gold": 0.12,
+   "Purple": 1.0,
+   "Light Blue": 0.0,
+   "Red": 1.0,
+   "Royal": 1.0,
+   "Carolina Blue": 1.0,
+   "Light Pink": 0.0
+  },
+  "manual": true
+ },
+ "Going With the Flow Tee": {
+  "printify": "6ae77a715b46121dd6093a8b",
+  "shopify": "8845005586593",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Forest"
+  ],
+  "add": [
+   "Navy",
+   "Team Purple"
+  ],
+  "scores": {
+   "Athletic Heather": 0.84,
+   "Natural": 0.93,
+   "Soft Cream": 0.89,
+   "Deep Heather": 0.69,
+   "Heather Mauve": 0.73,
+   "Heather Columbia Blue": 0.71,
+   "Autumn": 0.58,
+   "Heather Team Purple": 0.58,
+   "Gold": 0.84,
+   "True Royal": 0.54,
+   "Red": 0.57
+  },
+  "manual": true
+ },
+ "Fallen, Not Finished Hoodie": {
+  "printify": "6ae77a2517932a00ba02a3f6",
+  "shopify": "8845005357217",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Purple",
+   "Royal"
+  ],
+  "scores": {
+   "Sport Grey": 0.0,
+   "Sand": 0.0,
+   "White": 0.0,
+   "Gold": 0.1,
+   "Purple": 1.0,
+   "Light Blue": 0.0,
+   "Red": 1.0,
+   "Royal": 1.0,
+   "Carolina Blue": 1.0,
+   "Light Pink": 0.0
+  },
+  "manual": true
+ },
+ "Fallen, Not Finished Tee": {
+  "printify": "6ae77a0da04ae2f1280aa3cb",
+  "shopify": "8845005291681",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Maroon"
+  ],
+  "add": [
+   "Navy",
+   "Team Purple"
+  ],
+  "scores": {
+   "Athletic Heather": 0.84,
+   "Natural": 0.92,
+   "Soft Cream": 0.88,
+   "Deep Heather": 0.74,
+   "Heather Mauve": 0.78,
+   "Heather Columbia Blue": 0.76,
+   "Autumn": 0.63,
+   "Heather Team Purple": 0.63,
+   "Gold": 0.84,
+   "True Royal": 0.59,
+   "Red": 0.62
+  },
+  "manual": true
+ },
+ "Born Ready Hoodie": {
+  "printify": "6ae779f2f9c00c9ec009d8e0",
+  "shopify": "8845005258913",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon",
+   "Navy"
+  ],
+  "add": [
+   "Purple",
+   "Royal"
+  ],
+  "scores": {
+   "Sport Grey": 0.0,
+   "Sand": 0.0,
+   "White": 0.0,
+   "Gold": 0.06,
+   "Purple": 1.0,
+   "Light Blue": 0.0,
+   "Red": 1.0,
+   "Royal": 1.0,
+   "Carolina Blue": 1.0,
+   "Light Pink": 0.0
+  },
+  "manual": true
+ },
+ "Born Ready Tee": {
+  "printify": "6ae779db48500d698e04256f",
+  "shopify": "8845005193377",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Black",
+   "Navy"
+  ],
+  "add": [
+   "Maroon",
+   "Team Purple"
+  ],
+  "scores": {
+   "Athletic Heather": 0.62,
+   "Natural": 0.86,
+   "Soft Cream": 0.74,
+   "Deep Heather": 0.51,
+   "Heather Mauve": 0.51,
+   "Heather Columbia Blue": 0.51,
+   "Autumn": 0.6,
+   "Heather Team Purple": 0.6,
+   "Gold": 0.6,
+   "True Royal": 0.7,
+   "Red": 0.63
+  },
+  "manual": true
+ },
+ "Currently Elsewhere Hoodie": {
+  "printify": "6ae646e588325bfb8908eb85",
+  "shopify": "8843807555745",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Forest Green",
+   "Gold",
+   "Light Pink",
+   "Maroon",
+   "Military Green",
+   "Sand"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 1.0,
+   "Sand": 0.0,
+   "White": 0.0,
+   "Gold": 1.0,
+   "Purple": 1.0,
+   "Light Blue": 0.0,
+   "Red": 1.0,
+   "Royal": 1.0,
+   "Carolina Blue": 1.0,
+   "Light Pink": 0.0
+  }
+ },
+ "Seasonal Depression World Tour Hoodie": {
+  "printify": "6ae646e188325bfb8908eb7e",
+  "shopify": "8843807391905",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Dark Heather",
+   "Forest Green",
+   "Maroon"
+  ],
+  "add": [
+   "Navy",
+   "Purple",
+   "Royal"
+  ],
+  "scores": {
+   "Sport Grey": 1.0,
+   "Sand": 0.0,
+   "White": 0.0,
+   "Gold": 1.0,
+   "Purple": 1.0,
+   "Light Blue": 0.0,
+   "Red": 1.0,
+   "Royal": 1.0,
+   "Carolina Blue": 1.0,
+   "Light Pink": 0.0
+  },
+  "manual": true
+ },
+ "Butterfly Effect Hoodie": {
+  "printify": "6ae646da09e2bd18a5030cb0",
+  "shopify": "8843807129761",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Carolina Blue",
+   "Dark Chocolate",
+   "Forest Green",
+   "Gold",
+   "Light Pink",
+   "Maroon",
+   "Sport Grey",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.94,
+   "Sand": 0.87,
+   "White": 0.9,
+   "Gold": 0.93,
+   "Purple": 0.4,
+   "Light Blue": 0.89,
+   "Red": 0.8,
+   "Royal": 0.79,
+   "Carolina Blue": 0.86,
+   "Light Pink": 0.89
+  }
+ },
+ "Sunflower Soul Hoodie": {
+  "printify": "6ae646d3c9ed9f59750545fd",
+  "shopify": "8843806834849",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Dark Chocolate",
+   "Forest Green",
+   "Gold",
+   "Maroon",
+   "Royal",
+   "Sand",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.87,
+   "Sand": 0.79,
+   "White": 0.91,
+   "Gold": 0.86,
+   "Purple": 0.55,
+   "Light Blue": 0.84,
+   "Red": 0.72,
+   "Royal": 0.67,
+   "Carolina Blue": 0.79,
+   "Light Pink": 0.87
+  }
+ },
+ "Color Me Bold Hoodie": {
+  "printify": "6ae646d009e2bd18a5030c9c",
+  "shopify": "8843806703777",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Forest Green",
+   "Gold",
+   "Maroon",
+   "Sport Grey",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.92,
+   "Sand": 0.85,
+   "White": 0.89,
+   "Gold": 0.92,
+   "Purple": 0.48,
+   "Light Blue": 0.88,
+   "Red": 0.78,
+   "Royal": 0.78,
+   "Carolina Blue": 0.79,
+   "Light Pink": 0.88
+  }
+ },
+ "Crown & Curls Hoodie": {
+  "printify": "6ae646cc09e2bd18a5030c93",
+  "shopify": "8843806605473",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Dark Chocolate",
+   "Forest Green",
+   "Gold",
+   "Maroon",
+   "Sand",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.9,
+   "Sand": 0.83,
+   "White": 0.87,
+   "Gold": 0.87,
+   "Purple": 0.48,
+   "Light Blue": 0.85,
+   "Red": 0.83,
+   "Royal": 0.79,
+   "Carolina Blue": 0.78,
+   "Light Pink": 0.85
+  }
+ },
+ "Pink Crown Hoodie": {
+  "printify": "6ae646c91194fd37ca05c5d0",
+  "shopify": "8843806474401",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Black",
+   "Dark Chocolate",
+   "Forest Green",
+   "Gold",
+   "Light Pink",
+   "Maroon",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.87,
+   "Sand": 0.75,
+   "White": 0.84,
+   "Gold": 0.87,
+   "Purple": 0.53,
+   "Light Blue": 0.81,
+   "Red": 0.77,
+   "Royal": 0.78,
+   "Carolina Blue": 0.82,
+   "Light Pink": 0.82
+  }
+ },
+ "Sisterhood Hoodie": {
+  "printify": "6ae646c509e2bd18a5030c80",
+  "shopify": "8843806343329",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Dark Chocolate",
+   "Forest Green",
+   "Gold",
+   "Maroon",
+   "Military Green",
+   "Sand",
+   "Sport Grey"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.84,
+   "Sand": 0.75,
+   "White": 0.87,
+   "Gold": 0.83,
+   "Purple": 0.62,
+   "Light Blue": 0.83,
+   "Red": 0.71,
+   "Royal": 0.65,
+   "Carolina Blue": 0.78,
+   "Light Pink": 0.85
+  }
+ },
+ "Same Chaos Different Day Hoodie": {
+  "printify": "6ae646be8ac3264f1b0a9ad3",
+  "shopify": "8843806081185",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Gold",
+   "Light Blue",
+   "Sand",
+   "Sport Grey",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.83,
+   "Sand": 0.86,
+   "White": 0.98,
+   "Gold": 0.82,
+   "Purple": 0.52,
+   "Light Blue": 0.91,
+   "Red": 0.71,
+   "Royal": 0.68,
+   "Carolina Blue": 0.74,
+   "Light Pink": 0.92
+  }
+ },
+ "Balance Hoodie": {
+  "printify": "6ae646b7256dbc082b0f0997",
+  "shopify": "8843805851809",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Gold",
+   "Light Blue",
+   "Sand",
+   "Sport Grey",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.93,
+   "Sand": 0.94,
+   "White": 0.99,
+   "Gold": 0.92,
+   "Purple": 0.38,
+   "Light Blue": 0.96,
+   "Red": 0.72,
+   "Royal": 0.61,
+   "Carolina Blue": 0.86,
+   "Light Pink": 0.96
+  }
+ },
+ "Somewhere in a Calmer Place Hoodie": {
+  "printify": "6ae646b31194fd37ca05c599",
+  "shopify": "8843805753505",
+  "blueprint": 77,
+  "provider": 39,
+  "have": [
+   "Gold",
+   "Light Blue",
+   "Sand",
+   "Sport Grey",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Sport Grey": 0.75,
+   "Sand": 0.77,
+   "White": 0.89,
+   "Gold": 0.73,
+   "Purple": 0.57,
+   "Light Blue": 0.81,
+   "Red": 0.76,
+   "Royal": 0.77,
+   "Carolina Blue": 0.71,
+   "Light Pink": 0.82
+  }
+ },
+ "Sisterhood Tee": {
+  "printify": "6ae3993c69e5369eb60ec5a5",
+  "shopify": "8838114934945",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Athletic Heather",
+   "Brown",
+   "Forest",
+   "Gold",
+   "Heather Olive",
+   "Maroon",
+   "Natural",
+   "Soft Cream"
+  ],
+  "add": [],
+  "scores": {
+   "Athletic Heather": 0.73,
+   "Natural": 0.91,
+   "Soft Cream": 0.78,
+   "Deep Heather": 0.79,
+   "Heather Mauve": 0.74,
+   "Heather Columbia Blue": 0.73,
+   "Autumn": 0.7,
+   "Heather Team Purple": 0.7,
+   "Gold": 0.73,
+   "True Royal": 0.65,
+   "Red": 0.67
+  }
+ },
+ "Pink Crown Tee": {
+  "printify": "6ae399320ba0af82e10cc50a",
+  "shopify": "8838114672801",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Athletic Heather",
+   "Black",
+   "Brown",
+   "Forest",
+   "Gold",
+   "Maroon",
+   "Soft Pink",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Athletic Heather": 0.85,
+   "Natural": 0.97,
+   "Soft Cream": 0.9,
+   "Deep Heather": 0.75,
+   "Heather Mauve": 0.75,
+   "Heather Columbia Blue": 0.73,
+   "Autumn": 0.72,
+   "Heather Team Purple": 0.72,
+   "Gold": 0.84,
+   "True Royal": 0.75,
+   "Red": 0.71
+  }
+ },
+ "Crown & Curls Tee": {
+  "printify": "6ae3992a69e5369eb60ec59b",
+  "shopify": "8838114476193",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Athletic Heather",
+   "Brown",
+   "Forest",
+   "Gold",
+   "Heather Clay",
+   "Maroon",
+   "Natural",
+   "Soft Cream",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Athletic Heather": 0.87,
+   "Natural": 0.97,
+   "Soft Cream": 0.95,
+   "Deep Heather": 0.74,
+   "Heather Mauve": 0.75,
+   "Heather Columbia Blue": 0.75,
+   "Autumn": 0.82,
+   "Heather Team Purple": 0.82,
+   "Gold": 0.85,
+   "True Royal": 0.78,
+   "Red": 0.81
+  }
+ },
+ "Color Me Bold Tee": {
+  "printify": "6ae39913e367827cf60428d9",
+  "shopify": "8838113919137",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Athletic Heather",
+   "Black",
+   "Brown",
+   "Forest",
+   "Gold",
+   "Maroon",
+   "Natural",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Athletic Heather": 0.91,
+   "Natural": 0.97,
+   "Soft Cream": 0.95,
+   "Deep Heather": 0.72,
+   "Heather Mauve": 0.75,
+   "Heather Columbia Blue": 0.74,
+   "Autumn": 0.74,
+   "Heather Team Purple": 0.74,
+   "Gold": 0.91,
+   "True Royal": 0.75,
+   "Red": 0.74
+  }
+ },
+ "Sunflower Soul Tee": {
+  "printify": "6ae3990a17980e2dc502040f",
+  "shopify": "8838113656993",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Athletic Heather",
+   "Brown",
+   "Forest",
+   "Gold",
+   "Heather Columbia Blue",
+   "Maroon",
+   "Natural",
+   "Soft Cream",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Athletic Heather": 0.86,
+   "Natural": 1.0,
+   "Soft Cream": 0.91,
+   "Deep Heather": 0.78,
+   "Heather Mauve": 0.77,
+   "Heather Columbia Blue": 0.76,
+   "Autumn": 0.68,
+   "Heather Team Purple": 0.68,
+   "Gold": 0.85,
+   "True Royal": 0.63,
+   "Red": 0.66
+  }
+ },
+ "Butterfly Effect Tee": {
+  "printify": "6ae398fb8ec2381d7b03bed4",
+  "shopify": "8838113296545",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Athletic Heather",
+   "Brown",
+   "Forest",
+   "Gold",
+   "Heather Mauve",
+   "Maroon",
+   "Soft Pink",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Athletic Heather": 0.94,
+   "Natural": 0.98,
+   "Soft Cream": 0.96,
+   "Deep Heather": 0.82,
+   "Heather Mauve": 0.85,
+   "Heather Columbia Blue": 0.83,
+   "Autumn": 0.77,
+   "Heather Team Purple": 0.77,
+   "Gold": 0.93,
+   "True Royal": 0.76,
+   "Red": 0.77
+  }
+ },
+ "Somewhere in a Calmer Place Tee": {
+  "printify": "6ae37f720d95ee75ad0fb870",
+  "shopify": "8837991202977",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Athletic Heather",
+   "Autumn",
+   "Gold",
+   "Heather Clay",
+   "Heather Ice Blue",
+   "Natural",
+   "Soft Cream",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Athletic Heather": 0.74,
+   "Natural": 0.87,
+   "Soft Cream": 0.8,
+   "Deep Heather": 0.73,
+   "Heather Mauve": 0.72,
+   "Heather Columbia Blue": 0.73,
+   "Autumn": 0.76,
+   "Heather Team Purple": 0.76,
+   "Gold": 0.73,
+   "True Royal": 0.77,
+   "Red": 0.77
+  }
+ },
+ "Balance Tee": {
+  "printify": "6ae37f5fe367827cf604133a",
+  "shopify": "8837990580385",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Athletic Heather",
+   "Autumn",
+   "Gold",
+   "Heather Ice Blue",
+   "Heather Mint",
+   "Natural",
+   "Soft Cream",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Athletic Heather": 0.93,
+   "Natural": 0.98,
+   "Soft Cream": 0.95,
+   "Deep Heather": 0.82,
+   "Heather Mauve": 0.85,
+   "Heather Columbia Blue": 0.84,
+   "Autumn": 0.72,
+   "Heather Team Purple": 0.71,
+   "Gold": 0.92,
+   "True Royal": 0.63,
+   "Red": 0.69
+  }
+ },
+ "Same Chaos Different Day Tee": {
+  "printify": "6ae37f4090b6129a4a02d964",
+  "shopify": "8837989662881",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Ash",
+   "Athletic Heather",
+   "Autumn",
+   "Gold",
+   "Heather Ice Blue",
+   "Heather Peach",
+   "Natural",
+   "Soft Cream",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Athletic Heather": 0.82,
+   "Natural": 0.97,
+   "Soft Cream": 0.89,
+   "Deep Heather": 0.75,
+   "Heather Mauve": 0.74,
+   "Heather Columbia Blue": 0.74,
+   "Autumn": 0.7,
+   "Heather Team Purple": 0.7,
+   "Gold": 0.82,
+   "True Royal": 0.68,
+   "Red": 0.69
+  }
+ },
+ "Not AI. Just Tired. Tee": {
+  "printify": "6ae188b4bbc3d50fc40423b3",
+  "shopify": "8831409258657",
+  "blueprint": 12,
+  "provider": 29,
+  "have": [
+   "Athletic Heather",
+   "Black",
+   "Brown",
+   "Forest",
+   "Gold",
+   "Heather Navy",
+   "Maroon",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Athletic Heather": 1.0,
+   "Natural": 1.0,
+   "Soft Cream": 1.0,
+   "Deep Heather": 1.0,
+   "Heather Mauve": 1.0,
+   "Heather Columbia Blue": 1.0,
+   "Autumn": 1.0,
+   "Heather Team Purple": 1.0,
+   "Gold": 1.0,
+   "True Royal": 1.0,
+   "Red": 1.0
+  }
+ },
+ "Ships in 6\u20137 Business Days Tee": {
+  "printify": "6ae188af374c6285a90f5704",
+  "shopify": "8831409160353",
+  "blueprint": 12,
+  "provider": 39,
+  "have": [
+   "Athletic Heather",
+   "Autumn",
+   "Gold",
+   "Heather Dust",
+   "Heather Ice Blue",
+   "Heather Mustard",
+   "Natural",
+   "Sage",
+   "Tan",
+   "White"
+  ],
+  "add": [],
+  "scores": {
+   "Athletic Heather": 1.0,
+   "Natural": 1.0,
+   "Soft Cream": 1.0,
+   "Deep Heather": 1.0,
+   "Heather Mauve": 1.0,
+   "Heather Columbia Blue": 1.0,
+   "Autumn": 1.0,
+   "Heather Team Purple": 1.0,
+   "Gold": 1.0,
+   "True Royal": 1.0,
+   "Red": 1.0
+  }
+ }
+}

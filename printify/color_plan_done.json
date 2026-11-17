@@ -1,0 +1,26 @@
+{
+ "Skeleton Reading Book Crewneck": {
+  "printify": "6afc032455472a51c00ed0f9",
+  "shopify": "8902084395169",
+  "blueprint": 49,
+  "added": [
+   "Gold"
+  ],
+  "sides": [
+   "front",
+   "neck"
+  ]
+ },
+ "Stacked Books Crewneck": {
+  "printify": "6afc031755472a51c00ed0f1",
+  "shopify": "8902084034721",
+  "blueprint": 49,
+  "added": [
+   "Gold"
+  ],
+  "sides": [
+   "front",
+   "neck"
+  ]
+ }
+}
