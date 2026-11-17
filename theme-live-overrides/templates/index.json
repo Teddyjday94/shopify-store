@@ -60,9 +60,90 @@
         "female",
         "side"
       ]
+    },
+    "lookbook": {
+      "type": "mw-lookbook",
+      "blocks": {
+        "look_1": {
+          "type": "look",
+          "settings": {
+            "image": "shopify://shop_images/elsewhere-duo_tees-brick-wall.png",
+            "product": "elsewhere-dreamscape-tee",
+            "caption": "Brick wall, Brooklyn"
+          }
+        },
+        "look_2": {
+          "type": "look",
+          "settings": {
+            "image": "shopify://shop_images/no-signal_hoodie-back-arcade.png",
+            "product": "no-signal-hoodie",
+            "caption": "Arcade, 2am"
+          }
+        },
+        "look_3": {
+          "type": "look",
+          "settings": {
+            "image": "shopify://shop_images/sisterhood_tee-urban-glass.png",
+            "product": "sisterhood-womens-tee",
+            "caption": "Downtown"
+          }
+        },
+        "look_4": {
+          "type": "look",
+          "settings": {
+            "image": "shopify://shop_images/elsewhere-groovy-retro_tee-woman-street.png",
+            "product": "elsewhere-groovy-retro-tee",
+            "caption": "Golden hour"
+          }
+        },
+        "look_5": {
+          "type": "look",
+          "settings": {
+            "image": "shopify://shop_images/elsewhere-graffiti_hoodie-back-garage.png",
+            "product": "elsewhere-graffiti-hoodie",
+            "caption": "Parking garage"
+          }
+        },
+        "look_6": {
+          "type": "look",
+          "settings": {
+            "image": "shopify://shop_images/sunflower-soul_tee-subway.png",
+            "product": "sunflower-soul-womens-tee",
+            "caption": "Subway platform"
+          }
+        },
+        "look_7": {
+          "type": "look",
+          "settings": {
+            "image": "shopify://shop_images/main-character-syndrome_tee-back-arcade.png",
+            "product": "main-character-syndrome-tee",
+            "caption": "Arcade floor"
+          }
+        },
+        "look_8": {
+          "type": "look",
+          "settings": {
+            "image": "shopify://shop_images/crown-and-curls_tee-street-golden-light.png",
+            "product": "crown-curls-womens-tee",
+            "caption": "Side street"
+          }
+        }
+      },
+      "block_order": [
+        "look_1",
+        "look_2",
+        "look_3",
+        "look_4",
+        "look_5",
+        "look_6",
+        "look_7",
+        "look_8"
+      ],
+      "settings": {}
     }
   },
   "order": [
-    "field_guide"
+    "field_guide",
+    "lookbook"
   ]
 }
