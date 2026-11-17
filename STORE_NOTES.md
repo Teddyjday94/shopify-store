@@ -204,10 +204,11 @@ Monster of the Week (held: resembles a trademarked character).
   other discounts) makes the $60 banner true, whatever the shipping profiles charge. The Shop Helpers theme copy shows
   a "$X away from free US shipping" bar in the cart drawer (threshold 6000 cents in snippets/cart-drawer.liquid;
   change it there if the discount changes).
-- Variant photos (printify/variant_photos.py, 2026-11-17): attaching each variant's colour photo so checkout and
-  order emails show the right colour. Done and checked for ~680 variants (8 crewnecks, then batches vm_8, vv_0, vv_1);
-  ~1,540 variants on ~70 products remain. This connection caps a mutation at 16KB of query text, so data goes in
-  GraphQL variables; each ~30KB batch has to be passed through the chat by hand, which is slow and costly.
+- Variant photos (printify/variant_photos.py, 2026-11-17): every variant now has its own colour's photo, so checkout,
+  order emails and the cart show the colour the shopper picked (2,216 variants on 102 products; checked one by one with
+  printify/variant_photos_check.py, and a rescan finds none left). New colours added later need the script run again.
+  This connection caps a mutation at 16KB of query text, so printify/variant_photos_vars.py turns the batches into
+  GraphQL variables (the IDs go in variables, not the query).
 - Shopify caps a store at 20 themes and this connection can't delete themes; the owner removes old drafts in admin.
 
 ## Conventions
