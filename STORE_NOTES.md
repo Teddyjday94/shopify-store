@@ -152,6 +152,16 @@ Monster of the Week (held: resembles a trademarked character).
   publish: the Creature Feature tile (World / 02) became Elsewhere Bound, using the owner's campaign photo
   (Chrome Globe tee at a bar; original media/homepage/source-elsewhere-bound-chrome-globe.jpg, cropped to
   head-to-logo as elsewhere-bound-chrome-globe.jpg in Shopify Files).
+- 2026-11-17, copy "Cart Drawer + Quick View" (156798746785, from live Elsewhere Bound Tile), waiting for the
+  owner to publish: slide-out cart and product quick view, written from scratch in the Field Guide style
+  (inspired by the paid Omega theme's features, nothing copied). Files: snippets/cart-drawer.liquid,
+  assets/mw-cart.js, assets/mw-cart.css, snippets/product-card.liquid (card is now div.card holding
+  a.card__link + button.card__quick), layout/theme.liquid (css/js/render hooks). All in theme-live-overrides/.
+  Every /cart/add form adds in place and opens the drawer; the header Cart link opens it (still /cart without JS
+  and on the cart page). Quick view reads /products/<handle>.js, uses the "<Title> in <Color>, ..." photo labels,
+  starts on the main photo's color. Drawer shows each line's color photo (new-color variants have no variant
+  image, so checkout still shows the product's main photo for them). Browser test: theme-live-overrides/qv_test.js.
+  Theme files can be pushed with themeFilesUpsert body type URL pointing at raw.githubusercontent.com/<commit>.
 - Shopify caps a store at 20 themes and this connection can't delete themes; the owner removes old drafts in admin.
 
 ## Conventions
