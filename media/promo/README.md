@@ -9,9 +9,6 @@ Regenerate with `python3 printify/promo_pack.py`.
 - **Color Me Bold** (`color-me-bold/`): folded-closeup, hoodie-back, hoodie-back-2, model-man, model-woman, model-woman-2, on-chair, two-models, two-models-2, womens-flatlay, womens-lifestyle
 - **Crown & Curls** (`crown-and-curls/`): folded-closeup, hoodie-back, hoodie-back-2, model-man, model-woman, model-woman-2, on-chair, two-models, two-models-2, womens-flatlay, womens-lifestyle
 - **Currently Elsewhere** (`currently-elsewhere/`): hoodie-front, hoodie-model-man, hoodie-model-man-2, hoodie-model-woman, hoodie-model-woman-2
-- **Dead Inside, Dressed to Kill** (`dead-inside-dressed-to-kill/`): folded-closeup, hoodie-back, hoodie-back-2, model-man, model-woman, model-woman-2, on-chair, two-models, two-models-2
-- **Dead Tired** (`dead-tired/`): folded-closeup, hoodie-back, hoodie-back-2, model-man, model-woman, model-woman-2, on-chair, two-models, two-models-2
-- **Don't Open the Basement** (`don-t-open-the-basement/`): folded-closeup, model-man, model-woman, model-woman-2, on-chair, two-models, two-models-2
 - **Dragonfall** (`dragonfall/`): folded-closeup, hoodie-back, hoodie-back-2, model-man, model-woman, model-woman-2, on-chair, two-models, two-models-2
 - **Elsewhere Chrome Globe** (`elsewhere-chrome-globe/`): folded-closeup, hoodie-back, hoodie-back-2, model-man, model-woman, model-woman-2, on-chair, two-models, two-models-2, womens-flatlay, womens-lifestyle
 - **Elsewhere Chrome Script** (`elsewhere-chrome-script/`): folded-closeup, hoodie-back, hoodie-back-2, model-man, model-woman, model-woman-2, on-chair, two-models, two-models-2, womens-flatlay, womens-lifestyle
@@ -23,8 +20,6 @@ Regenerate with `python3 printify/promo_pack.py`.
 - **Fallen, Not Finished** (`fallen-not-finished/`): folded-closeup, hoodie-back, hoodie-back-2, model-man, model-woman, model-woman-2, on-chair, two-models, two-models-2, womens-flatlay, womens-lifestyle
 - **Final Boss Energy** (`final-boss-energy/`): flat-back, hoodie-back, hoodie-back-2, model-man-back, model-man-back-2, model-woman-back, model-woman-back-2
 - **Going With the Flow** (`going-with-the-flow/`): folded-closeup, hoodie-back, hoodie-back-2, model-man, model-woman, model-woman-2, on-chair, two-models, two-models-2, womens-flatlay, womens-lifestyle
-- **Horror Club** (`horror-club/`): folded-closeup, hoodie-back, hoodie-back-2, model-man, model-woman, model-woman-2, on-chair, sleeve-edition-back, two-models, two-models-2
-- **I Came. I Screamed. I Left.** (`i-came-i-screamed-i-left/`): folded-closeup, hoodie-back, hoodie-back-2, model-man, model-woman, model-woman-2, on-chair, two-models, two-models-2
 - **I Paused My Game to Be Here** (`i-paused-my-game-to-be-here/`): flat-back, hoodie-back, hoodie-back-2, model-man-back, model-man-back-2, model-woman-back, model-woman-back-2
 - **I'm Only Here for the Post-Credits Scene** (`i-m-only-here-for-the-post-credits-scene/`): folded-closeup, hoodie-back, hoodie-back-2, model-man, model-woman, model-woman-2, on-chair, two-models, two-models-2
 - **Lantern Witch** (`lantern-witch/`): folded-closeup, hoodie-back, hoodie-back-2, model-man, model-woman, model-woman-2, on-chair, two-models, two-models-2

@@ -43,6 +43,11 @@ Facts worth remembering between sessions. Update as things change.
   Masterless (tee, women's tee, hoodie) deleted the same day.
   Also deleted: In My Own Lane, Lucky Charm, Respawn Pending (tee, women's tee, hoodie each), Resting Witch
   Face Tee, This House Eats People Tee. Side Quest tile moved to No Signal.
+- 2026-11-17: the whole Creature Feature collection deleted (handle horror-collection; Printify + Shopify):
+  Horror Club (tee, long sleeve, hoodie, Sleeve Edition hoodie), Dead Tired, Dead Inside Dressed to Kill,
+  I Came. I Screamed. I Left. (tee + hoodie each), Don't Open the Basement Tee. 11 products. Its menu link went
+  with the collection; its homepage tile hides itself (the grid now shows three tiles, numbered 01/03/04).
+  Promo pack rebuilt without them.
 
 ## Product photos and promo pack (2026-11-16)
 - Every tee and women's tee got Printify model and hanging shots (alts "... in <Color>, on a model" / "hanging").
