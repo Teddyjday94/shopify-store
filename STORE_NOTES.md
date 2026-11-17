@@ -191,7 +191,8 @@ Monster of the Week (held: resembles a trademarked character).
   (per color "<Title> in <Color>, front print", plus back view + folded for the main color), sent as batched
   productUpdate calls (bulkOperationRunMutation is blocked on this connection). The other session also began
   adding crewneck photos, so 7 crewnecks (Chrome Script, Ransom Note, Chrome Globe, Groovy Retro, Psychedelic
-  Drip, Moonwood Druid, Lantern Witch) briefly had a second set; remove the later copy once it stops.
+  Drip, Moonwood Druid, Lantern Witch) briefly had a second set; that session removed its copies (checked:
+  one set per crewneck, all READY; 4 light-color crewnecks keep one extra "in Gold, folded" shot).
 - Shopify caps a store at 20 themes and this connection can't delete themes; the owner removes old drafts in admin.
 
 ## Conventions
