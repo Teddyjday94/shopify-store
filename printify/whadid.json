@@ -1,0 +1,42 @@
+{
+  "08-whadid-i-do-tee": {
+    "printify": "6afbb8d44acba633f109cd01",
+    "title": "WHADID I DO?! Tee",
+    "kind": "tee",
+    "cost": [
+      1177,
+      1438
+    ],
+    "shopify": "8901642223777"
+  },
+  "08-whadid-i-do-womens": {
+    "printify": "6afbb8e14acba633f109cd0b",
+    "title": "WHADID I DO?! Women's Tee",
+    "kind": "womens",
+    "cost": [
+      1082,
+      1319
+    ],
+    "shopify": "8901642518689"
+  },
+  "08-whadid-i-do-hoodie": {
+    "printify": "6afbb8ef452e689d0f101143",
+    "title": "WHADID I DO?! Hoodie",
+    "kind": "hoodie",
+    "cost": [
+      2267,
+      2484
+    ],
+    "shopify": "8901642748065"
+  },
+  "08-whadid-i-do-hoodie-front": {
+    "printify": "6afbb8fb452e689d0f101151",
+    "title": "WHADID I DO?! Front Print Hoodie",
+    "kind": "hoodie-front",
+    "cost": [
+      2267,
+      2484
+    ],
+    "shopify": "8901643010209"
+  }
+}

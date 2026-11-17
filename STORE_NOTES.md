@@ -73,6 +73,13 @@ Facts worth remembering between sessions. Update as things change.
   designs/src/logo_cutout.py (--pockets also clears paper trapped inside the art), 4500 px longest side =
   15 in at 300 DPI (designs/print-brand). Raw upscales (designs/logo-up) are git-ignored.
 - Products: printify/create_brand.py, ids in printify/brand.json.
+- 2026-11-17 batch 2: Elsewhere Graffiti and Elsewhere Dreamscape (tee, women's tee, back-print hoodie,
+  front-print hoodie; printify/create_brand2.py). Dreamscape art came in at 1145x1374 and was upscaled 4x.
+- WHADID I DO?! (owner's art; the first version had the Tune Squad logo on the jersey and was not used):
+  Tired But Here (tag "drop 002"), same four products, printify/create_whadid.py, ids in printify/whadid.json.
+- Photos for new products: printify/photo_mutations.py PROGRESS.json OUT.graphql [slug prefixes].
+- Hats collection now matches tag "hat" only; its old title rule (contains Hat/Cap/Beanie) caught
+  "Dreamscape".
 - 2026-11-17: front-print versions too ("<Design> Front Print Hoodie", $37, logo across the chest at 85%
   of the 14x10 in front area; printify/create_brand_front.py). They open on Printify's hoodie model shots
   (98428 main, then flat front 98424, then 98427/98429/98430), the only hoodie models Printify has.
