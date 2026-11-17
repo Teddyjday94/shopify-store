@@ -200,11 +200,14 @@ Monster of the Week (held: resembles a trademarked character).
   on phones once the main button scrolls away, and "Complete the look" (sections/mw-recs.liquid, loaded by
   assets/mw-product.js from /recommendations/products?intent=related; skips other styles of the same design).
   Tested in preview: right chart per garment, 4 recs shown, sticky add opens the cart drawer.
-- Free-shipping mismatch (found 2026-11-17, not fixed): the banner says "Free US shipping on orders $60+", but
-  the General profile is free only at $70+ and the Printify profiles (most products) have no free tier at all.
-  Owner to decide: add a free rate at $60 to every profile, or change the banner. Free-shipping progress bar waits on that.
+- Free shipping: the automatic discount "Free US shipping over $60" (active since 2026-10-30, US only, combines with
+  other discounts) makes the $60 banner true, whatever the shipping profiles charge. The Shop Helpers theme copy shows
+  a "$X away from free US shipping" bar in the cart drawer (threshold 6000 cents in snippets/cart-drawer.liquid;
+  change it there if the discount changes).
 - Variant photos (printify/variant_photos.py, 2026-11-17): attaching each variant's colour photo so checkout and
-  order emails show the right colour. Paused after 8 crewnecks; ~2,200 variants on ~100 products remain.
+  order emails show the right colour. Done and checked for ~680 variants (8 crewnecks, then batches vm_8, vv_0, vv_1);
+  ~1,540 variants on ~70 products remain. This connection caps a mutation at 16KB of query text, so data goes in
+  GraphQL variables; each ~30KB batch has to be passed through the chat by hand, which is slow and costly.
 - Shopify caps a store at 20 themes and this connection can't delete themes; the owner removes old drafts in admin.
 
 ## Conventions
