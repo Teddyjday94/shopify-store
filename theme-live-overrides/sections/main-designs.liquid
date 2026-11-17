@@ -48,6 +48,7 @@
       <button type="button" class="mw-chip" data-kind="tee" aria-pressed="false">Tees</button>
       <button type="button" class="mw-chip" data-kind="womens" aria-pressed="false">Women's tees</button>
       <button type="button" class="mw-chip" data-kind="hoodie" aria-pressed="false">Hoodies</button>
+      <button type="button" class="mw-chip" data-kind="crewneck" aria-pressed="false">Crewnecks</button>
       <button type="button" class="mw-chip" data-kind="longsleeve" aria-pressed="false">Long sleeves</button>
       <button type="button" class="mw-chip" data-kind="extras" aria-pressed="false">Hats, mugs &amp; more</button>
     </div>
@@ -115,7 +116,7 @@
                 assign first_idx = style_idx.first | plus: 0
                 assign cover = all[first_idx]
                 assign name = cover.title | remove: '“' | remove: '”'
-                assign trims = " Women's Tee| Long Sleeve Tee| Sleeve Edition Hoodie| Graphic Tee| Tee| Hoodie| Mug| Dad Hat| Trucker Hat| Bucket Hat| Cuffed Beanie| Beanie| Desk Mat" | split: '|'
+                assign trims = " Women's Tee| Long Sleeve Tee| Sleeve Edition Hoodie| Graphic Tee| Tee| Hoodie| Crewneck| Mug| Dad Hat| Trucker Hat| Bucket Hat| Cuffed Beanie| Beanie| Desk Mat" | split: '|'
                 for t in trims
                   assign tl = t.size
                   assign neg = 0 | minus: tl
