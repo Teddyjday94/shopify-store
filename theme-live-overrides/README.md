@@ -6,3 +6,5 @@ that theme is not stored here). Applied to the copy "Elsewhere Apparel Co. | New
   still, and "center_art" turns off the per-tile zoom/offset for artwork pre-cropped around the design.
 - templates/index.json: Legends Never Die tile = Born Ready painting (Rise From Ruin video retired 2026-11-14), Side Quest tile = No Signal art, Creature Feature tile = Horror
   Club photo. Media sources in media/homepage/.
+- assets/theme.js, assets/mw-gallery.css: product gallery shows every photo of the selected color (print
+  photos plus model/hanging shots), with swipe, arrows and position dots. Applied to copy "Swipe Gallery".

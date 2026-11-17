@@ -55,6 +55,9 @@ Facts worth remembering between sessions. Update as things change.
   chair 102049, pairs 102051-102053, models front 102057/102059/102061, models back 102054/102058/102060;
   women's (Gildan 5000L) front 87728, back 87729, hanging 87730, flat lay 87731, model 87732; hoodie
   (Gildan 18500) front 98424, back 98425, back-2 98426, models (front only) 98427-98430.
+- Product page gallery (theme-live-overrides/assets/theme.js + mw-gallery.css, copy "Swipe Gallery"
+  156788424865, waiting for the owner to publish): a photo labeled "<Title> in <Color>, <anything>" joins
+  that color's gallery, so model/hanging shots show; swipe, arrows and dots step through them.
 - Promo pack: media/promo/<design>/ (337 shots, 37 designs, 2048 px), rebuilt by printify/promo_pack.py.
 
 ## Brand collection (2026-11-16)
