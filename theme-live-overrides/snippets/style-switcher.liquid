@@ -10,7 +10,7 @@
   assign found = 0
   for suffix in suffixes
     assign h = base | append: suffix
-    if all_products[h].id
+    if all_products[h].title != blank
       assign found = found | plus: 1
     endif
   endfor
@@ -22,7 +22,7 @@
       {%- for suffix in suffixes -%}
         {%- assign h = base | append: suffix -%}
         {%- assign p = all_products[h] -%}
-        {%- unless p.id -%}{%- continue -%}{%- endunless -%}
+        {%- if p.title == blank -%}{%- continue -%}{%- endif -%}
         {%- liquid
           assign shot = p.featured_media
           if p.title contains 'Hoodie'
