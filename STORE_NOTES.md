@@ -99,7 +99,9 @@ Facts worth remembering between sessions. Update as things change.
 - 2026-11-17: hoodie back prints made as big as SwiftPOD's 14 x 16 in back area allows (full width, or full
   height for tall art; top-aligned) on all 32 hoodies: printify/enlarge_hoodie_backs.py, log in
   printify/hoodie_backs.json. The labeled "back print" photos were swapped in place with fileUpdate
-  (printify/hoodie_back_photos.py); older unlabeled launch photos were left as they were.
+  (printify/hoodie_back_photos.py). The 178 older launch photos on 18 hoodies (unlabeled or description-only)
+  were matched to their Printify mockup by thumbnail and swapped the same way (printify/hoodie_launch_photos.py,
+  matches in printify/hoodie_launch_matches.json). Every hoodie photo now shows the current print size.
 
 ## Christmas line removed (2026-11-13)
 - Deleted all 60 Christmas products (batch 1: Naughty List Again, Suck It Up Buttercup, Bring Bourbon,
