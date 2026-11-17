@@ -121,7 +121,7 @@
     </div>
   </div>
 
-  <div class="page-width" data-recs hidden data-url="{{ routes.product_recommendations_url }}?section_id=mw-recs&product_id={{ product.id }}&limit=8&intent=related"></div>
+  <div class="page-width" data-recs data-url="{{ routes.product_recommendations_url }}?section_id=mw-recs&product_id={{ product.id }}&limit=8&intent=related"></div>
   <script src="{{ 'mw-product.js' | asset_url }}" defer="defer"></script>
 
   {%- if product.handle == 'critical-failure-hoodie' -%}

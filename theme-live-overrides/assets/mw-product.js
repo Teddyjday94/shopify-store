@@ -44,7 +44,7 @@
       .then((r) => (r.ok ? r.text() : ''))
       .then((html) => {
         const found = new DOMParser().parseFromString(html, 'text/html').querySelector('[data-recs-loaded]');
-        if (found) { recs.replaceChildren(found); recs.hidden = false; }
+        if (found) recs.replaceChildren(found);
       })
       .catch(() => {});
     if ('IntersectionObserver' in window) {
