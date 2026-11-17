@@ -56,7 +56,9 @@ def main():
             if "Sleeve Edition" in x["title"]:
                 cams = [(98425, "sleeve-edition-back")]
             for cam, shot in cams:
-                jobs.append((design_of(x["title"]), shot, f"https://images.printify.com/mockup/{mock}/{variant}/{cam}/{name}.jpg?s=2048"))
+                # v= busts Printify's image cache, so a product edited since the last run (e.g. a resized print) renders fresh
+                v = re.sub(r"\D", "", x.get("updated_at") or "")
+                jobs.append((design_of(x["title"]), shot, f"https://images.printify.com/mockup/{mock}/{variant}/{cam}/{name}.jpg?s=2048&v={v}"))
         if not r.get("next_page_url") or not r["data"]:
             break
         page += 1
