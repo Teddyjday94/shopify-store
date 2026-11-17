@@ -209,6 +209,16 @@ Monster of the Week (held: resembles a trademarked character).
   printify/variant_photos_check.py, and a rescan finds none left). New colours added later need the script run again.
   This connection caps a mutation at 16KB of query text, so printify/variant_photos_vars.py turns the batches into
   GraphQL variables (the IDs go in variables, not the query).
+- Colour range (2026-11-17): 150 colours added to 91 apparel products so every design has 4+ colours with a
+  lighter or mid-tone option and a colour pop where the art allows. printify/color_plan.py checks each design's print
+  art against each shirt colour (contrast) and color_plan.json holds the result; hand overrides in MANUAL for designs
+  whose thin white caption/title vanishes on light shirts (Fallen Not Finished, Going With the Flow, Queen Forever,
+  Born Ready, No Signal, Seasonal Depression: they get deep pops like Purple/Royal/Team Purple instead) and for
+  Ransom Note (red letters fade on Red). "My Other Outfit Is Also Black" keeps its range on purpose.
+  apply_color_plan.py enables the colours in Printify (variants only, so neck-label text layers survive), then
+  new_color_photos.py adds one labeled photo per colour and variant_photos.py links all 754 new variants to it
+  (checked one by one). Result: 135 of 137 apparel products have 4-11 colours (the two at 2 are My Other Outfit).
+  Contact sheet of the light pairings: media/color_readability_check.jpg.
 - Shopify caps a store at 20 themes and this connection can't delete themes; the owner removes old drafts in admin.
 
 ## Conventions

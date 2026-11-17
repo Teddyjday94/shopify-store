@@ -34,7 +34,7 @@ def main():
                         if "/mockup/" in im["src"] and im.get("position") == side), None)
         media = []
         for color in v["added"]:
-            vid = next((vv["id"] for vv in x["variants"] if vv["is_enabled"] and cat[vv["id"]].get("color") == color), None)
+            vid = next((vv["id"] for vv in x["variants"] if vv["is_enabled"] and color in vv["title"].split(" / ")), None)
             if not vid:
                 print("not enabled:", title, color); continue
             url = f"https://images.printify.com/mockup/{mock}/{vid}/{cam}/{name}.jpg?s=2048"
