@@ -43,5 +43,66 @@
     "sides": [
       "front"
     ]
+  },
+  "WHADID I DO?! Tee": {
+    "printify": "6afbb8d44acba633f109cd01",
+    "shopify": "8901642223777",
+    "blueprint": 12,
+    "had": "Black",
+    "added": [
+      "Dark Grey Heather",
+      "Forest",
+      "Maroon",
+      "Military Green",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Elsewhere Dreamscape Hoodie": {
+    "printify": "6afbb8262bc794f18d0df43b",
+    "shopify": "8901641306273",
+    "blueprint": 77,
+    "had": "Black",
+    "added": [
+      "Dark Chocolate",
+      "Dark Heather",
+      "Forest Green",
+      "Maroon",
+      "Navy"
+    ],
+    "sides": [
+      "back"
+    ]
+  },
+  "Elsewhere Dreamscape Women's Tee": {
+    "printify": "6afbb819452e689d0f1010a2",
+    "shopify": "8901641175201",
+    "blueprint": 466,
+    "had": "Black",
+    "added": [
+      "Navy",
+      "Purple"
+    ],
+    "sides": [
+      "front"
+    ]
+  },
+  "Elsewhere Dreamscape Tee": {
+    "printify": "6afbb80d81a10a4455111c69",
+    "shopify": "8901641142433",
+    "blueprint": 12,
+    "had": "Black",
+    "added": [
+      "Dark Grey Heather",
+      "Forest",
+      "Maroon",
+      "Military Green",
+      "Navy"
+    ],
+    "sides": [
+      "front"
+    ]
   }
 }
