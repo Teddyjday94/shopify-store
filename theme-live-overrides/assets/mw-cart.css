@@ -123,7 +123,7 @@ html.mw-modal-open { overflow: hidden; }
 .mw-swatches { display: flex; flex-wrap: wrap; gap: 8px; }
 .mw-swatches input { position: absolute; opacity: 0; pointer-events: none; }
 .option__values.mw-swatches label.mw-swatch {
-  width: 36px; height: 36px; min-height: 0; padding: 0; border-radius: 50%;
+  flex: 0 0 36px; width: 36px; height: 36px; min-width: 0; min-height: 0; padding: 0; border-radius: 50%; aspect-ratio: 1;
   background: var(--sw); border: 1px solid #f1e5d14d; box-shadow: inset 0 0 0 3px var(--mw-panel, #151113); cursor: pointer;
 }
 .option__values.mw-swatches input:checked + label.mw-swatch { background: var(--sw); outline: 2px solid var(--fg-gold, #e7b681); outline-offset: 2px; }

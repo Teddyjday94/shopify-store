@@ -48,6 +48,26 @@
     return data;
   }
 
+  // Product data by handle (quick view, and the drawer's per-color photos). Photos labeled
+  // "<Title> in <Color>, <detail>" belong to that color.
+  const products = new Map();  // handle -> Promise<product>
+  const loaded = new Map();    // handle -> product, once it has arrived
+  const LABEL = /^.* in ([^,]+), (.+)$/i;
+  function loadProduct(handle) {
+    if (!products.has(handle)) {
+      const p = api(`products/${encodeURIComponent(handle)}.js`);
+      p.then((data) => loaded.set(handle, data), () => products.delete(handle));
+      products.set(handle, p);
+    }
+    return products.get(handle);
+  }
+  function colorPhoto(product, color) {
+    if (!product || !color) return null;
+    const hit = (product.media || []).find((m) => m.media_type === 'image'
+      && ((LABEL.exec(m.alt || '') || [])[1] || '').toLowerCase() === color.toLowerCase());
+    return hit ? (hit.src || hit.preview_image?.src) : null;
+  }
+
   let lastFocus = null;
   function openDialog(dialog) {
     if (dialog.open) return;
@@ -86,8 +106,24 @@
     drawer.querySelector('[data-cart-drawer-count]').textContent = cart.item_count ? `(${cart.item_count})` : '';
   }
 
+  // Variants of colors added later have no photo of their own, so cart.js falls back to the product's
+  // main photo (often another color). Show the line's own color photo instead once the product is loaded.
+  function lineColor(item) {
+    const opt = (item.options_with_values || []).find((o) => /colou?r/i.test(o.name));
+    return opt ? opt.value : null;
+  }
+  function lineImage(item) {
+    if (item.variant_id && item.featured_image && item.featured_image.variant_ids?.includes(item.variant_id)) return item.image;
+    return colorPhoto(loaded.get(item.handle), lineColor(item)) || item.image;
+  }
+  function loadLinePhotos() {
+    const missing = cart.items.filter((i) => lineColor(i) && !loaded.has(i.handle)).map((i) => loadProduct(i.handle).catch(() => null));
+    if (missing.length) Promise.all(missing).then(() => { if (drawer.open) renderCart(); });
+  }
+
   function renderCart() {
     updateCounts();
+    loadLinePhotos();
     if (!cart.item_count) {
       itemsEl.innerHTML = `<div class="mw-drawer__empty"><p class="mw-drawer__empty-title">${esc(S.empty)}</p>
         <a class="btn" href="${esc(S.shopUrl)}">${esc(S.continueShopping)} &rarr;</a></div>`;
@@ -100,7 +136,7 @@
       const was = item.original_line_price > item.final_line_price ? `<s>${money(item.original_line_price)}</s> ` : '';
       return `<li class="mw-line" data-key="${esc(item.key)}">
         <a class="mw-line__media" href="${esc(item.url)}" tabindex="-1" aria-hidden="true">
-          ${item.image ? `<img src="${esc(sized(item.image, 200))}" alt="" loading="lazy" width="100" height="100">` : ''}
+          ${lineImage(item) ? `<img src="${esc(sized(lineImage(item), 200))}" alt="" loading="lazy" width="100" height="100">` : ''}
         </a>
         <div class="mw-line__info">
           <a class="mw-line__title" href="${esc(item.url)}">${esc(item.product_title)}</a>
@@ -197,23 +233,12 @@
 
   // ---------- quick view ----------
   const body = quick.querySelector('[data-quick-body]');
-  const products = new Map();  // handle -> Promise<product>
   const SWATCH = {
     'black': '#121113', 'white': '#f4f2ee', 'navy': '#1f2742', 'dark grey heather': '#4b4a50', 'dark heather': '#414249',
     'charcoal': '#3d3e42', 'maroon': '#5a1b26', 'forest': '#1f3a2c', 'forest green': '#22402f', 'military green': '#4e5530',
     'dark chocolate': '#3b2820', 'purple': '#4f3480', 'light pink': '#f2c9d2', 'sport grey': '#a3a5a8', 'sand': '#d9c8a5',
     'light blue': '#a8c5e2', 'gold': '#e2a62a', 'red': '#a3262a', 'royal': '#2a4aa0', 'heather grey': '#a7a6a9', 'ash': '#d4d3cf',
   };
-  const LABEL = /^.* in ([^,]+), (.+)$/i;
-
-  function loadProduct(handle) {
-    if (!products.has(handle)) {
-      const p = api(`products/${encodeURIComponent(handle)}.js`);
-      p.catch(() => products.delete(handle));
-      products.set(handle, p);
-    }
-    return products.get(handle);
-  }
 
   // Warm the product data when a shopper points at or focuses a quick view button.
   ['pointerenter', 'focusin'].forEach((type) => document.addEventListener(type, (e) => {
@@ -241,7 +266,10 @@
     const colorIndex = options.findIndex((o) => /colou?r/i.test(o.name));
     const images = (product.media || []).filter((m) => m.media_type === 'image')
       .map((m) => ({ src: m.src || m.preview_image?.src, alt: m.alt || '', color: (LABEL.exec(m.alt || '') || [])[1] || null }));
-    let variant = product.variants.find((v) => v.available) || product.variants[0];
+    const mainColor = (LABEL.exec((images[0] || {}).alt || '') || [])[1];
+    let variant = (colorIndex >= 0 && mainColor && product.variants.find((v) => v.available
+        && v.options[colorIndex].toLowerCase() === mainColor.toLowerCase()))
+      || product.variants.find((v) => v.available) || product.variants[0];
     const id = 'qv-' + product.id;
     const view = document.createElement('div');
     view.className = 'mw-quick__grid';
