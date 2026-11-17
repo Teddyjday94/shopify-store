@@ -73,22 +73,18 @@ Facts worth remembering between sessions. Update as things change.
   designs/src/logo_cutout.py (--pockets also clears paper trapped inside the art), 4500 px longest side =
   15 in at 300 DPI (designs/print-brand). Raw upscales (designs/logo-up) are git-ignored.
 - Products: printify/create_brand.py, ids in printify/brand.json.
-- 2026-11-17 batch 2: Elsewhere Graffiti and Elsewhere Dreamscape (tee, women's tee, back-print hoodie,
-  front-print hoodie; printify/create_brand2.py). Dreamscape art came in at 1145x1374 and was upscaled 4x.
+- 2026-11-17 batch 2: Elsewhere Graffiti and Elsewhere Dreamscape (tee, women's tee, back-print hoodie;
+  printify/create_brand2.py). Dreamscape art came in at 1145x1374 and was upscaled 4x.
 - WHADID I DO?! (owner's art; the first version had the Tune Squad logo on the jersey and was not used):
-  Tired But Here (tag "drop 002"), same four products, printify/create_whadid.py, ids in printify/whadid.json.
-- Back print is the main hoodie: each back-print hoodie's description links to its front-print twin
-  ("Prefer it on the front?") and each front-print one links back. Hoodies & Sweatshirts and Brand are
-  sorted by hand (MANUAL): back-print right before its front-print twin; Brand grouped by design (tee,
-  women's, hoodie, front hoodie). New products land at the end of manual collections, so reorder them
-  after each drop. Printify republishing a product would overwrite these description edits.
+  Tired But Here (tag "drop 002"), tee, women's tee and hoodie, printify/create_whadid.py, ids in printify/whadid.json.
+- Hoodies & Sweatshirts and Brand are sorted by hand (MANUAL); Brand is grouped by design (tee, women's tee,
+  hoodie). New products land at the end of manual collections, so reorder them after each drop.
 - Photos for new products: printify/photo_mutations.py PROGRESS.json OUT.graphql [slug prefixes].
 - Hats collection now matches tag "hat" only; its old title rule (contains Hat/Cap/Beanie) caught
   "Dreamscape".
-- 2026-11-17: front-print versions too ("<Design> Front Print Hoodie", $37, logo across the chest at 85%
-  of the 14x10 in front area; printify/create_brand_front.py). They open on Printify's hoodie model shots
-  (98428 main, then flat front 98424, then 98427/98429/98430), the only hoodie models Printify has.
-  Currently Elsewhere Hoodie (front print) got the same four model shots (Black), one as the main photo.
+- 2026-11-17: front-print hoodie versions (Printify's hoodie models) were added, then removed the same day
+  at the owner's request: back print is the only hoodie. Currently Elsewhere Hoodie (always front print) keeps
+  Printify's four hoodie model shots, one as its main photo.
 
 ## Christmas line removed (2026-11-13)
 - Deleted all 60 Christmas products (batch 1: Naughty List Again, Suck It Up Buttercup, Bring Bourbon,

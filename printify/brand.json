@@ -149,56 +149,6 @@
     ],
     "shopify": "8901423497377"
   },
-  "03-chrome-globe-hoodie-front": {
-    "printify": "6afb9d2781a10a4455110439",
-    "title": "Elsewhere Chrome Globe Front Print Hoodie",
-    "kind": "hoodie-front",
-    "cost": [
-      2267,
-      2484
-    ],
-    "shopify": "8901540905121"
-  },
-  "01-psychedelic-drip-hoodie-front": {
-    "printify": "6afb9d4aa44fa49e570d49a2",
-    "title": "Elsewhere Psychedelic Drip Front Print Hoodie",
-    "kind": "hoodie-front",
-    "cost": [
-      2267,
-      2484
-    ],
-    "shopify": "8901541626017"
-  },
-  "02-groovy-retro-hoodie-front": {
-    "printify": "6afb9d59a44fa49e570d49b5",
-    "title": "Elsewhere Groovy Retro Front Print Hoodie",
-    "kind": "hoodie-front",
-    "cost": [
-      2267,
-      2484
-    ],
-    "shopify": "8901541822625"
-  },
-  "04-ransom-note-hoodie-front": {
-    "printify": "6afb9d66037a5f765201d02f",
-    "title": "Elsewhere Ransom Note Front Print Hoodie",
-    "kind": "hoodie-front",
-    "cost": [
-      2267,
-      2484
-    ],
-    "shopify": "8901542379681"
-  },
-  "05-chrome-script-hoodie-front": {
-    "printify": "6afb9d740d75fb6f9f0bd2a4",
-    "title": "Elsewhere Chrome Script Front Print Hoodie",
-    "kind": "hoodie-front",
-    "cost": [
-      2267,
-      2484
-    ],
-    "shopify": "8901542740129"
-  },
   "06-graffiti-tee": {
     "printify": "6afbb7d5a23dd0a5a00b316a",
     "title": "Elsewhere Graffiti Tee",
@@ -229,16 +179,6 @@
     ],
     "shopify": "8901641044129"
   },
-  "06-graffiti-hoodie-front": {
-    "printify": "6afbb7fa65c2d0e8bb050824",
-    "title": "Elsewhere Graffiti Front Print Hoodie",
-    "kind": "hoodie-front",
-    "cost": [
-      2267,
-      2484
-    ],
-    "shopify": "8901641076897"
-  },
   "07-dreamscape-tee": {
     "printify": "6afbb80d81a10a4455111c69",
     "title": "Elsewhere Dreamscape Tee",
@@ -268,15 +208,5 @@
       2484
     ],
     "shopify": "8901641306273"
-  },
-  "07-dreamscape-hoodie-front": {
-    "printify": "6afbb832452e689d0f1010b6",
-    "title": "Elsewhere Dreamscape Front Print Hoodie",
-    "kind": "hoodie-front",
-    "cost": [
-      2267,
-      2484
-    ],
-    "shopify": "8901641339041"
   }
 }
