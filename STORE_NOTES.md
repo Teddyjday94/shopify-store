@@ -219,6 +219,19 @@ Monster of the Week (held: resembles a trademarked character).
   new_color_photos.py adds one labeled photo per colour and variant_photos.py links all 754 new variants to it
   (checked one by one). Result: 135 of 137 apparel products have 4-11 colours (the two at 2 are My Other Outfit).
   Contact sheet of the light pairings: media/color_readability_check.jpg.
+- Ornaments (2026-11-18): the 9 graphic-design ornaments (Not AI, Dreamscape, Chrome Globe, Groovy Retro,
+  Psychedelic Drip, Post-Credits, Moonwood, Lantern Witch, Dragonfall) were square art on flat black, so the round
+  ornament cut off the edges and showed black around the design. printify/ornament_art.py now scales each design so
+  every visible pixel sits within 85% of the circle's radius (nudged down, clear of the hanging hole) on a blurred
+  glow of the design's own colours; Not AI uses white text on a dusk-purple gradient. Art in media/ornaments/,
+  uploaded to Printify (printify/ornament_v2_done.json) and the Shopify photos replaced with the new mockups.
+  The 4 painting ornaments (Queen Forever, Going With the Flow, Fallen Not Finished, Born Ready) already fill the
+  circle and were left as they were.
+- Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
+  Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
+  Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;
+  Can Holder bp355 (stainless, vacuum insulated, 12oz) $19.70, ship $6.19;
+  Polar Camel Slim Beverage Holder bp1518 (stainless, 16 colours) $22.63, ship $6.79. Stubby Cooler bp1329 is AU-only.
 - Shopify caps a store at 20 themes and this connection can't delete themes; the owner removes old drafts in admin.
 
 ## Conventions
