@@ -236,6 +236,11 @@ Monster of the Week (held: resembles a trademarked character).
   (front and back alike). Three listings (printify/koozies.json): WHADID I DO?! (white, the owner's main pick),
   Not AI. Just Tired. (white text on #3a2a66), Elsewhere Groovy Retro (white). Tags accessory/gift/home put them
   in Home & Accessories and Gifts Under $30; WHADID also in Tired But Here, Groovy in Elsewhere Bound.
+  Colours (owner asked): the blank is white-only and variants are just Regular/Slim, so each colour is its own
+  listing ("<design> – <Colour>"), made by printify/koozie_colors.py (cloned from the original, recorded in
+  koozies.json). WHADID: White/Black/Navy/Red; Not AI: Purple/Black/White (dark text)/Red; Groovy:
+  White/Black/Navy/Cream. Shopify imports Printify mockups in random order, so photos were matched to Printify's
+  camera views by image comparison before setting alts, order (on-a-can front first) and Regular/Slim photos.
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;

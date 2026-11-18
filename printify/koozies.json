@@ -43,5 +43,59 @@
    "Slim Can, on a can, front",
    "Slim Can, on a can, back"
   ]
+ },
+ "WHADID I DO?! Koozie – Black": {
+  "printify": "6afe3690e6ba52c5810c8d70",
+  "design": "WHADID I DO?! Koozie",
+  "colour": "Black",
+  "bg": "#141414"
+ },
+ "WHADID I DO?! Koozie – Navy": {
+  "printify": "6afe3697e6ba52c5810c8d75",
+  "design": "WHADID I DO?! Koozie",
+  "colour": "Navy",
+  "bg": "#1f2a44"
+ },
+ "WHADID I DO?! Koozie – Red": {
+  "printify": "6afe369e0ef5a611d100b74b",
+  "design": "WHADID I DO?! Koozie",
+  "colour": "Red",
+  "bg": "#a8222b"
+ },
+ "Not AI. Just Tired. Koozie – Black": {
+  "printify": "6afe36a472cda2c206047451",
+  "design": "Not AI. Just Tired. Koozie",
+  "colour": "Black",
+  "bg": "#141414"
+ },
+ "Not AI. Just Tired. Koozie – White": {
+  "printify": "6afe36a70ef5a611d100b752",
+  "design": "Not AI. Just Tired. Koozie",
+  "colour": "White",
+  "bg": "#ffffff"
+ },
+ "Not AI. Just Tired. Koozie – Red": {
+  "printify": "6afe36abe4ef99a85e0e03bd",
+  "design": "Not AI. Just Tired. Koozie",
+  "colour": "Red",
+  "bg": "#a8222b"
+ },
+ "Elsewhere Groovy Retro Koozie – Black": {
+  "printify": "6afe36b2658727daea0ce53c",
+  "design": "Elsewhere Groovy Retro Koozie",
+  "colour": "Black",
+  "bg": "#141414"
+ },
+ "Elsewhere Groovy Retro Koozie – Navy": {
+  "printify": "6afe36b8f143d20e6406740a",
+  "design": "Elsewhere Groovy Retro Koozie",
+  "colour": "Navy",
+  "bg": "#1f2a44"
+ },
+ "Elsewhere Groovy Retro Koozie – Cream": {
+  "printify": "6afe36be658727daea0ce541",
+  "design": "Elsewhere Groovy Retro Koozie",
+  "colour": "Cream",
+  "bg": "#f3e6cc"
  }
 }
