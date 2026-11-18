@@ -9,7 +9,8 @@ from PIL import Image, ImageFilter, ImageEnhance, ImageDraw
 
 SRC, OUT = Path(sys.argv[1]), Path(sys.argv[2]); OUT.mkdir(exist_ok=True)
 N = 1908                      # print file size (Printify circle placeholder 954 px, printed at 2x)
-SAFE = 0.85                   # every visible art pixel within 80% of the radius
+SAFE = 0.95
+COVER = ("Moonwood Druid", "Lantern Witch", "Dragonfall")   # framed illustrations: zoom to fill the circle                   # every visible art pixel within 80% of the radius
 CY = 0.53                     # nudge art below centre, away from the hanging hole
 
 
@@ -33,8 +34,11 @@ def glow_background(art):
     return Image.fromarray(out)
 
 
-def fit(art):
+def fit(art, cover=False):
     art = art.crop(art.getbbox())
+    if cover:   # scale so the circle sits inside the art (corners crop away, like the full paintings)
+        s = N * 1.04 / min(art.width, art.height)
+        return art.resize((int(art.width * s), int(art.height * s)), Image.LANCZOS)
     a = np.asarray(art.split()[-1]) > 40
     ys, xs = np.nonzero(a)
     cx, cy = art.width / 2, art.height / 2
@@ -59,10 +63,11 @@ for title, v in info.items():
     if title.startswith("Not AI"):            # the tee file is black ink; the ornament needs it light
         white = Image.new("RGBA", art.size, (245, 240, 232, 255)); white.putalpha(art.split()[-1]); art = white
     bg = text_background() if title.startswith("Not AI") else glow_background(art.crop(art.getbbox()))
-    a = fit(art)
+    a = fit(art, cover=title.startswith(COVER))
     canvas = bg.convert("RGBA")
-    canvas.alpha_composite(a, (int(N / 2 - a.width / 2), int(N * CY - a.height / 2)))
-    name = "ornament-" + v["art"].replace("ornament-", "").replace(".jpg", "") + "-v2.png"
+    cy = N / 2 if title.startswith(COVER) else N * CY
+    canvas.alpha_composite(a, (int(N / 2 - a.width / 2), int(cy - a.height / 2)))
+    name = "ornament-" + v["art"].replace("ornament-", "").replace(".jpg", "") + "-v3.png"
     canvas.convert("RGB").save(OUT / name)
     v["new_art"] = name
     # preview: what shows on the round ornament

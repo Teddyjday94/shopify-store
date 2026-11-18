@@ -227,6 +227,15 @@ Monster of the Week (held: resembles a trademarked character).
   uploaded to Printify (printify/ornament_v2_done.json) and the Shopify photos replaced with the new mockups.
   The 4 painting ornaments (Queen Forever, Going With the Flow, Fallen Not Finished, Born Ready) already fill the
   circle and were left as they were.
+  v3 (same day, owner asked for bigger art): text designs now fill to 95% of the radius; the illustrated ones
+  (Moonwood Druid, Lantern Witch, Dragonfall) cover the whole circle edge to edge. Files *-v3.png; old photos
+  deleted. Not AI, Dreamscape, Chrome Globe and Groovy were missing the accessory/gift/home tags (so missing from
+  Home & Accessories and Gifts Under $30); added, plus brand/brand collection on the three Elsewhere ones.
+- Koozies (2026-11-18): Can Cooler bp951/pp92 (Pic The Gift), Regular + Slim, $15. Sheet folds in half: top half is
+  the front, bottom half is the back rotated 180. printify/koozie_art.py centres the art on a solid colour
+  (front and back alike). Three listings (printify/koozies.json): WHADID I DO?! (white, the owner's main pick),
+  Not AI. Just Tired. (white text on #3a2a66), Elsewhere Groovy Retro (white). Tags accessory/gift/home put them
+  in Home & Accessories and Gifts Under $30; WHADID also in Tired But Here, Groovy in Elsewhere Bound.
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;
