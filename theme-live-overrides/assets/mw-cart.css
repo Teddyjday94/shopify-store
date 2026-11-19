@@ -222,3 +222,21 @@ html.mw-modal-open { overflow: hidden; }
 .mw-ship__fill { display: block; height: 100%; width: 0; background: var(--accent, #c8875a); transition: width .4s ease; }
 .mw-ship.is-done .mw-ship__fill { background: #7fb38a; }
 @media (prefers-reduced-motion: reduce) { .mw-ship__fill { transition: none; } }
+
+/* Koozie multi-buy (2026-11-19): price table on koozie pages + nudge in the cart drawer */
+.mw-deal { margin: 14px 0 4px; padding: 12px 14px; border: 1px dashed var(--fg-gold, #e7b681); }
+.mw-deal__head { margin: 0 0 10px; font-size: 14px; }
+.mw-deal__head strong { color: var(--fg-gold, #e7b681); text-transform: uppercase; letter-spacing: .06em; }
+.mw-deal__tiers { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.mw-deal__tiers li { display: flex; flex-direction: column; align-items: center; padding: 8px 4px; border: 1px solid rgba(242,230,214,.18); text-align: center; }
+.mw-deal__tiers li.is-best { border-color: var(--fg-gold, #e7b681); background: rgba(231,182,129,.12); }
+.mw-deal__qty { font-size: 12px; opacity: .75; }
+.mw-deal__price { font-size: 17px; font-weight: 600; }
+.mw-deal__price small { font-size: 11px; font-weight: 400; opacity: .75; }
+.mw-deal__note { margin: 10px 0 0; font-size: 12px; opacity: .75; }
+.mw-deal-nudge { margin: 0; padding: 10px 22px; font-size: 13px; background: rgba(231,182,129,.12); border-bottom: 1px solid var(--mw-line); }
+.mw-deal-nudge[hidden] { display: none; }
+.mw-deal-nudge strong { color: var(--fg-gold, #e7b681); font-weight: 600; }
+.mw-deal-nudge a { color: inherit; text-decoration: underline; white-space: nowrap; }
+.mw-deal-nudge.is-done { background: rgba(127,179,138,.14); }
+@media (max-width: 749px) { .mw-deal-nudge { padding-inline: 16px; } }

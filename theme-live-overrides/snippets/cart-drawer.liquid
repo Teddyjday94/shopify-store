@@ -20,6 +20,9 @@
       <p class="mw-ship__text" data-ship-text></p>
       <div class="mw-ship__track" aria-hidden="true"><span class="mw-ship__fill" data-ship-fill></span></div>
     </div>
+    {%- comment -%} Koozie multi-buy nudge (2026-11-19). Tiers as min-qty:cents-each; must match the automatic
+      discounts "Koozies: 2/4/6 or more" in admin and snippets/koozie-deal.liquid. {%- endcomment -%}
+    <p class="mw-deal-nudge" data-koozie-nudge data-koozie-tiers="2:1000,4:900,6:850" data-koozie-url="{{ routes.search_url }}?q=koozie&amp;type=product" hidden></p>
     <div class="mw-drawer__body" data-cart-items></div>
     <footer class="mw-drawer__foot" data-cart-foot>
       <dl class="mw-drawer__totals">

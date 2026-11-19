@@ -135,9 +135,30 @@
     bar.querySelector('[data-ship-fill]').style.width = Math.min(100, (cart.total_price / goal) * 100) + '%';
   }
 
+  // Koozie multi-buy nudge: counts koozies in the cart and says how many more reach the next price.
+  function renderKoozieNudge() {
+    const el = drawer.querySelector('[data-koozie-nudge]');
+    if (!el) return;
+    const n = cart.items.filter((i) => /koozie/i.test(i.handle)).reduce((t, i) => t + i.quantity, 0);
+    const tiers = (el.dataset.koozieTiers || '').split(',').map((t) => t.split(':').map(Number)).filter((t) => t[0]);
+    if (!n || !tiers.length) { el.hidden = true; return; }
+    const next = tiers.find((t) => t[0] > n);
+    const link = `<a href="${el.dataset.koozieUrl}">Shop koozies</a>`;
+    if (next) {
+      const more = next[0] - n;
+      el.innerHTML = `Add <strong>${more} more koozie${more > 1 ? 's' : ''}</strong> and they're all <strong>${money(next[1])} each</strong>. ${link}`;
+      el.classList.remove('is-done');
+    } else {
+      el.innerHTML = `<strong>Best koozie price unlocked:</strong> ${money(tiers[tiers.length - 1][1])} each, applied at checkout`;
+      el.classList.add('is-done');
+    }
+    el.hidden = false;
+  }
+
   function renderCart() {
     updateCounts();
     renderShipBar();
+    renderKoozieNudge();
     loadLinePhotos();
     if (!cart.item_count) {
       itemsEl.innerHTML = `<div class="mw-drawer__empty"><p class="mw-drawer__empty-title">${esc(S.empty)}</p>

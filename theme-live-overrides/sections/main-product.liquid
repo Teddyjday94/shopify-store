@@ -55,6 +55,7 @@
 
         <p class="product__price" data-product-price>{% render 'price', variant: current_variant %}</p>
         <p class="label muted" style="margin: 0;">{{ 'cart.taxes_shipping' | t }}</p>
+        {%- if product.tags contains 'koozie' -%}{% render 'koozie-deal' %}{%- endif -%}
 
         {% render 'style-switcher', product: product %}
 
