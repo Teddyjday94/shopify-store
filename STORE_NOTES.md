@@ -252,6 +252,11 @@ Monster of the Week (held: resembles a trademarked character).
   any new koozie product. Worst case (free shipping): 4 at $9 ~$6.40, 6 at $8.50 ~$9.20. A 20-pack via Printify
   costs ~$122 before profit (no volume pricing), too dear for buyers; real bulk ($1-3 each) would need a bulk
   printer and our own stock.
+- Koozie deal on the site (2026-11-19), theme copy "Elsewhere Apparel Co. | Koozie Deals" (156906258593, unpublished;
+  duplicated from the live Shop Helpers theme): products tagged "koozie" show a "Buy more, pay less" price table
+  under the price (snippets/koozie-deal.liquid), and the cart drawer says how many more koozies reach the next
+  price (data-koozie-tiers in snippets/cart-drawer.liquid, renderKoozieNudge in assets/mw-cart.js; counts lines whose
+  handle contains "koozie"). Change both if the discount tiers change. Tested: theme-live-overrides/koozie_test.js.
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;
