@@ -264,6 +264,16 @@ Monster of the Week (held: resembles a trademarked character).
   order profits (9 at $7 with free shipping ~$3.25 is the low point). A koozie in a $60+ apparel order loses ~$0.90 on
   its own shipping, covered by the apparel. The Koozie Deals theme went live with the old table; copy "Elsewhere
   Apparel Co. | Koozie Prices" (156906782881) has the new prices and must be published.
+- Printify Premium: free month, active until 2026-12-18. Costs with Premium (cheapest variant): koozie $3.62 (was
+  $4.99), unisex tee $9.40 (was $11.77), women's tee $8.14 (was $10.82), crewneck $13.78, hoodie $16.71, long sleeve
+  $20.27, mug $4.10, ornament $4.57, desk mat $7.74, hats $10.21-15.26. Shipping is not discounted. Premium costs
+  $39/mo or $299/yr; worth keeping at roughly 15-25 items/month (monthly) or 10-15 (yearly).
+- Holiday Sale (automatic discount, 2026-11-19 to end of 2026-12-17 ET, endsAt 2026-12-18T04:59Z): 15% off every
+  product in the hidden smart collection "holiday-sale-2026" (title does not contain "Koozie"; unpublished, so not
+  shown in the store; new non-koozie products join it automatically). Koozies keep their own tiers instead. The sale
+  and the three koozie tiers all have productDiscounts combining ON; checked with draftOrderCalculate: tiers do not
+  stack on each other (4 koozies $30, 6 $42), tee + 6 koozies $64.95 (both apply). Ends a day before Premium so every
+  sale order is printed at Premium cost. Before it ends, nothing to do; afterwards delete the collection if wanted.
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;
