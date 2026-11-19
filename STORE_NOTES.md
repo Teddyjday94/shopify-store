@@ -13,7 +13,7 @@ Facts worth remembering between sessions. Update as things change.
 - Hoodies: $37
 - Hats, beanies, phone cases: $27
 - Mugs, ornaments: $17
-- Koozies: $12 ($10 each for 2+, automatic discount)
+- Koozies: $12; automatic tiers 2+ $10, 4+ $9, 6+ $8.50 each (best one applies, none stack)
 - Desk mats: $27 / $37 / $47 by size
 - Posters: removed from the store (2026-11-10)
 - Discount codes: none (ELSEWHERE15 / MANYWORLDS15 deleted 2026-11-10)
@@ -247,6 +247,11 @@ Monster of the Week (held: resembles a trademarked character).
   products must be added to that discount. Floor math: cost $4.99 + US ship $5.59 first / $0.89 extra (own
   supplier, so never shares shipping with apparel); at $12 a lone koozie on a free-shipping order still nets ~$0.75,
   2 at $10 ~$2.70, more grows from there. Below ~$11 a single koozie loses money on free-shipping orders.
+  Added 2026-11-19: "Koozies: 4 or more for $9 each" ($3 off each) and "Koozies: 6 or more for $8.50 each" ($3.50
+  off each); all three tiers have productDiscounts combine off, so Shopify applies only the best. All three must get
+  any new koozie product. Worst case (free shipping): 4 at $9 ~$6.40, 6 at $8.50 ~$9.20. A 20-pack via Printify
+  costs ~$122 before profit (no volume pricing), too dear for buyers; real bulk ($1-3 each) would need a bulk
+  printer and our own stock.
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;
