@@ -13,7 +13,7 @@ Facts worth remembering between sessions. Update as things change.
 - Hoodies: $37
 - Hats, beanies, phone cases: $27
 - Mugs, ornaments: $17
-- Koozies: $12; automatic tiers 2+ $10, 4+ $9, 6+ $8.50 each (best one applies, none stack)
+- Koozies: $9.99; automatic tiers 2+ $8, 4+ $7.50, 6+ $7 each (best one applies, none stack)
 - Desk mats: $27 / $37 / $47 by size
 - Posters: removed from the store (2026-11-10)
 - Discount codes: none (ELSEWHERE15 / MANYWORLDS15 deleted 2026-11-10)
@@ -257,6 +257,13 @@ Monster of the Week (held: resembles a trademarked character).
   under the price (snippets/koozie-deal.liquid), and the cart drawer says how many more koozies reach the next
   price (data-koozie-tiers in snippets/cart-drawer.liquid, renderKoozieNudge in assets/mw-cart.js; counts lines whose
   handle contains "koozie"). Change both if the discount tiers change. Tested: theme-live-overrides/koozie_test.js.
+- Koozie price cut (2026-11-19, later): $9.99 each; the three discounts renamed and set to $1.99/$2.49/$2.99 off each
+  (2+ $8, 4+ $7.50, 6+ $7). Koozie shipping is the Printify profile "Standard: Pic The Gift, 951, 5338,Accessories":
+  US $5.59 up to 0.33 lb, +$0.89 per 0.22 lb, i.e. customers pay Printify's cost. Floor: extra koozies cost ~$6.10 with
+  fees, so $7 is the lowest tier; at $6.50 a 10-koozie order (free shipping at $60) loses money. Every koozie-only
+  order profits (9 at $7 with free shipping ~$3.25 is the low point). A koozie in a $60+ apparel order loses ~$0.90 on
+  its own shipping, covered by the apparel. The Koozie Deals theme went live with the old table; copy "Elsewhere
+  Apparel Co. | Koozie Prices" (156906782881) has the new prices and must be published.
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;

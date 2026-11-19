@@ -1,7 +1,7 @@
 // Usage: node theme-live-overrides/koozie_test.js [screenshot dir]   Checks the koozie price table + cart nudge in a theme copy.
 const { chromium } = require('playwright');
 const OUT = process.argv[2] || __dirname + '/';
-const THEME = '156906258593';
+const THEME = '156906782881';
 const base = 'https://elsewhereapparelco.com';
 (async () => {
   const b = await chromium.launch();
