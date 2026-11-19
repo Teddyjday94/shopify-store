@@ -279,6 +279,15 @@ Monster of the Week (held: resembles a trademarked character).
   after it (sections/announcement-bar.liquid). Messages: "Holiday Sale: 15% off everything through Dec 17" (ends
   2026-12-17, links /collections/all), "Koozies: 6 or more for $7 each" (links koozie search), then the two old ones.
   Not browser-tested: the store's bot check blocked the test browser that day; files verified by checksum.
+- Printify vs Shopify sync check (2026-11-19): compared all 179 Printify products to Shopify (variant counts, price
+  range). 12 products had in-stock Printify variants missing from Shopify (likely out of stock when first published):
+  Forest M/XL on Not AI, Butterfly Effect, Sunflower Soul, Color Me Bold, Crown & Curls, Pink Crown, Sisterhood tees;
+  Mustard M/L on Odysseus; Navy L/2XL on Post-Credits, Dragonfall, Lantern Witch, Moonwood hoodies. Republished
+  those, plus all koozies and ornaments (edited in Printify after publishing), with publish flags variants=true and
+  everything else false: only adds/syncs variants, leaves Shopify titles, descriptions, tags, SEO and photos alone
+  (checked). New variants then got their colour photo. Light Blue 2XL on those 4 hoodies is out of stock at the
+  supplier, so it stays off Shopify. 5 older Printify-only tees (Please Respect the Plot, Stacked Books, Skeleton
+  Reading Book, Read Wildly, My Happy Place; $14.99-26.79) were never published; left for the owner to decide.
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;
