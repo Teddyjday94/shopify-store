@@ -1,0 +1,61 @@
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement": {
+      "type": "announcement-bar",
+      "blocks": {
+        "sale": {
+          "type": "message",
+          "settings": {
+            "text": "Holiday Sale: 15% off everything through Dec 17",
+            "link": "/collections/all",
+            "ends": "2026-12-17"
+          }
+        },
+        "koozies": {
+          "type": "message",
+          "settings": {
+            "text": "Koozies: 6 or more for $7 each",
+            "link": "/search?q=koozie&type=product",
+            "ends": ""
+          }
+        },
+        "m2": {
+          "type": "message",
+          "settings": {
+            "text": "Printed to order, just for you",
+            "link": ""
+          }
+        },
+        "m3": {
+          "type": "message",
+          "settings": {
+            "text": "Free US shipping on orders $60+.",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "sale",
+        "koozies",
+        "m2",
+        "m3"
+      ],
+      "settings": {
+        "speed": 40
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "menu": "main-menu",
+        "logo_width": 180
+      }
+    }
+  },
+  "order": [
+    "announcement",
+    "header"
+  ]
+}
