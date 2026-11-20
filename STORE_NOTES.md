@@ -324,7 +324,7 @@ Monster of the Week (held: resembles a trademarked character).
   pair; combines with product + shipping discounts. Scheduled to start 2026-12-18T04:59Z, when the Holiday Sale ends:
   Shopify won't discount the "buy" item with another deal, so during the sale it always lost to 15% off both
   ($11.85 vs $8.40 on a hoodie + pair). Mechanism checked with a temporary koozie-as-buy test (pair $42 -> $33.60),
-  test deleted. After Premium a set ($37 + $33.60) still nets ~$15. Sweatpants descriptions end with a "Make it a
+  test deleted. Correction (later): a set is over $60, so we pay ~$10-11 SwiftPOD shipping; after Premium a set ($37 + $33.60) nets ~$6.80, ~$16.90 with Premium renewed (see set economics below). Sweatpants descriptions end with a "Make it a
   set" line mentioning Dec 18; a scheduled check-in on Dec 18 tests the deal and trims that line. Urban Collection
   sweatpants description no longer claims matching Urban hoodies (there are none yet).
 - Announcement bar (2026-11-20): messages also take a "starts" date (shows from that day, store time zone). Messages:
@@ -361,6 +361,14 @@ Monster of the Week (held: resembles a trademarked character).
   /cart/add.js items call. Gotcha: the product form has an input named "id", which shadows form.id in JS; use
   form.getAttribute('id'). Tested (theme-live-overrides/set_addon_test.js): Final Boss hoodie L + Side Quest Navy
   L -> cart has both, $67.15 = page total; unticked -> hoodie only; iPhone layout fine, no overflow.
+- Set economics (2026-11-20, SwiftPOD hoodie + 18200 pants, free shipping paid by us: ~$7.99 first + $2.09 extra,
+  2.9% + 30c fees; post-Premium costs estimated ~25% above Premium: hoodie ~$20.90, pants ~$29.66):
+  $79 no deal ~$15 | $70.60 (20% off pants, current) ~$6.80 | 25% off ~$4.75 | 30% off ~$2.70. With Premium kept add
+  ~$10 to each. Owner chose to keep 20% for now.
+- Print Geek (provider 27, Canada) makes 4 hoodies: Moonwood Druid, Lantern Witch, Dragonfall, Post-Credits. US
+  shipping $28.09 first item (+$3.29); Shopify profile "Standard: Print Geek, Hoodie, Sweatshirt" charges customers the
+  same. Any $60+ free-shipping order with one loses ~$13-21. Fix if wanted: move them to SwiftPOD (bp 77 / pp 39,
+  ~$8 shipping). Owner declined for now (2026-11-20).
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;
