@@ -166,5 +166,65 @@
    "Brown",
    "Royal"
   ]
+ },
+ "Side Quest Painted Beanie": {
+  "printify": "6affca2b85a4176c400bf91d",
+  "collection": "side-quest",
+  "kind": "Painted Beanie",
+  "colors": [
+   "Black",
+   "Graphite",
+   "Navy"
+  ]
+ },
+ "Elsewhere Signature Painted Beanie": {
+  "printify": "6affca2f3c6d6ac92d0f58d6",
+  "collection": "elsewhere-signature",
+  "kind": "Painted Beanie",
+  "colors": [
+   "Black",
+   "Graphite",
+   "Navy"
+  ]
+ },
+ "Legends Never Die Painted Beanie": {
+  "printify": "6affca3285a4176c400bf92d",
+  "collection": "legends-never-die",
+  "kind": "Painted Beanie",
+  "colors": [
+   "Black",
+   "Graphite",
+   "Navy"
+  ]
+ },
+ "Born Ready Painted Beanie": {
+  "printify": "6affca3713e72c2c980a1aec",
+  "collection": "born-ready",
+  "kind": "Painted Beanie",
+  "colors": [
+   "Black",
+   "Graphite",
+   "Navy"
+  ]
+ },
+ "Urban Collection Painted Beanie": {
+  "printify": "6affca3c856de185780c7007",
+  "collection": "urban-collection",
+  "kind": "Painted Beanie",
+  "colors": [
+   "Black",
+   "Graphite",
+   "Navy"
+  ]
+ },
+ "Female Lead Painted Beanie": {
+  "printify": "6affca3f316e1226a508b090",
+  "collection": "female-lead",
+  "kind": "Painted Beanie",
+  "colors": [
+   "Black",
+   "Graphite",
+   "Navy"
+  ]
  }
 }
