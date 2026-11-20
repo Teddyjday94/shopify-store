@@ -319,6 +319,14 @@ Monster of the Week (held: resembles a trademarked character).
   and one right-leg (emblem) image, order Black, Dark Heather, Navy; alts and variant photos set by hand.
   Ships from Fulfill Engine, so not together with SwiftPOD hoodies. Rejected: Independent Trading fleece (Army/Red/
   Royal, ~$33 cost, $52 retail), AOP joggers (polyester, $20.79 US shipping), light colours (art's dark edges).
+- Set deal (2026-11-20): automatic Buy X Get Y "Hoodie + sweatpants set: 20% off the sweatpants" (DiscountAutomaticNode
+  1280963117217): buy 1 from Hoodies & Sweatshirts (hoodies + crewnecks), get 20% off 1 from Sweatpants; repeats per
+  pair; combines with product + shipping discounts. Scheduled to start 2026-12-18T04:59Z, when the Holiday Sale ends:
+  Shopify won't discount the "buy" item with another deal, so during the sale it always lost to 15% off both
+  ($11.85 vs $8.40 on a hoodie + pair). Mechanism checked with a temporary koozie-as-buy test (pair $42 -> $33.60),
+  test deleted. After Premium a set ($37 + $33.60) still nets ~$15. Sweatpants descriptions end with a "Make it a
+  set" line mentioning Dec 18; a scheduled check-in on Dec 18 tests the deal and trims that line. Urban Collection
+  sweatpants description no longer claims matching Urban hoodies (there are none yet).
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;
