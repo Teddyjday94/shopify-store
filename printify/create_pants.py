@@ -10,17 +10,19 @@ from create_products import Printify
 
 SHOP = "/shops/29509655"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PRINT = os.path.join(ROOT, "designs/pants-2026/print-pocket")  # make_print.py pocket
+PRINT = os.path.join(ROOT, "designs/pants-2026/print")  # make_print.py (18200); print-pocket = 18100
 DONE = os.path.join(ROOT, "printify/pants.json")
-COLORS = ("Black", "Navy", "Dark Heather")
-BLUEPRINT, PROVIDER = 6039, 217
-LEFT, RIGHT = "front_left_leg_dtf", "front_right_leg_dtf"
+COLORS = ("Black", "Navy")
+BLUEPRINT, PROVIDER = 1398, 39   # Gildan 18200 at SwiftPOD (18100 pocket at Fulfill Engine was 6039 / 217)
+LEFT, RIGHT = "left_leg_front", "right_leg_front"
 PRICES = {"S": 4200, "M": 4200, "L": 4200, "XL": 4200, "2XL": 4600, "3XL": 4800}  # two print spots
-FEATURES = ("<ul><li>Gildan Heavy Blend fleece, 50% cotton / 50% polyester, 8 oz</li>"
-            "<li>Side pockets, covered elastic waistband with drawcord, elastic cuffs</li>"
-            "<li>Same Gildan fleece as our hoodies</li>"
+FEATURES = ("<ul><li>Gildan Heavy Blend fleece, 50% cotton / 50% polyester</li>"
+            "<li>Elastic waistband with drawcord, elastic cuffs</li>"
+            "<li>Same maker as our hoodies, so a matching set usually ships together</li>"
             "<li>Printed to order just for you</li></ul>"
-            "<h3>Size &amp; fit</h3><p>Available sizes: S, M, L, XL, 2XL, 3XL. Unisex fit.</p>")
+            "<h3>Size &amp; fit</h3><p>Available sizes: S, M, L, XL, 2XL, 3XL. Unisex fit.</p>"
+            "<p><strong>Make it a set:</strong> add any hoodie or crewneck and get 20% off the sweatpants, from "
+            "December 18. Until then, the Holiday Sale takes 15% off both.</p>")
 
 COLLECTIONS = {
     "side-quest": ("Side Quest", ["player two", "side quest", "gaming", "nerdy"],
@@ -58,7 +60,9 @@ def main():
                 path = os.path.join(PRINT, f"{slug}-{style}.png")
                 ups[style] = api.post("/uploads/images.json", {"file_name": os.path.basename(path),
                                       "contents": base64.b64encode(open(path, "rb").read()).decode()})["id"]
-            desc = (f"<p>The {title} are fleece sweatpants made to match our {name} hoodies, tees and crewnecks: "
+            match = ("that start our Urban Collection" if slug == "urban-collection"
+                     else f"made to match our {name} hoodies, tees and crewnecks")
+            desc = (f"<p>The {title} are fleece sweatpants {match}: "
                     f"the full design down the left leg and its emblem on the right thigh.</p><p>{bold_desc}</p>" + FEATURES)
             vids = [v["id"] for v in variants]
             body = {"title": title, "description": desc, "blueprint_id": BLUEPRINT, "print_provider_id": PROVIDER,

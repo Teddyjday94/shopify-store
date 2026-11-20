@@ -15,7 +15,7 @@ import sys
 POCKET = 'pocket' in sys.argv[1:]
 W, H = (1200, 4200) if POCKET else (1200, 4800)
 OUT = 'print-pocket' if POCKET else 'print'
-EMBLEM_W = 1140 if POCKET else 860
+EMBLEM_W = 1140  # full width since 2026-11-20 (owner asked for a bigger emblem)
 os.makedirs(OUT, exist_ok=True)
 
 

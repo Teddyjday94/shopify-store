@@ -1,0 +1,32 @@
+{
+ "Side Quest Sweatpants": {
+  "printify": "6affad9891900e187303a982",
+  "collection": "side-quest",
+  "style": "bold left + emblem right"
+ },
+ "Elsewhere Signature Sweatpants": {
+  "printify": "6affad9ec27dd3b5d20cf696",
+  "collection": "elsewhere-signature",
+  "style": "bold left + emblem right"
+ },
+ "Legends Never Die Sweatpants": {
+  "printify": "6affada42d50b435790c8b6c",
+  "collection": "legends-never-die",
+  "style": "bold left + emblem right"
+ },
+ "Born Ready Sweatpants": {
+  "printify": "6affada98255bd08d507ffd0",
+  "collection": "born-ready",
+  "style": "bold left + emblem right"
+ },
+ "Urban Collection Sweatpants": {
+  "printify": "6affadaed9c1f4bb4b0f85a9",
+  "collection": "urban-collection",
+  "style": "bold left + emblem right"
+ },
+ "Female Lead Sweatpants": {
+  "printify": "6affadb42d50b435790c8b7a",
+  "collection": "female-lead",
+  "style": "bold left + emblem right"
+ }
+}

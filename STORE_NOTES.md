@@ -13,7 +13,7 @@ Facts worth remembering between sessions. Update as things change.
 - Hoodies: $37
 - Hats, beanies, phone cases: $27
 - Mugs, ornaments: $17
-- Sweatpants: $42 (S-XL), $46 2XL, $48 3XL (two print spots; Gildan 18100 pocket, Black/Navy/Dark Heather)
+- Sweatpants: $42 (S-XL), $46 2XL, $48 3XL (two print spots; Gildan 18200 at SwiftPOD, Black/Navy)
 - Koozies: $9.99; automatic tiers 2+ $8, 4+ $7.50, 6+ $7 each (best one applies, none stack)
 - Desk mats: $27 / $37 / $47 by size
 - Posters: removed from the store (2026-11-10)
@@ -338,6 +338,12 @@ Monster of the Week (held: resembles a trademarked character).
   Owner published Set Deal (2026-11-20) and deleted a few drafts (17 themes left).
 - Main menu (2026-11-20): "Sweatpants" added to Shop after Hoodies & Crewnecks; "Urban Collection" added to
   Collections (menuUpdate replaces the whole list, so all existing items are resent with their ids). Checked live.
+- Sweatpants back on Gildan 18200 / SwiftPOD (2026-11-20, owner preferred its full-pants mockups over the 18100's
+  per-leg close-ups): Black + Navy, S-3XL, $42/$46/$48, emblem now full width (1140 px) on the right thigh, big
+  design unchanged on the left. Cost with Premium $23.73 S-XL, $28.62 2XL, $30.40 3XL. New Shopify ids again
+  (8915869171873, 8915869925537, 8915870711969, 8915871269025, 8915871727777, 8915872055457); the 18100 ones are
+  in printify/pants_18100_retired.json. Descriptions keep the set-deal line and the Urban wording (now built in
+  create_pants.py). Ships with SwiftPOD hoodies again. Dec 18 check-in updated with the new ids.
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;
