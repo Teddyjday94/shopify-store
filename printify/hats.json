@@ -1,0 +1,170 @@
+{
+ "Side Quest Trucker Hat": {
+  "printify": "6affc0821cda74b2fa015842",
+  "collection": "side-quest",
+  "kind": "Trucker Hat",
+  "colors": [
+   "Black",
+   "Black / White",
+   "Navy / White",
+   "Charcoal / White",
+   "Evergreen / White",
+   "Dark Heather Grey",
+   "Steel Blue / Silver"
+  ]
+ },
+ "Side Quest Beanie": {
+  "printify": "6affc086d9c1f4bb4b0f9636",
+  "collection": "side-quest",
+  "kind": "Beanie",
+  "colors": [
+   "Black",
+   "Navy",
+   "Dark Grey",
+   "Spruce",
+   "Olive",
+   "Brown",
+   "Royal"
+  ]
+ },
+ "Elsewhere Signature Trucker Hat": {
+  "printify": "6affc08a316e1226a508a401",
+  "collection": "elsewhere-signature",
+  "kind": "Trucker Hat",
+  "colors": [
+   "Black",
+   "Black / White",
+   "Navy / White",
+   "Charcoal / White",
+   "Evergreen / White",
+   "Dark Heather Grey",
+   "Coyote Brown / Black"
+  ]
+ },
+ "Elsewhere Signature Beanie": {
+  "printify": "6affc08f3c6d6ac92d0f4d82",
+  "collection": "elsewhere-signature",
+  "kind": "Beanie",
+  "colors": [
+   "Black",
+   "Navy",
+   "Dark Grey",
+   "Spruce",
+   "Olive",
+   "Brown",
+   "Royal"
+  ]
+ },
+ "Legends Never Die Trucker Hat": {
+  "printify": "6affc093ecdd113cf607a474",
+  "collection": "legends-never-die",
+  "kind": "Trucker Hat",
+  "colors": [
+   "Black",
+   "Black / White",
+   "Navy / White",
+   "Charcoal / White",
+   "Evergreen / White",
+   "Dark Heather Grey",
+   "Maroon / Grey"
+  ]
+ },
+ "Legends Never Die Beanie": {
+  "printify": "6affc097c27dd3b5d20d0760",
+  "collection": "legends-never-die",
+  "kind": "Beanie",
+  "colors": [
+   "Black",
+   "Navy",
+   "Dark Grey",
+   "Spruce",
+   "Olive",
+   "Brown",
+   "Royal"
+  ]
+ },
+ "Born Ready Trucker Hat": {
+  "printify": "6affc09b4e6a14ab0c080ba6",
+  "collection": "born-ready",
+  "kind": "Trucker Hat",
+  "colors": [
+   "Black",
+   "Black / White",
+   "Navy / White",
+   "Charcoal / White",
+   "Evergreen / White",
+   "Dark Heather Grey",
+   "Royal / White"
+  ]
+ },
+ "Born Ready Beanie": {
+  "printify": "6affc09fecdd113cf607a483",
+  "collection": "born-ready",
+  "kind": "Beanie",
+  "colors": [
+   "Black",
+   "Navy",
+   "Dark Grey",
+   "Spruce",
+   "Olive",
+   "Brown",
+   "Royal"
+  ]
+ },
+ "Urban Collection Trucker Hat": {
+  "printify": "6affc0a33c6d6ac92d0f4d90",
+  "collection": "urban-collection",
+  "kind": "Trucker Hat",
+  "colors": [
+   "Black",
+   "Black / White",
+   "Navy / White",
+   "Charcoal / White",
+   "Evergreen / White",
+   "Dark Heather Grey",
+   "Brown / Khaki"
+  ]
+ },
+ "Urban Collection Beanie": {
+  "printify": "6affc0a7d9c1f4bb4b0f9647",
+  "collection": "urban-collection",
+  "kind": "Beanie",
+  "colors": [
+   "Black",
+   "Navy",
+   "Dark Grey",
+   "Spruce",
+   "Olive",
+   "Brown",
+   "Royal"
+  ]
+ },
+ "Female Lead Trucker Hat": {
+  "printify": "6affc0ab1bb94b621f03e894",
+  "collection": "female-lead",
+  "kind": "Trucker Hat",
+  "colors": [
+   "Black",
+   "Black / White",
+   "Navy / White",
+   "Charcoal / White",
+   "Evergreen / White",
+   "Dark Heather Grey",
+   "Maroon / Grey"
+  ]
+ },
+ "Female Lead Beanie": {
+  "printify": "6affc0af3c6d6ac92d0f4d9a",
+  "collection": "female-lead",
+  "kind": "Beanie",
+  "colors": [
+   "Black",
+   "Navy",
+   "Dark Grey",
+   "Spruce",
+   "Olive",
+   "Brown",
+   "Royal"
+  ]
+ }
+}

@@ -13,6 +13,7 @@ Facts worth remembering between sessions. Update as things change.
 - Hoodies: $37
 - Hats, beanies, phone cases: $27
 - Mugs, ornaments: $17
+- Collection trucker hats + beanies: $27
 - Sweatpants: $42 (S-XL), $46 2XL, $48 3XL (two print spots; Gildan 18200 at SwiftPOD, Black/Navy)
 - Koozies: $9.99; automatic tiers 2+ $8, 4+ $7.50, 6+ $7 each (best one applies, none stack)
 - Desk mats: $27 / $37 / $47 by size
@@ -369,6 +370,15 @@ Monster of the Week (held: resembles a trademarked character).
   shipping $28.09 first item (+$3.29); Shopify profile "Standard: Print Geek, Hoodie, Sweatshirt" charges customers the
   same. Any $60+ free-shipping order with one loses ~$13-21. Fix if wanted: move them to SwiftPOD (bp 77 / pp 39,
   ~$8 shipping). Owner declined for now (2026-11-20).
+- Collection hats (2026-11-20): per collection (Side Quest, Elsewhere Signature, Legends Never Die, Born Ready, Urban
+  Collection, Female Lead) a "<Name> Trucker Hat" (Yupoong 6606, bp 1446 / pp 99, embroidered front 1200x675, cost
+  $13.94 with Premium) and "<Name> Beanie" (Yupoong 1501KC, bp 1691 / pp 99, embroidered cuff 1500x525, $14.05), $27
+  each, 7 dark colours (trucker: Black, Black/White, Navy/White, Charcoal/White, Evergreen/White, Dark Heather Grey +
+  one per design; beanie: Black, Navy, Dark Grey, Spruce, Olive, Brown, Royal). Light crowns skipped (cream/gold
+  thread vanishes). Art: designs/hats-2026/flatten.py turns the painted sweatpants emblems into 1-5 solid thread
+  colours (drops shading and Side Quest's clouds, merges blotchy letters, removes unsewable specks) -> flat/;
+  printify/create_hats.py builds print files (designs/hats-2026/print) and products (ids in printify/hats.json).
+  Printify maps colours to its nearest real threads (Urban teal looks greener, BR cream more golden on mockups).
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;
