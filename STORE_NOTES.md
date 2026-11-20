@@ -13,6 +13,7 @@ Facts worth remembering between sessions. Update as things change.
 - Hoodies: $37
 - Hats, beanies, phone cases: $27
 - Mugs, ornaments: $17
+- Sweatpants: $37 (S-XL), $41 2XL, $43 3XL
 - Koozies: $9.99; automatic tiers 2+ $8, 4+ $7.50, 6+ $7 each (best one applies, none stack)
 - Desk mats: $27 / $37 / $47 by size
 - Posters: removed from the store (2026-11-10)
@@ -288,6 +289,20 @@ Monster of the Week (held: resembles a trademarked character).
   (checked). New variants then got their colour photo. Light Blue 2XL on those 4 hoodies is out of stock at the
   supplier, so it stays off Shopify. 5 older Printify-only tees (Please Respect the Plot, Stacked Books, Skeleton
   Reading Book, Read Wildly, My Happy Place; $14.99-26.79) were never published; left for the owner to decide.
+- Sweatpants (2026-11-20): 12 listings, Gildan 18200 at SwiftPOD (bp 1398 / pp 39, same maker as the hoodies),
+  Black + Navy only (the art has dark painted edges made for dark fabric; checked on grey/sand, looked dirty),
+  S-3XL, $37/$41/$43. Cost with Premium $16.24-18.47 S-XL, $20.51-25.15 2XL-3XL (about 20-25% more without).
+  Owner's art (designs/pants-2026/*.png): per collection a Bold tall design and a Subtle emblem. "<Name> Sweatpants"
+  = Bold down the left thigh (1140 px wide from 120 px below the waist on the 1200x4800 left_leg_front area);
+  "<Name> Emblem Sweatpants" = Subtle, 860 px wide on the upper thigh. designs/pants-2026/make_print.py builds the
+  print files (drops stray source-crop fragments; hand trims for Urban, Born Ready and Elsewhere emblems).
+  Female Lead came as one small 72 dpi image (1122x1402) holding both pieces; it was cut apart and upscaled 3x, so
+  it prints softer than the rest (a full-size file from the owner would fix it). printify/create_pants.py made and
+  published them (ids in printify/pants.json). Collections: Side Quest, Elsewhere Bound, Legends Never Die
+  (immortalized tag, Born Ready too), Female Lead (own lane), new "Urban Collection" (tag urban) and new
+  "Sweatpants" (tag sweatpants); Women's got a second source, product type Sweatpants. Product type set to
+  Sweatpants (Printify sets Trousers). Photos are Printify's flat drawings, alts "<title> in <Colour>, front/back".
+  An earlier set (create_extras.py, ELSEWHERE wordmark, $42) had been removed before this.
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;
