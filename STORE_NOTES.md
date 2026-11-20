@@ -383,6 +383,15 @@ Monster of the Week (held: resembles a trademarked character).
   the order of the variants' featured photos), then back / worn front / worn back per colour in that same order.
   Alts "<Title> in <Colour>, front|back|worn, front|worn, back" set via fileUpdate; the Black front moved to first
   (productReorderMedia) so cards show Black. Variant photos link correctly as imported.
+- Social Club hats (2026-11-20): the owner's 7 full-colour party designs (designs/party-2026/src: Cheers From
+  Elsewhere, Weekend Ritual, Pour Decisions Club, Side Quest Social Club, After Hours Only, Night Shift Social,
+  Midnight Mischief) as "<Design> Trucker Hat" (OTTO foam trucker bp 1735 / pp 99, DTF front 1650x750, cost $11.50,
+  8 colours: Black, Dark Navy, Black/White, Navy/White, Red, Royal/White, Hot Pink/White, Kelly/White) and
+  "<Design> Beanie" (bp 5254 / pp 99, Black/Graphite/Navy, $11.17), $27 each. printify/create_party_hats.py, ids in
+  printify/party_hats.json. Smart collection Social Club (handle social-club, tag "social club", Collection
+  337979244705), in the Collections menu. Trucker photos: 32 (8 fronts, then per colour side / worn / worn second
+  model); alts set, variant photos linked by Printify, Black first. Other DTF-printable caps exist (Richardson
+  printed truckers bp 5596 with 24 colours, at Fulfill Engine pp 217) if more colour choice is wanted.
 - Painted beanies (2026-11-20, owner: "incorporate our actual designs"): "<Name> Painted Beanie" x6, the painted
   emblems unsimplified, DTF-printed on Port Authority C939 100% Cotton Beanie (bp 5254 / pp 99, front_dtf 1500x900,
   no cuff), Black/Graphite/Navy only, $27, cost $11.17, US ship $5.09. Sold ALONGSIDE the embroidered beanies (owner's
