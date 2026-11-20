@@ -251,7 +251,18 @@
     if (btn) { btn.disabled = true; btn.textContent = S.adding; btn.setAttribute('aria-busy', 'true'); }
     if (errorEl) { errorEl.hidden = true; errorEl.textContent = ''; }
     try {
-      await api('cart/add.js', new FormData(form));
+      // Hoodie page "Complete the set": when "yes" is ticked, add the hoodie and the chosen sweatpants together.
+      const addon = form.id && document.querySelector(`[data-set-addon][data-for="${form.id}"]`);
+      const pantsId = addon && addon.querySelector('[data-set-yes]').checked ? addon.dataset.pantsVariant : '';
+      if (pantsId) {
+        const fd = new FormData(form);
+        await api('cart/add.js', { items: [
+          { id: Number(fd.get('id')), quantity: Number(fd.get('quantity') || 1) },
+          { id: Number(pantsId), quantity: 1 }
+        ] });
+      } else {
+        await api('cart/add.js', new FormData(form));
+      }
       await refreshCart();
       statusEl.textContent = S.added;
       if (onCartPage) { location.reload(); return; }
@@ -424,3 +435,85 @@
 
   updateCounts();
 })();
+
+// ---------- hoodie page: "Complete the set" add-on (2026-11-20, snippets/matching-sweatpants.liquid) ----------
+(() => {
+  document.querySelectorAll('[data-set-addon]').forEach((box) => {
+    let data;
+    try { data = JSON.parse(box.querySelector('[data-set-data]').textContent); } catch (e) { return; }
+    const form = document.getElementById(box.dataset.for);
+    if (!form) return;
+    const fmt = box.dataset.money || '${{amount}}';
+    const money = (cents) => fmt.replace(/\{\{\s*\w+\s*\}\}/, (cents / 100).toFixed(2));
+    const yes = box.querySelector('[data-set-yes]');
+    const panel = box.querySelector('[data-set-panel]');
+    const colorsEl = box.querySelector('[data-set-colors]');
+    const sizesEl = box.querySelector('[data-set-sizes]');
+    const order = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'];
+    const colors = [...new Set(data.pants.map((v) => v.color))];
+    const sizes = [...new Set(data.pants.map((v) => v.size))].sort((a, b) => order.indexOf(a) - order.indexOf(b));
+    const uid = box.dataset.for + '-set';
+    let color = colors[0];
+    let size = null;
+
+    const mainVariant = () => data.main[form.querySelector('[name="id"]').value];
+    const mainSize = () => { const v = mainVariant(); return v && v.options.find((o) => sizes.includes(o)); };
+    const pick = () => data.pants.find((v) => v.color === color && v.size === size);
+
+    function buttons(el, values, name, current, onPick) {
+      el.innerHTML = '';
+      values.forEach((val, i) => {
+        const id = `${uid}-${name}-${i}`;
+        const input = Object.assign(document.createElement('input'), { type: 'radio', name: `${uid}-${name}`, id, value: val, checked: val === current });
+        const label = Object.assign(document.createElement('label'), { htmlFor: id, textContent: val });
+        if (name === 'size') {
+          const v = data.pants.find((p) => p.color === color && p.size === val);
+          if (!v || !v.available) { input.disabled = true; label.classList.add('is-unavailable'); }
+        }
+        input.addEventListener('change', () => onPick(val));
+        el.append(input, label);
+      });
+    }
+
+    function render() {
+      if (!size || !pick() || !pick().available) size = sizes.includes(mainSize()) ? mainSize() : (size || sizes[0]);
+      buttons(colorsEl, colors, 'color', color, (v) => { color = v; render(); });
+      buttons(sizesEl, sizes, 'size', size, (v) => { size = v; render(); });
+      const m = mainVariant(); const p = pick();
+      box.dataset.pantsVariant = p && p.available ? p.id : '';
+      if (!m || !p) return;
+      const list = m.price + p.price;
+      box.querySelector('[data-set-main-price]').textContent = money(m.price);
+      box.querySelector('[data-set-pants-price]').textContent = money(p.price);
+      const note = box.querySelector('[data-set-note]');
+      const totalEl = box.querySelector('[data-set-total]');
+      if (box.dataset.phase === 'set') {
+        const total = m.price + Math.round(p.price * 0.8);
+        totalEl.innerHTML = `<s>${money(list)}</s> ${money(total)}`;
+        note.textContent = `Set price: 20% off the sweatpants with this ${box.dataset.kind}, applied in your cart.`;
+      } else if (box.dataset.phase === 'sale') {
+        const total = Math.round(list * 0.85);
+        totalEl.innerHTML = `<s>${money(list)}</s> ${money(total)}`;
+        note.textContent = 'Holiday Sale: 15% off both, applied in your cart.';
+      } else {
+        totalEl.textContent = money(list);
+        note.textContent = '';
+      }
+      const addBtn = form.querySelector('[data-add-button]');
+      if (addBtn && !addBtn.disabled) addBtn.textContent = yes.checked ? 'Add both to cart' : (addBtn.dataset.label || addBtn.textContent);
+    }
+
+    const addBtn = form.querySelector('[data-add-button]');
+    if (addBtn) addBtn.dataset.label = addBtn.textContent.trim();
+    yes.addEventListener('change', () => {
+      panel.hidden = !yes.checked;
+      box.classList.toggle('is-on', yes.checked);
+      if (!yes.checked && addBtn && !addBtn.disabled) addBtn.textContent = addBtn.dataset.label;
+      render();
+    });
+    // Follow the hoodie's own colour/size picks (variant id changes) so prices and the default pants size stay right.
+    form.addEventListener('change', () => setTimeout(render, 0));
+    render();
+  });
+})();
+

@@ -37,20 +37,60 @@
   assign today = 'now' | date: '%Y%m%d' | plus: 0
 -%}
 {%- if pants_collection.products_count > 0 -%}
-  <div class="mw-set">
-    {%- if match -%}
-      <a class="mw-set__card" href="{{ match.url }}">
+  {%- if match -%}
+    {%- comment -%}
+      Set add-on (2026-11-20): "Yes, add the matching sweatpants" opens colour + size for the pants and a price summary;
+      assets/mw-cart.js then adds the hoodie and the chosen pair together. Phase: sale (to 2026-12-17: Holiday Sale 15%
+      off both), set (from 2026-12-18: 20% off the sweatpants), else none.
+    {%- endcomment -%}
+    {%- liquid
+      if today <= 20261217
+        assign phase = 'sale'
+      elsif today >= 20261218
+        assign phase = 'set'
+      endif
+      assign kind = product.type | downcase | replace: 'sweatshirt', 'crewneck'
+    -%}
+    <div class="mw-set mw-set--addon" data-set-addon data-for="{{ form_id }}" data-phase="{{ phase }}" data-kind="{{ kind }}"
+      data-money="{{ shop.money_format | strip_html | escape }}">
+      <script type="application/json" data-set-data>
+        {
+          "main": { {%- for v in product.variants -%}"{{ v.id }}": {"price": {{ v.price }}, "options": {{ v.options | json }}}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%} },
+          "pants": [ {%- for v in match.variants -%}{"id": {{ v.id }}, "price": {{ v.price }}, "available": {{ v.available | json }}, "color": {{ v.option1 | json }}, "size": {{ v.option2 | json }}}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%} ]
+        }
+      </script>
+      <label class="mw-set__ask">
+        <input type="checkbox" data-set-yes>
         {%- if match.featured_image -%}
           <img class="mw-set__img" src="{{ match.featured_image | image_url: width: 240 }}" alt="{{ match.featured_image.alt | escape }}" width="120" height="120" loading="lazy">
         {%- endif -%}
         <span class="mw-set__text">
           <span class="mw-set__kicker">Complete the set</span>
-          <strong class="mw-set__title">{{ match.title }}</strong>
-          <span class="mw-set__price">{{ match.price | money }}{% if today >= 20261218 %} &middot; 20% off with this {{ product.type | downcase | replace: 'sweatshirt', 'crewneck' }}{% endif %}</span>
+          <strong class="mw-set__title">Add the matching {{ match.title }}?</strong>
+          <span class="mw-set__price">{{ match.price | money }}{% if phase == 'set' %} &middot; 20% off with this {{ kind }}{% endif %}</span>
         </span>
-        <span class="mw-set__arrow" aria-hidden="true">&rarr;</span>
-      </a>
-    {%- else -%}
+        <span class="mw-set__check" aria-hidden="true"></span>
+      </label>
+      <div class="mw-set__panel" data-set-panel hidden>
+        <fieldset class="mw-set__opt">
+          <legend class="label">Sweatpants colour</legend>
+          <div class="option__values" data-set-colors></div>
+        </fieldset>
+        <fieldset class="mw-set__opt">
+          <legend class="label">Sweatpants size</legend>
+          <div class="option__values" data-set-sizes></div>
+        </fieldset>
+        <dl class="mw-set__sum">
+          <div><dt>{{ product.title }}</dt><dd data-set-main-price></dd></div>
+          <div><dt>{{ match.title }}</dt><dd data-set-pants-price></dd></div>
+          <div class="mw-set__total"><dt>Together</dt><dd data-set-total></dd></div>
+        </dl>
+        <p class="mw-set__note" data-set-note></p>
+        <a class="mw-set__view" href="{{ match.url }}">View the sweatpants &rarr;</a>
+      </div>
+    </div>
+  {%- else -%}
+    <div class="mw-set">
       <a class="mw-set__card mw-set__card--plain" href="{{ pants_collection.url }}">
         <span class="mw-set__text">
           <span class="mw-set__kicker">Complete the set</span>
@@ -59,6 +99,6 @@
         </span>
         <span class="mw-set__arrow" aria-hidden="true">&rarr;</span>
       </a>
-    {%- endif -%}
-  </div>
+    </div>
+  {%- endif -%}
 {%- endif -%}
