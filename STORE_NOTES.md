@@ -383,6 +383,14 @@ Monster of the Week (held: resembles a trademarked character).
   the order of the variants' featured photos), then back / worn front / worn back per colour in that same order.
   Alts "<Title> in <Colour>, front|back|worn, front|worn, back" set via fileUpdate; the Black front moved to first
   (productReorderMedia) so cards show Black. Variant photos link correctly as imported.
+- Painted beanies (2026-11-20, owner: "incorporate our actual designs"): "<Name> Painted Beanie" x6, the painted
+  emblems unsimplified, DTF-printed on Port Authority C939 100% Cotton Beanie (bp 5254 / pp 99, front_dtf 1500x900,
+  no cuff), Black/Graphite/Navy only, $27, cost $11.17, US ship $5.09. Sold ALONGSIDE the embroidered beanies (owner's
+  call). printify/create_painted_beanies.py; art from designs/pants-2026/print/<slug>-subtle.png (the trimmed files:
+  the raw ones have paint flecks that showed on Born Ready + Urban, fixed by an images-only republish). 3 flat
+  mockups each (import order Graphite, Black, Navy); alts "<Title> in <Colour>, front", Black moved first. Printify
+  sometimes doesn't link variant photos on first import: link with productVariantAppendMedia. Other printed beanie:
+  none (all other Printify beanies are embroidery-only; AS Colour 5385 'front' is embroidery too).
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;
