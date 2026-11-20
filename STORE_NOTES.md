@@ -353,6 +353,14 @@ Monster of the Week (held: resembles a trademarked character).
   hoodie + No Signal crewneck -> Side Quest, Born Ready hoodie/crewneck -> Born Ready, Fallen Not Finished -> LND,
   Sisterhood -> Female Lead, Dreamscape -> Elsewhere Signature, WHADID / Dragonfall / Post-Credits -> collection,
   tees -> no card. New sweatpants designs: add their collection tag to the keys list in the snippet.
+  Owner published it, then asked for an opt-in: theme copy "Elsewhere Apparel Co. | Set Add-on" (156956393633,
+  from the live Complete the Set theme; owner publishes). When a match exists the card is a checkbox "Add the
+  matching <pants>?"; ticking it opens the pants colour + size (size follows the hoodie's size), a price summary
+  (hoodie, pants, together; until 2026-12-17 shows the Holiday Sale 15% total, from 2026-12-18 the set price with
+  20% off the pants) and turns the button into "Add both to cart". assets/mw-cart.js adds both with one
+  /cart/add.js items call. Gotcha: the product form has an input named "id", which shadows form.id in JS; use
+  form.getAttribute('id'). Tested (theme-live-overrides/set_addon_test.js): Final Boss hoodie L + Side Quest Navy
+  L -> cart has both, $67.15 = page total; unticked -> hoodie only; iPhone layout fine, no overflow.
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;
