@@ -252,7 +252,9 @@
     if (errorEl) { errorEl.hidden = true; errorEl.textContent = ''; }
     try {
       // Hoodie page "Complete the set": when "yes" is ticked, add the hoodie and the chosen sweatpants together.
-      const addon = form.id && document.querySelector(`[data-set-addon][data-for="${form.id}"]`);
+      // getAttribute: the product form has an input named "id", which shadows form.id.
+      const formId = form.getAttribute('id');
+      const addon = formId && document.querySelector(`[data-set-addon][data-for="${formId}"]`);
       const pantsId = addon && addon.querySelector('[data-set-yes]').checked ? addon.dataset.pantsVariant : '';
       if (pantsId) {
         const fd = new FormData(form);
@@ -475,8 +477,13 @@
       });
     }
 
+    let lastMainSize;
     function render() {
-      if (!size || !pick() || !pick().available) size = sizes.includes(mainSize()) ? mainSize() : (size || sizes[0]);
+      // Default the pants size to the hoodie's size, and follow it when the hoodie size changes.
+      const ms = mainSize();
+      if (ms && ms !== lastMainSize && sizes.includes(ms)) size = ms;
+      lastMainSize = ms;
+      if (!size || !pick() || !pick().available) size = sizes.includes(ms) ? ms : (size || sizes[0]);
       buttons(colorsEl, colors, 'color', color, (v) => { color = v; render(); });
       buttons(sizesEl, sizes, 'size', size, (v) => { size = v; render(); });
       const m = mainVariant(); const p = pick();
