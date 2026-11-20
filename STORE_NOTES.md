@@ -428,7 +428,13 @@ Monster of the Week (held: resembles a trademarked character).
   R00368 pairs with the same pants. Women's US set: Mock-Neck Crew WW0004 ($16.99) + Sweatshorts WK0004 ($12.99),
   18 colours, S-L. All jackets and the heavyweight/vintage-wash sets are China-only. Denim jacket UT0142: $29.99,
   440 gsm, Black/Blue/Navy, DTG or embroidery, front+back 40x52 cm, China only.
-  Owner's plan: fleece set (US) + denim jacket for Legends Never Die, Urban Collection, Side Quest. Print files:
+  Owner's plan: fleece set (US) + denim jacket for Legends Never Die, Urban Collection, Side Quest. Update: set
+  hoodies carry the artwork from our tops (owner): 10 '<Design> Fleece Hoodie' (Legends: Born Ready, Fallen Not
+  Finished, Going With the Flow, Queen Forever, back poster + chest mark; Side Quest: Main Character Syndrome, No
+  Signal, I Paused My Game, My Other Outfit Is Also Black, Out of Orbit, Final Boss Energy, back art + Side Quest
+  hearts emblem on chest) + Urban Collection hoodie (street-scene art, no tops yet); 3 '<Collection> Fleece Joggers'
+  (emblem); 3 denim jackets. 17 products. Files: designs/tapstitch-2026/hoodies/<design>/ (backs capped 4000 px wide
+  / 4700 tall for upload size). Zips in media/tapstitch-*.zip (gitignored). Print files:
   designs/tapstitch-2026/make_files.py (-dtf: soft paint flattened on black + hard edges for DTF; -dtg: original);
   GUIDE.md has placements, colours (Black/Navy/Gray Coffee/Eden Green for fleece), titles (<Name> Fleece Hoodie,
   <Name> Fleece Joggers, <Name> Denim Jacket) and prices ($49 / $42 / $79). Pending: owner creates them in the app,

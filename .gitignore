@@ -6,4 +6,4 @@ designs/logo-up/
 
 # Tapstitch print files: regenerate with designs/tapstitch-2026/make_files.py
 designs/tapstitch-2026/*/
-media/tapstitch-print-files.zip
+media/tapstitch-*.zip
