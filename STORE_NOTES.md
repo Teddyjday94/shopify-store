@@ -379,6 +379,10 @@ Monster of the Week (held: resembles a trademarked character).
   colours (drops shading and Side Quest's clouds, merges blotchy letters, removes unsewable specks) -> flat/;
   printify/create_hats.py builds print files (designs/hats-2026/print) and products (ids in printify/hats.json).
   Printify maps colours to its nearest real threads (Urban teal looks greener, BR cream more golden on mockups).
+  Photos: 28 per hat (7 colours x front, back, worn front, worn back). Shopify order as imported: the 7 fronts (in
+  the order of the variants' featured photos), then back / worn front / worn back per colour in that same order.
+  Alts "<Title> in <Colour>, front|back|worn, front|worn, back" set via fileUpdate; the Black front moved to first
+  (productReorderMedia) so cards show Black. Variant photos link correctly as imported.
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;
