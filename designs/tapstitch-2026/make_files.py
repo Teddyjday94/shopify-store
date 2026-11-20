@@ -69,3 +69,32 @@ for slug in SLUGS:
     for name, im in (("back-dtg", bold), ("emblem-dtg", emb), ("back-dtf", dtf(bold)), ("emblem-dtf", dtf(emb))):
         im.save(os.path.join(d, f"{name}.png"), dpi=(300, 300))
         print(slug, name, im.size, f"{im.width/300*2.54:.0f}x{im.height/300*2.54:.0f} cm at 300 dpi")
+
+
+# Set hoodies carry the artwork already on our tops (owner, 2026-11-21): same back art as the Printify hoodies,
+# made DTF-ready. Legends Never Die designs keep their small chest mark up front; Side Quest designs were back-only
+# on Printify, so their front gets the Side Quest emblem (ties the hoodie to the joggers). Out: hoodies/<design>/.
+DESIGNS = os.path.join(HERE, "..")
+TOPS = {
+    "born-ready": ("print-drop4/05-born-ready-back.png", "print-drop4/05-born-ready-front.png"),
+    "fallen-not-finished": ("print-drop4/06-fallen-not-finished-back.png", "print-drop4/06-fallen-not-finished-front.png"),
+    "going-with-the-flow": ("print-drop4/08-going-with-the-flow-back.png", "print-drop4/08-going-with-the-flow-front.png"),
+    "queen-forever": ("print-drop4/10-queen-forever-back.png", "print-drop4/10-queen-forever-front.png"),
+    "main-character-syndrome": ("player-two-src/01-main-character-syndrome.png", None),
+    "no-signal": ("player-two-src/02-no-signal.png", None),
+    "i-paused-my-game": ("player-two-src/06-i-paused-my-game.png", None),
+    "my-other-outfit-is-also-black": ("player-two-src/07-my-other-outfit-is-also-black.png", None),
+    "out-of-orbit": ("player-two-src/09-out-of-orbit.png", None),
+    "final-boss-energy": ("player-two-src/10-final-boss-energy.png", None),
+}
+if not sys.argv[1:]:
+    for name, (back, front) in TOPS.items():
+        d = os.path.join(HERE, "hoodies", name); os.makedirs(d, exist_ok=True)
+        b = dtf(Image.open(os.path.join(DESIGNS, back)).convert("RGBA"))
+        b.save(os.path.join(d, "back-dtf.png"), dpi=(300, 300))
+        if front:
+            f = dtf(Image.open(os.path.join(DESIGNS, front)).convert("RGBA"))
+        else:
+            f = Image.open(os.path.join(HERE, "side-quest", "emblem-dtf.png"))
+        f.save(os.path.join(d, "front-dtf.png"), dpi=(300, 300))
+        print("hoodie", name, "back", b.size, "front", f.size)
