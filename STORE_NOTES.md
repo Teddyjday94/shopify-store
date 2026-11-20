@@ -335,6 +335,9 @@ Monster of the Week (held: resembles a trademarked character).
   Holiday Sale theme) got the two files and was renamed "Elsewhere Apparel Co. | Set Deal": owner publishes it.
   Preview checked: today shows sale + sweatpants messages, set message hidden. Old drafts to delete in admin when
   convenient: anything older than "Holiday Sale"/"Set Deal" except as a backup.
+  Owner published Set Deal (2026-11-20) and deleted a few drafts (17 themes left).
+- Main menu (2026-11-20): "Sweatpants" added to Shop after Hoodies & Crewnecks; "Urban Collection" added to
+  Collections (menuUpdate replaces the whole list, so all existing items are resent with their ids). Checked live.
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;
