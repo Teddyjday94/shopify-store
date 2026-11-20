@@ -344,6 +344,15 @@ Monster of the Week (held: resembles a trademarked character).
   (8915869171873, 8915869925537, 8915870711969, 8915871269025, 8915871727777, 8915872055457); the 18100 ones are
   in printify/pants_18100_retired.json. Descriptions keep the set-deal line and the Urban wording (now built in
   create_pants.py). Ships with SwiftPOD hoodies again. Dec 18 check-in updated with the new ids.
+- "Complete the set" card (2026-11-20), theme copy "Elsewhere Apparel Co. | Complete the Set" (156956229793, from the
+  live Set Deal theme; owner publishes): on product types Hoodie and Sweatshirt, under Add to cart, a card linking the
+  matching sweatpants (snippets/matching-sweatpants.liquid, styles in assets/mw-cart.css). Match: design name in the
+  title (Born Ready), else shared tag player two / immortalized / own lane / brand collection / urban; otherwise
+  "Shop matching sweatpants" -> /collections/sweatpants (Tired But Here, Here Be Dragons, Currently Elsewhere,
+  Seasonal Depression). From 2026-12-18 it adds "20% off with this hoodie/crewneck". Tested in preview: Final Boss
+  hoodie + No Signal crewneck -> Side Quest, Born Ready hoodie/crewneck -> Born Ready, Fallen Not Finished -> LND,
+  Sisterhood -> Female Lead, Dreamscape -> Elsewhere Signature, WHADID / Dragonfall / Post-Credits -> collection,
+  tees -> no card. New sweatpants designs: add their collection tag to the keys list in the snippet.
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;
