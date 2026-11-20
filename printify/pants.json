@@ -2,63 +2,38 @@
  "Side Quest Sweatpants": {
   "printify": "6affa42a8c941ac784028d3c",
   "collection": "side-quest",
-  "style": "bold"
- },
- "Side Quest Emblem Sweatpants": {
-  "printify": "6affa42ec27dd3b5d20cee92",
-  "collection": "side-quest",
-  "style": "subtle"
+  "style": "bold left + emblem right",
+  "emblem": "side-quest-subtle"
  },
  "Elsewhere Signature Sweatpants": {
   "printify": "6affa432a8207fb5e303c1b5",
   "collection": "elsewhere-signature",
-  "style": "bold"
- },
- "Elsewhere Signature Emblem Sweatpants": {
-  "printify": "6affa43691900e187303a23c",
-  "collection": "elsewhere-signature",
-  "style": "subtle"
+  "style": "bold left + emblem right",
+  "emblem": "elsewhere-signature-subtle"
  },
  "Legends Never Die Sweatpants": {
   "printify": "6affa43a78f92b28c10bff04",
   "collection": "legends-never-die",
-  "style": "bold"
- },
- "Legends Never Die Emblem Sweatpants": {
-  "printify": "6affa43d78f92b28c10bff06",
-  "collection": "legends-never-die",
-  "style": "subtle"
+  "style": "bold left + emblem right",
+  "emblem": "legends-never-die-subtle"
  },
  "Born Ready Sweatpants": {
   "printify": "6affa4421cda74b2fa013eb7",
   "collection": "born-ready",
-  "style": "bold"
- },
- "Born Ready Emblem Sweatpants": {
-  "printify": "6affa4462afb8cedd8058956",
-  "collection": "born-ready",
-  "style": "subtle"
+  "style": "bold left + emblem right",
+  "emblem": "born-ready-subtle"
  },
  "Urban Collection Sweatpants": {
   "printify": "6affa44a4b4a62db6a06b1c6",
   "collection": "urban-collection",
-  "style": "bold"
- },
- "Urban Collection Emblem Sweatpants": {
-  "printify": "6affa44dd9c1f4bb4b0f7d41",
-  "collection": "urban-collection",
-  "style": "subtle"
+  "style": "bold left + emblem right",
+  "emblem": "urban-collection-subtle"
  },
  "Female Lead Sweatpants": {
   "printify": "6affa451d9c1f4bb4b0f7d47",
   "collection": "female-lead",
-  "style": "bold",
-  "art": "female-lead-bold v2 (owner's cleaned files, 2026-11-20)"
- },
- "Female Lead Emblem Sweatpants": {
-  "printify": "6affa455316e1226a5088a3d",
-  "collection": "female-lead",
-  "style": "subtle",
-  "art": "female-lead-subtle v2 (owner's cleaned files, 2026-11-20)"
+  "style": "bold left + emblem right",
+  "art": "female-lead-bold v2 (owner's cleaned files, 2026-11-20)",
+  "emblem": "female-lead-subtle"
  }
 }
