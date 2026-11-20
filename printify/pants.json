@@ -52,11 +52,13 @@
  "Female Lead Sweatpants": {
   "printify": "6affa451d9c1f4bb4b0f7d47",
   "collection": "female-lead",
-  "style": "bold"
+  "style": "bold",
+  "art": "female-lead-bold v2 (owner's cleaned files, 2026-11-20)"
  },
  "Female Lead Emblem Sweatpants": {
   "printify": "6affa455316e1226a5088a3d",
   "collection": "female-lead",
-  "style": "subtle"
+  "style": "subtle",
+  "art": "female-lead-subtle v2 (owner's cleaned files, 2026-11-20)"
  }
 }

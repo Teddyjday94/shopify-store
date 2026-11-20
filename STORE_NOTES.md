@@ -296,11 +296,12 @@ Monster of the Week (held: resembles a trademarked character).
   = Bold down the left thigh (1140 px wide from 120 px below the waist on the 1200x4800 left_leg_front area);
   "<Name> Emblem Sweatpants" = Subtle, 860 px wide on the upper thigh. designs/pants-2026/make_print.py builds the
   print files (drops stray source-crop fragments; hand trims for Urban, Born Ready and Elsewhere emblems).
-  Female Lead came as one small 72 dpi image (1122x1402) holding both pieces; it was cut apart and upscaled 3x, so
-  it prints softer than the rest (a full-size file from the owner would fix it). printify/create_pants.py made and
+  Female Lead first came as one small 72 dpi image (1122x1402) holding both pieces; on 2026-11-20 the owner sent
+  separate cleaned files (2600x5600 / 1800x1800, same art, upscaled from that source like the other five), now in
+  designs/pants-2026 and on both Printify products (variants-only republish, Shopify listing untouched). printify/create_pants.py made and
   published them (ids in printify/pants.json). Collections: Side Quest, Elsewhere Bound, Legends Never Die
   (immortalized tag, Born Ready too), Female Lead (own lane), new "Urban Collection" (tag urban) and new
-  "Sweatpants" (tag sweatpants); Women's got a second source, product type Sweatpants. Product type set to
+  "Sweatpants" (tag sweatpants); Women's got a second source, product type Sweatpants (all 12 now in Women's). Product type set to
   Sweatpants (Printify sets Trousers). Photos are Printify's flat drawings, alts "<title> in <Colour>, front/back".
   An earlier set (create_extras.py, ELSEWHERE wordmark, $42) had been removed before this.
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
