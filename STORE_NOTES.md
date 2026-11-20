@@ -327,6 +327,14 @@ Monster of the Week (held: resembles a trademarked character).
   test deleted. After Premium a set ($37 + $33.60) still nets ~$15. Sweatpants descriptions end with a "Make it a
   set" line mentioning Dec 18; a scheduled check-in on Dec 18 tests the deal and trims that line. Urban Collection
   sweatpants description no longer claims matching Urban hoodies (there are none yet).
+- Announcement bar (2026-11-20): messages also take a "starts" date (shows from that day, store time zone). Messages:
+  Holiday Sale (ends 2026-12-17), "New: matching sweatpants for our collections" (ends 2026-12-17, links
+  /collections/sweatpants), "Hoodie + sweatpants set: 20% off the sweatpants" (starts 2026-12-18), koozies, printed to
+  order, free shipping. Store is at Shopify's 20-theme limit (this connection can't delete themes), so instead of a
+  new copy the unpublished "Koozie Prices" theme (156906782881; every other file checked identical to the live
+  Holiday Sale theme) got the two files and was renamed "Elsewhere Apparel Co. | Set Deal": owner publishes it.
+  Preview checked: today shows sale + sweatpants messages, set message hidden. Old drafts to delete in admin when
+  convenient: anything older than "Holiday Sale"/"Set Deal" except as a backup.
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;
