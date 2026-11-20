@@ -417,3 +417,19 @@ Monster of the Week (held: resembles a trademarked character).
 - Hoodie product photos: labeled "<Title> in <Color>, back print" so cards and galleries show the design first.
 - Homepage hero video: Garden cinemagraph loop (Artlist 5s clip locked to the still with media/video/cinemagraph.py; only moving areas come from the clip), Shopify Files elsewhere-garden-loop-v2.mp4/.webm; source in media/video/. Toggle in the hero section settings.
 - Printify limits publishes (~75 in a burst); scripts pace and retry.
+
+- Tapstitch (2026-11-21, app installed by owner; no API from here, products are made in the Tapstitch app).
+  tapstitch.com added to the environment allowlist; its pages embed Nuxt data (decode with __NUXT_DATA__ refs) with
+  blankPrice / sidePrice (per print area) / printAreaList / fulfillmentInfoList (country CN or US) / colorList.
+  'monthlySales' is a placeholder (250 everywhere). Rates API (api.service.tapstitch.com) not allowlisted; US
+  shipping per reviews ~$5.50-6 first item + ~$2 each extra. US print area $3.49, China $2.99.
+  US (LA, ~5-7 days) sets: Oversize Fleeced Hoodie R00286 ($14.92, 24 colours, DTF/embroidery, front/back/sleeves)
+  + Solid Color Fleece Straight Leg Pants R00363 ($15.76, 9 colours, DTF); 8 shared colours. Fleeced Sweatshirt
+  R00368 pairs with the same pants. Women's US set: Mock-Neck Crew WW0004 ($16.99) + Sweatshorts WK0004 ($12.99),
+  18 colours, S-L. All jackets and the heavyweight/vintage-wash sets are China-only. Denim jacket UT0142: $29.99,
+  440 gsm, Black/Blue/Navy, DTG or embroidery, front+back 40x52 cm, China only.
+  Owner's plan: fleece set (US) + denim jacket for Legends Never Die, Urban Collection, Side Quest. Print files:
+  designs/tapstitch-2026/make_files.py (-dtf: soft paint flattened on black + hard edges for DTF; -dtg: original);
+  GUIDE.md has placements, colours (Black/Navy/Gray Coffee/Eden Green for fleece), titles (<Name> Fleece Hoodie,
+  <Name> Fleece Joggers, <Name> Denim Jacket) and prices ($49 / $42 / $79). Pending: owner creates them in the app,
+  then descriptions, alts, collections, add-on (joggers vs Printify sweatpants) and set deal on the Shopify side.
