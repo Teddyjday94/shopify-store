@@ -34,10 +34,30 @@
             "text": "Free US shipping on orders $60+.",
             "link": ""
           }
+        },
+        "sweats": {
+          "type": "message",
+          "settings": {
+            "text": "New: matching sweatpants for our collections",
+            "link": "/collections/sweatpants",
+            "starts": "",
+            "ends": "2026-12-17"
+          }
+        },
+        "set": {
+          "type": "message",
+          "settings": {
+            "text": "Hoodie + sweatpants set: 20% off the sweatpants",
+            "link": "/collections/sweatpants",
+            "starts": "2026-12-18",
+            "ends": ""
+          }
         }
       },
       "block_order": [
         "sale",
+        "sweats",
+        "set",
         "koozies",
         "m2",
         "m3"
