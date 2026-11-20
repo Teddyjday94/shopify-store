@@ -1,0 +1,64 @@
+{%- comment -%}
+  "Complete the set" card on hoodie and crewneck pages (2026-11-20). Rendered from sections/main-product.liquid for
+  product types Hoodie and Sweatshirt. Picks the matching sweatpants from the "sweatpants" collection:
+    1. a pair whose design name is in this product's title (Born Ready Hoodie -> Born Ready Sweatpants);
+    2. otherwise a pair sharing a collection tag: player two (Side Quest), immortalized (Legends Never Die),
+       own lane (Female Lead), brand collection (Elsewhere Signature), urban (Urban Collection).
+       Born Ready sweatpants also carry "immortalized" but are only matched by name (rule 1).
+    3. no match: a link to the whole Sweatpants collection.
+  From 2026-12-18 it mentions the set deal (automatic discount "Hoodie + sweatpants set: 20% off the sweatpants").
+{%- endcomment -%}
+{%- liquid
+  assign pants_collection = collections['sweatpants']
+  assign match = nil
+  for p in pants_collection.products
+    assign design = p.title | remove: ' Sweatpants'
+    if product.title contains design
+      assign match = p
+      break
+    endif
+  endfor
+  unless match
+    assign keys = 'player two|immortalized|own lane|brand collection|urban' | split: '|'
+    for key in keys
+      if product.tags contains key
+        for p in pants_collection.products
+          if p.tags contains key and p.handle != 'born-ready-sweatpants'
+            assign match = p
+            break
+          endif
+        endfor
+      endif
+      if match
+        break
+      endif
+    endfor
+  endunless
+  assign today = 'now' | date: '%Y%m%d' | plus: 0
+-%}
+{%- if pants_collection.products_count > 0 -%}
+  <div class="mw-set">
+    {%- if match -%}
+      <a class="mw-set__card" href="{{ match.url }}">
+        {%- if match.featured_image -%}
+          <img class="mw-set__img" src="{{ match.featured_image | image_url: width: 240 }}" alt="{{ match.featured_image.alt | escape }}" width="120" height="120" loading="lazy">
+        {%- endif -%}
+        <span class="mw-set__text">
+          <span class="mw-set__kicker">Complete the set</span>
+          <strong class="mw-set__title">{{ match.title }}</strong>
+          <span class="mw-set__price">{{ match.price | money }}{% if today >= 20261218 %} &middot; 20% off with this {{ product.type | downcase | replace: 'sweatshirt', 'crewneck' }}{% endif %}</span>
+        </span>
+        <span class="mw-set__arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    {%- else -%}
+      <a class="mw-set__card mw-set__card--plain" href="{{ pants_collection.url }}">
+        <span class="mw-set__text">
+          <span class="mw-set__kicker">Complete the set</span>
+          <strong class="mw-set__title">Shop matching sweatpants</strong>
+          {%- if today >= 20261218 -%}<span class="mw-set__price">20% off sweatpants with any hoodie or crewneck</span>{%- endif -%}
+        </span>
+        <span class="mw-set__arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    {%- endif -%}
+  </div>
+{%- endif -%}

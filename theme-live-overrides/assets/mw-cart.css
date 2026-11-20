@@ -240,3 +240,15 @@ html.mw-modal-open { overflow: hidden; }
 .mw-deal-nudge a { color: inherit; text-decoration: underline; white-space: nowrap; }
 .mw-deal-nudge.is-done { background: rgba(127,179,138,.14); }
 @media (max-width: 749px) { .mw-deal-nudge { padding-inline: 16px; } }
+
+/* "Complete the set" card on hoodie and crewneck pages (2026-11-20, snippets/matching-sweatpants.liquid) */
+.mw-set { margin: 14px 0 6px; }
+.mw-set__card { display: flex; align-items: center; gap: 14px; padding: 10px 14px 10px 10px; border: 1px dashed var(--fg-gold, #e7b681); color: inherit; text-decoration: none; transition: background .2s; }
+.mw-set__card:hover, .mw-set__card:focus-visible { background: rgba(231,182,129,.10); }
+.mw-set__card--plain { padding-left: 14px; }
+.mw-set__img { width: 64px; height: 64px; object-fit: cover; flex: none; background: #fff; }
+.mw-set__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
+.mw-set__kicker { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--fg-gold, #e7b681); }
+.mw-set__title { font-size: 15px; font-weight: 600; }
+.mw-set__price { font-size: 13px; opacity: .8; }
+.mw-set__arrow { font-size: 20px; color: var(--fg-gold, #e7b681); flex: none; }

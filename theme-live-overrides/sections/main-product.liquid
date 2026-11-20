@@ -100,6 +100,7 @@
           </div>
           <p class="form-error" role="alert" data-form-error hidden></p>
         {%- endform -%}
+        {%- if product.type == 'Hoodie' or product.type == 'Sweatshirt' -%}{% render 'matching-sweatpants', product: product %}{%- endif -%}
         <div class="mw-sticky-buy" data-sticky-buy aria-hidden="true">
           <div class="mw-sticky-buy__info"><strong>{{ product.title }}</strong><span data-sticky-price>{% render 'price', variant: current_variant %}</span></div>
           <button class="btn" type="submit" form="{{ form_id }}" data-sticky-add tabindex="-1">{{ 'products.add_to_cart' | t }}</button>
