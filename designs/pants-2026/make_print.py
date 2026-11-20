@@ -3,14 +3,20 @@ Bold: the tall collection art, 1140 px wide, from 120 px below the waistband dow
 Subtle: the emblem, 860 px wide, centred on the upper thigh (top at 300 px).
 Stray fragments (left over from a source crop) are dropped: pieces lying wholly outside the box around the main
 pieces (each >=5% of the art), padded by 1%, are removed. Faint pixels (alpha < 16) are cleared.
-Usage: python3 make_print.py   -> print/<name>.png"""
+Usage: python3 make_print.py [pocket]   -> print/<name>.png or print-pocket/<name>.png"""
 import os
 import numpy as np
 from PIL import Image
 from scipy import ndimage
 
-W, H = 1200, 4800
-os.makedirs('print', exist_ok=True)
+import sys
+# Default: Gildan 18200 left/right_leg_front (1200x4800). "pocket": Gildan 18100 front_*_leg_dtf (1200x4200), used
+# since 2026-11-20 with the emblem at full width (owner asked for a bigger print).
+POCKET = 'pocket' in sys.argv[1:]
+W, H = (1200, 4200) if POCKET else (1200, 4800)
+OUT = 'print-pocket' if POCKET else 'print'
+EMBLEM_W = 1140 if POCKET else 860
+os.makedirs(OUT, exist_ok=True)
 
 
 # Hand trims for smudges that touch or sit just above an emblem in its source file:
@@ -55,12 +61,12 @@ for f in sorted(os.listdir('.')):
     name = f[:-4]
     art = clean(Image.open(f).convert('RGBA'), name)
     bold = name.endswith('-bold')
-    w = 1140 if bold else 860
+    w = 1140 if bold else EMBLEM_W
     h = round(art.height * w / art.width)
     if h > H - 240:
         h = H - 240; w = round(art.width * h / art.height)
     art = art.resize((w, h), Image.LANCZOS)
     canvas = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     canvas.alpha_composite(art, ((W - w) // 2, 120 if bold else 300))
-    canvas.save(f'print/{name}.png', dpi=(300, 300))
+    canvas.save(f'{OUT}/{name}.png', dpi=(300, 300))
     print(name, (w, h))

@@ -13,7 +13,7 @@ Facts worth remembering between sessions. Update as things change.
 - Hoodies: $37
 - Hats, beanies, phone cases: $27
 - Mugs, ornaments: $17
-- Sweatpants: $42 (S-XL), $46 2XL, $48 3XL (two print spots)
+- Sweatpants: $42 (S-XL), $46 2XL, $48 3XL (two print spots; Gildan 18100 pocket, Black/Navy/Dark Heather)
 - Koozies: $9.99; automatic tiers 2+ $8, 4+ $7.50, 6+ $7 each (best one applies, none stack)
 - Desk mats: $27 / $37 / $47 by size
 - Posters: removed from the store (2026-11-10)
@@ -309,6 +309,16 @@ Monster of the Week (held: resembles a trademarked character).
   listings were deleted (Printify delete removed them from Shopify too). The second print spot adds $5.26 per pair
   with Premium (S cost $18.47 -> $23.73; about $30 after Premium), so prices went to $42/$46/$48. Republishing
   images from Printify resets product type to Trousers and clears alts: set them again afterwards.
+  Later the same day (owner: bigger print, more colours): moved to Gildan 18100 POCKET sweatpants at Fulfill Engine
+  (bp 6039 / pp 217, DTF, ~3.2 business days), Black + Navy + Dark Heather, S-3XL, same $42/$46/$48. Cost with
+  Premium $25.18 S-XL, $28.03 2XL, $29.43 3XL (both legs printed). Print areas are 1200x4200 px per leg (~4 x 14 in
+  at 300 dpi); the old 18200 was 1200x4800 (~4 x 16 in). No Printify sweatpant prints wider than ~4 in on a leg, so
+  the big design stays ~3.8 in wide; the emblem went to full width (1140 px, was 860). Print files:
+  designs/pants-2026/print-pocket (make_print.py pocket). Products are new Shopify ids (old 18200 ones deleted;
+  ids in printify/pants_18200_retired.json). Mockups are per-leg close-ups: per colour one left-leg (full design)
+  and one right-leg (emblem) image, order Black, Dark Heather, Navy; alts and variant photos set by hand.
+  Ships from Fulfill Engine, so not together with SwiftPOD hoodies. Rejected: Independent Trading fleece (Army/Red/
+  Royal, ~$33 cost, $52 retail), AOP joggers (polyester, $20.79 US shipping), light colours (art's dark edges).
 - Koozie options in Printify (checked 2026-11-18, cost before shipping; US shipping first item):
   Can Cooler bp951 (Pic The Gift, regular + slim, edge-to-edge print) $4.99, ship $5.59;
   Can Cooler Sleeve bp636 (neoprene, front+back) $7.92, ship $5.59; Slim Can Cooler bp808 $9.28, ship $5.89;
