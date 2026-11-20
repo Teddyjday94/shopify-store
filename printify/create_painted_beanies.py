@@ -1,7 +1,7 @@
 """Painted beanies (2026-11-20): the collection emblems exactly as painted (no thread simplification), DTF-printed on
 the Port Authority C939 100% Cotton Beanie (blueprint 5254, Printify Choice 99, print area front_dtf 1500x900,
 cost $11.17, US shipping $5.09). Black, Graphite, Navy (all it comes in), $27. Sold alongside the embroidered
-beanies from create_hats.py (owner's call). Art: designs/pants-2026/<slug>-subtle.png, fitted into 1400x820.
+beanies from create_hats.py (owner's call). Art: designs/pants-2026/print/<slug>-subtle.png (trimmed), fitted into 1400x820.
 Usage: python3 printify/create_painted_beanies.py   (creates + publishes, ids in printify/hats.json; skips done ones)"""
 import base64, io, json, os, time
 from PIL import Image
@@ -10,7 +10,7 @@ from create_hats import COLLECTIONS, DONE, SHOP, PRICE, ROOT
 
 BLUEPRINT, PROVIDER, POSITION = 5254, 99, "front_dtf"
 CANVAS, BOX = (1500, 900), (1400, 820)
-ART = os.path.join(ROOT, "designs/pants-2026")
+ART = os.path.join(ROOT, "designs/pants-2026/print")  # trimmed emblems (raw files carry paint flecks)
 OUT = os.path.join(ROOT, "designs/hats-2026/print")
 FEATURES = ("<ul><li>Port Authority 100% cotton knit beanie, no cuff</li>"
             "<li>Full-colour print of the original painted artwork</li>"
