@@ -456,3 +456,7 @@ Monster of the Week (held: resembles a trademarked character).
   dotted print texture note, 1-2 week shipping) and tags (varsity jacket + 'drop 004'/'immortalized' for Legends or
   'player two'/'side quest' for Side Quest). Still DRAFT pending owner's go-ahead. Live fleeced jackets have no tags
   (not in their design collections).
+- 2026-11-23: Blue raglan varsity jackets published (Online Store). Live fleeced jackets tagged (varsity jacket, fleece
+  lined jacket + collection tags) so all 20 show in Legends Never Die / Side Quest; generic Tapstitch descriptions on
+  Born Ready, Fallen Not Finished, Going With the Flow, Queen Forever, Main Character Syndrome replaced (the other five
+  already had custom ones, kept).
