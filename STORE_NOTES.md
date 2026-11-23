@@ -449,3 +449,6 @@ Monster of the Week (held: resembles a trademarked character).
   been manually included in the sale source and were removed from its inclusion selections (manual inclusions
   override conditions). All 20 jackets set to product type Jacket. Tapstitch set drafts exist (owner): 11 '<Design>
   Fleece Hoodie' at $37 (cost $20.89 US) and 3 '<Collection> Fleece Joggers' at $42 ($17.74); not yet published.
+- 2026-11-23: collection logo removed (owner) -> fleeced varsity cost $30.96, raglan drafts $28.96. All 10 live
+  fleeced varsity jackets set to $45 (240 variants): ~$10.70 profit when the customer pays $8 shipping, ~$3.10 on
+  a free-shipping order. Blue raglan drafts still at $47, unpublished.
