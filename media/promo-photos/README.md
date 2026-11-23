@@ -31,3 +31,14 @@ Files are named `<design>_<shot>`. Posters (`*_poster*`) already have the design
 | `sisterhood_poster.png` | image-gen-1(20261110-171937).png |
 | `crown-and-curls_poster.png` | image-gen-2(20261110-171938).png |
 | `female-lead_poster-group.png` | Female Lead Streetwear Portrait.png |
+
+| `born-ready/born-ready-womens-tee_front-candid.webp` | IMG_4976(3).jpeg |
+| `born-ready/born-ready-womens-tee_back-turn.webp` | IMG_4978(2).jpeg |
+| `born-ready/born-ready-womens-tee_back-wide.webp` | IMG_4979(2).jpeg |
+| `born-ready/born-ready-womens-tee_back-portrait.webp` | IMG_4980(3).jpeg |
+| `born-ready/born-ready-womens-tee_back-stance.webp` | IMG_4981(2).jpeg |
+| `rise-from-ruin/rise-from-ruin-hoodie_back-wide.webp` | IMG_5116.jpeg |
+| `rise-from-ruin/rise-from-ruin-hoodie_front-pose.webp` | IMG_5117.jpeg |
+| `rise-from-ruin/rise-from-ruin-hoodie_back-motion.webp` | IMG_5122.jpeg |
+| `rise-from-ruin/rise-from-ruin-hoodie_front-full.webp` | IMG_5123.jpeg |
+| `rise-from-ruin/rise-from-ruin-hoodie_back-detail.webp` | IMG_5124.jpeg |
