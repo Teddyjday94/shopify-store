@@ -439,3 +439,13 @@ Monster of the Week (held: resembles a trademarked character).
   GUIDE.md has placements, colours (Black/Navy/Gray Coffee/Eden Green for fleece), titles (<Name> Fleece Hoodie,
   <Name> Fleece Joggers, <Name> Denim Jacket) and prices ($49 / $42 / $79). Pending: owner creates them in the app,
   then descriptions, alts, collections, add-on (joggers vs Printify sweatpants) and set deal on the Shopify side.
+
+- Varsity jackets (Tapstitch/ODMPOD, made by owner 2026-11-22): 10 live '<Design> Varsity Jacket' = Two-Tone Fleeced
+  Varsity RQ0001 ($24.99 + 3 areas x $2.99 = $33.96; ~$10.30 shipping from China; 0.81 kg), $47; 10 draft '<Design>
+  Blue Varsity Jacket' = Raglan RQ0006 ($22.99 + 3 x $2.99 = $31.95; ~$7.40 shipping). Store shipping: $8, free
+  at $70+. At $47 with the 15% sale and free shipping a jacket lost ~$5.80. 2026-11-23: owner removing the
+  collection logo (keeps back print + Elsewhere logo) -> 2 areas, $30.97; then price $44 (~$8.90 on a normal order).
+  Holiday Sale collection now excludes title 'Varsity Jacket' (second DOES_NOT_CONTAIN condition); 5 jackets had
+  been manually included in the sale source and were removed from its inclusion selections (manual inclusions
+  override conditions). All 20 jackets set to product type Jacket. Tapstitch set drafts exist (owner): 11 '<Design>
+  Fleece Hoodie' at $37 (cost $20.89 US) and 3 '<Collection> Fleece Joggers' at $42 ($17.74); not yet published.
