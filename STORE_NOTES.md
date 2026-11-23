@@ -466,3 +466,4 @@ Monster of the Week (held: resembles a trademarked character).
   14.92 + 2 x 2.99; joggers $17.74), so descriptions say 1-2 weeks. In the Holiday Sale. Known gap: the theme's
   matching-sweatpants card on fleece hoodies points to the Printify '<Name> Sweatpants' (title/tag match), not the
   Fleece Joggers; fix needs a snippet change (prefer 'fleece joggers' for 'fleece hoodie') in a theme copy.
+- 2026-11-23 (later): owner no longer wants the fleece set; all 14 Fleece Hoodies/Joggers set back to DRAFT (not deleted).
