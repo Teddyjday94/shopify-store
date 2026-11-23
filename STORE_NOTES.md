@@ -452,3 +452,7 @@ Monster of the Week (held: resembles a trademarked character).
 - 2026-11-23: collection logo removed (owner) -> fleeced varsity cost $30.96, raglan drafts $28.96. All 10 live
   fleeced varsity jackets set to $45 (240 variants): ~$10.70 profit when the customer pays $8 shipping, ~$3.10 on
   a free-shipping order. Blue raglan drafts still at $47, unpublished.
+- 2026-11-23: Blue raglan varsity drafts (10) set to $45, given custom descriptions (design story, raglan fabric, size chart,
+  dotted print texture note, 1-2 week shipping) and tags (varsity jacket + 'drop 004'/'immortalized' for Legends or
+  'player two'/'side quest' for Side Quest). Still DRAFT pending owner's go-ahead. Live fleeced jackets have no tags
+  (not in their design collections).
