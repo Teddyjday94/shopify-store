@@ -4,20 +4,16 @@ On 2026-11-25 the owner changed the drop's crest from an **L** to a **big D**, a
 
 ## Files
 
-Art lives in `designs/tapstitch-2026/doomsday/` on the owner's drive (art folders are kept out of git).
-
 | File | Size | Use |
 | --- | --- | --- |
-| `d-crest-v2.png` | 1111 x 1415, transparent | Master artwork |
-| `d-crest-front.png` | 2222 x 2830 (2x) | Varsity chest crest, about 4 in tall |
-| `d-crest-back-hd.png` | 4444 x 5660 (4x) | Large prints: varsity back, tee front, hoodie back. Also in Shopify Files as `d-crest-print.png` |
-| `d-crest-v2-preview-*.jpg` | | Previews on black and on varsity green |
+| `ai/crest-D.png` | 1111 x 1415, transparent | Master artwork |
+| `print/crest-D.png` | 4444 x 5660 (4x Lanczos) | Print file: varsity back, tee front, hoodie back. Also in Shopify Files as `d-crest-print.png` |
 
-The art was made in Kittl (GPT Image 2.5 Flare-HQ edit of the original L crest, two passes to enlarge the D). Kittl filled the
-shield with white, so the white was flood-filled back to transparent. The enlargements are Lanczos, which is a little soft up close
-but prints at 330-350 DPI at full size.
+`crest-L.png` in `ai/` and `print/` is the retired L version, kept for reference.
 
-The original L art is `C:\Users\teddy\Downloads\doomsday-promo\doomsday-promo\1-designs-transparent\l-crest.png` (not in the repo).
+The D was made in Kittl (GPT Image 2.5 Flare-HQ edit of the L crest, two passes to enlarge the D). Kittl filled the
+shield with white, so the white was flood-filled back to transparent. The 4x enlargement is a little soft up close
+but prints at 330-350 DPI at full size. The varsity chest uses a 2x copy (2222 x 2830, about 4 in tall), made the same way.
 
 ## Products
 

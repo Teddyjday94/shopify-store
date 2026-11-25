@@ -478,6 +478,10 @@ Monster of the Week (held: resembles a trademarked character).
   2026-11-25: Doomsday Mask + Tree Spirit tee/hoodie deleted (owner); A Stolen Life added; Doomsday Incursion deleted (owner) -> 12 products. King of the 3 Realms: hood
   added, horns removed, then the stone throne swapped for an original throne forged from swords (not the HBO Iron
   Throne shape; owner sent that as the reference). Grimhold Crest (renamed L Crest 2026-11-25, handles l-crest-tee/-hoodie with redirects): big silver L instead of the three horns; "Grimhold" word removed (2026-11-25), just the L.
+  Later on 2026-11-25 the owner switched the L to a big D everywhere: D Crest Tee / D Crest Hoodie (handles
+  d-crest-tee/-hoodie, redirects from l-crest-*), art designs/doomsday-2026/print/crest-D.png, plus a new Tapstitch
+  D Crest Varsity Jacket (green with white, $47, live) and a "Crest feature" band at the top of the live homepage.
+  See designs/doomsday-2026/D-CREST.md.
   Included in the Holiday Sale (storewide 15%). Owner extended the drop through Dec 18 (2026-11-25). Ends via a
   send_later reminder at 00:05 ET Dec 19 (trig_01V5TysCN6Z4vFrFiSue9wef): products to draft, menu item removed,
   collection unpublished. Homepage: section limited-drop (sections/limited-drop.liquid, first on templates/index.json,

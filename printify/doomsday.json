@@ -133,20 +133,22 @@
    1831
   ]
  },
- "L Crest Tee": {
+ "D Crest Tee": {
   "printify": "6b062b835bda8acb1a0d2382",
-  "design": "crest-L",
+  "design": "crest-D",
   "cost": [
    940,
    1149
-  ]
+  ],
+  "renamed": "2026-11-25 from L Crest Tee (owner switched the crest to a D); handle d-crest-tee, redirect from l-crest-tee"
  },
- "L Crest Hoodie": {
+ "D Crest Hoodie": {
   "printify": "6b062b96c873c9091302a06e",
-  "design": "crest-L",
+  "design": "crest-D",
   "cost": [
    1671,
    1831
-  ]
+  ],
+  "renamed": "2026-11-25 from L Crest Hoodie (owner switched the crest to a D); handle d-crest-hoodie, redirect from l-crest-hoodie"
  }
 }
