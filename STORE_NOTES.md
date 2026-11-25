@@ -477,7 +477,7 @@ Monster of the Week (held: resembles a trademarked character).
   "limited drop". Smart collection Doomsday Drop 338393530529 (tag), published, top-level Main menu item.
   2026-11-25: Doomsday Mask + Tree Spirit tee/hoodie deleted (owner); A Stolen Life added; Doomsday Incursion deleted (owner) -> 12 products. King of the 3 Realms: hood
   added, horns removed, then the stone throne swapped for an original throne forged from swords (not the HBO Iron
-  Throne shape; owner sent that as the reference). Grimhold Crest: big silver L instead of the three horns; "Grimhold" word removed (2026-11-25), just the L.
+  Throne shape; owner sent that as the reference). Grimhold Crest (renamed L Crest 2026-11-25, handles l-crest-tee/-hoodie with redirects): big silver L instead of the three horns; "Grimhold" word removed (2026-11-25), just the L.
   Included in the Holiday Sale (storewide 15%). Owner extended the drop through Dec 18 (2026-11-25). Ends via a
   send_later reminder at 00:05 ET Dec 19 (trig_01V5TysCN6Z4vFrFiSue9wef): products to draft, menu item removed,
   collection unpublished. Homepage: section limited-drop (sections/limited-drop.liquid, first on templates/index.json,

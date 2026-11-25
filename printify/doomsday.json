@@ -1,20 +1,4 @@
 {
- "Grimhold Crest Tee": {
-  "printify": "6b062b835bda8acb1a0d2382",
-  "design": "crest-L",
-  "cost": [
-   940,
-   1149
-  ]
- },
- "Grimhold Crest Hoodie": {
-  "printify": "6b062b96c873c9091302a06e",
-  "design": "crest-L",
-  "cost": [
-   1671,
-   1831
-  ]
- },
  "Doom in Our Time Tee": {
   "printify": "6b062baa255f2587670e9fa4",
   "design": "doom-in-our-time",
@@ -144,6 +128,22 @@
  "A Stolen Life Hoodie": {
   "printify": "6b067445d3c2aadbe1009353",
   "design": "a-stolen-life",
+  "cost": [
+   1671,
+   1831
+  ]
+ },
+ "L Crest Tee": {
+  "printify": "6b062b835bda8acb1a0d2382",
+  "design": "crest-L",
+  "cost": [
+   940,
+   1149
+  ]
+ },
+ "L Crest Hoodie": {
+  "printify": "6b062b96c873c9091302a06e",
+  "design": "crest-L",
   "cost": [
    1671,
    1831

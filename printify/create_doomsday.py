@@ -16,7 +16,7 @@ EDGE, TOP = 0.97, 0.03
 NOTE = "<p><strong>Doomsday Drop: limited run, available until December 18.</strong></p>"
 
 DESIGNS = [
-    ("crest-L", "Grimhold Crest", "A silver L on a green-and-black shield, laurels below and steel finials above. Swear allegiance.", ["crest", "heraldry"]),
+    ("crest-L", "L Crest", "A silver L on a green-and-black shield, laurels below and steel finials above. Swear allegiance.", ["crest", "heraldry"]),
     ("doom-in-our-time", "Doom in Our Time", "Jagged acid-green lettering, about as subtle as a prophecy.", ["typography", "lettering"]),
     ("inevitable-throne-hood", "The Inevitable Doomsday", "A hooded ruler on a throne of conquered crowns and helmets. The decree is final.", ["villain", "throne"]),
     ("king-of-3-realms", "King of the 3 Realms", "A hooded king on a throne forged from swords, three moons behind him and green lightning splitting the sky.", ["villain", "throne", "moons"]),
