@@ -64,6 +64,9 @@
         {%- assign eager = false -%}
         {%- if shown <= 3 -%}{%- assign eager = true -%}{%- endif -%}
         {% render 'product-card', product: product, index: index, lazy: eager %}
+        {%- if collection.handle == 'doomsday-drop' and paginate.current_page == 1 and layered == false and shown == 6 -%}
+          {% render 'doom-collection-editorial' %}
+        {%- endif -%}
       {%- endfor -%}
     {%- endcapture -%}
 <div class="collection-view" data-collection-view>
