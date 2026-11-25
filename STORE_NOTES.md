@@ -469,3 +469,12 @@ Monster of the Week (held: resembles a trademarked character).
 - 2026-11-23 (later): owner no longer wants the fleece set; all 14 Fleece Hoodies/Joggers set back to DRAFT (not deleted).
 - 2026-11-23 (later): owner asked to delete the fleece set; all 14 Fleece Hoodies/Joggers deleted from Shopify. If
   Tapstitch re-syncs them, remove the designs in the Tapstitch app.
+- Doomsday Drop (2026-11-25 to 2026-12-17, limited): the owner's 8 designs, cleaned (no franchise marks, logos,
+  titles or names anywhere: the originals in designs/doomsday-2026/src are gitignored and must never be sold),
+  Kittl 4x upscales keyed to transparent (designs/doomsday-2026/print, prep.py), 303-382 DPI. 8 Black tees
+  (Bella+Canvas 3001 / pp 29, front, $27, cost $9.40-11.49) + 8 Black hoodies (Gildan 18500 / SwiftPOD pp 39, back,
+  $37, cost $16.71-18.31), S-2XL. printify/create_doomsday.py, ids in printify/doomsday.json. Tags "doomsday drop",
+  "limited drop". Smart collection Doomsday Drop 338393530529 (tag), published, top-level Main menu item.
+  King of the 3 Realms: hood added, horns removed. Grimhold Crest: big silver L instead of the three horns.
+  Included in the Holiday Sale (storewide 15%). Ends via a send_later reminder at 00:05 ET Dec 18
+  (trig_01JKZNWzZ5fPr1qwxGTqBKTG): products to draft, menu item removed, collection unpublished.

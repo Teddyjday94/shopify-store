@@ -1,0 +1,130 @@
+{
+ "Grimhold Crest Tee": {
+  "printify": "6b062b835bda8acb1a0d2382",
+  "design": "crest-L",
+  "cost": [
+   940,
+   1149
+  ]
+ },
+ "Grimhold Crest Hoodie": {
+  "printify": "6b062b96c873c9091302a06e",
+  "design": "crest-L",
+  "cost": [
+   1671,
+   1831
+  ]
+ },
+ "Doom in Our Time Tee": {
+  "printify": "6b062baa255f2587670e9fa4",
+  "design": "doom-in-our-time",
+  "cost": [
+   940,
+   1149
+  ]
+ },
+ "Doom in Our Time Hoodie": {
+  "printify": "6b062bbdeca3203e09094d7c",
+  "design": "doom-in-our-time",
+  "cost": [
+   1671,
+   1831
+  ]
+ },
+ "Doomsday Mask Tee": {
+  "printify": "6b062bd2b15190dac300dc56",
+  "design": "doomsday-mask",
+  "cost": [
+   940,
+   1149
+  ]
+ },
+ "Doomsday Mask Hoodie": {
+  "printify": "6b062be4b15190dac300dc66",
+  "design": "doomsday-mask",
+  "cost": [
+   1671,
+   1831
+  ]
+ },
+ "The Inevitable Doomsday Tee": {
+  "printify": "6b062bfac873c9091302a0a8",
+  "design": "inevitable-throne-hood",
+  "cost": [
+   940,
+   1149
+  ]
+ },
+ "The Inevitable Doomsday Hoodie": {
+  "printify": "6b062c0cc873c9091302a0b5",
+  "design": "inevitable-throne-hood",
+  "cost": [
+   1671,
+   1831
+  ]
+ },
+ "King of the 3 Realms Tee": {
+  "printify": "6b062c22e50eaed63003b9a8",
+  "design": "king-of-3-realms",
+  "cost": [
+   940,
+   1149
+  ]
+ },
+ "King of the 3 Realms Hoodie": {
+  "printify": "6b062c3494a3ebd306097dcc",
+  "design": "king-of-3-realms",
+  "cost": [
+   1671,
+   1831
+  ]
+ },
+ "No Gods, Only Doom Tee": {
+  "printify": "6b062c49e50eaed63003b9d2",
+  "design": "no-gods-only-doom",
+  "cost": [
+   940,
+   1149
+  ]
+ },
+ "No Gods, Only Doom Hoodie": {
+  "printify": "6b062c5b71915c76bb02626e",
+  "design": "no-gods-only-doom",
+  "cost": [
+   1671,
+   1831
+  ]
+ },
+ "Doomsday Incursion Tee": {
+  "printify": "6b062c72b15190dac300dd2f",
+  "design": "three-earths",
+  "cost": [
+   940,
+   1149
+  ]
+ },
+ "Doomsday Incursion Hoodie": {
+  "printify": "6b062c84b15190dac300dd4c",
+  "design": "three-earths",
+  "cost": [
+   1671,
+   1831
+  ]
+ },
+ "Tree Spirit Tee": {
+  "printify": "6b062c99c873c9091302a14c",
+  "design": "tree-spirit",
+  "cost": [
+   940,
+   1149
+  ]
+ },
+ "Tree Spirit Hoodie": {
+  "printify": "6b062cab79ddb1aaf4005f7e",
+  "design": "tree-spirit",
+  "cost": [
+   1671,
+   1831
+  ]
+ }
+}
