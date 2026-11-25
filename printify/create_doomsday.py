@@ -1,4 +1,4 @@
-"""Doomsday Drop (limited, 2026-11-25 to 2026-12-17): the owner's cleaned designs (6 after Doomsday Mask + Tree Spirit were dropped) as a Black front-print tee
+"""Doomsday Drop (limited, 2026-11-25 to 2026-12-18): the owner's cleaned designs (6 after Doomsday Mask + Tree Spirit were dropped) as a Black front-print tee
 (Bella+Canvas 3001, provider 29, $27) and a Black back-print hoodie (Gildan 18500 at SwiftPOD, provider 39, $37).
 Print files: designs/doomsday-2026/print/<slug>.png (Kittl 4x upscales, background keyed out; see prep.py).
 Tags "doomsday drop" + "limited drop" feed the Doomsday Drop collection. No franchise names anywhere.
@@ -13,7 +13,7 @@ SRC = os.path.join(os.path.dirname(__file__), "..", "designs", "doomsday-2026", 
 DONE = os.path.join(os.path.dirname(__file__), "doomsday.json")
 SIZES = {"S", "M", "L", "XL", "2XL"}
 EDGE, TOP = 0.97, 0.03
-NOTE = "<p><strong>Doomsday Drop: limited run, available until December 17.</strong></p>"
+NOTE = "<p><strong>Doomsday Drop: limited run, available until December 18.</strong></p>"
 
 DESIGNS = [
     ("crest-L", "Grimhold Crest", "A silver L on a green-and-black shield, laurels below and steel finials above. Swear allegiance.", ["crest", "heraldry"]),

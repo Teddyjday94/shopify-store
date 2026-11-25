@@ -486,4 +486,9 @@ Monster of the Week (held: resembles a trademarked character).
   duplicated from the published No Denim; owner publishes). Tried on No Denim first and reverted: No Denim carries
   other committed-but-unpublished edits (denim-set, main-product, product-card, theme.liquid, lookbook...) not made
   by this session, so publishing it would ship those too.
+  White + green skin (2026-11-25, owner asked for the limited run): assets/doomsday-skin.css loaded last in
+  layout/theme.liquid of the Doomsday Drop copy only; overrides the dark surfaces (header, bars, cards, product page,
+  filters, lookbook, the Doomsday band) to off-white #f7f8f3 / ink #0f1a12 / green #128a3a / acid #8dff3a; photo
+  tiles and the hero film keep their dark art. After the drop, the owner republishes a regular theme (No Denim).
+  Product + collection copy now say 'until December 18' / 'Six designs'.
   Hoodies: back-print photo moved to first (Printify puts the blank front first).
