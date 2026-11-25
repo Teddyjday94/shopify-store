@@ -475,7 +475,7 @@ Monster of the Week (held: resembles a trademarked character).
   (Bella+Canvas 3001 / pp 29, front, $27, cost $9.40-11.49) + 8 Black hoodies (Gildan 18500 / SwiftPOD pp 39, back,
   $37, cost $16.71-18.31), S-2XL. printify/create_doomsday.py, ids in printify/doomsday.json. Tags "doomsday drop",
   "limited drop". Smart collection Doomsday Drop 338393530529 (tag), published, top-level Main menu item.
-  2026-11-25: Doomsday Mask + Tree Spirit tee/hoodie deleted (owner); A Stolen Life added -> 14 products. King of the 3 Realms: hood
+  2026-11-25: Doomsday Mask + Tree Spirit tee/hoodie deleted (owner); A Stolen Life added; Doomsday Incursion deleted (owner) -> 12 products. King of the 3 Realms: hood
   added, horns removed, then the stone throne swapped for an original throne forged from swords (not the HBO Iron
   Throne shape; owner sent that as the reference). Grimhold Crest: big silver L instead of the three horns; "Grimhold" word removed (2026-11-25), just the L.
   Included in the Holiday Sale (storewide 15%). Owner extended the drop through Dec 18 (2026-11-25). Ends via a
