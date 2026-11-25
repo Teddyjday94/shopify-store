@@ -11,7 +11,8 @@ it finishes the Shopify side (descriptions, photo labels, collections, the match
 ## 1. Set hoodies: Oversize Fleeced Hoodie (R00286), same for every hoodie
 - **Fulfilment: choose US (Los Angeles)**, about 5-7 days to US customers. Method: DTF.
 - Colours: **Black, Navy Blue, Gray Coffee, Eden Green** (dark only: the art has light type and painted edges).
-- Price: **$49** (cost about $21.90 + shipping).
+- Price: **$37**, same as our other hoodies (owner, 2026-11-21). Cost $20.90 front + back, US shipping $10.30.
+- Back file: upload `back-dtf-5500.png` (3600+ x 5500 px). The capped `back-dtf.png` is under 300 DPI at full back size.
 - Title: `<Design> Fleece Hoodie` (e.g. `Born Ready Fleece Hoodie`).
 
 Files are in `hoodies/<design>/`. **Back:** `back-dtf.png`, centred, as big as the back area allows.
