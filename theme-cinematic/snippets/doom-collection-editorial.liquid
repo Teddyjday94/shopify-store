@@ -1,0 +1,48 @@
+{%- assign editorial_image = images['doomsday-collection-rack-lobby.png'] -%}
+<section class="doom-editorial" aria-labelledby="DoomEditorialTitle">
+  <div class="doom-editorial__media">
+    {%- if editorial_image != blank -%}
+      {{ editorial_image | image_url: width: 1400 | image_tag:
+        widths: '520, 760, 1000, 1400',
+        sizes: '(min-width: 900px) 58vw, 100vw',
+        loading: 'lazy',
+        class: 'doom-editorial__image',
+        alt: 'Four Doomsday Drop garments displayed on a rack in a cinema lobby'
+      }}
+    {%- endif -%}
+    <span class="doom-editorial__stamp label">Cinema lobby / Look 01</span>
+  </div>
+  <div class="doom-editorial__copy">
+    <p class="label doom-editorial__kicker">Intermission / Shop the rack</p>
+    <h2 class="display" id="DoomEditorialTitle">Four pieces.<br>One inevitable night.</h2>
+    <p>A cinema-lobby lineup from the Doomsday Drop. Start with the clean product view, then see every piece out in the world.</p>
+    <nav class="doom-editorial__links" aria-label="Shop the featured Doomsday looks">
+      <a href="/products/the-inevitable-doomsday-hoodie">The Inevitable <span aria-hidden="true">↗</span></a>
+      <a href="/products/a-stolen-life-hoodie">A Stolen Life <span aria-hidden="true">↗</span></a>
+      <a href="/products/d-crest-varsity-jacket">D Crest Varsity <span aria-hidden="true">↗</span></a>
+      <a href="/products/king-of-the-3-realms-hoodie">King of the 3 Realms <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</section>
+
+<style>
+  .doom-editorial { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr); min-height: 560px; margin: 28px 0 34px; overflow: hidden; border: 1px solid #4fd16a55; background: radial-gradient(110% 100% at 0 50%, #16361f 0%, #101512 48%, #090b09 100%); color: #f2eee5; box-shadow: 0 24px 70px #0008; }
+  .doom-editorial__media { position: relative; min-height: 560px; overflow: hidden; background: #080a08; }
+  .doom-editorial__image { width: 100%; height: 100%; object-fit: cover; object-position: center 46%; display: block; mix-blend-mode: normal; filter: saturate(.86) contrast(1.04); }
+  .doom-editorial__media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 70%, #101512 100%); pointer-events: none; }
+  .doom-editorial__stamp { position: absolute; left: 20px; bottom: 18px; z-index: 1; padding: 8px 10px; background: #0a0d0bcc; border: 1px solid #4fd16a88; color: #f2eee5; }
+  .doom-editorial__copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(32px, 5vw, 72px); }
+  .doom-editorial__kicker { margin: 0 0 18px; color: #4fd16a; }
+  .doom-editorial__copy .display { margin: 0 0 22px; font-size: clamp(48px, 5.4vw, 92px); line-height: .9; color: #f2eee5; }
+  .doom-editorial__copy > p:not(.doom-editorial__kicker) { max-width: 36ch; margin: 0 0 30px; color: #d5d0c7; font-size: 16px; line-height: 1.55; }
+  .doom-editorial__links { display: grid; border-top: 1px solid #f2eee52b; }
+  .doom-editorial__links a { display: flex; justify-content: space-between; gap: 18px; padding: 13px 0; border-bottom: 1px solid #f2eee52b; color: #f2eee5; font-family: var(--mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; }
+  .doom-editorial__links a:hover, .doom-editorial__links a:focus-visible { color: #4fd16a; }
+  @media (max-width: 760px) {
+    .doom-editorial { grid-template-columns: 1fr; min-height: 0; margin: 18px 0 24px; }
+    .doom-editorial__media { min-height: 0; aspect-ratio: 4 / 5; }
+    .doom-editorial__media::after { background: linear-gradient(0deg, #101512 0%, transparent 28%); }
+    .doom-editorial__copy { padding: 30px 20px 34px; }
+    .doom-editorial__copy .display { font-size: clamp(46px, 15vw, 68px); }
+  }
+</style>
