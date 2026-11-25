@@ -1,4 +1,4 @@
-"""Doomsday Drop (limited, 2026-11-25 to 2026-12-18): the owner's cleaned designs (6 after Doomsday Mask + Tree Spirit were dropped) as a Black front-print tee
+"""Doomsday Drop (limited, 2026-11-25 to 2026-12-18): the owner's cleaned designs (Doomsday Mask + Tree Spirit dropped, A Stolen Life added) as a Black front-print tee
 (Bella+Canvas 3001, provider 29, $27) and a Black back-print hoodie (Gildan 18500 at SwiftPOD, provider 39, $37).
 Print files: designs/doomsday-2026/print/<slug>.png (Kittl 4x upscales, background keyed out; see prep.py).
 Tags "doomsday drop" + "limited drop" feed the Doomsday Drop collection. No franchise names anywhere.
@@ -22,6 +22,7 @@ DESIGNS = [
     ("king-of-3-realms", "King of the 3 Realms", "A hooded king on a throne forged from swords, three moons behind him and green lightning splitting the sky.", ["villain", "throne", "moons"]),
     ("no-gods-only-doom", "No Gods, Only Doom", "An iron gauntlet shattering a golden halo, framed by roses and a banner.", ["villain", "roses", "tattoo"]),
     ("three-earths", "Doomsday Incursion", "Three worlds colliding in green and violet fire.", ["space", "planets", "multiverse"]),
+    ("a-stolen-life", "A Stolen Life", "A vintage-poster sunset: a boy in suspenders holding up a homemade wooden shield, a couple silhouetted in a glowing doorway. A chance at peace.", ["vintage", "retro poster", "americana"]),
 ]
 TEE = dict(kind="Tee", blueprint=12, provider=29, price=2700, position="front", colors={"Black"},
            features=["Full-color front print", "Soft, lightweight 100% combed cotton", "Retail unisex fit"])
