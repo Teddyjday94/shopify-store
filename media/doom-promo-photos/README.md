@@ -18,7 +18,7 @@ Lifestyle and product shots for the Doomsday Drop (limited run, Nov 25 to Dec 18
 | 11 | King, Inevitable Doomsday, A Stolen Life and crest on a lounge sofa |
 | 12 | Same four on a rack in a cinema lobby |
 | 13 | Same four, flat lay |
-| 14-16 | Green/cream varsity jacket with the crest (front, back, worn) |
+| 14-16 | D Crest Varsity Jacket, green/cream (front, back, worn) |
 
-Notes: the crest in 04, 06, 09, 11-16 shows a "D"-style letter; the store product is the L Crest (silver L).
-The varsity jacket (14-16) is not a store product yet. Keep "Avengers"/"Marvel" out of captions and hashtags.
+Notes: the crest is the D Crest (D Crest Tee / Hoodie / Varsity Jacket in the store). Keep "Avengers"/"Marvel"
+out of captions and hashtags.
