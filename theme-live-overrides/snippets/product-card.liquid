@@ -43,6 +43,28 @@
     endif
   endif
 -%}
+{%- liquid
+  assign hover_class = 'card__hover'
+  assign lifestyle_hover = nil
+  case product.handle
+    when 'd-crest-varsity-jacket'
+      assign lifestyle_hover = images['doomsday-d-crest-varsity-friends.png']
+    when 'd-crest-tee'
+      assign lifestyle_hover = images['doomsday-d-crest-tee-group.png']
+    when 'king-of-the-3-realms-hoodie'
+      assign lifestyle_hover = images['doomsday-king-3-realms-hoodie-aisle.png']
+    when 'no-gods-only-doom-tee'
+      assign lifestyle_hover = images['doomsday-no-gods-tee-concessions.png']
+    when 'a-stolen-life-tee'
+      assign lifestyle_hover = images['doomsday-a-stolen-life-tee-porch.png']
+    when 'a-stolen-life-hoodie'
+      assign lifestyle_hover = images['doomsday-a-stolen-life-hoodie-sidewalk.png']
+  endcase
+  if lifestyle_hover != blank
+    assign hover = lifestyle_hover
+    assign hover_class = 'card__hover card__hover--lifestyle'
+  endif
+-%}
 {%- comment -%} The card is a frame holding the product link plus a quick view button (a button can't sit inside a link). {%- endcomment -%}
 <div class="card outfit-frame">
 <a class="card__link" href="{{ product.url }}">
@@ -66,6 +88,7 @@
           widths: '360, 540, 720, 1000, 1440',
           sizes: '(min-width: 1440px) 450px, (min-width: 990px) 31vw, 50vw',
           loading: 'lazy',
+          class: hover_class,
           alt: ''
         }}
       {%- endif -%}
