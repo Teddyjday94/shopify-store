@@ -21,7 +21,7 @@ DESIGNS = [
     ("inevitable-throne-hood", "The Inevitable Doomsday", "A hooded ruler on a throne of conquered crowns and helmets. The decree is final.", ["villain", "throne"]),
     ("king-of-3-realms", "King of the 3 Realms", "A hooded king on a throne forged from swords, three moons behind him and green lightning splitting the sky.", ["villain", "throne", "moons"]),
     ("no-gods-only-doom", "No Gods, Only Doom", "An iron gauntlet shattering a golden halo, framed by roses and a banner.", ["villain", "roses", "tattoo"]),
-    ("a-stolen-life", "A Stolen Life", "A vintage-poster sunset: a boy in suspenders holding up a homemade wooden shield, a couple silhouetted in a glowing doorway. A chance at peace.", ["vintage", "retro poster", "americana"]),
+    ("a-stolen-life", "A Stolen Life", "A vintage-poster sunset: a boy in suspenders holding up a dented trash-can lid like a shield, a couple silhouetted in a glowing doorway. A chance at peace.", ["vintage", "retro poster", "americana"]),
 ]
 TEE = dict(kind="Tee", blueprint=12, provider=29, price=2700, position="front", colors={"Black"},
            features=["Full-color front print", "Soft, lightweight 100% combed cotton", "Retail unisex fit"])
