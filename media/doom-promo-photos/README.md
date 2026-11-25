@@ -24,3 +24,20 @@ Lifestyle and product shots for the Doomsday Drop (limited run, Nov 25 to Dec 18
 
 Notes: the crest is the D Crest (D Crest Tee / Hoodie / Varsity Jacket in the store). Keep "Avengers"/"Marvel"
 out of captions and hashtags.
+
+## Storefront placement (2026-11-25)
+
+- Homepage D Crest feature: 17
+- Homepage "Worn Elsewhere" lookbook: 01, 03, 07 and 17
+- Doomsday Drop collection cover: 12
+- A Stolen Life Tee gallery: 02 and 10
+- A Stolen Life Hoodie gallery: 01
+- King of the 3 Realms Hoodie gallery: 03, 05 and 08
+- D Crest Tee gallery: 04, 06 and 09
+- Doom in Our Time Tee gallery: 09
+- No Gods, Only Doom Tee gallery: 07 and 09
+- The Inevitable Doomsday Hoodie gallery: 12
+- D Crest Varsity Jacket gallery: 14-18
+
+The original product mockups remain first in each gallery. Lifestyle photos follow them to show fit, scale and
+real-world context without replacing the clean product view.
