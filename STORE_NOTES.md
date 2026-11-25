@@ -478,3 +478,4 @@ Monster of the Week (held: resembles a trademarked character).
   King of the 3 Realms: hood added, horns removed. Grimhold Crest: big silver L instead of the three horns.
   Included in the Holiday Sale (storewide 15%). Ends via a send_later reminder at 00:05 ET Dec 18
   (trig_01JKZNWzZ5fPr1qwxGTqBKTG): products to draft, menu item removed, collection unpublished.
+  Hoodies: back-print photo moved to first (Printify puts the blank front first).
