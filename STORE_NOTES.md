@@ -478,6 +478,11 @@ Monster of the Week (held: resembles a trademarked character).
   2026-11-25: Doomsday Mask + Tree Spirit tee/hoodie deleted (owner); 12 products remain. King of the 3 Realms: hood
   added, horns removed, then the stone throne swapped for an original throne forged from swords (not the HBO Iron
   Throne shape; owner sent that as the reference). Grimhold Crest: big silver L instead of the three horns; "Grimhold" word removed (2026-11-25), just the L.
-  Included in the Holiday Sale (storewide 15%). Ends via a send_later reminder at 00:05 ET Dec 18
-  (trig_01JKZNWzZ5fPr1qwxGTqBKTG): products to draft, menu item removed, collection unpublished.
+  Included in the Holiday Sale (storewide 15%). Owner extended the drop through Dec 18 (2026-11-25). Ends via a
+  send_later reminder at 00:05 ET Dec 19 (trig_01V5TysCN6Z4vFrFiSue9wef): products to draft, menu item removed,
+  collection unpublished. Homepage: section limited-drop (sections/limited-drop.liquid, first on templates/index.json,
+  countdown to the end of its 'ends' date, hides itself after; big image = Files doomsday-drop-hero.jpg) + an
+  announcement message ending 2026-12-18, both on the live theme No Denim (157083205793), committed, waiting for
+  publish. That theme also had other committed-but-unpublished edits (denim-set, main-product, product-card,
+  theme.liquid, lookbook...) not made by this session; publishing it ships those too.
   Hoodies: back-print photo moved to first (Printify puts the blank front first).
