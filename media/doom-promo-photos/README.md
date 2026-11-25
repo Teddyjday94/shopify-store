@@ -19,6 +19,8 @@ Lifestyle and product shots for the Doomsday Drop (limited run, Nov 25 to Dec 18
 | 12 | Same four on a rack in a cinema lobby |
 | 13 | Same four, flat lay |
 | 14-16 | D Crest Varsity Jacket, green/cream (front, back, worn) |
+| 17 | D Crest Varsity Jacket, two friends in a cinema lobby (front + back) |
+| 18 | D Crest Varsity Jacket, back, theater hallway |
 
 Notes: the crest is the D Crest (D Crest Tee / Hoodie / Varsity Jacket in the store). Keep "Avengers"/"Marvel"
 out of captions and hashtags.
