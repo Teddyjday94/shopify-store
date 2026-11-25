@@ -482,7 +482,8 @@ Monster of the Week (held: resembles a trademarked character).
   send_later reminder at 00:05 ET Dec 19 (trig_01V5TysCN6Z4vFrFiSue9wef): products to draft, menu item removed,
   collection unpublished. Homepage: section limited-drop (sections/limited-drop.liquid, first on templates/index.json,
   countdown to the end of its 'ends' date, hides itself after; big image = Files doomsday-drop-hero.jpg) + an
-  announcement message ending 2026-12-18, both on the live theme No Denim (157083205793), committed, waiting for
-  publish. That theme also had other committed-but-unpublished edits (denim-set, main-product, product-card,
-  theme.liquid, lookbook...) not made by this session; publishing it ships those too.
+  announcement message ending 2026-12-18, both on theme copy "Elsewhere Apparel Co. | Doomsday Drop" (157190258849,
+  duplicated from the published No Denim; owner publishes). Tried on No Denim first and reverted: No Denim carries
+  other committed-but-unpublished edits (denim-set, main-product, product-card, theme.liquid, lookbook...) not made
+  by this session, so publishing it would ship those too.
   Hoodies: back-print photo moved to first (Printify puts the blank front first).
