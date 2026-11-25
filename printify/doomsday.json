@@ -130,5 +130,21 @@
    1831
   ],
   "deleted": "2026-11-25 (owner removed from the drop)"
+ },
+ "A Stolen Life Tee": {
+  "printify": "6b06743343cb7ee2d402cb73",
+  "design": "a-stolen-life",
+  "cost": [
+   940,
+   1149
+  ]
+ },
+ "A Stolen Life Hoodie": {
+  "printify": "6b067445d3c2aadbe1009353",
+  "design": "a-stolen-life",
+  "cost": [
+   1671,
+   1831
+  ]
  }
 }
