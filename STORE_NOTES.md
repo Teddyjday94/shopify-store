@@ -152,6 +152,14 @@ Monster of the Week (held: resembles a trademarked character).
   nothing on this theme; theme_bash edits + theme_commit worked. themeCreate from a raw.githubusercontent zip works.
   Tiles (2026-11-27): Here Be Dragons = Dragonfall Hoodie back print, Female Lead = Sisterhood tee at the graffiti
   wall (block image settings in templates/index.json; product photos are usable as shopify://shop_images/<file>).
+- 2026-11-27, Legends Never Die hoodie art updated in Printify (owner): Born Ready, Fallen Not Finished, Going With the
+  Flow and Queen Forever hoodies were republished with images, which replaced every Shopify photo with 33 unlabeled
+  mockups (8 colors x front/back/back 2nd view/folded + Printify size chart); Going With the Flow also got 18 duplicate
+  imports. Fixed: photos matched to Printify mockups by image comparison (printify/match_republished_photos.py), labeled
+  "<Title> in <Color>, back print / back print, second view / front print / folded" and "<Title> size chart", ordered
+  Black back print first then each color (option order), chart last; every variant linked to its color's back print;
+  the 18 duplicates detached from the product (files kept in Files). Old lifestyle/model photos on these hoodies were
+  replaced by the republish and are gone from the products. Tees, women's tees, crewnecks etc. were not republished.
 - 2026-11-27, Urban Collection emptied and hidden until real products exist: removed tags "urban" and
   "urban collection" from its 4 products (Urban Collection Sweatpants, Beanie, Painted Beanie, Trucker Hat; the
   collection's only rule is a product tag) and removed its link from the main menu. The collection itself is
