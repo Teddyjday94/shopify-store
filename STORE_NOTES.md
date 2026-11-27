@@ -173,6 +173,16 @@ Monster of the Week (held: resembles a trademarked character).
   unverified: check it in the Printify editor. 40 crewneck photos matched first (printify/prematch_photos.py: front
   98502, back view 98503, folded 100648), then swapped and verified. Old settings incl. the full neck entries:
   printify/legends_crewnecks_print_areas_before_2026-11-27.json.
+- 2026-11-27, Legends art enlarged (owner: the new art has less border, use more of the shirt): print areas are
+  nearly square and the art is tall, so height is the limit; the art already filled 90-94% of it. The PNGs have a
+  ~3% transparent margin, so printify/legends_enlarge.py scales each print until the visible art fills 99% of the
+  print height (transparent margin may run past the edge; Printify clips it), centered on the visible art.
+  Gains: tees/women's tees +7-10%, hoodies/crewnecks +5-7%. Scales before -> after: hoodies & crewnecks Born Ready
+  0.7838->0.8298, Fallen 0.8229->0.8771, Flow 0.7855->0.8281, Queen 0.6824->0.7153; tees Born 0.7566->0.8228,
+  Fallen 0.7934->0.8697, Flow 0.7581->0.8211, Queen 0.6610->0.7093; women's Born 0.7591->0.8296, Fallen
+  0.7970->0.8769, Flow 0.7607->0.8279, Queen 0.6611->0.7152 (y 0.505 tees, 0.5 others before). Going bigger
+  needs cropping the art or a wider print area. All 220 Shopify photos re-pointed to the new mockups and verified.
+  Crewneck neck layers still listed afterwards.
 - 2026-11-27, Urban Collection emptied and hidden until real products exist: removed tags "urban" and
   "urban collection" from its 4 products (Urban Collection Sweatpants, Beanie, Painted Beanie, Trucker Hat; the
   collection's only rule is a product tag) and removed its link from the main menu. The collection itself is
