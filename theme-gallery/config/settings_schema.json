@@ -1,0 +1,65 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Elsewhere Gallery",
+    "theme_version": "1.0.0",
+    "theme_author": "Elsewhere Apparel Co.",
+    "theme_documentation_url": "https://github.com/Teddyjday94/shopify-store",
+    "theme_support_url": "https://github.com/Teddyjday94/shopify-store"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      { "type": "color", "id": "color_bg", "label": "Background", "default": "#FFFFFF" },
+      { "type": "color", "id": "color_ink", "label": "Text", "default": "#141414" },
+      { "type": "color", "id": "color_tile", "label": "Image tiles", "default": "#F2F1EE" },
+      { "type": "color", "id": "color_accent", "label": "Accent (buttons, links, highlights)", "default": "#5B3DF5" },
+      { "type": "color", "id": "color_accent_text", "label": "Text on accent", "default": "#FFFFFF" },
+      { "type": "color", "id": "color_sale", "label": "Sale badges and prices", "default": "#E0322B" },
+      { "type": "color", "id": "color_promo", "label": "Announcement bar and footer", "default": "#141414" },
+      { "type": "color", "id": "color_promo_text", "label": "Text on announcement bar and footer", "default": "#FFFFFF" }
+    ]
+  },
+  {
+    "name": "Layout",
+    "settings": [
+      { "type": "range", "id": "page_width", "label": "Page width", "min": 1100, "max": 1800, "step": 20, "unit": "px", "default": 1440 },
+      { "type": "range", "id": "radius", "label": "Corner radius", "min": 0, "max": 20, "step": 1, "unit": "px", "default": 10 }
+    ]
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      { "type": "image_picker", "id": "favicon", "label": "Favicon", "info": "32 x 32px PNG" }
+    ]
+  },
+  {
+    "name": "Product cards",
+    "settings": [
+      { "type": "checkbox", "id": "card_show_second_image", "label": "Show second image on hover", "default": true },
+      {
+        "type": "textarea",
+        "id": "world_handles",
+        "label": "Collections shown as \"from ...\" under card titles",
+        "default": "doomsday-drop, elsewhere-bound, player-two, realms, the-immortalized-collection, own-lane, drop-002, urban-collection, social-club",
+        "info": "Collection handles, comma separated, in order of preference. A product shows the first one it belongs to, like an artist name."
+      }
+    ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      { "type": "checkbox", "id": "cart_drawer", "label": "Open a cart drawer when adding to cart", "default": true },
+      { "type": "number", "id": "free_shipping_threshold", "label": "Free shipping threshold (in your currency)", "default": 60, "info": "Shows a progress bar in the cart. Set 0 to hide. Match your free-shipping discount." }
+    ]
+  },
+  {
+    "name": "Social",
+    "settings": [
+      { "type": "text", "id": "social_instagram", "label": "Instagram URL" },
+      { "type": "text", "id": "social_tiktok", "label": "TikTok URL" },
+      { "type": "text", "id": "social_facebook", "label": "Facebook URL" },
+      { "type": "text", "id": "social_pinterest", "label": "Pinterest URL" }
+    ]
+  }
+]

@@ -1,0 +1,35 @@
+{%- comment -%}
+  Slide-out cart. Lines are rendered by assets/theme.js from /cart.js, so the drawer is always current.
+  Free shipping bar threshold: theme setting free_shipping_threshold (match the automatic discount).
+{%- endcomment -%}
+{%- if settings.cart_drawer -%}
+  <div class="drawer drawer--right" id="CartDrawer" data-cart-drawer hidden>
+    <div class="drawer__scrim" data-drawer-close></div>
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-labelledby="CartDrawerTitle" tabindex="-1">
+      <div class="drawer__head">
+        <h2 class="h4" id="CartDrawerTitle">{{ 'cart.title' | t }} <span class="muted" data-cart-drawer-count></span></h2>
+        <button class="icon-btn" type="button" data-drawer-close aria-label="{{ 'general.close' | t }}">{% render 'icon', name: 'close' %}</button>
+      </div>
+      {%- if settings.free_shipping_threshold > 0 -%}
+        <div class="ship-bar" data-ship-bar
+          data-away="{{ 'cart.free_shipping_away' | t: amount: '__AMOUNT__' | escape }}"
+          data-done="{{ 'cart.free_shipping_unlocked' | t | escape }}">
+          <p class="ship-bar__text" data-ship-text></p>
+          <div class="ship-bar__track"><span data-ship-fill></span></div>
+        </div>
+      {%- endif -%}
+      <div class="drawer__body" data-cart-lines aria-live="polite"></div>
+      <div class="drawer__foot" data-cart-foot>
+        <div class="drawer__total">
+          <span>{{ 'cart.subtotal' | t }}</span>
+          <strong data-cart-subtotal>{{ cart.total_price | money }}</strong>
+        </div>
+        <p class="muted small">{{ 'cart.taxes_shipping' | t }}</p>
+        <form action="{{ routes.cart_url }}" method="post">
+          <button class="btn btn--block btn--lg" type="submit" name="checkout">{{ 'cart.checkout' | t }}</button>
+        </form>
+        <a class="link-btn drawer__view" href="{{ routes.cart_url }}">{{ 'cart.view' | t }}</a>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

@@ -1,0 +1,57 @@
+{%- comment -%}
+  CSS color for a garment color name (Printify names). Unknown names fall back to a neutral grey.
+  @param name
+{%- endcomment -%}
+{%- liquid
+  assign n = name | downcase | strip
+  case n
+    when 'black', 'vintage black'
+      echo '#141414'
+    when 'white', 'vintage white'
+      echo '#ffffff'
+    when 'natural', 'cream', 'ivory'
+      echo '#efe6d2'
+    when 'sand', 'tan', 'heather sand'
+      echo '#d8c6a5'
+    when 'navy', 'heather navy', 'dark navy'
+      echo '#1f2a44'
+    when 'red', 'cardinal', 'cardinal red', 'heather red'
+      echo '#c8232c'
+    when 'maroon', 'burgundy'
+      echo '#6b1f2b'
+    when 'royal', 'royal blue', 'true royal', 'heather true royal'
+      echo '#2550b3'
+    when 'light blue', 'baby blue', 'carolina blue', 'heather blue'
+      echo '#9cc3e6'
+    when 'purple', 'team purple', 'heather team purple'
+      echo '#4b2d84'
+    when 'pink', 'light pink', 'heather pink', 'azalea'
+      echo '#f3b7c8'
+    when 'forest', 'forest green', 'heather forest', 'dark green'
+      echo '#244a33'
+    when 'military green', 'olive', 'army'
+      echo '#5b5f3e'
+    when 'kelly', 'kelly green', 'irish green'
+      echo '#1f8a4c'
+    when 'gold', 'mustard', 'yellow', 'daisy', 'heather mustard'
+      echo '#e3b23c'
+    when 'orange', 'heather orange'
+      echo '#ea6a2a'
+    when 'brown', 'dark chocolate'
+      echo '#4a3227'
+    when 'sport grey', 'athletic heather', 'heather grey', 'ash', 'grey', 'gray', 'light grey', 'heather'
+      echo '#b9b9b6'
+    when 'dark heather', 'charcoal', 'dark grey', 'dark grey heather', 'asphalt', 'heather dark grey'
+      echo '#45474a'
+    when 'graphite heather', 'graphite'
+      echo '#5d5f61'
+    when 'teal', 'heather teal'
+      echo '#1f7a80'
+    when 'mint', 'heather mint'
+      echo '#a8dcc4'
+    when 'lavender', 'heather lavender', 'orchid'
+      echo '#bda7dc'
+    else
+      echo '#c9c6c0'
+  endcase
+-%}

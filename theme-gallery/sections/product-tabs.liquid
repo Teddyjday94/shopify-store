@@ -1,0 +1,71 @@
+{%- comment -%}
+  Product grid with tabs ("Trending", "New", "Hoodies"...). Each tab block is a collection; all tabs render up
+  front and the tab buttons just show one at a time, so it works without waiting on the network.
+{%- endcomment -%}
+{%- assign tabs = section.blocks | where: 'type', 'tab' -%}
+<section class="section ptabs" data-tabs>
+  <div class="page-width">
+    <div class="section-head">
+      <div>
+        {%- if section.settings.kicker != blank -%}<p class="kicker">{{ section.settings.kicker }}</p>{%- endif -%}
+        <h2 class="h2">{{ section.settings.heading }}</h2>
+      </div>
+      {%- if tabs.size > 1 -%}
+        <div class="pills" role="tablist" aria-label="{{ section.settings.heading | escape }}">
+          {%- for block in tabs -%}
+            <button class="pill{% if forloop.first %} is-active{% endif %}" type="button" role="tab"
+              id="Tab-{{ section.id }}-{{ forloop.index }}" aria-controls="Panel-{{ section.id }}-{{ forloop.index }}"
+              aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" {% unless forloop.first %}tabindex="-1"{% endunless %} {{ block.shopify_attributes }}>
+              {{ block.settings.label | default: block.settings.collection.title }}
+            </button>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- for block in tabs -%}
+      {%- assign c = block.settings.collection -%}
+      <div class="ptabs__panel" role="tabpanel" id="Panel-{{ section.id }}-{{ forloop.index }}" aria-labelledby="Tab-{{ section.id }}-{{ forloop.index }}" {% unless forloop.first %}hidden{% endunless %}>
+        <div class="grid" style="--cols: {{ section.settings.columns }};">
+          {%- if c != blank and c.products.size > 0 -%}
+            {%- for product in c.products limit: section.settings.limit -%}
+              {% render 'product-card', product: product %}
+            {%- endfor -%}
+          {%- else -%}
+            {%- for i in (1..section.settings.columns) -%}
+              <article class="card"><div class="card__media"><span class="card__placeholder">?</span></div><div class="card__info"><h3 class="card__title">Pick a collection</h3></div></article>
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+        {%- if c != blank -%}
+          <div class="center-row">
+            <a class="btn btn--ghost" href="{{ c.url }}">{{ 'general.shop_all' | t }} {{ block.settings.label | default: c.title }}</a>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product tabs",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Trending designs" },
+    { "type": "range", "id": "limit", "label": "Products per tab", "min": 4, "max": 24, "step": 1, "default": 10 },
+    { "type": "range", "id": "columns", "label": "Columns on desktop", "min": 3, "max": 6, "step": 1, "default": 5 }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        { "type": "collection", "id": "collection", "label": "Collection" },
+        { "type": "text", "id": "label", "label": "Tab label (optional)" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Product tabs", "blocks": [{ "type": "tab" }, { "type": "tab" }] }]
+}
+{% endschema %}

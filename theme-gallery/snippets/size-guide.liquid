@@ -1,0 +1,36 @@
+{%- comment -%}
+  "Size guide" link + dialog with Printify's size chart for the garment. Charts live in Shopify Files
+  (size-chart-*.jpg). Chart chosen by handle suffix (see snippets/design-key.liquid). Women's tees have no chart.
+  @param product
+{%- endcomment -%}
+{%- liquid
+  assign chart = blank
+  assign h = product.handle
+  if h == 'odysseus-layover-tee'
+    assign chart = 'size-chart-tee-comfort-colors.jpg'
+  elsif h contains '-womens-tee'
+    assign chart = blank
+  elsif h contains '-long-sleeve-tee'
+    assign chart = 'size-chart-long-sleeve-gildan-2400.jpg'
+  elsif h contains '-hoodie'
+    assign chart = 'size-chart-hoodie-gildan-18500.jpg'
+  elsif h contains '-crewneck'
+    assign chart = 'size-chart-crewneck-gildan-18000.jpg'
+  elsif h contains '-tee'
+    assign chart = 'size-chart-tee-bella-canvas-3001.jpg'
+  endif
+-%}
+{%- if chart != blank -%}
+  {%- assign img = images[chart] -%}
+  {%- if img != blank -%}
+    <button type="button" class="link-btn" data-dialog-open="SizeGuide" aria-haspopup="dialog">Size guide</button>
+    <dialog class="modal" id="SizeGuide" aria-label="Size guide">
+      <div class="modal__head">
+        <h2 class="h4">Size guide</h2>
+        <button class="icon-btn" type="button" data-dialog-close aria-label="{{ 'general.close' | t }}">{% render 'icon', name: 'close' %}</button>
+      </div>
+      {{ img | image_url: width: 1600 | image_tag: loading: 'lazy', widths: '800, 1200, 1600', sizes: '(min-width: 900px) 860px, 100vw' }}
+      <p class="muted small">Measured flat. Lay a shirt you love flat and compare its width (armpit to armpit) with the chart. For an oversized look, go one size up.</p>
+    </dialog>
+  {%- endif -%}
+{%- endif -%}

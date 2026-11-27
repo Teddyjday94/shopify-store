@@ -1,0 +1,98 @@
+<footer class="footer">
+  {%- if section.settings.show_newsletter -%}
+    <div class="footer__signup">
+      <div class="page-width footer__signup-inner">
+        <div>
+          <h2 class="h3">{{ section.settings.newsletter_heading }}</h2>
+          {%- if section.settings.newsletter_text != blank -%}<p>{{ section.settings.newsletter_text }}</p>{%- endif -%}
+        </div>
+        {%- form 'customer', id: 'FooterNewsletter', class: 'signup' -%}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          {%- if form.posted_successfully? -%}
+            <p class="signup__ok" role="status">{{ 'newsletter.success' | t }}</p>
+          {%- else -%}
+            <label class="visually-hidden" for="FooterEmail">{{ 'newsletter.label' | t }}</label>
+            <input class="signup__input" id="FooterEmail" type="email" name="contact[email]" required autocomplete="email" placeholder="{{ 'newsletter.placeholder' | t }}">
+            <button class="btn btn--light" type="submit">{{ 'newsletter.submit' | t }}</button>
+            {%- if form.errors -%}<p class="signup__err" role="alert">{{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}</p>{%- endif -%}
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+  <div class="page-width footer__main">
+    <div class="footer__brand">
+      <a class="footer__wordmark" href="{{ routes.root_url }}">{{ shop.name }}</a>
+      {%- if section.settings.about != blank -%}<div class="footer__about">{{ section.settings.about }}</div>{%- endif -%}
+      <ul class="footer__social" role="list">
+        {%- for network in 'instagram,tiktok,facebook,pinterest' | split: ',' -%}
+          {%- assign key = 'social_' | append: network -%}
+          {%- if settings[key] != blank -%}
+            <li><a class="icon-btn" href="{{ settings[key] }}" target="_blank" rel="noopener" aria-label="{{ network | capitalize }}">{% render 'icon', name: network %}</a></li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+
+    {%- for block in section.blocks -%}
+      <div class="footer__col" {{ block.shopify_attributes }}>
+        <h2 class="footer__heading">{{ block.settings.heading }}</h2>
+        {%- case block.type -%}
+          {%- when 'menu' -%}
+            <ul role="list">
+              {%- for link in block.settings.menu.links -%}
+                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {%- endfor -%}
+            </ul>
+          {%- when 'text' -%}
+            <div class="rte">{{ block.settings.text }}</div>
+        {%- endcase -%}
+      </div>
+    {%- endfor -%}
+  </div>
+
+  <div class="page-width footer__bottom">
+    <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. {{ section.settings.small_print }}</p>
+    {%- if section.settings.show_payment -%}
+      <ul class="footer__pay" role="list" aria-label="Payment methods">
+        {%- for type in shop.enabled_payment_types -%}
+          <li>{{ type | payment_type_svg_tag }}</li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "section-footer",
+  "settings": [
+    { "type": "checkbox", "id": "show_newsletter", "label": "Show newsletter signup", "default": true },
+    { "type": "text", "id": "newsletter_heading", "label": "Newsletter heading", "default": "Get first dibs on new drops" },
+    { "type": "text", "id": "newsletter_text", "label": "Newsletter text", "default": "New designs, sales and the occasional dispatch from elsewhere." },
+    { "type": "richtext", "id": "about", "label": "About text", "default": "<p>Graphic tees, hoodies and more, printed to order one at a time.</p>" },
+    { "type": "text", "id": "small_print", "label": "Small print", "default": "Made elsewhere. Worn here." },
+    { "type": "checkbox", "id": "show_payment", "label": "Show payment icons", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Menu",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Shop" },
+        { "type": "link_list", "id": "menu", "label": "Menu", "default": "footer" }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Help" },
+        { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Questions? We answer every email.</p>" }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,31 @@
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement": {
+      "type": "announcement-bar",
+      "blocks": {
+        "sale": { "type": "message", "settings": { "text": "Holiday Sale: 15% off everything through Dec 17", "link": "/collections/all", "starts": "", "ends": "2026-12-17" } },
+        "sweats": { "type": "message", "settings": { "text": "New: matching sweatpants for our collections", "link": "/collections/sweatpants", "starts": "", "ends": "2026-12-17" } },
+        "set": { "type": "message", "settings": { "text": "Hoodie + sweatpants set: 20% off the sweatpants", "link": "/collections/sweatpants", "starts": "2026-12-18", "ends": "" } },
+        "koozies": { "type": "message", "settings": { "text": "Koozies: 6 or more for $7 each", "link": "/search?q=koozie&type=product", "starts": "", "ends": "" } },
+        "ship": { "type": "message", "settings": { "text": "Free US shipping on orders $60+", "link": "", "starts": "", "ends": "" } },
+        "print": { "type": "message", "settings": { "text": "Printed to order, just for you", "link": "", "starts": "", "ends": "" } }
+      },
+      "block_order": ["sale", "sweats", "set", "koozies", "ship", "print"],
+      "settings": { "interval": 5 }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "menu": "main-menu",
+        "logo_width": 170,
+        "highlight_first": true,
+        "search_placeholder": "Search designs, collections and products",
+        "mega_collection": "elsewhere-bound",
+        "mega_kicker": "Featured collection"
+      }
+    }
+  },
+  "order": ["announcement", "header"]
+}

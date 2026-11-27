@@ -1,0 +1,17 @@
+<section class="section">
+  <div class="page-width page-narrow empty">
+    <p class="kicker">404</p>
+    <h1 class="h1">This page went elsewhere.</h1>
+    <p>The link may be old, or the design was retired.</p>
+    <form class="search-bar search-bar--page" action="{{ routes.search_url }}" method="get" role="search">
+      <label class="visually-hidden" for="Search404">{{ 'search.title' | t }}</label>
+      <input class="search-bar__input" id="Search404" type="search" name="q" placeholder="{{ 'search.placeholder' | t }}">
+      <button class="search-bar__btn" type="submit" aria-label="{{ 'search.submit' | t }}">{% render 'icon', name: 'search' %}</button>
+    </form>
+    <a class="btn" href="{{ routes.all_products_collection_url }}">{{ 'cart.continue' | t }}</a>
+  </div>
+</section>
+
+{% schema %}
+{ "name": "404", "settings": [] }
+{% endschema %}

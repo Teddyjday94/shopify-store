@@ -1,0 +1,31 @@
+{%- comment -%}
+  The product's "world": the first collection from theme setting world_handles that the product belongs to.
+  Works like the artist name on an art marketplace. Outputs one value, chosen by `part`: title (default), url or handle.
+  @param product
+  @param part - 'title', 'url' or 'handle'
+{%- endcomment -%}
+{%- liquid
+  assign found = nil
+  assign wanted = settings.world_handles | split: ','
+  for raw in wanted
+    assign h = raw | strip
+    for c in product.collections
+      if c.handle == h
+        assign found = c
+        break
+      endif
+    endfor
+    if found
+      break
+    endif
+  endfor
+  if found
+    if part == 'url'
+      echo found.url
+    elsif part == 'handle'
+      echo found.handle
+    else
+      echo found.title | escape
+    endif
+  endif
+-%}

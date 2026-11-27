@@ -1,0 +1,83 @@
+{
+  "general": {
+    "cart": "Cart",
+    "menu": "Menu",
+    "search": "Search",
+    "account": "Account",
+    "close": "Close",
+    "home": "Home",
+    "shop_all": "Shop all"
+  },
+  "products": {
+    "add_to_cart": "Add to cart",
+    "added": "Added",
+    "sold_out": "Sold out",
+    "unavailable": "Unavailable",
+    "quantity": "Quantity",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "on_sale": "Sale",
+    "from_price": "From {{ price }}",
+    "from_world": "from",
+    "available_on": "Available on",
+    "more_from": "More from {{ title }}",
+    "you_may_like": "You might also like"
+  },
+  "cart": {
+    "title": "Your cart",
+    "empty": "Your cart is empty.",
+    "continue": "Keep shopping",
+    "subtotal": "Subtotal",
+    "checkout": "Check out",
+    "remove": "Remove",
+    "update": "Update",
+    "note": "Order note",
+    "view": "View cart",
+    "taxes_shipping": "Taxes, discounts and shipping calculated at checkout.",
+    "free_shipping_away": "You're {{ amount }} away from free US shipping",
+    "free_shipping_unlocked": "You've unlocked free US shipping"
+  },
+  "collections": {
+    "empty": "Nothing here yet. New designs are on the way.",
+    "sort_by": "Sort by",
+    "filter": "Filter",
+    "clear_all": "Clear all",
+    "apply": "Show results",
+    "count": {
+      "one": "{{ count }} item",
+      "other": "{{ count }} items"
+    }
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search designs, collections and products",
+    "submit": "Search",
+    "results": {
+      "one": "{{ count }} result for “{{ terms }}”",
+      "other": "{{ count }} results for “{{ terms }}”"
+    },
+    "none": "Nothing found for “{{ terms }}”."
+  },
+  "newsletter": {
+    "label": "Email",
+    "placeholder": "Your email address",
+    "submit": "Sign up",
+    "success": "You're on the list. Watch your inbox for the next drop."
+  },
+  "contact": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "success": "Thanks, we got your message and will reply soon."
+  },
+  "pagination": {
+    "previous": "Previous page",
+    "next": "Next page"
+  },
+  "password": {
+    "enter": "Enter store password",
+    "password": "Password",
+    "submit": "Enter"
+  }
+}

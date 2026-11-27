@@ -1,0 +1,246 @@
+{%- comment -%}
+  Product page. Gallery on the left: photos labeled "<Title> in <Color>, ..." are grouped by color and only the
+  selected color's photos show (all photos show when none match). Buy box on the right: title, "from <collection>",
+  price, "Available on" (other styles of the same design), color swatches, sizes with size guide, add to cart.
+  Below: details accordions and "More from <collection>".
+{%- endcomment -%}
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign current_media = current_variant.featured_media | default: product.featured_media
+  assign form_id = 'ProductForm-' | append: section.id
+  assign color_index = -1
+  for option in product.options_with_values
+    assign on = option.name | downcase
+    if on == 'color' or on == 'colour'
+      assign color_index = forloop.index0
+    endif
+  endfor
+-%}
+{%- capture world_title -%}{% render 'product-world', product: product %}{%- endcapture -%}
+{%- capture world_url -%}{% render 'product-world', product: product, part: 'url' %}{%- endcapture -%}
+{%- capture world_handle -%}{% render 'product-world', product: product, part: 'handle' %}{%- endcapture -%}
+
+<section class="section section--tight pdp-wrap">
+  <div class="page-width">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="{{ routes.root_url }}">{{ 'general.home' | t }}</a> <span aria-hidden="true">/</span>
+      {%- if world_title != blank -%}
+        <a href="{{ world_url }}">{{ world_title }}</a> <span aria-hidden="true">/</span>
+      {%- elsif collection -%}
+        <a href="{{ collection.url }}">{{ collection.title }}</a> <span aria-hidden="true">/</span>
+      {%- endif -%}
+      <span aria-current="page">{{ product.title }}</span>
+    </nav>
+
+    <div class="pdp" data-product data-color-index="{{ color_index }}">
+      <div class="gallery" data-gallery>
+        <div class="gallery__main">
+          {%- for media in product.media -%}
+            {%- liquid
+              assign color = ''
+              if media.alt contains ' in ' and media.alt contains ','
+                assign tail = media.alt | split: ' in ' | last
+                assign color = tail | split: ',' | first | strip
+              endif
+              assign is_current = false
+              if media.id == current_media.id
+                assign is_current = true
+              endif
+            -%}
+            {%- if media.media_type == 'image' -%}
+              <figure class="gallery__slide{% if is_current %} is-active{% endif %}" data-media-id="{{ media.id }}" data-color="{{ color | escape }}">
+                {%- assign load = 'lazy' -%}{%- if is_current -%}{%- assign load = 'eager' -%}{%- endif -%}
+                {{ media | image_url: width: 1600 | image_tag:
+                  widths: '600, 900, 1200, 1600',
+                  sizes: '(min-width: 990px) 55vw, 100vw',
+                  loading: load,
+                  alt: media.alt | default: product.title
+                }}
+              </figure>
+            {%- endif -%}
+          {%- endfor -%}
+          {%- if product.media.size == 0 -%}<figure class="gallery__slide is-active"><span class="card__placeholder">{{ product.title | slice: 0 }}</span></figure>{%- endif -%}
+          {%- if product.media.size > 1 -%}
+            <button class="icon-btn icon-btn--round gallery__nav gallery__nav--prev" type="button" data-gallery-prev aria-label="Previous image">{% render 'icon', name: 'arrow-left' %}</button>
+            <button class="icon-btn icon-btn--round gallery__nav gallery__nav--next" type="button" data-gallery-next aria-label="Next image">{% render 'icon', name: 'arrow' %}</button>
+            <p class="gallery__count" aria-live="polite"><span data-gallery-pos>1</span> / <span data-gallery-total>{{ product.media.size }}</span></p>
+          {%- endif -%}
+        </div>
+        {%- if product.media.size > 1 -%}
+          <div class="gallery__thumbs" aria-label="Product images">
+            {%- for media in product.media -%}
+              {%- if media.media_type != 'image' -%}{%- continue -%}{%- endif -%}
+              {%- liquid
+                assign color = ''
+                if media.alt contains ' in ' and media.alt contains ','
+                  assign tail = media.alt | split: ' in ' | last
+                  assign color = tail | split: ',' | first | strip
+                endif
+              -%}
+              <button class="gallery__thumb" type="button" data-thumb="{{ media.id }}" data-color="{{ color | escape }}"
+                aria-label="Show image {{ forloop.index }}" aria-current="{% if media.id == current_media.id %}true{% else %}false{% endif %}">
+                {{ media | image_url: width: 200 | image_tag: loading: 'lazy', alt: '' }}
+              </button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="buy">
+        <div class="buy__sticky">
+          <h1 class="buy__title">{{ product.title }}</h1>
+          {%- if world_title != blank -%}
+            <a class="buy__by" href="{{ world_url }}">
+              <span class="buy__avatar" aria-hidden="true">{{ world_title | slice: 0 }}</span>
+              <span>{{ 'products.from_world' | t }} <strong>{{ world_title }}</strong></span>
+            </a>
+          {%- endif -%}
+
+          <div class="buy__price" data-product-price>
+            {% render 'price', variant: current_variant %}
+            {%- if current_variant.compare_at_price > current_variant.price -%}
+              {%- assign off = current_variant.compare_at_price | minus: current_variant.price | times: 100 | divided_by: current_variant.compare_at_price -%}
+              <span class="badge badge--sale">Save {{ off }}%</span>
+            {%- endif -%}
+          </div>
+
+          {%- if product.tags contains 'koozie' -%}{% render 'koozie-deal' %}{%- endif -%}
+
+          {% render 'style-switcher', product: product %}
+
+          {%- form 'product', product, id: form_id, class: 'buy__form', novalidate: 'novalidate' -%}
+            <input type="hidden" name="id" value="{{ current_variant.id }}" data-variant-id>
+
+            {%- unless product.has_only_default_variant -%}
+              {%- for option in product.options_with_values -%}
+                {%- assign option_index = forloop.index0 -%}
+                <fieldset class="picker">
+                  <legend class="picker__legend">
+                    {{ option.name }}: <strong data-option-label="{{ option_index }}">{{ option.selected_value }}</strong>
+                    {%- assign on = option.name | downcase -%}
+                    {%- if on == 'size' -%}{% render 'size-guide', product: product %}{%- endif -%}
+                  </legend>
+                  <div class="picker__values{% if option_index == color_index %} picker__values--swatch{% endif %}">
+                    {%- for value in option.values -%}
+                      {%- assign input_id = section.id | append: '-' | append: option_index | append: '-' | append: forloop.index0 -%}
+                      <input class="visually-hidden" type="radio" id="{{ input_id }}" name="option-{{ option_index }}"
+                        value="{{ value | escape }}" data-option-index="{{ option_index }}"
+                        {% if option.selected_value == value %}checked{% endif %}>
+                      {%- if option_index == color_index -%}
+                        {%- capture sw -%}{% render 'swatch-color', name: value %}{%- endcapture -%}
+                        <label class="swatch" for="{{ input_id }}" title="{{ value | escape }}" style="--sw: {{ sw | strip }};">
+                          <span class="visually-hidden">{{ value }}</span>
+                        </label>
+                      {%- else -%}
+                        <label class="chip-opt" for="{{ input_id }}">{{ value }}</label>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                </fieldset>
+              {%- endfor -%}
+            {%- endunless -%}
+
+            <div class="buy__row">
+              <div class="qty">
+                <button type="button" data-qty="-1" aria-label="{{ 'products.decrease' | t }}">&minus;</button>
+                <label class="visually-hidden" for="Quantity-{{ section.id }}">{{ 'products.quantity' | t }}</label>
+                <input type="number" id="Quantity-{{ section.id }}" name="quantity" value="1" min="1" inputmode="numeric">
+                <button type="button" data-qty="1" aria-label="{{ 'products.increase' | t }}">+</button>
+              </div>
+              <button class="btn btn--lg buy__add" type="submit" name="add" data-add-button {% unless current_variant.available %}disabled{% endunless %}>
+                {%- if current_variant.available -%}{{ 'products.add_to_cart' | t }}{%- else -%}{{ 'products.sold_out' | t }}{%- endif -%}
+              </button>
+            </div>
+            <p class="form-error" role="alert" data-form-error hidden></p>
+            {%- if section.settings.show_dynamic_checkout -%}{{ form | payment_button }}{%- endif -%}
+          {%- endform -%}
+
+          <ul class="perks" role="list">
+            {%- if section.settings.perk_1 != blank -%}<li>{% render 'icon', name: 'print' %}<span>{{ section.settings.perk_1 }}</span></li>{%- endif -%}
+            {%- if section.settings.perk_2 != blank -%}<li>{% render 'icon', name: 'truck' %}<span>{{ section.settings.perk_2 }}</span></li>{%- endif -%}
+            {%- if section.settings.perk_3 != blank -%}<li>{% render 'icon', name: 'return' %}<span>{{ section.settings.perk_3 }}</span></li>{%- endif -%}
+          </ul>
+
+          <div class="accordions">
+            {%- if product.description != blank -%}
+              <details class="acc" open>
+                <summary>About this design {% render 'icon', name: 'chevron' %}</summary>
+                <div class="rte">{{ product.description }}</div>
+              </details>
+            {%- endif -%}
+            {%- for block in section.blocks -%}
+              <details class="acc" {{ block.shopify_attributes }}>
+                <summary>{{ block.settings.heading }} {% render 'icon', name: 'chevron' %}</summary>
+                <div class="rte">
+                  {{ block.settings.content }}
+                  {{ block.settings.page.content }}
+                </div>
+              </details>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sticky-buy" data-sticky-buy aria-hidden="true">
+    <div class="sticky-buy__info">
+      <strong>{{ product.title }}</strong>
+      <span data-sticky-price>{% render 'price', variant: current_variant %}</span>
+    </div>
+    <button class="btn" type="button" data-sticky-add tabindex="-1">{{ 'products.add_to_cart' | t }}</button>
+  </div>
+
+  <script type="application/json" data-product-json>{{ product | json }}</script>
+</section>
+
+{%- if section.settings.show_more and world_handle != blank -%}
+  {%- assign wc = collections[world_handle] -%}
+  {%- capture own_base -%}{% render 'design-key', handle: product.handle, part: 'base' %}{%- endcapture -%}
+  {%- capture more -%}
+    {%- assign shown = 0 -%}
+    {%- for p in wc.products limit: 40 -%}
+      {%- if shown >= section.settings.more_limit -%}{%- break -%}{%- endif -%}
+      {%- capture b -%}{% render 'design-key', handle: p.handle, part: 'base' %}{%- endcapture -%}
+      {%- if b == own_base -%}{%- continue -%}{%- endif -%}
+      {%- assign shown = shown | plus: 1 -%}
+      {% render 'product-card', product: p %}
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- if shown > 0 -%}
+    <section class="section">
+      <div class="page-width">
+        <div class="section-head">
+          <h2 class="h2">{{ 'products.more_from' | t: title: wc.title }}</h2>
+          <a class="link-arrow" href="{{ wc.url }}">{{ 'general.shop_all' | t }} {% render 'icon', name: 'arrow' %}</a>
+        </div>
+        <div class="grid grid--scroll" style="--cols: 5;">{{ more }}</div>
+      </div>
+    </section>
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product page",
+  "settings": [
+    { "type": "checkbox", "id": "show_dynamic_checkout", "label": "Show Shop Pay / buy it now button", "default": false },
+    { "type": "text", "id": "perk_1", "label": "Promise 1", "default": "Printed to order, just for you" },
+    { "type": "text", "id": "perk_2", "label": "Promise 2", "default": "Free US shipping on orders $60+" },
+    { "type": "text", "id": "perk_3", "label": "Promise 3", "default": "Misprint or damage? We replace it" },
+    { "type": "checkbox", "id": "show_more", "label": "Show \"More from <collection>\"", "default": true },
+    { "type": "range", "id": "more_limit", "label": "Products in \"More from\"", "min": 4, "max": 15, "step": 1, "default": 10 }
+  ],
+  "blocks": [
+    {
+      "type": "collapsible",
+      "name": "Collapsible row",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Shipping" },
+        { "type": "richtext", "id": "content", "label": "Content" },
+        { "type": "page", "id": "page", "label": "Content from a page" }
+      ]
+    }
+  ]
+}
+{% endschema %}

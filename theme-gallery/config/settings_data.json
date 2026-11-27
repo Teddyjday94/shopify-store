@@ -1,0 +1,21 @@
+{
+  "current": "Default",
+  "presets": {
+    "Default": {
+      "color_bg": "#FFFFFF",
+      "color_ink": "#141414",
+      "color_tile": "#F2F1EE",
+      "color_accent": "#5B3DF5",
+      "color_accent_text": "#FFFFFF",
+      "color_sale": "#E0322B",
+      "color_promo": "#141414",
+      "color_promo_text": "#FFFFFF",
+      "page_width": 1440,
+      "radius": 10,
+      "card_show_second_image": true,
+      "world_handles": "doomsday-drop, elsewhere-bound, player-two, realms, the-immortalized-collection, own-lane, drop-002, urban-collection, social-club",
+      "cart_drawer": true,
+      "free_shipping_threshold": 60
+    }
+  }
+}

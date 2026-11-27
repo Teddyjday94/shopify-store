@@ -1,0 +1,98 @@
+{%- comment -%}
+  Big promo banner carousel. Each slide: image (and optional phone image), kicker, heading, text, button.
+  Slides rotate on their own unless the visitor prefers reduced motion; arrows and dots step through them.
+{%- endcomment -%}
+{%- assign slides = section.blocks | where: 'type', 'slide' -%}
+{%- if slides.size > 0 -%}
+<section class="section hero" data-carousel data-autoplay="{{ section.settings.autoplay }}" aria-roledescription="carousel" aria-label="{{ section.settings.label | escape }}">
+  <div class="page-width">
+    <div class="hero__frame" style="--hero-h: {{ section.settings.height }}px;">
+      {%- for block in slides -%}
+        <div class="hero__slide hero__slide--{{ block.settings.align }} hero__slide--{{ block.settings.layout }}{% if forloop.first %} is-active{% endif %}" data-slide
+          role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ slides.size }}"
+          {% unless forloop.first %}aria-hidden="true"{% endunless %}
+          style="--slide-bg: {{ block.settings.bg }}; --slide-ink: {{ block.settings.ink }};" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            <picture class="hero__media">
+              {%- if block.settings.image_mobile != blank -%}
+                <source media="(max-width: 749px)" srcset="{{ block.settings.image_mobile | image_url: width: 900 }} 900w, {{ block.settings.image_mobile | image_url: width: 1400 }} 1400w" sizes="100vw">
+              {%- endif -%}
+              {%- assign eager = 'lazy' -%}{%- if forloop.first -%}{%- assign eager = 'eager' -%}{%- endif -%}
+              {%- assign focal_style = 'object-position: ' | append: block.settings.focal | append: ';' -%}
+              {{ block.settings.image | image_url: width: 2400 | image_tag:
+                widths: '800, 1200, 1600, 2000, 2400', sizes: '(min-width: 1440px) 1440px, 100vw',
+                loading: eager, alt: block.settings.image.alt | default: '',
+                style: focal_style }}
+            </picture>
+          {%- endif -%}
+          <div class="hero__copy">
+            {%- if block.settings.kicker != blank -%}<p class="kicker">{{ block.settings.kicker }}</p>{%- endif -%}
+            {%- if block.settings.heading != blank -%}
+              {%- if forloop.first -%}<h1 class="hero__title">{{ block.settings.heading | newline_to_br }}</h1>{%- else -%}<h2 class="hero__title">{{ block.settings.heading | newline_to_br }}</h2>{%- endif -%}
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}<div class="hero__text">{{ block.settings.text }}</div>{%- endif -%}
+            <div class="hero__btns">
+              {%- if block.settings.button_label != blank -%}
+                <a class="btn btn--lg" href="{{ block.settings.button_link | default: routes.all_products_collection_url }}">{{ block.settings.button_label }}</a>
+              {%- endif -%}
+              {%- if block.settings.button2_label != blank -%}
+                <a class="btn btn--lg btn--glass" href="{{ block.settings.button2_link | default: routes.collections_url }}">{{ block.settings.button2_label }}</a>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+
+      {%- if slides.size > 1 -%}
+        <div class="hero__controls">
+          <button class="icon-btn icon-btn--round" type="button" data-prev aria-label="Previous slide">{% render 'icon', name: 'arrow-left' %}</button>
+          <div class="hero__dots">
+            {%- for block in slides -%}
+              <button type="button" class="dot{% if forloop.first %} is-active{% endif %}" data-dot="{{ forloop.index0 }}" aria-label="Show slide {{ forloop.index }}"></button>
+            {%- endfor -%}
+          </div>
+          <button class="icon-btn icon-btn--round" type="button" data-next aria-label="Next slide">{% render 'icon', name: 'arrow' %}</button>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Hero banner",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Accessible name", "default": "Featured" },
+    { "type": "range", "id": "height", "label": "Height on desktop", "min": 360, "max": 760, "step": 20, "unit": "px", "default": 560 },
+    { "type": "checkbox", "id": "autoplay", "label": "Rotate slides automatically", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "image_picker", "id": "image_mobile", "label": "Phone image (optional)" },
+        { "type": "text", "id": "focal", "label": "Image focus", "default": "center center", "info": "CSS object-position, e.g. 'center top' or '30% 50%'." },
+        { "type": "select", "id": "layout", "label": "Layout", "default": "overlay", "options": [
+          { "value": "overlay", "label": "Text over a full-width image" }, { "value": "split", "label": "Text beside the image (best for portrait photos)" }
+        ] },
+        { "type": "select", "id": "align", "label": "Text position", "default": "left", "options": [
+          { "value": "left", "label": "Left" }, { "value": "center", "label": "Center" }, { "value": "right", "label": "Right" }
+        ] },
+        { "type": "color", "id": "bg", "label": "Background (behind or without an image)", "default": "#141414" },
+        { "type": "color", "id": "ink", "label": "Text color", "default": "#FFFFFF" },
+        { "type": "text", "id": "kicker", "label": "Kicker", "default": "New drop" },
+        { "type": "textarea", "id": "heading", "label": "Heading", "default": "Designs from\nother realities" },
+        { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Graphic tees, hoodies and more, printed to order.</p>" },
+        { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop now" },
+        { "type": "url", "id": "button_link", "label": "Button link" },
+        { "type": "text", "id": "button2_label", "label": "Second button label" },
+        { "type": "url", "id": "button2_link", "label": "Second button link" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Hero banner", "blocks": [{ "type": "slide" }] }]
+}
+{% endschema %}

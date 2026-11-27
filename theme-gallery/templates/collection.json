@@ -1,0 +1,1 @@
+{ "sections": { "main": { "type": "main-collection", "settings": { "show_banner": true, "browse_menu": "main-menu", "per_page": 24, "columns": 4, "open_filters": 3 } } }, "order": ["main"] }

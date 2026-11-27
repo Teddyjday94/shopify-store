@@ -1,0 +1,156 @@
+{%- comment -%}
+  Marketplace-style header: logo, a wide search bar and account/cart icons on top; the main menu below as a
+  category row. Menu items with children open a mega panel: collection links that have an image show as image
+  tiles, the rest as a link list. Phones get a slide-in menu drawer and the search bar under the logo.
+{%- endcomment -%}
+<header class="header" data-header>
+  <div class="page-width header__top">
+    <button class="icon-btn header__burger" type="button" data-drawer-open="MenuDrawer" aria-controls="MenuDrawer" aria-expanded="false" aria-label="{{ 'general.menu' | t }}">
+      {% render 'icon', name: 'menu' %}
+    </button>
+
+    <a class="header__logo" href="{{ routes.root_url }}">
+      {%- if section.settings.logo != blank -%}
+        {%- assign logo_height = section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio | round -%}
+        {{ section.settings.logo | image_url: width: 600 | image_tag:
+          width: section.settings.logo_width,
+          height: logo_height,
+          alt: shop.name,
+          style: 'max-width: 100%; height: auto;'
+        }}
+      {%- else -%}
+        <span class="header__wordmark">{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
+
+    <form class="search-bar header__search" action="{{ routes.search_url }}" method="get" role="search">
+      <label class="visually-hidden" for="HeaderSearch">{{ 'general.search' | t }}</label>
+      <input class="search-bar__input" id="HeaderSearch" type="search" name="q" value="{{ search.terms | escape }}"
+        placeholder="{{ section.settings.search_placeholder | escape }}" autocomplete="off">
+      <input type="hidden" name="type" value="product">
+      <button class="search-bar__btn" type="submit" aria-label="{{ 'search.submit' | t }}">{% render 'icon', name: 'search' %}</button>
+    </form>
+
+    <div class="header__icons">
+      {%- if shop.customer_accounts_enabled -%}
+        <a class="icon-btn header__account" href="{{ routes.account_url }}" aria-label="{{ 'general.account' | t }}">{% render 'icon', name: 'account' %}</a>
+      {%- endif -%}
+      <a class="icon-btn header__cart" href="{{ routes.cart_url }}" data-cart-open aria-label="{{ 'general.cart' | t }}">
+        {% render 'icon', name: 'cart' %}
+        <span class="cart-count{% if cart.item_count == 0 %} is-empty{% endif %}" data-cart-count>{{ cart.item_count }}</span>
+      </a>
+    </div>
+  </div>
+
+  <nav class="header__nav" aria-label="Main">
+    <ul class="page-width nav" role="list">
+      {%- for link in section.settings.menu.links -%}
+        {%- assign highlight = false -%}
+        {%- if section.settings.highlight_first and forloop.first -%}{%- assign highlight = true -%}{%- endif -%}
+        {%- if link.links.size > 0 -%}
+          <li class="nav__item has-mega" data-mega>
+            <button class="nav__link{% if link.child_active %} is-active{% endif %}" type="button" aria-expanded="false" aria-controls="Mega-{{ forloop.index }}">
+              {{ link.title }} {% render 'icon', name: 'chevron' %}
+            </button>
+            <div class="mega" id="Mega-{{ forloop.index }}" hidden>
+              <div class="page-width mega__inner">
+                {%- liquid
+                  assign tiles = 0
+                  for child in link.links
+                    if child.type == 'collection_link' and child.object.featured_image
+                      assign tiles = tiles | plus: 1
+                    endif
+                  endfor
+                -%}
+                {%- if tiles >= 3 -%}
+                  <ul class="mega__tiles" role="list">
+                    {%- for child in link.links -%}
+                      <li>
+                        <a class="mega-tile" href="{{ child.url }}">
+                          <span class="mega-tile__img">
+                            {%- assign img = child.object.image | default: child.object.featured_image -%}
+                            {%- if img -%}{{ img | image_url: width: 400 | image_tag: loading: 'lazy', alt: '', sizes: '200px', widths: '200, 400' }}{%- endif -%}
+                          </span>
+                          <span class="mega-tile__name">{{ child.title }}</span>
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- else -%}
+                  <ul class="mega__list" role="list">
+                    {%- for child in link.links -%}
+                      <li><a href="{{ child.url }}"{% if child.current %} aria-current="page"{% endif %}>{{ child.title }}</a></li>
+                    {%- endfor -%}
+                  </ul>
+                  {%- if section.settings.mega_collection != blank -%}
+                    {%- assign promo = section.settings.mega_collection -%}
+                    <a class="mega__promo" href="{{ promo.url }}">
+                      {%- assign img = promo.image | default: promo.featured_image -%}
+                      {%- if img -%}{{ img | image_url: width: 800 | image_tag: loading: 'lazy', alt: '', sizes: '400px', widths: '400, 800' }}{%- endif -%}
+                      <span class="mega__promo-text"><small>{{ section.settings.mega_kicker }}</small>{{ promo.title }}</span>
+                    </a>
+                  {%- endif -%}
+                {%- endif -%}
+                <a class="mega__all" href="{{ link.url }}">{{ 'general.shop_all' | t }} {{ link.title }} {% render 'icon', name: 'arrow' %}</a>
+              </div>
+            </div>
+          </li>
+        {%- else -%}
+          <li class="nav__item">
+            <a class="nav__link{% if link.active %} is-active{% endif %}{% if highlight %} nav__link--hot{% endif %}" href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title }}</a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </nav>
+</header>
+
+<div class="drawer drawer--left" id="MenuDrawer" data-menu-drawer hidden>
+  <div class="drawer__scrim" data-drawer-close></div>
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="{{ 'general.menu' | t }}" tabindex="-1">
+    <div class="drawer__head">
+      <span class="header__wordmark">{{ shop.name }}</span>
+      <button class="icon-btn" type="button" data-drawer-close aria-label="{{ 'general.close' | t }}">{% render 'icon', name: 'close' %}</button>
+    </div>
+    <div class="drawer__body">
+      <ul class="m-nav" role="list">
+        {%- for link in section.settings.menu.links -%}
+          <li>
+            {%- if link.links.size > 0 -%}
+              <details class="m-nav__group">
+                <summary>{{ link.title }} {% render 'icon', name: 'chevron' %}</summary>
+                <ul role="list">
+                  {%- for child in link.links -%}
+                    <li><a href="{{ child.url }}">{{ child.title }}</a></li>
+                  {%- endfor -%}
+                </ul>
+              </details>
+            {%- else -%}
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+      {%- if shop.customer_accounts_enabled -%}
+        <a class="btn btn--ghost btn--block" href="{{ routes.account_url }}">{% render 'icon', name: 'account' %} {{ 'general.account' | t }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "section-header",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo image", "info": "Leave empty to show the store name." },
+    { "type": "range", "id": "logo_width", "label": "Logo width", "min": 80, "max": 320, "step": 10, "unit": "px", "default": 170 },
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" },
+    { "type": "checkbox", "id": "highlight_first", "label": "Highlight the first menu item", "default": true, "info": "Accent color, for a current drop." },
+    { "type": "text", "id": "search_placeholder", "label": "Search placeholder", "default": "Search designs, collections and products" },
+    { "type": "header", "content": "Mega menu" },
+    { "type": "collection", "id": "mega_collection", "label": "Featured collection in link-list dropdowns" },
+    { "type": "text", "id": "mega_kicker", "label": "Featured collection label", "default": "Featured" }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,24 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "shop": { "type": "menu", "settings": { "heading": "Shop", "menu": "main-menu" } },
+        "info": { "type": "menu", "settings": { "heading": "Help", "menu": "footer" } },
+        "about": { "type": "text", "settings": { "heading": "Printed to order", "text": "<p>Every piece is printed when you order it, then shipped wherever you are. No warehouse, no waste. Free US shipping on orders $60+.</p>" } }
+      },
+      "block_order": ["shop", "info", "about"],
+      "settings": {
+        "show_newsletter": true,
+        "newsletter_heading": "Get first dibs on new drops",
+        "newsletter_text": "New designs, sales and the occasional dispatch from elsewhere.",
+        "about": "<p>Apparel for other realities. Graphic tees, hoodies, hats and more, printed one at a time.</p>",
+        "small_print": "Made elsewhere. Worn here.",
+        "show_payment": true
+      }
+    }
+  },
+  "order": ["footer"]
+}

@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "shipping": { "type": "collapsible", "settings": { "heading": "Shipping & production", "content": "<p>Every piece is printed when you order it, usually in 2-5 business days, then shipped. Free US shipping on orders $60+.</p>", "page": "" } },
+        "returns": { "type": "collapsible", "settings": { "heading": "Returns", "content": "<p>Made to order, so we can't take back the wrong size, but if your item arrives misprinted or damaged, we'll replace it. See our returns page for details.</p>", "page": "" } }
+      },
+      "block_order": ["shipping", "returns"],
+      "settings": {
+        "show_dynamic_checkout": false,
+        "perk_1": "Printed to order, just for you",
+        "perk_2": "Free US shipping on orders $60+",
+        "perk_3": "Misprint or damage? We replace it",
+        "show_more": true,
+        "more_limit": 10
+      }
+    },
+    "recs": { "type": "product-recommendations", "settings": { "heading": "You might also like", "limit": 5 } }
+  },
+  "order": ["main", "recs"]
+}

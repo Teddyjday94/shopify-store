@@ -1,0 +1,27 @@
+<section class="section section--tight tiles">
+  <div class="page-width">
+    <h1 class="h1">{{ section.settings.heading }}</h1>
+    <ul class="tiles__grid" role="list" style="--cols: 4;">
+      {%- for c in collections -%}
+        {%- if c.handle == 'frontpage' or c.products_count == 0 -%}{%- continue -%}{%- endif -%}
+        {%- assign img = c.image | default: c.featured_image -%}
+        <li>
+          <a class="tile" href="{{ c.url }}">
+            {%- if img -%}{{ img | image_url: width: 900 | image_tag: loading: 'lazy', alt: '', class: 'tile__img', widths: '400, 600, 900', sizes: '(min-width: 990px) 25vw, 50vw' }}{%- endif -%}
+            <span class="tile__copy">
+              <span class="tile__name">{{ c.title }}</span>
+              <span class="tile__count">{{ c.products_count }} pieces {% render 'icon', name: 'arrow' %}</span>
+            </span>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collections list",
+  "settings": [{ "type": "text", "id": "heading", "label": "Heading", "default": "All collections" }]
+}
+{% endschema %}

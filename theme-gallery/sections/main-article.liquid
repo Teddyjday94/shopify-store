@@ -1,0 +1,15 @@
+<article class="section section--tight">
+  <div class="page-width page-narrow">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ blog.url }}">{{ blog.title }}</a></nav>
+    <h1 class="h1">{{ article.title }}</h1>
+    <p class="muted">{{ article.published_at | date: '%B %-d, %Y' }}</p>
+    {%- if article.image -%}
+      <div class="article__img">{{ article.image | image_url: width: 1600 | image_tag: loading: 'eager', alt: article.image.alt | default: '', widths: '800, 1200, 1600', sizes: '(min-width: 860px) 820px, 100vw' }}</div>
+    {%- endif -%}
+    <div class="rte">{{ article.content }}</div>
+  </div>
+</article>
+
+{% schema %}
+{ "name": "Article", "settings": [] }
+{% endschema %}

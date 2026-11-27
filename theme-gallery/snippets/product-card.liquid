@@ -1,0 +1,92 @@
+{% doc %}
+  Product card: design on a soft tile, title, "from <collection>", price.
+  @param {product} product - Product to display
+  @param {boolean} [lazy] - Lazy-load the main image (default true)
+  @param {string} [sizes] - Image sizes attribute
+{% enddoc %}
+{%- liquid
+  assign loading = 'lazy'
+  if lazy == false
+    assign loading = 'eager'
+  endif
+  assign img_sizes = sizes | default: '(min-width: 1200px) 22vw, (min-width: 750px) 30vw, 50vw'
+
+  # Hoodies preview their back print ("... in Black, back print"), with the front as the hover image.
+  assign preview = product.featured_media
+  assign hover = product.media[1]
+  if product.title contains 'Hoodie'
+    assign back_any = nil
+    assign back_black = nil
+    assign front_any = nil
+    for media in product.media
+      if media.alt contains ', back print'
+        if back_any == nil
+          assign back_any = media
+        endif
+        if back_black == nil and media.alt contains ' in Black,'
+          assign back_black = media
+        endif
+      elsif media.alt contains ', front print' and front_any == nil
+        assign front_any = media
+      endif
+    endfor
+    if back_black
+      assign preview = back_black
+    elsif back_any
+      assign preview = back_any
+    endif
+    if preview != product.featured_media
+      assign hover = front_any
+    endif
+  endif
+
+  assign discount = 0
+  if product.compare_at_price > product.price
+    assign discount = product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price
+  endif
+-%}
+{%- capture world -%}{% render 'product-world', product: product %}{%- endcapture -%}
+<article class="card">
+  <a class="card__link" href="{{ product.url }}">
+    <div class="card__media{% if settings.card_show_second_image and hover %} has-hover{% endif %}">
+      {%- if preview -%}
+        {{ preview | image_url: width: 900 | image_tag:
+          widths: '300, 450, 600, 900',
+          sizes: img_sizes,
+          loading: loading,
+          class: 'card__img',
+          alt: preview.alt | default: product.title
+        }}
+        {%- if settings.card_show_second_image and hover -%}
+          {{ hover | image_url: width: 900 | image_tag:
+            widths: '300, 450, 600, 900',
+            sizes: img_sizes,
+            loading: 'lazy',
+            class: 'card__img card__img--hover',
+            alt: ''
+          }}
+        {%- endif -%}
+      {%- else -%}
+        <span class="card__placeholder">{{ product.title | slice: 0 }}</span>
+      {%- endif -%}
+
+      <span class="card__badges">
+        {%- if product.available == false -%}
+          <span class="badge badge--dark">{{ 'products.sold_out' | t }}</span>
+        {%- elsif discount > 0 -%}
+          <span class="badge badge--sale">-{{ discount }}%</span>
+        {%- endif -%}
+      </span>
+      <span class="card__cta" aria-hidden="true">View design {% render 'icon', name: 'arrow' %}</span>
+    </div>
+    <div class="card__info">
+      <h3 class="card__title">{{ product.title }}</h3>
+      {%- if world != blank -%}
+        <p class="card__by">{{ 'products.from_world' | t }} <span>{{ world }}</span></p>
+      {%- elsif product.type != blank -%}
+        <p class="card__by">{{ product.type | escape }}</p>
+      {%- endif -%}
+      <p class="card__price">{% render 'price', product: product %}</p>
+    </div>
+  </a>
+</article>

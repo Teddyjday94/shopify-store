@@ -1,0 +1,152 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "blocks": {
+        "doom": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/doomsday-d-crest-varsity-friends.png",
+            "focal": "center 30%",
+            "layout": "split",
+            "align": "left",
+            "bg": "#141414",
+            "ink": "#FFFFFF",
+            "kicker": "New drop",
+            "heading": "The Doomsday Drop",
+            "text": "<p>Varsity jackets, crest tees and hoodies. Thirteen pieces, printed to order.</p>",
+            "button_label": "Shop the drop",
+            "button_link": "shopify://collections/doomsday-drop",
+            "button2_label": "Browse everything",
+            "button2_link": "shopify://collections/all"
+          }
+        },
+        "sale": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/elsewhere-cinematic-doorway.png",
+            "focal": "center center",
+            "layout": "overlay",
+            "align": "left",
+            "bg": "#1c1640",
+            "ink": "#FFFFFF",
+            "kicker": "Holiday Sale",
+            "heading": "15% off everything\nthrough Dec 17",
+            "text": "<p>Applied automatically at checkout. Free US shipping on orders $60+.</p>",
+            "button_label": "Shop the sale",
+            "button_link": "shopify://collections/all",
+            "button2_label": "Gifts under $30",
+            "button2_link": "shopify://collections/gifts"
+          }
+        },
+        "bound": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/elsewhere-world-crossing.png",
+            "focal": "center center",
+            "layout": "overlay",
+            "align": "left",
+            "bg": "#0d2233",
+            "ink": "#FFFFFF",
+            "kicker": "Elsewhere Bound",
+            "heading": "Wear the destination.",
+            "text": "<p>Our own logo designs, from chrome to psychedelic.</p>",
+            "button_label": "Shop Elsewhere Bound",
+            "button_link": "shopify://collections/elsewhere-bound"
+          }
+        }
+      },
+      "block_order": ["doom", "sale", "bound"],
+      "settings": { "label": "Featured", "height": 560, "autoplay": true }
+    },
+    "cats": {
+      "type": "category-scroller",
+      "blocks": {
+        "tees": { "type": "collection", "settings": { "collection": "t-shirts", "title": "Tees" } },
+        "hoodies": { "type": "collection", "settings": { "collection": "hoodies-sweatshirts", "title": "Hoodies & Crews" } },
+        "jackets": { "type": "collection", "settings": { "collection": "jackets", "title": "Jackets" } },
+        "sweats": { "type": "collection", "settings": { "collection": "sweatpants", "title": "Sweatpants" } },
+        "hats": { "type": "collection", "settings": { "collection": "hats", "title": "Hats & Beanies" } },
+        "home": { "type": "collection", "settings": { "collection": "accessories", "title": "Home & Accessories" } },
+        "womens": { "type": "collection", "settings": { "collection": "womens", "title": "Women's" } },
+        "mens": { "type": "collection", "settings": { "collection": "mens", "title": "Men's" } },
+        "gifts": { "type": "collection", "settings": { "collection": "gifts", "title": "Gifts Under $30" } }
+      },
+      "block_order": ["tees", "hoodies", "jackets", "sweats", "hats", "home", "womens", "mens", "gifts"],
+      "settings": { "heading": "Shop by product", "link_label": "Shop all", "link": "shopify://collections/all", "shape": "round", "pad_top": 40 }
+    },
+    "trending": {
+      "type": "product-tabs",
+      "blocks": {
+        "doom": { "type": "tab", "settings": { "collection": "doomsday-drop", "label": "Doomsday Drop" } },
+        "featured": { "type": "tab", "settings": { "collection": "frontpage", "label": "Staff picks" } },
+        "hoodies": { "type": "tab", "settings": { "collection": "hoodies-sweatshirts", "label": "Hoodies" } },
+        "gifts": { "type": "tab", "settings": { "collection": "gifts", "label": "Under $30" } }
+      },
+      "block_order": ["doom", "featured", "hoodies", "gifts"],
+      "settings": { "kicker": "", "heading": "Trending designs", "limit": 10, "columns": 5 }
+    },
+    "props": {
+      "type": "value-props",
+      "blocks": {
+        "p1": { "type": "prop", "settings": { "icon": "print", "title": "Printed to order", "text": "Made just for you, one at a time" } },
+        "p2": { "type": "prop", "settings": { "icon": "truck", "title": "Free US shipping $60+", "text": "Applied automatically at checkout" } },
+        "p3": { "type": "prop", "settings": { "icon": "spark", "title": "Every design, every style", "text": "Tees, hoodies, hats, mugs and more" } },
+        "p4": { "type": "prop", "settings": { "icon": "return", "title": "Misprint? We fix it", "text": "Damaged or wrong items replaced" } }
+      },
+      "block_order": ["p1", "p2", "p3", "p4"],
+      "settings": {}
+    },
+    "spotlight": {
+      "type": "collection-spotlight",
+      "settings": {
+        "kicker": "Collection spotlight",
+        "heading": "Featured world",
+        "collection": "elsewhere-bound",
+        "title": "",
+        "text": "Wear the destination. Our own logo designs: Chrome Globe, Groovy Retro, Psychedelic Drip and more.",
+        "bg": "#5B3DF5",
+        "ink": "#FFFFFF",
+        "button_label": "Visit the collection",
+        "limit": 6,
+        "flip": false
+      }
+    },
+    "worlds": {
+      "type": "collection-tiles",
+      "blocks": {
+        "bound": { "type": "collection", "settings": { "collection": "elsewhere-bound" } },
+        "doom": { "type": "collection", "settings": { "collection": "doomsday-drop" } },
+        "quest": { "type": "collection", "settings": { "collection": "player-two" } },
+        "legends": { "type": "collection", "settings": { "collection": "the-immortalized-collection" } },
+        "dragons": { "type": "collection", "settings": { "collection": "realms" } },
+        "female": { "type": "collection", "settings": { "collection": "own-lane" } },
+        "tired": { "type": "collection", "settings": { "collection": "drop-002" } },
+        "social": { "type": "collection", "settings": { "collection": "social-club" } }
+      },
+      "block_order": ["bound", "doom", "quest", "legends", "dragons", "female", "tired", "social"],
+      "settings": { "kicker": "", "heading": "Shop by collection", "link_label": "All collections", "link": "shopify://collections", "columns": 4 }
+    },
+    "promos": {
+      "type": "promo-split",
+      "blocks": {
+        "gifts": { "type": "promo", "settings": { "image": "shopify://shop_images/elsewhere-three-worlds-sharp.webp", "bg": "#141414", "ink": "#FFFFFF", "kicker": "Gift guide", "heading": "Gifts under $30", "text": "Tees, hats, mugs and ornaments for the person who's always somewhere else.", "button_label": "Shop gifts", "link": "shopify://collections/gifts" } },
+        "sweats": { "type": "promo", "settings": { "bg": "#E9E4FF", "ink": "#141414", "kicker": "New", "heading": "Matching sweatpants", "text": "Pair them with a collection hoodie. From Dec 18: 20% off the sweatpants in a set.", "button_label": "Shop sweatpants", "link": "shopify://collections/sweatpants" } }
+      },
+      "block_order": ["gifts", "sweats"],
+      "settings": {}
+    },
+    "new": {
+      "type": "product-tabs",
+      "blocks": {
+        "tees": { "type": "tab", "settings": { "collection": "t-shirts", "label": "Tees" } },
+        "womens": { "type": "tab", "settings": { "collection": "womens", "label": "Women's" } },
+        "hats": { "type": "tab", "settings": { "collection": "hats", "label": "Hats" } },
+        "home": { "type": "tab", "settings": { "collection": "accessories", "label": "Home" } }
+      },
+      "block_order": ["tees", "womens", "hats", "home"],
+      "settings": { "kicker": "", "heading": "Fresh from the printer", "limit": 10, "columns": 5 }
+    }
+  },
+  "order": ["hero", "cats", "trending", "props", "spotlight", "worlds", "promos", "new"]
+}

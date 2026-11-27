@@ -1,0 +1,25 @@
+<section class="section section--tight">
+  <div class="page-width page-narrow">
+    {%- form 'contact', class: 'contact' -%}
+      {%- if form.posted_successfully? -%}
+        <p class="notice" role="status">{{ 'contact.success' | t }}</p>
+      {%- endif -%}
+      {%- if form.errors -%}<p class="notice notice--error" role="alert">{{ form.errors | default_errors }}</p>{%- endif -%}
+      <input type="hidden" name="contact[subject]" value="{{ section.settings.subject | escape }}">
+      <div class="contact__row">
+        <label>{{ 'contact.name' | t }}<input class="input" type="text" name="contact[name]" autocomplete="name" value="{{ form.name }}"></label>
+        <label>{{ 'contact.email' | t }}<input class="input" type="email" name="contact[email]" autocomplete="email" required value="{{ form.email }}"></label>
+      </div>
+      <label>{{ 'contact.message' | t }}<textarea class="input" name="contact[body]" rows="6" required>{{ form.body }}</textarea></label>
+      <button class="btn btn--lg" type="submit">{{ 'contact.send' | t }}</button>
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact form",
+  "settings": [{ "type": "text", "id": "subject", "label": "Email subject", "default": "Store contact" }],
+  "presets": [{ "name": "Contact form" }]
+}
+{% endschema %}

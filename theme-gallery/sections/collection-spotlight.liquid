@@ -1,0 +1,63 @@
+{%- comment -%}
+  Featured collection shown like an artist's shop: a banner card (image, name, blurb, "Visit the shop") beside
+  a row of its products.
+{%- endcomment -%}
+{%- assign c = section.settings.collection -%}
+<section class="section spot">
+  <div class="page-width">
+    {%- if section.settings.heading != blank -%}
+      <div class="section-head">
+        <div>
+          {%- if section.settings.kicker != blank -%}<p class="kicker">{{ section.settings.kicker }}</p>{%- endif -%}
+          <h2 class="h2">{{ section.settings.heading }}</h2>
+        </div>
+      </div>
+    {%- endif -%}
+    <div class="spot__wrap{% if section.settings.flip %} spot__wrap--flip{% endif %}">
+      <a class="spot__card" href="{{ c.url | default: '#' }}" style="--spot-bg: {{ section.settings.bg }}; --spot-ink: {{ section.settings.ink }};">
+        {%- assign img = section.settings.image | default: c.image | default: c.featured_image -%}
+        {%- if img -%}
+          {{ img | image_url: width: 1200 | image_tag: loading: 'lazy', alt: '', class: 'spot__img', widths: '600, 900, 1200', sizes: '(min-width: 990px) 40vw, 100vw' }}
+        {%- endif -%}
+        <span class="spot__copy">
+          <span class="spot__avatar" aria-hidden="true">{{ c.title | default: section.settings.title | slice: 0 }}</span>
+          <span class="spot__name">{{ section.settings.title | default: c.title }}</span>
+          {%- if section.settings.text != blank -%}
+            <span class="spot__text">{{ section.settings.text }}</span>
+          {%- elsif c.description != blank -%}
+            <span class="spot__text">{{ c.description | strip_html | truncatewords: 22 }}</span>
+          {%- endif -%}
+          <span class="spot__meta">{{ c.products_count }} pieces</span>
+          <span class="btn btn--light">{{ section.settings.button_label }} {% render 'icon', name: 'arrow' %}</span>
+        </span>
+      </a>
+      <div class="grid spot__grid" style="--cols: 3;">
+        {%- if c != blank -%}
+          {%- for product in c.products limit: section.settings.limit -%}
+            {% render 'product-card', product: product, sizes: '(min-width: 990px) 18vw, 50vw' %}
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection spotlight",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Collection spotlight" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Featured world" },
+    { "type": "collection", "id": "collection", "label": "Collection" },
+    { "type": "text", "id": "title", "label": "Name (optional)" },
+    { "type": "text", "id": "text", "label": "Blurb (optional)", "info": "Defaults to the collection description." },
+    { "type": "image_picker", "id": "image", "label": "Banner image (optional)" },
+    { "type": "color", "id": "bg", "label": "Card color", "default": "#5B3DF5" },
+    { "type": "color", "id": "ink", "label": "Card text", "default": "#FFFFFF" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Visit the collection" },
+    { "type": "range", "id": "limit", "label": "Products", "min": 3, "max": 9, "step": 3, "default": 6 },
+    { "type": "checkbox", "id": "flip", "label": "Card on the right", "default": false }
+  ],
+  "presets": [{ "name": "Collection spotlight" }]
+}
+{% endschema %}
