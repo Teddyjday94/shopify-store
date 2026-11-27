@@ -150,6 +150,13 @@ Monster of the Week (held: resembles a trademarked character).
   Not carried over from the live theme: lookbook, set add-on / matching sweatpants card, /pages/designs template,
   Doomsday editorial and lifestyle hover photos. themeFilesUpsert with URL bodies returned success but changed
   nothing on this theme; theme_bash edits + theme_commit worked. themeCreate from a raw.githubusercontent zip works.
+  Tiles (2026-11-27): Here Be Dragons = Dragonfall Hoodie back print, Female Lead = Sisterhood tee at the graffiti
+  wall (block image settings in templates/index.json; product photos are usable as shopify://shop_images/<file>).
+- 2026-11-27, Urban Collection emptied and hidden until real products exist: removed tags "urban" and
+  "urban collection" from its 4 products (Urban Collection Sweatpants, Beanie, Painted Beanie, Trucker Hat; the
+  collection's only rule is a product tag) and removed its link from the main menu. The collection itself is
+  still published (this connection blocks unpublishing): owner unpublishes it in admin. To bring it back, re-tag
+  products "urban" and re-add the menu link.
 - Live theme (2026-11-12): "Hero Video Preview" (156465922209), the Field Guide design, built outside this repo.
   Only the files in theme-live-overrides/ are stored here. theme-cinematic/ is the older design.
 - Fonts: Anton (big headings), Barlow Semi Condensed (supporting text, card titles), Inter Tight (body),
