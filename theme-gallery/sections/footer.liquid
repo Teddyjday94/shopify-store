@@ -26,7 +26,8 @@
       <a class="footer__wordmark" href="{{ routes.root_url }}">{{ shop.name }}</a>
       {%- if section.settings.about != blank -%}<div class="footer__about">{{ section.settings.about }}</div>{%- endif -%}
       <ul class="footer__social" role="list">
-        {%- for network in 'instagram,tiktok,facebook,pinterest' | split: ',' -%}
+        {%- assign networks = 'instagram,tiktok,facebook,pinterest' | split: ',' -%}
+        {%- for network in networks -%}
           {%- assign key = 'social_' | append: network -%}
           {%- if settings[key] != blank -%}
             <li><a class="icon-btn" href="{{ settings[key] }}" target="_blank" rel="noopener" aria-label="{{ network | capitalize }}">{% render 'icon', name: network %}</a></li>
