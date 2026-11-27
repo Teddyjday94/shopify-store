@@ -167,9 +167,12 @@ Monster of the Week (held: resembles a trademarked character).
   front 102044, hanging 102047; women's model 87732, front 87728, hanging 87730); then fileUpdate originalSource
   swapped all 52 photos to the regenerated mockups (same media ids, so labels, order and variant links stay).
   Verified all 52 against the new mockups. Old print settings: printify/legends_tees_print_areas_before_2026-11-27.json.
-  CREWNECKS NOT DONE: they have a neck-label text layer the API can't send back, so a print-area PUT would drop it.
-  Owner swaps the art in the Printify editor (front: <design>-natural-border-final-5500.png, same height as before),
-  then the same prematch + fileUpdate photo swap applies (crewneck cameras: front print, back view, folded).
+  Crewnecks done too (owner asked, same day): Printify rejects the neck text layer when it is sent back ("Provided images
+  do not exist"), so the swap omits it (--crew); Printify then kept the neck layer anyway (same layer id 5941187e...,
+  new instance id). Its text can't be read via the API and no mockup shows the collar, so the inside-neck print is
+  unverified: check it in the Printify editor. 40 crewneck photos matched first (printify/prematch_photos.py: front
+  98502, back view 98503, folded 100648), then swapped and verified. Old settings incl. the full neck entries:
+  printify/legends_crewnecks_print_areas_before_2026-11-27.json.
 - 2026-11-27, Urban Collection emptied and hidden until real products exist: removed tags "urban" and
   "urban collection" from its 4 products (Urban Collection Sweatpants, Beanie, Painted Beanie, Trucker Hat; the
   collection's only rule is a product tag) and removed its link from the main menu. The collection itself is

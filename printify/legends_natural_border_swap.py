@@ -3,8 +3,8 @@ on the Legends tees and women's tees, keeping each product's printed height and 
 WITHOUT images (Shopify photos keep their ids, labels, order and variant links; their pictures are swapped afterwards
 with fileUpdate originalSource from the regenerated Printify mockups, see --media).
 
-Crewnecks are NOT handled: they carry a neck-label text layer the Printify API can't send back, so a print-area PUT
-would drop it. Swap their art in the Printify editor instead.
+Crewnecks (--crew HANDLE) carry a neck-label text layer. Printify rejects it when sent back ("Provided images do not
+exist", 2026-11-27), so the owner chose to drop the neck label: --crew removes it. Re-add it in the Printify editor if wanted.
 
 Usage:
     python3 printify/legends_natural_border_swap.py              # dry run
@@ -26,6 +26,8 @@ TARGETS = {"born-ready-tee": "6ae779db48500d698e04256f", "fallen-not-finished-te
            "going-with-the-flow-tee": "6ae77a715b46121dd6093a8b", "queen-forever-tee": "6aea9404365c19e4ba07e79f",
            "born-ready-womens-tee": "6af37481f6491c921e019173", "fallen-not-finished-womens-tee": "6af37702cb8adff71a0292aa",
            "going-with-the-flow-womens-tee": "6af3771b45f16ba7160339ee", "queen-forever-womens-tee": "6af37772da607b43c50f7859"}
+CREW = {"born-ready-crewneck": "6afc013d17c004fdc80482d9", "fallen-not-finished-crewneck": "6afc028cfd4d7f230d0ab614",
+        "going-with-the-flow-crewneck": "6afc0280fd4d7f230d0ab606", "queen-forever-crewneck": "6afc0273fd4d7f230d0ab5f8"}
 DONE = Path(__file__).with_name("legends_natural_border_done.json")
 
 
@@ -39,10 +41,10 @@ def new_art(api):
     return art
 
 
-def swap(api, apply):
+def swap(api, apply, targets=TARGETS, allow_text=False):
     art = new_art(api)
     done = json.loads(DONE.read_text()) if DONE.exists() else []
-    for handle, pid in TARGETS.items():
+    for handle, pid in targets.items():
         if pid in done:
             print("done  ", handle); continue
         design = next(d for d in HOODIES if handle.startswith(d))
@@ -55,7 +57,10 @@ def swap(api, apply):
                 imgs = []
                 for i in ph["images"]:
                     if i.get("type") == "text/plain" or i["name"].endswith(".svg"):
-                        raise SystemExit(f"{p['title']} has a text layer ({ph['position']}); not safe to PUT")
+                        if not allow_text:
+                            raise SystemExit(f"{p['title']} has a text layer ({ph['position']}); not safe to PUT")
+                        print(f"   dropping text layer on {ph['position']}")
+                        continue
                     place = dict(x=i["x"], y=i["y"], scale=i["scale"], angle=i.get("angle", 0))
                     if ph["position"] == "front" and i["name"].endswith("-back.png"):
                         # same printed height: scale is relative to width, so adjust for the new aspect ratio
@@ -103,8 +108,11 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--apply", action="store_true")
     ap.add_argument("--media", nargs=2)
+    ap.add_argument("--crew")
     a = ap.parse_args()
     if a.media:
         media(*a.media)
+    elif a.crew:
+        swap(Printify(None), a.apply, {a.crew: CREW[a.crew]}, allow_text=True)
     else:
         swap(Printify(None), a.apply)
