@@ -135,6 +135,18 @@ Shop categories: Men's, Women's, Tees, Hoodies, Hats & beanies, Home & Accessori
   "ELSEWHERE APPAREL CO. · LEGENDS NEVER DIE"; hoodie chest mark "ELSEWHERE / LEGENDS NEVER DIE" (2026-11-10).
 - Shopify sometimes fails to fetch fresh Printify mockups (status FAILED); check media status after swaps and re-add.
 
+## Repo cleanup (2026-11-27)
+Owner asked to drop art for designs no longer on the store. 353 image files removed from designs/ (about 3 GB):
+Christmas lines (print-xmas, print-xmas2, xmas-src, xmas2-src, holiday mugs/ornaments/mats), Relatable (print-relatable,
+relatable-src, phone cases, mugs), old pants art (print-pants), Creature Feature/horror, Player Two retirees (Critical
+Failure, Talk Nerdy, Forbidden Knowledge, Respawn Pending, PhD in Overthinking, Monster of the Week), In My Own Lane,
+Lucky Charm, drop2 backs/fronts not in use, realms retirees (Happily Ever After, Origin Story, Gargoyle Watch, Rooftop
+Leap), Many Worlds beanie, the 8 Legends paintings not on the store (Lead the Charge, Rise From Ruin, Sleep Paralysis
+Club, One Way Ferry, Above It All, Long Live the King, Nine Tails, Masterless), and Doomsday Mask / Tree Spirit /
+Three Earths. Matching was by Printify print-file names plus design titles (Printify + ODMPOD varsity products).
+Kept alternates of live designs (Crown & Curls backs, Not AI neck label, Calmer Place backs, realms raw/4x sources,
+Doomsday crest versions) and site art (web/, preview.png). Everything is still in git history (before this commit).
+
 ## Retired designs (do not recreate)
 My Kind of Leg Day, Built Character, Currently Avoiding, Nine Tails (Printify would not publish its art),
 Monster of the Week (held: resembles a trademarked character).

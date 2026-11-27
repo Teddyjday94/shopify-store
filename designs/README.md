@@ -18,7 +18,7 @@ SIL Open Font License, which allows commercial use on merchandise.
 
 ## All artwork (`all-artwork/`)
 
-Every print file currently on a Printify product (194 files, downloaded 2026-11-13), one copy per design,
+Print files on Printify products (downloaded 2026-11-13; trimmed to the 76 still on the store on 2026-11-27), one copy per design,
 named `<collection>__<original upload name>`. `INDEX.tsv` lists each file's pixel size and the products using it.
 Collections use the new names (Inner Monologue, Female Lead, Legends Never Die incl. Old Gods, Naughty List,
 Creature Feature, Side Quest, Here Be Dragons, Tired But Here); anything else is `elsewhere-core`.
