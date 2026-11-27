@@ -160,6 +160,16 @@ Monster of the Week (held: resembles a trademarked character).
   Black back print first then each color (option order), chart last; every variant linked to its color's back print;
   the 18 duplicates detached from the product (files kept in Files). Whatever photos the hoodies had before were
   replaced by the republish. Tees, women's tees, crewnecks etc. were not republished.
+- 2026-11-27, same new Legends art on the 4 tees + 4 women's tees: printify/legends_natural_border_swap.py put each
+  design's "natural-border-final-5500" file (reused from the hoodie back, no new upload) on the front at the same
+  position and printed height (scale up ~3-5% for the slightly wider art), republished with images=false. Before that,
+  printify/legends_tee_prematch.py matched every Shopify photo to its Printify variant + camera (model 102059/102057,
+  front 102044, hanging 102047; women's model 87732, front 87728, hanging 87730); then fileUpdate originalSource
+  swapped all 52 photos to the regenerated mockups (same media ids, so labels, order and variant links stay).
+  Verified all 52 against the new mockups. Old print settings: printify/legends_tees_print_areas_before_2026-11-27.json.
+  CREWNECKS NOT DONE: they have a neck-label text layer the API can't send back, so a print-area PUT would drop it.
+  Owner swaps the art in the Printify editor (front: <design>-natural-border-final-5500.png, same height as before),
+  then the same prematch + fileUpdate photo swap applies (crewneck cameras: front print, back view, folded).
 - 2026-11-27, Urban Collection emptied and hidden until real products exist: removed tags "urban" and
   "urban collection" from its 4 products (Urban Collection Sweatpants, Beanie, Painted Beanie, Trucker Hat; the
   collection's only rule is a product tag) and removed its link from the main menu. The collection itself is
