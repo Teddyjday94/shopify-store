@@ -9,6 +9,8 @@
   assign current_media = current_variant.featured_media | default: product.featured_media
   assign form_id = 'ProductForm-' | append: section.id
   assign color_index = -1
+  # Photos labeled "<Title> in <Color>, ..." belong to that color.
+  assign label_prefix = product.title | append: ' in '
   for option in product.options_with_values
     assign on = option.name | downcase
     if on == 'color' or on == 'colour'
@@ -38,8 +40,9 @@
           {%- for media in product.media -%}
             {%- liquid
               assign color = ''
-              if media.alt contains ' in ' and media.alt contains ','
-                assign tail = media.alt | split: ' in ' | last
+              assign alt_head = media.alt | slice: 0, label_prefix.size
+              if alt_head == label_prefix and media.alt contains ','
+                assign tail = media.alt | remove_first: label_prefix
                 assign color = tail | split: ',' | first | strip
               endif
               assign is_current = false
@@ -72,8 +75,9 @@
               {%- if media.media_type != 'image' -%}{%- continue -%}{%- endif -%}
               {%- liquid
                 assign color = ''
-                if media.alt contains ' in ' and media.alt contains ','
-                  assign tail = media.alt | split: ' in ' | last
+                assign alt_head = media.alt | slice: 0, label_prefix.size
+                if alt_head == label_prefix and media.alt contains ','
+                  assign tail = media.alt | remove_first: label_prefix
                   assign color = tail | split: ',' | first | strip
                 endif
               -%}
