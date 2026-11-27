@@ -158,8 +158,8 @@ Monster of the Week (held: resembles a trademarked character).
   imports. Fixed: photos matched to Printify mockups by image comparison (printify/match_republished_photos.py), labeled
   "<Title> in <Color>, back print / back print, second view / front print / folded" and "<Title> size chart", ordered
   Black back print first then each color (option order), chart last; every variant linked to its color's back print;
-  the 18 duplicates detached from the product (files kept in Files). Old lifestyle/model photos on these hoodies were
-  replaced by the republish and are gone from the products. Tees, women's tees, crewnecks etc. were not republished.
+  the 18 duplicates detached from the product (files kept in Files). Whatever photos the hoodies had before were
+  replaced by the republish. Tees, women's tees, crewnecks etc. were not republished.
 - 2026-11-27, Urban Collection emptied and hidden until real products exist: removed tags "urban" and
   "urban collection" from its 4 products (Urban Collection Sweatpants, Beanie, Painted Beanie, Trucker Hat; the
   collection's only rule is a product tag) and removed its link from the main menu. The collection itself is
