@@ -140,6 +140,16 @@ My Kind of Leg Day, Built Character, Currently Avoiding, Nine Tails (Printify wo
 Monster of the Week (held: resembles a trademarked character).
 
 ## Themes
+- 2026-11-27, NEW theme "Elsewhere Apparel Co. | Gallery (new theme)" (157322379425, unpublished; owner decides
+  whether to publish): a from-scratch marketplace layout inspired by Threadless (layout only, nothing copied;
+  the site itself couldn't be fetched from the cloud session, so it was built from knowledge of its layout).
+  Source: theme-gallery/ (README there), zip in dist/elsewhere-gallery-theme.zip. Search-first header + mega menu,
+  hero carousel, "Shop by product" circles, tabbed grids, collection spotlight/tiles, filter sidebar, product
+  gallery grouped by color label, "Available on" style picker (design-key handles), swatches, size guide,
+  koozie table, cart drawer with $60 free-shipping bar. "from <collection>" on cards = theme setting world_handles.
+  Not carried over from the live theme: lookbook, set add-on / matching sweatpants card, /pages/designs template,
+  Doomsday editorial and lifestyle hover photos. themeFilesUpsert with URL bodies returned success but changed
+  nothing on this theme; theme_bash edits + theme_commit worked. themeCreate from a raw.githubusercontent zip works.
 - Live theme (2026-11-12): "Hero Video Preview" (156465922209), the Field Guide design, built outside this repo.
   Only the files in theme-live-overrides/ are stored here. theme-cinematic/ is the older design.
 - Fonts: Anton (big headings), Barlow Semi Condensed (supporting text, card titles), Inter Tight (body),
